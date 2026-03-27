@@ -1,0 +1,1046 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'Crypto Staking Calculator 2026 — Estimate Your Rewards';
+const description = 'Calculate your crypto staking rewards instantly. Enter your holdings, see projected yields for 1, 3, and 5 years. Free tool by Quakr.';
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is crypto staking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Crypto staking is the process of locking up your cryptocurrency in a blockchain network to help validate transactions. In return, you earn staking rewards (APY) paid in the same token."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is staking APY calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "APY (Annual Percentage Yield) accounts for compound interest. The formula is: Final Amount = Principal × (1 + APY/n)^(n×t), where n is the compounding frequency per year and t is the number of years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which crypto has the highest staking rewards?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of 2026, ATOM (Cosmos) offers around 18% APY, DOT (Polkadot) around 14%, and NEAR Protocol around 9%. However, higher APY often comes with higher risk and token inflation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is staking crypto safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Staking carries risks including token price volatility, slashing penalties (on some networks), and smart contract risk. Always research the validator and network before staking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between daily and monthly compounding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Daily compounding reinvests your rewards every day, resulting in slightly higher returns than monthly or annual compounding. The difference becomes more significant over longer time periods and higher APY rates."
+      }
+    }
+  ]
+});
+---
+
+<BaseLayout title={title} description={description} articleSchema={faqSchema}>
+  <div class="calc-page">
+
+    <!-- Hero -->
+    <section class="calc-hero">
+      <span class="calc-badge">Free Tool</span>
+      <h1>Crypto Staking <span class="accent">Yield Calculator</span></h1>
+      <p>See exactly how much your staked crypto could earn over 1, 3, and 5 years — with compound interest factored in.</p>
+    </section>
+
+    <!-- Main Calculator -->
+    <section class="calc-wrapper">
+      <div class="calc-grid">
+
+        <!-- LEFT: Inputs -->
+        <div class="calc-inputs">
+          <h2 class="calc-section-title">Your Parameters</h2>
+
+          <div class="form-group">
+            <label for="coin-select">Cryptocurrency</label>
+            <select id="coin-select">
+              <option value="ETH" data-apy="3.8" data-price="3200">ETH — Ethereum</option>
+              <option value="SOL" data-apy="7.0" data-price="180">SOL — Solana</option>
+              <option value="ADA" data-apy="4.0" data-price="0.52">ADA — Cardano</option>
+              <option value="DOT" data-apy="14.0" data-price="8.5">DOT — Polkadot</option>
+              <option value="AVAX" data-apy="8.5" data-price="38">AVAX — Avalanche</option>
+              <option value="ATOM" data-apy="18.0" data-price="11">ATOM — Cosmos</option>
+              <option value="NEAR" data-apy="9.0" data-price="6.2">NEAR — NEAR Protocol</option>
+              <option value="MATIC" data-apy="5.0" data-price="0.85">MATIC — Polygon</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="amount-input">Holdings (tokens)</label>
+              <input type="number" id="amount-input" min="0" step="any" placeholder="e.g. 10" value="10" />
+            </div>
+            <div class="form-group">
+              <label for="price-input">Current Price (USD)</label>
+              <div class="input-prefix-wrap">
+                <span class="input-prefix">$</span>
+                <input type="number" id="price-input" min="0" step="any" placeholder="e.g. 3200" value="3200" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="apy-input">
+              APY (%)
+              <span class="apy-badge" id="apy-badge">Preset: 3.8%</span>
+            </label>
+            <div class="apy-row">
+              <input type="range" id="apy-slider" min="0.1" max="50" step="0.1" value="3.8" />
+              <input type="number" id="apy-input" min="0.1" max="100" step="0.1" value="3.8" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="compound-select">Compounding Frequency</label>
+            <select id="compound-select">
+              <option value="365">Daily (365×/yr) — Best returns</option>
+              <option value="52">Weekly (52×/yr)</option>
+              <option value="12" selected>Monthly (12×/yr)</option>
+              <option value="1">Annually (1×/yr)</option>
+              <option value="0">No Compounding</option>
+            </select>
+          </div>
+
+          <button class="calc-btn" id="calc-btn">Calculate Rewards</button>
+
+          <p class="calc-disclaimer">* Estimates only. Does not account for token price changes or network changes.</p>
+        </div>
+
+        <!-- RIGHT: Results -->
+        <div class="calc-results" id="calc-results" aria-live="polite">
+          <div class="results-placeholder" id="results-placeholder">
+            <div class="placeholder-icon">&#9654;</div>
+            <p>Fill in your details and click <strong>Calculate Rewards</strong> to see your projected staking income.</p>
+          </div>
+
+          <div class="results-content" id="results-content" style="display:none">
+            <h2 class="calc-section-title">Your Projected Rewards</h2>
+
+            <!-- Summary cards -->
+            <div class="result-cards">
+              <div class="result-card" data-year="1">
+                <div class="result-year">1 Year</div>
+                <div class="result-tokens" id="tokens-1">—</div>
+                <div class="result-usd" id="usd-1">—</div>
+                <div class="result-gain" id="gain-1">—</div>
+              </div>
+              <div class="result-card featured" data-year="3">
+                <div class="result-year">3 Years</div>
+                <div class="result-tokens" id="tokens-3">—</div>
+                <div class="result-usd" id="usd-3">—</div>
+                <div class="result-gain" id="gain-3">—</div>
+              </div>
+              <div class="result-card" data-year="5">
+                <div class="result-year">5 Years</div>
+                <div class="result-tokens" id="tokens-5">—</div>
+                <div class="result-usd" id="usd-5">—</div>
+                <div class="result-gain" id="gain-5">—</div>
+              </div>
+            </div>
+
+            <!-- Bar chart -->
+            <div class="bar-chart-wrap">
+              <h3 class="chart-title">USD Value Comparison</h3>
+              <div class="bar-chart" id="bar-chart">
+                <div class="bar-row">
+                  <span class="bar-label">1 Year</span>
+                  <div class="bar-track"><div class="bar-fill" id="bar-1" style="width:0%"></div></div>
+                  <span class="bar-val" id="bar-val-1">$0</span>
+                </div>
+                <div class="bar-row">
+                  <span class="bar-label">3 Years</span>
+                  <div class="bar-track"><div class="bar-fill accent-bar" id="bar-3" style="width:0%"></div></div>
+                  <span class="bar-val" id="bar-val-3">$0</span>
+                </div>
+                <div class="bar-row">
+                  <span class="bar-label">5 Years</span>
+                  <div class="bar-track"><div class="bar-fill" id="bar-5" style="width:0%"></div></div>
+                  <span class="bar-val" id="bar-val-5">$0</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- CD6 Scarcity + CD8 Loss aversion -->
+            <div class="loss-banner" id="loss-banner">
+              <div class="loss-icon">&#9888;</div>
+              <div>
+                <strong>Waiting costs you money.</strong>
+                <span id="loss-text">If you delay 1 year, you miss out on <strong id="loss-amount">$0</strong> in compounded rewards.</span>
+              </div>
+            </div>
+
+            <!-- Opportunity cost table -->
+            <div class="opportunity-wrap">
+              <h3 class="chart-title">Cost of Not Staking</h3>
+              <table class="opp-table">
+                <thead>
+                  <tr>
+                    <th>Scenario</th>
+                    <th>1 Year</th>
+                    <th>3 Years</th>
+                    <th>5 Years</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Staking rewards</td>
+                    <td id="opp-stake-1">—</td>
+                    <td id="opp-stake-3">—</td>
+                    <td id="opp-stake-5">—</td>
+                  </tr>
+                  <tr class="opp-loss-row">
+                    <td>If you don't stake (missed)</td>
+                    <td id="opp-miss-1">—</td>
+                    <td id="opp-miss-3">—</td>
+                    <td id="opp-miss-5">—</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="staking-cta-section" id="staking-cta" style="display:none">
+      <div class="staking-cta-inner">
+        <h2>Ready to start staking?</h2>
+        <p>Open an account on one of these trusted exchanges and put your crypto to work today.</p>
+        <div class="cta-buttons">
+          <a href="https://www.binance.com/en/register?ref=725285686" target="_blank" rel="noopener noreferrer sponsored" class="cta-exchange binance">
+            <span class="exchange-name">Binance</span>
+            <span class="exchange-sub">World's largest exchange</span>
+          </a>
+          <a href="https://www.okx.com/join/26575603" target="_blank" rel="noopener noreferrer sponsored" class="cta-exchange okx">
+            <span class="exchange-name">OKX</span>
+            <span class="exchange-sub">Up to 20% APY on staking</span>
+          </a>
+          <a href="https://www.bybit.com/invite?ref=WKNA1V" target="_blank" rel="noopener noreferrer sponsored" class="cta-exchange bybit">
+            <span class="exchange-name">Bybit</span>
+            <span class="exchange-sub">Simple on-chain staking</span>
+          </a>
+        </div>
+        <p class="cta-legal">Affiliate links — Quakr may earn a commission at no cost to you. Not financial advice.</p>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="faq-inner">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <h3>What is crypto staking?</h3>
+          <p>Crypto staking is the process of locking up your cryptocurrency in a blockchain network to help validate transactions. In return, you earn staking rewards (APY) paid in the same token.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>How is staking APY calculated?</h3>
+          <p>APY (Annual Percentage Yield) accounts for compound interest. The formula is: Final Amount = Principal &times; (1 + APY/n)^(n&times;t), where <em>n</em> is the compounding frequency per year and <em>t</em> is the number of years.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Which crypto has the highest staking rewards?</h3>
+          <p>As of 2026, ATOM (Cosmos) offers around 18% APY, DOT (Polkadot) around 14%, and NEAR Protocol around 9%. However, higher APY often comes with higher risk and token inflation. Always do your own research.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Is staking crypto safe?</h3>
+          <p>Staking carries risks including token price volatility, slashing penalties on some networks, and smart contract risk. Always research the validator and network before staking, and never invest more than you can afford to lose.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What is the difference between daily and monthly compounding?</h3>
+          <p>Daily compounding reinvests your rewards every day, resulting in slightly higher returns than monthly or annual compounding. The difference becomes more significant over longer time periods and higher APY rates.</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+/* ===== Page Wrapper ===== */
+.calc-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ===== Hero ===== */
+.calc-hero {
+  text-align: center;
+  padding: 3.5rem 1rem 2.5rem;
+}
+
+.calc-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(34,211,238,0.35);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.calc-hero h1 {
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 0.9rem;
+}
+
+.calc-hero .accent {
+  color: var(--accent);
+}
+
+.calc-hero p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ===== Calculator wrapper ===== */
+.calc-wrapper {
+  margin-bottom: 3rem;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ===== Section Title ===== */
+.calc-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ===== Inputs Panel ===== */
+.calc-inputs {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.45rem;
+}
+
+.apy-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(34,211,238,0.3);
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  margin-left: auto;
+}
+
+select,
+input[type="number"] {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2rem;
+}
+
+select:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(34,211,238,0.12);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.input-prefix-wrap {
+  position: relative;
+}
+
+.input-prefix {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.input-prefix-wrap input {
+  padding-left: 1.75rem;
+}
+
+/* APY slider */
+.apy-row {
+  display: grid;
+  grid-template-columns: 1fr 90px;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  background: var(--border-light);
+  border-radius: 9999px;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(34,211,238,0.4);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+/* Calculate button */
+.calc-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--accent);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 0.5rem;
+}
+
+.calc-btn:hover {
+  background: var(--accent-hover);
+}
+
+.calc-btn:active {
+  transform: scale(0.98);
+}
+
+.calc-disclaimer {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+/* ===== Results Panel ===== */
+.calc-results {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  min-height: 300px;
+}
+
+.results-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  min-height: 260px;
+  color: var(--text-muted);
+  gap: 1rem;
+}
+
+.placeholder-icon {
+  font-size: 2.5rem;
+  color: var(--accent);
+  opacity: 0.4;
+}
+
+.results-placeholder p {
+  font-size: 0.9rem;
+  max-width: 240px;
+  line-height: 1.6;
+}
+
+/* Result cards */
+.result-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.result-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.result-card.featured {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, rgba(34,211,238,0.06), var(--bg-secondary));
+}
+
+.result-year {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.result-card.featured .result-year {
+  color: var(--accent);
+}
+
+.result-tokens {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.result-usd {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.result-gain {
+  font-size: 0.75rem;
+  color: var(--success);
+  font-weight: 600;
+}
+
+/* Bar chart */
+.bar-chart-wrap {
+  margin-bottom: 1.25rem;
+}
+
+.chart-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 80px;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.bar-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.bar-track {
+  background: var(--bg-primary);
+  border-radius: 9999px;
+  height: 10px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: rgba(34,211,238,0.5);
+  border-radius: 9999px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 0%;
+}
+
+.bar-fill.accent-bar {
+  background: var(--accent);
+}
+
+.bar-val {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Loss / Scarcity banner */
+.loss-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(248,113,113,0.08);
+  border: 1px solid rgba(248,113,113,0.25);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.loss-icon {
+  color: var(--danger);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.loss-banner strong {
+  color: var(--danger);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+/* Opportunity cost table */
+.opportunity-wrap {
+  overflow-x: auto;
+}
+
+.opp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.opp-table th {
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.opp-table td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.opp-table tr:last-child td {
+  border-bottom: none;
+}
+
+.opp-loss-row td {
+  color: var(--danger);
+  font-weight: 600;
+}
+
+/* ===== CTA Section ===== */
+.staking-cta-section {
+  margin-bottom: 3rem;
+}
+
+.staking-cta-inner {
+  background: linear-gradient(135deg, rgba(34,211,238,0.07), var(--bg-card));
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.staking-cta-inner h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.staking-cta-inner > p {
+  color: var(--text-secondary);
+  margin-bottom: 1.75rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.cta-exchange {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1.75rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-width: 140px;
+  text-decoration: none;
+}
+
+.cta-exchange:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.cta-exchange.binance {
+  background: #F0B90B;
+  color: #1a1a1a;
+}
+
+.cta-exchange.okx {
+  background: #fff;
+  color: #1a1a1a;
+}
+
+.cta-exchange.bybit {
+  background: #F7A600;
+  color: #1a1a1a;
+}
+
+.exchange-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.exchange-sub {
+  font-size: 0.72rem;
+  font-weight: 500;
+  opacity: 0.75;
+  margin-top: 0.15rem;
+}
+
+.cta-legal {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ===== FAQ Section ===== */
+.faq-section {
+  border-top: 1px solid var(--border);
+  padding-top: 3rem;
+}
+
+.faq-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.faq-inner h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.faq-item {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.faq-item h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.faq-item p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.result-card, .loss-banner, .bar-chart-wrap, .opportunity-wrap {
+  animation: fadeUp 0.4s ease both;
+}
+
+.result-card:nth-child(1) { animation-delay: 0.05s; }
+.result-card:nth-child(2) { animation-delay: 0.12s; }
+.result-card:nth-child(3) { animation-delay: 0.19s; }
+
+/* ===== Responsive ===== */
+@media (max-width: 800px) {
+  .calc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .result-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .apy-row {
+    grid-template-columns: 1fr 80px;
+  }
+
+  .bar-row {
+    grid-template-columns: 50px 1fr 70px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-exchange {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+</style>
+
+<script>
+// ── Data ──────────────────────────────────────────────────────────────
+const COIN_DATA = {
+  ETH:  { apy: 3.8,  price: 3200 },
+  SOL:  { apy: 7.0,  price: 180  },
+  ADA:  { apy: 4.0,  price: 0.52 },
+  DOT:  { apy: 14.0, price: 8.5  },
+  AVAX: { apy: 8.5,  price: 38   },
+  ATOM: { apy: 18.0, price: 11   },
+  NEAR: { apy: 9.0,  price: 6.2  },
+  MATIC:{ apy: 5.0,  price: 0.85 },
+};
+
+// ── Helpers ───────────────────────────────────────────────────────────
+function formatUSD(n) {
+  if (n >= 1_000_000) return '$' + (n / 1_000_000).toFixed(2) + 'M';
+  if (n >= 1_000)     return '$' + n.toLocaleString('en-US', { maximumFractionDigits: 0 });
+  return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function formatTokens(n, coin) {
+  const decimals = n < 0.001 ? 6 : n < 1 ? 4 : 2;
+  return n.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) + ' ' + coin;
+}
+
+function calcRewards(principal, apyPct, years, compoundFreq) {
+  const r = apyPct / 100;
+  if (compoundFreq === 0) {
+    return principal * (1 + r * years);
+  }
+  return principal * Math.pow(1 + r / compoundFreq, compoundFreq * years);
+}
+
+// Animate a number from 0 to target in ~600ms
+function animateNumber(el, targetText) {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(6px)';
+  requestAnimationFrame(() => {
+    el.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+    el.style.opacity = '1';
+    el.style.transform = 'translateY(0)';
+    el.textContent = targetText;
+  });
+}
+
+// ── Main calculate function ────────────────────────────────────────────
+function calculate() {
+  const coinSelect   = document.getElementById('coin-select');
+  const amountInput  = document.getElementById('amount-input');
+  const priceInput   = document.getElementById('price-input');
+  const apyInput     = document.getElementById('apy-input');
+  const compSelect   = document.getElementById('compound-select');
+
+  const coin     = coinSelect.value;
+  const amount   = parseFloat(amountInput.value) || 0;
+  const price    = parseFloat(priceInput.value)  || 0;
+  const apy      = parseFloat(apyInput.value)    || 0;
+  const freq     = parseInt(compSelect.value)    || 0;
+
+  if (amount <= 0 || price <= 0 || apy <= 0) {
+    alert('Please enter valid positive values for holdings, price, and APY.');
+    return;
+  }
+
+  const years = [1, 3, 5];
+  const results = years.map(y => {
+    const totalTokens   = calcRewards(amount, apy, y, freq);
+    const earnedTokens  = totalTokens - amount;
+    const totalUSD      = totalTokens * price;
+    const earnedUSD     = earnedTokens * price;
+    const gainPct       = (earnedTokens / amount * 100).toFixed(1);
+    return { totalTokens, earnedTokens, totalUSD, earnedUSD, gainPct };
+  });
+
+  // Show results panel
+  document.getElementById('results-placeholder').style.display = 'none';
+  const content = document.getElementById('results-content');
+  content.style.display = 'block';
+
+  // Re-trigger animations by cloning the cards container
+  const cards = content.querySelectorAll('.result-card');
+  cards.forEach(c => { c.style.animation = 'none'; void c.offsetWidth; c.style.animation = ''; });
+
+  // Fill result cards
+  [1, 3, 5].forEach((y, i) => {
+    const r = results[i];
+    animateNumber(document.getElementById(`tokens-${y}`), formatTokens(r.earnedTokens, coin));
+    animateNumber(document.getElementById(`usd-${y}`),    formatUSD(r.totalUSD));
+    animateNumber(document.getElementById(`gain-${y}`),   '+' + r.gainPct + '% total');
+  });
+
+  // Bar chart — scale relative to 5yr max
+  const max = results[2].totalUSD;
+  [1, 3, 5].forEach((y, i) => {
+    const pct = max > 0 ? (results[i].totalUSD / max * 100) : 0;
+    const bar = document.getElementById(`bar-${y}`);
+    bar.style.width = '0%';
+    requestAnimationFrame(() => {
+      bar.style.transition = 'width 0.9s cubic-bezier(0.4, 0, 0.2, 1)';
+      bar.style.width = pct + '%';
+    });
+    document.getElementById(`bar-val-${y}`).textContent = formatUSD(results[i].totalUSD);
+  });
+
+  // Loss aversion / scarcity — "if you wait 1 year"
+  const missedY1 = results[0].earnedUSD;
+  document.getElementById('loss-amount').textContent = formatUSD(missedY1);
+
+  // Opportunity cost table
+  [1, 3, 5].forEach((y, i) => {
+    document.getElementById(`opp-stake-${y}`).textContent = '+' + formatUSD(results[i].earnedUSD);
+    document.getElementById(`opp-miss-${y}`).textContent  = '-' + formatUSD(results[i].earnedUSD);
+  });
+
+  // Show CTA
+  document.getElementById('staking-cta').style.display = 'block';
+
+  // Scroll to results on mobile
+  if (window.innerWidth < 800) {
+    document.getElementById('calc-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+// ── Wire up coin selector → update price + APY preset ─────────────────
+document.getElementById('coin-select').addEventListener('change', function() {
+  const data = COIN_DATA[this.value];
+  if (!data) return;
+  document.getElementById('price-input').value   = data.price;
+  document.getElementById('apy-input').value     = data.apy;
+  document.getElementById('apy-slider').value    = data.apy;
+  document.getElementById('apy-badge').textContent = 'Preset: ' + data.apy + '%';
+});
+
+// ── Sync slider ↔ number input ────────────────────────────────────────
+document.getElementById('apy-slider').addEventListener('input', function() {
+  document.getElementById('apy-input').value = this.value;
+  document.getElementById('apy-badge').textContent = 'Custom: ' + this.value + '%';
+});
+
+document.getElementById('apy-input').addEventListener('input', function() {
+  const v = Math.min(Math.max(parseFloat(this.value) || 0.1, 0.1), 50);
+  document.getElementById('apy-slider').value = v;
+  document.getElementById('apy-badge').textContent = 'Custom: ' + v + '%';
+});
+
+// ── Calculate button ──────────────────────────────────────────────────
+document.getElementById('calc-btn').addEventListener('click', calculate);
+
+// Also calculate on Enter key in any input
+document.querySelectorAll('input[type="number"]').forEach(el => {
+  el.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+});
+</script>
