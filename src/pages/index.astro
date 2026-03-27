@@ -16,6 +16,22 @@ const categories = [
   { slug: 'tools', label: 'Tools' },
   { slug: 'news', label: 'News' },
 ];
+
+const levelLabels: Record<string, string> = {
+  beginner: 'Beginner',
+  intermediate: 'Intermediate',
+  advanced: 'Advanced',
+};
+
+// Start Here: fixed 3 beginner posts
+const startHereSlugs = [
+  'how-to-earn-passive-income-with-crypto-2026',
+  'best-crypto-passive-income-strategies-2026',
+  'how-to-stake-sol-marinade-finance',
+];
+const startHerePosts = startHereSlugs
+  .map((slug) => allPosts.find((p) => p.id === slug))
+  .filter(Boolean) as typeof allPosts;
 ---
 
 <BaseLayout title="Quakr">
@@ -27,7 +43,43 @@ const categories = [
       Practical guides on staking, DeFi yield, exchange lending, and every other
       way to put your crypto to work — written by holders, for holders.
     </p>
+    <p class="hero-stat">
+      Holders who stake earn <strong>4–12% APY</strong> on assets they already own. We'll show you how.
+    </p>
+    <p class="hero-loss">
+      Every day your crypto sits idle, you're leaving yield on the table.
+    </p>
     <a href="/blog" class="hero-cta">Read the Guides</a>
+  </section>
+
+  <!-- Start Here -->
+  <section class="start-here">
+    <div class="start-here-inner">
+      <div class="start-here-header">
+        <span class="start-here-label">New to crypto passive income?</span>
+        <h2>Start Here</h2>
+      </div>
+      <div class="start-here-grid">
+        {startHerePosts.map((post) => (
+          <a href={`/blog/${post.id}`} class="start-here-card">
+            <div class="start-here-card-badges">
+              <span class="card-category">{post.data.category}</span>
+              {post.data.level && (
+                <span class={`level-badge level-${post.data.level}`}>
+                  {levelLabels[post.data.level]}
+                </span>
+              )}
+              {post.data.trending && (
+                <span class="trending-badge">🔥 Trending</span>
+              )}
+            </div>
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+            <span class="start-here-read">Read guide &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
   </section>
 
   <div class="category-filter">
@@ -40,7 +92,17 @@ const categories = [
   <section class="article-grid">
     {posts.map((post) => (
       <a href={`/blog/${post.id}`} class="article-card">
-        <span class="card-category">{post.data.category}</span>
+        <div class="card-badges">
+          <span class="card-category">{post.data.category}</span>
+          {post.data.level && (
+            <span class={`level-badge level-${post.data.level}`}>
+              {levelLabels[post.data.level]}
+            </span>
+          )}
+          {post.data.trending && (
+            <span class="trending-badge">🔥 Trending</span>
+          )}
+        </div>
         <h3>{post.data.title}</h3>
         <p>{post.data.description}</p>
         <div class="card-meta">

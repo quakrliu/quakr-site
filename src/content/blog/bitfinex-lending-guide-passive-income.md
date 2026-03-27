@@ -17,6 +17,7 @@ affiliateLinks:
 seoTitle: "Bitfinex Margin Funding Guide: Earn Passive Income Lending Crypto (2026)"
 seoDescription: "Learn how to earn 5-18% APY lending USDT and other crypto on Bitfinex's margin funding market. Complete guide with strategies, risks, and step-by-step setup."
 draft: false
+level: intermediate
 ---
 
 ## What Is Bitfinex Margin Funding?

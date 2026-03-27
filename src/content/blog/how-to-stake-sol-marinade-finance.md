@@ -17,6 +17,7 @@ affiliateLinks:
 seoTitle: "How to Stake SOL with Marinade Finance (2026 Guide)"
 seoDescription: "Complete guide to staking Solana with Marinade Finance. Learn about mSOL liquid staking, expected yields, risks, and step-by-step setup instructions."
 draft: false
+level: beginner
 ---
 
 ## Why Stake SOL?

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { getCollection } from 'astro:content';
 import { generateArticleSchema } from '@/utils/seo';
 
 interface Props {
@@ -14,6 +15,8 @@ interface Props {
   seoDescription?: string;
   canonicalUrl?: string;
   ogImage?: string;
+  level?: 'beginner' | 'intermediate' | 'advanced';
+  trending?: boolean;
 }
 
 const {
@@ -28,6 +31,8 @@ const {
   seoDescription,
   canonicalUrl,
   ogImage,
+  level,
+  trending = false,
 } = Astro.props;
 
 const articleSchema = generateArticleSchema({
@@ -51,6 +56,25 @@ const categoryLabels: Record<string, string> = {
   tools: 'Tools',
   news: 'News',
 };
+
+const levelLabels: Record<string, string> = {
+  beginner: 'Beginner',
+  intermediate: 'Intermediate',
+  advanced: 'Advanced',
+};
+
+// Related articles: same category, exclude current page
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const currentUrl = Astro.url.pathname;
+const relatedPosts = allPosts
+  .filter((p) => p.data.category === category && `/blog/${p.id}` !== currentUrl)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+// Share on X
+const shareText = encodeURIComponent(`${title} via @quakr_dev`);
+const shareUrl = encodeURIComponent(Astro.url.href);
+const twitterShareUrl = `https://x.com/intent/tweet?text=${shareText}&url=${shareUrl}`;
 ---
 
 <BaseLayout
@@ -67,9 +91,19 @@ const categoryLabels: Record<string, string> = {
   </div>
 
   <header class="post-header">
-    <a href={`/category/${category}`} class="post-category">
-      {categoryLabels[category] || category}
-    </a>
+    <div class="post-header-badges">
+      <a href={`/category/${category}`} class="post-category">
+        {categoryLabels[category] || category}
+      </a>
+      {level && (
+        <span class={`level-badge level-${level}`}>
+          {levelLabels[level]}
+        </span>
+      )}
+      {trending && (
+        <span class="trending-badge">🔥 Trending</span>
+      )}
+    </div>
     <h1>{title}</h1>
     <div class="post-meta">
       <time datetime={pubDate.toISOString()}>
@@ -79,6 +113,18 @@ const categoryLabels: Record<string, string> = {
           day: 'numeric',
         })}
       </time>
+      {updatedDate && (
+        <span class="updated-date">
+          Last updated:{' '}
+          <time datetime={updatedDate.toISOString()}>
+            {updatedDate.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+        </span>
+      )}
       <span>{readingTime} min read</span>
     </div>
   </header>
@@ -115,6 +161,72 @@ const categoryLabels: Record<string, string> = {
         {tags.map((tag) => (
           <a href={`/blog?tag=${tag}`}>#{tag}</a>
         ))}
+      </div>
+    </div>
+  )}
+
+  <!-- Share on X -->
+  <div class="post-content post-share">
+    <a
+      href={twitterShareUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="share-x-btn"
+    >
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+      Share on X
+    </a>
+  </div>
+
+  <!-- Email CTA -->
+  <div class="post-content">
+    <div class="post-email-cta">
+      <h2>Get Smarter About Crypto Yield</h2>
+      <p>Join holders who get weekly APY picks, staking opportunities, and one actionable tip. Free forever.</p>
+      <form
+        action="https://app.beehiiv.com/forms/YOUR_FORM_ID"
+        method="POST"
+        target="_blank"
+        class="post-email-form"
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="you@example.com"
+          required
+        />
+        <button type="submit">Get Free Tips</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Related Articles -->
+  {relatedPosts.length > 0 && (
+    <div class="post-content">
+      <div class="related-articles">
+        <h2 class="related-heading">Keep Reading</h2>
+        <div class="related-grid">
+          {relatedPosts.map((post) => (
+            <a href={`/blog/${post.id}`} class="related-card">
+              <div class="related-card-top">
+                <span class="card-category">{post.data.category}</span>
+                {post.data.level && (
+                  <span class={`level-badge level-${post.data.level}`}>
+                    {levelLabels[post.data.level]}
+                  </span>
+                )}
+                {post.data.trending && (
+                  <span class="trending-badge">🔥 Trending</span>
+                )}
+              </div>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+              <span class="related-read-more">Read article &rarr;</span>
+            </a>
+          ))}
+        </div>
       </div>
     </div>
   )}
