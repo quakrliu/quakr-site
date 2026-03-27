@@ -1,7 +1,7 @@
 ---
 title: "How to Earn Passive Income with Crypto in 2026: The Complete Beginner's Guide"
 description: "Discover 8 proven ways to earn passive income with crypto in 2026. From staking and lending to DeFi yield farming — step-by-step strategies for beginners, with expected returns and risk levels."
-pubDate: 2026-03-27
+pubDate: 2026-03-14
 category: guides
 tags:
   - passive-income

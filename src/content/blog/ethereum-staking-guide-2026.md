@@ -1,7 +1,7 @@
 ---
 title: "Ethereum Staking in 2026: How Much Can You Really Earn?"
 description: "A complete guide to ETH staking in 2026 — compare solo staking, exchange staking, and liquid staking. See real earnings estimates and learn how to start earning passive income with your Ethereum today."
-pubDate: 2026-03-27
+pubDate: 2026-03-19
 category: staking
 tags:
   - ethereum

@@ -1,7 +1,7 @@
 ---
 title: "Best Crypto Lending Platforms in 2026: Earn Interest Without Selling Your Coins"
 description: "A comprehensive guide to the top crypto lending platforms in 2026. Compare APYs, security, and risks across CeFi and DeFi — with a decision framework to find the right fit for you."
-pubDate: 2026-03-27
+pubDate: 2026-03-23
 category: exchange-reviews
 tags:
   - crypto lending

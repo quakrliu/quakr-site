@@ -1,7 +1,7 @@
 ---
 title: "7 Best Crypto Passive Income Strategies in 2026 (Ranked by Risk)"
 description: "A comprehensive ranking of the top crypto passive income strategies in 2026 — from low-risk staking to high-yield DeFi farming. Learn the expected returns, risks, and who each strategy is best for."
-pubDate: 2026-03-15
+pubDate: 2026-03-05
 category: guides
 tags:
   - passive-income

@@ -1,7 +1,7 @@
 ---
 title: "Bitfinex Margin Funding: How to Earn Passive Income by Lending Crypto"
 description: "A complete guide to earning passive income through Bitfinex's margin funding market. Learn how peer-to-peer crypto lending works, expected returns, risk management, and optimal strategies."
-pubDate: 2026-03-18
+pubDate: 2026-03-11
 category: exchange-reviews
 tags:
   - bitfinex

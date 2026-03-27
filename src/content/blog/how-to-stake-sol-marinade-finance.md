@@ -1,7 +1,7 @@
 ---
 title: "How to Stake SOL with Marinade Finance: A Step-by-Step Guide"
 description: "Learn how to stake your Solana (SOL) using Marinade Finance for liquid staking rewards. This guide covers native staking vs. liquid staking, mSOL mechanics, and step-by-step instructions."
-pubDate: 2026-03-20
+pubDate: 2026-03-08
 category: staking
 tags:
   - solana

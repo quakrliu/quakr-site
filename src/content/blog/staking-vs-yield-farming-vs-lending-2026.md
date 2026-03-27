@@ -1,7 +1,7 @@
 ---
 title: "Staking vs. Yield Farming vs. Lending: Which Pays More in 2026?"
 description: "A no-fluff breakdown of crypto's three biggest yield strategies — with real APY data, risk tables, and a decision framework to help you pick the right one for your situation."
-pubDate: 2026-03-27
+pubDate: 2026-03-21
 category: guides
 tags:
   - staking
