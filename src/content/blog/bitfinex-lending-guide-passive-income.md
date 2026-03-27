@@ -12,7 +12,7 @@ tags:
   - usdt
 affiliateLinks:
   - name: Bitfinex
-    url: https://www.bitfinex.com/sign-up?refcode=YOUR_REF
+    url: https://www.bitfinex.com/sign-up?refcode=VzaPAa8Lh
     cta: "Start Lending on Bitfinex"
 seoTitle: "Bitfinex Margin Funding Guide: Earn Passive Income Lending Crypto (2026)"
 seoDescription: "Learn how to earn 5-18% APY lending USDT and other crypto on Bitfinex's margin funding market. Complete guide with strategies, risks, and step-by-step setup."

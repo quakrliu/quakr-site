@@ -16,7 +16,7 @@ affiliateLinks:
     url: https://shop.ledger.com/?r=YOUR_REF
     cta: "Protect Your Crypto with Ledger"
   - name: Binance
-    url: https://www.binance.com/en/register?ref=YOUR_REF
+    url: https://www.binance.com/en/register?ref=725285686
     cta: "Start Earning on Binance"
 seoTitle: "7 Best Crypto Passive Income Strategies in 2026 (Ranked)"
 seoDescription: "Comprehensive guide to earning passive income from crypto in 2026. Ranked from safest to highest-yield: staking, lending, DeFi, and more."
