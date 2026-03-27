@@ -52,7 +52,9 @@ The landscape has shifted dramatically. Three years ago, crypto passive income w
 
 **Infrastructure is mature.** Platforms like [Binance](https://www.binance.com/en/register?ref=725285686), Bybit, and OKX have spent years hardening their earn products. Insurance funds, proof-of-reserves audits, and regulatory compliance have all improved dramatically. The tools to earn crypto passive income have never been safer or simpler.
 
-The question isn't *whether* to put your crypto to work — it's *how*.
+But here's what most people miss: **these conditions won't last forever.** Staking yields are already compressing as more capital flows in. Ethereum staking APY has dropped from 6%+ in 2023 to 3–5% in 2026 — and it will keep shrinking as adoption grows. The best time to lock in high yields is *before* the crowd arrives, not after.
+
+The question isn't *whether* to put your crypto to work — it's *how fast you can start*.
 
 ---
 
@@ -472,7 +474,7 @@ The biggest mistake most crypto holders make isn't picking the wrong coin. It's 
 3. **This quarter:** Set up [CoinLedger](https://coinledger.io?fpr=4bsqmx) to track all your earn transactions for tax season
 4. **This year:** Explore [Bitfinex Lending](/blog/bitfinex-lending-guide-passive-income) and DeFi when you're ready for the next level
 
-Every day you wait is a day your crypto isn't compounding.
+Every day you wait is a day your crypto isn't compounding. And with yields compressing quarter over quarter as institutional capital floods in, the window for earning 8–15% on stablecoins won't stay open indefinitely. The people who act now will lock in rates that won't be available by 2027.
 
 ---
 
