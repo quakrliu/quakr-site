@@ -1,7 +1,7 @@
 ---
 title: "DeFi Yield Farming for Beginners: How to Start Earning Without Getting Rugged"
 description: "A complete beginner's guide to DeFi yield farming in 2026 — clear explanations, step-by-step setup, the 5 safest protocols to start with, and a hard-nosed rug pull detection checklist so you keep what you earn."
-date: 2026-03-27
+pubDate: 2026-03-27
 category: defi
 tags:
   - yield farming
