@@ -849,18 +849,19 @@ img {
   align-items: center;
   gap: 0.5rem;
   padding: 0.6rem 1.25rem;
-  background: #000;
+  background: var(--accent);
   color: #fff;
   border-radius: var(--radius);
   font-size: 0.875rem;
   font-weight: 600;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
   text-decoration: none;
 }
 
 .share-x-btn:hover {
-  background: #1a1a1a;
+  background: var(--accent-hover);
   color: #fff;
+  transform: translateY(-1px);
 }
 
 /* ========== Post Email CTA ========== */
