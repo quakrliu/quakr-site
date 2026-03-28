@@ -5,7 +5,7 @@ updatedDate: 2026-04-02
 description: "Restaking lets you earn additional yield on ETH you've already staked — without unstaking it. Here's how EigenLayer works, what risks you're actually taking, and whether it's worth it in 2026."
 seoTitle: "EigenLayer Restaking Guide 2026: Earn Extra ETH Yield Explained"
 seoDescription: "What is restaking? How does EigenLayer work in 2026? Learn how to earn additional yield on staked ETH, understand liquid restaking tokens, and assess the real risks before committing."
-author: "Quakr Team"
+author: "Crypto Yield Guide Team"
 category: staking
 tags: ["restaking", "EigenLayer", "ETH yield", "liquid restaking", "DeFi", "staking"]
 level: intermediate

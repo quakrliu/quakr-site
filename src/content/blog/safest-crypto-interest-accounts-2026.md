@@ -16,7 +16,7 @@ keywords:
   - safe crypto yield
 level: beginner
 trending: false
-author: quakr
+author: cryptoyieldguide
 image: /images/blog/safest-crypto-interest-accounts-2026.jpg
 ---
 

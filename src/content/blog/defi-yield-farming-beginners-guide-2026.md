@@ -15,7 +15,7 @@ keywords:
   - yield farming beginners
   - DeFi yield farming 2026
 image: /images/blog/defi-yield-farming-beginners-guide-2026.jpg
-author: quakr
+author: cryptoyieldguide
 level: intermediate
 trending: false
 ---

@@ -6,7 +6,7 @@ export async function GET(context: APIContext) {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
 
   return rss({
-    title: 'Quakr — Crypto Passive Income',
+    title: 'Crypto Yield Guide — Crypto Passive Income',
     description:
       'Practical guides on staking, DeFi yield, exchange lending, and every other way to put your crypto to work.',
     site: context.site!.toString(),
