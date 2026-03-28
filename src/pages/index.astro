@@ -34,6 +34,16 @@ const cryptoYieldSlugs = [
 const cryptoYieldPosts = cryptoYieldSlugs
   .map((slug) => allPosts.find((p) => p.id === slug))
   .filter(Boolean) as typeof allPosts;
+
+// Start Here: AI Income column (3 posts)
+const aiIncomeSlugs = [
+  'make-money-with-ai-2026',
+  'ai-freelancing-guide-2026',
+  'ai-youtube-channel-guide-2026',
+];
+const aiIncomePosts = aiIncomeSlugs
+  .map((slug) => allPosts.find((p) => p.id === slug))
+  .filter(Boolean) as typeof allPosts;
 ---
 
 <BaseLayout title="Passive Yield Lab" ogImage="/og/default.svg">
@@ -101,15 +111,22 @@ const cryptoYieldPosts = cryptoYieldSlugs
             <h3>AI Income</h3>
             <p>Build income streams with AI tools and automation.</p>
           </div>
-          <div class="start-here-coming-soon">
-            <div class="coming-soon-card">
-              <span class="coming-soon-badge">Coming Soon</span>
-              <h4>AI Income Guides</h4>
-              <p>
-                Step-by-step playbooks on using AI tools to build real income streams — from content automation to AI-powered side businesses.
-              </p>
-              <a href="/blog" class="start-here-read">Browse all guides &rarr;</a>
-            </div>
+          <div class="start-here-grid">
+            {aiIncomePosts.map((post) => (
+              <a href={`/blog/${post.id}`} class="start-here-card">
+                <div class="start-here-card-badges">
+                  <span class="card-category">{post.data.category}</span>
+                  {post.data.level && (
+                    <span class={`level-badge level-${post.data.level}`}>
+                      {levelLabels[post.data.level] || post.data.level}
+                    </span>
+                  )}
+                </div>
+                <h4>{post.data.title}</h4>
+                <p>{post.data.description}</p>
+                <span class="start-here-read">Read guide &rarr;</span>
+              </a>
+            ))}
           </div>
         </div>
 
