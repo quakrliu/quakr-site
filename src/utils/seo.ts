@@ -21,8 +21,8 @@ export function generateArticleSchema(input: ArticleSchemaInput): string {
     ...(input.ogImage && { image: input.ogImage }),
     publisher: {
       '@type': 'Organization',
-      name: 'Quakr',
-      url: 'https://quakr.dev',
+      name: 'Crypto Yield Guide',
+      url: 'https://cryptoyieldguide.com',
     },
   };
   return JSON.stringify(schema);
@@ -32,14 +32,14 @@ export function generateWebsiteSchema(): string {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Quakr',
-    url: 'https://quakr.dev',
+    name: 'Crypto Yield Guide',
+    url: 'https://cryptoyieldguide.com',
     description:
       'Learn how to earn passive income from your crypto holdings with staking, DeFi, lending, and more.',
     publisher: {
       '@type': 'Organization',
-      name: 'Quakr',
-      url: 'https://quakr.dev',
+      name: 'Crypto Yield Guide',
+      url: 'https://cryptoyieldguide.com',
     },
   };
   return JSON.stringify(schema);

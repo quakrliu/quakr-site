@@ -3,7 +3,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://quakr.dev',
+  site: 'https://cryptoyieldguide.com',
   output: 'static',
   integrations: [mdx(), sitemap()],
 });

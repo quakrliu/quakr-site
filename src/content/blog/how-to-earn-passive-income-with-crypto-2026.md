@@ -491,7 +491,7 @@ Every day you wait is a day your crypto isn't compounding. And with yields compr
 
 Join thousands of readers who get our weekly crypto passive income strategies, platform updates, and yield alerts delivered straight to their inbox. No spam — just actionable insights.
 
-**[Subscribe to the quakr.dev newsletter](#subscribe)** — free, weekly, unsubscribe anytime.
+**[Subscribe to the Crypto Yield Guide newsletter](#subscribe)** — free, weekly, unsubscribe anytime.
 
 ---
 
