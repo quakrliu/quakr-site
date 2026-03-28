@@ -84,6 +84,8 @@ const faqSchema = JSON.stringify({
             </select>
           </div>
 
+          <small class="apy-timestamp">Default APY rates as of March 2026. Adjust the slider for custom rates.</small>
+
           <div class="form-row">
             <div class="form-group">
               <label for="amount-input">Holdings (tokens)</label>
@@ -186,6 +188,11 @@ const faqSchema = JSON.stringify({
                 <strong>Waiting costs you money.</strong>
                 <span id="loss-text">If you delay 1 year, you miss out on <strong id="loss-amount">$0</strong> in compounded rewards.</span>
               </div>
+            </div>
+
+            <!-- Accomplishment message (S7) -->
+            <div class="accomplishment-msg" id="accomplishment-msg" style="display:none">
+              <span id="accomplishment-text"></span>
             </div>
 
             <!-- Opportunity cost table -->
@@ -795,6 +802,20 @@ input[type="range"]::-moz-range-thumb {
   margin: 0;
 }
 
+/* ===== Accomplishment Message (S7) ===== */
+.accomplishment-msg {
+  background: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  border-left: 4px solid var(--success);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #065F46;
+  line-height: 1.5;
+}
+
 /* ===== FAQ Section ===== */
 .faq-section {
   border-top: 1px solid var(--border);
@@ -1005,6 +1026,17 @@ function calculate() {
     document.getElementById(`opp-stake-${y}`).textContent = '+' + formatUSD(results[i].earnedUSD);
     document.getElementById(`opp-miss-${y}`).textContent  = '-' + formatUSD(results[i].earnedUSD);
   });
+
+  // Accomplishment message (S7)
+  const gain5yr = parseFloat(results[2].gainPct);
+  const accomplishmentEl = document.getElementById('accomplishment-msg');
+  const accomplishmentText = document.getElementById('accomplishment-text');
+  if (gain5yr > 50) {
+    accomplishmentText.textContent = "You're on track to grow your stack significantly. Most holders never take this step.";
+  } else {
+    accomplishmentText.textContent = "Solid start. Compounding monthly will put you ahead of 80% of holders.";
+  }
+  accomplishmentEl.style.display = 'block';
 
   // Show CTA
   document.getElementById('staking-cta').style.display = 'block';

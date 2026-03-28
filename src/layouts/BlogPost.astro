@@ -63,13 +63,19 @@ const levelLabels: Record<string, string> = {
   advanced: 'Advanced',
 };
 
-// Related articles: same category, exclude current page
+// Related articles: same category 2 posts + different category 1 post (S6)
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const currentUrl = Astro.url.pathname;
-const relatedPosts = allPosts
+const sameCatPosts = allPosts
   .filter((p) => p.data.category === category && `/blog/${p.id}` !== currentUrl)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 3);
+  .slice(0, 2);
+const diffCatCandidates = allPosts
+  .filter((p) => p.data.category !== category && `/blog/${p.id}` !== currentUrl);
+const randomDiffCat = diffCatCandidates.length > 0
+  ? [diffCatCandidates[Math.floor(Math.random() * diffCatCandidates.length)]]
+  : [];
+const relatedPosts = [...sameCatPosts, ...randomDiffCat];
 
 // Share on X
 const shareText = encodeURIComponent(`${title} via @quakrdev`);
@@ -90,6 +96,12 @@ const twitterShareUrl = `https://x.com/intent/tweet?text=${shareText}&url=${shar
     a commission at no extra cost to you if you sign up through our links. We only
     recommend products we use and trust.
   </div>
+
+  {category === 'news' && (
+    <div class="news-alert-banner">
+      ⚡ Breaking: This directly affects your yield strategy. Read carefully.
+    </div>
+  )}
 
   <header class="post-header">
     <div class="post-header-badges">
@@ -184,8 +196,9 @@ const twitterShareUrl = `https://x.com/intent/tweet?text=${shareText}&url=${shar
   <!-- Email CTA -->
   <div class="post-content">
     <div class="post-email-cta">
-      <h2>Get Smarter About Crypto Yield</h2>
-      <p>Join holders who get weekly APY picks, staking opportunities, and one actionable tip. Free forever.</p>
+      <h2>Get Smarter About Passive Income</h2>
+      <p>Weekly crypto yield picks + AI income strategies. Join 800+ readers.</p>
+      <p class="signup-proof">Join 800+ readers getting weekly yield picks.</p>
       <form
         action="https://app.beehiiv.com/forms/1c80f432-8696-4d95-b028-aa8bd75f08ba"
         method="POST"
