@@ -47,6 +47,7 @@ const canonical = canonicalUrl || Astro.url.href;
     <title>{siteTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link
       rel="alternate"
@@ -79,6 +80,7 @@ const canonical = canonicalUrl || Astro.url.href;
     <nav class="nav">
       <div class="nav-inner">
         <a href="/" class="nav-logo">
+          <img src="/logo-nav.png" alt="Passive Yield Lab" class="nav-logo-img" width="40" height="40" />
           <span class="nav-logo-text">Passive Yield Lab</span>
           <span class="nav-logo-tagline">Earn More. Work Less.</span>
         </a>
