@@ -6,6 +6,7 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  category?: string;
   canonicalUrl?: string;
   articleSchema?: string;
 }
@@ -14,9 +15,21 @@ const {
   title,
   description = 'Learn how to earn passive income from your crypto with staking, DeFi, lending, and more.',
   ogImage,
+  category,
   canonicalUrl,
   articleSchema,
 } = Astro.props;
+
+const categoryOgMap: Record<string, string> = {
+  staking: '/og/staking.svg',
+  defi: '/og/defi.svg',
+  guides: '/og/guides.svg',
+  tools: '/og/tools.svg',
+  news: '/og/news.svg',
+  'exchange-reviews': '/og/default.svg',
+};
+
+const resolvedOgImage = ogImage || (category ? (categoryOgMap[category] ?? '/og/default.svg') : '/og/default.svg');
 
 const siteTitle = title === 'Quakr' ? title : `${title} | Quakr`;
 const websiteSchema = generateWebsiteSchema();
@@ -46,13 +59,13 @@ const canonical = canonicalUrl || Astro.url.href;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="Quakr" />
-    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta property="og:image" content={resolvedOgImage} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={siteTitle} />
     <meta name="twitter:description" content={description} />
-    {ogImage && <meta name="twitter:image" content={ogImage} />}
+    <meta name="twitter:image" content={resolvedOgImage} />
 
     <!-- JSON-LD -->
     <script type="application/ld+json" set:html={websiteSchema} />
