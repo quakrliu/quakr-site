@@ -302,7 +302,7 @@ const faqSchema = JSON.stringify({
   letter-spacing: 0.08em;
   color: var(--accent);
   background: var(--accent-dim);
-  border: 1px solid rgba(34,211,238,0.35);
+  border: 1px solid rgba(37,99,235,0.25);
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
   margin-bottom: 1rem;
@@ -376,7 +376,7 @@ const faqSchema = JSON.stringify({
   font-weight: 600;
   color: var(--accent);
   background: var(--accent-dim);
-  border: 1px solid rgba(34,211,238,0.3);
+  border: 1px solid rgba(37,99,235,0.2);
   padding: 0.15rem 0.5rem;
   border-radius: 9999px;
   margin-left: auto;
@@ -407,7 +407,7 @@ select:focus,
 input[type="number"]:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(34,211,238,0.12);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
 }
 
 .form-row {
@@ -461,7 +461,7 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   background: var(--accent);
   cursor: pointer;
-  box-shadow: 0 0 6px rgba(34,211,238,0.4);
+  box-shadow: 0 0 6px rgba(37,99,235,0.3);
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -478,7 +478,7 @@ input[type="range"]::-moz-range-thumb {
   width: 100%;
   padding: 0.85rem;
   background: var(--accent);
-  color: var(--bg-primary);
+  color: #FFFFFF;
   border: none;
   border-radius: var(--radius);
   font-size: 1rem;
@@ -555,7 +555,7 @@ input[type="range"]::-moz-range-thumb {
 
 .result-card.featured {
   border-color: var(--accent);
-  background: linear-gradient(135deg, rgba(34,211,238,0.06), var(--bg-secondary));
+  background: linear-gradient(135deg, rgba(37,99,235,0.05), var(--bg-secondary));
 }
 
 .result-year {
@@ -625,7 +625,8 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .bar-track {
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
   border-radius: 9999px;
   height: 10px;
   overflow: hidden;
@@ -633,7 +634,7 @@ input[type="range"]::-moz-range-thumb {
 
 .bar-fill {
   height: 100%;
-  background: rgba(34,211,238,0.5);
+  background: rgba(37,99,235,0.35);
   border-radius: 9999px;
   transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   width: 0%;
@@ -718,8 +719,8 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .staking-cta-inner {
-  background: linear-gradient(135deg, rgba(34,211,238,0.07), var(--bg-card));
-  border: 1px solid var(--accent);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 2.5rem 2rem;
   text-align: center;
@@ -767,8 +768,8 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .cta-exchange.okx {
-  background: #fff;
-  color: #1a1a1a;
+  background: #1a1a1a;
+  color: #fff;
 }
 
 .cta-exchange.bybit {

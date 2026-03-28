@@ -243,7 +243,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   /* ===== Page Layout ===== */
   .resources-hero {
     position: relative;
-    background: linear-gradient(180deg, rgba(34, 211, 238, 0.06) 0%, transparent 100%);
+    background: linear-gradient(180deg, rgba(37, 99, 235, 0.05) 0%, transparent 100%);
     border-bottom: 1px solid var(--border);
     padding: 3.5rem 1.5rem 3rem;
     text-align: center;
@@ -258,7 +258,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     transform: translateX(-50%);
     width: 600px;
     height: 350px;
-    background: radial-gradient(ellipse at center, rgba(34, 211, 238, 0.12) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.07) 0%, transparent 70%);
     pointer-events: none;
   }
 
@@ -313,13 +313,13 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   }
 
   .resources-disclosure a {
-    color: var(--warning);
+    color: #92400E;
     text-decoration: underline;
     text-underline-offset: 2px;
   }
 
   .resources-disclosure a:hover {
-    color: #fcd34d;
+    color: #78350F;
   }
 
   /* ===== Section ===== */
@@ -371,27 +371,28 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
     display: flex;
     flex-direction: column;
     gap: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
   }
 
   .resource-card:hover {
-    border-color: var(--accent);
+    border-color: var(--border-hover);
     background: var(--bg-card-hover);
-    box-shadow: 0 8px 32px rgba(34, 211, 238, 0.09), 0 2px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     transform: translateY(-3px);
   }
 
   .resource-card--featured {
-    border-color: rgba(52, 211, 153, 0.3);
+    border-color: rgba(16, 185, 129, 0.3);
   }
 
   .resource-card--featured:hover {
-    border-color: #34d399;
-    box-shadow: 0 8px 32px rgba(52, 211, 153, 0.1), 0 2px 8px rgba(0,0,0,0.3);
+    border-color: #10B981;
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12);
   }
 
   .resource-card--internal {
-    border-color: rgba(34, 211, 238, 0.2);
+    border-color: rgba(37, 99, 235, 0.2);
   }
 
   /* ===== Card Header ===== */
@@ -419,14 +420,14 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   }
 
   .resource-logo--green {
-    background: rgba(52, 211, 153, 0.1);
-    border-color: rgba(52, 211, 153, 0.3);
-    color: #34d399;
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.3);
+    color: #10B981;
   }
 
   .resource-logo--accent {
     background: var(--accent-dim);
-    border-color: rgba(34, 211, 238, 0.3);
+    border-color: rgba(37, 99, 235, 0.2);
     color: var(--accent);
   }
 
@@ -460,14 +461,14 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   }
 
   .resource-tag--green {
-    background: rgba(52, 211, 153, 0.1);
-    border-color: rgba(52, 211, 153, 0.3);
-    color: #34d399;
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.3);
+    color: #10B981;
   }
 
   .resource-tag--accent {
     background: var(--accent-dim);
-    border-color: rgba(34, 211, 238, 0.3);
+    border-color: rgba(37, 99, 235, 0.2);
     color: var(--accent);
   }
 
@@ -484,34 +485,34 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   .resource-cta-btn {
     display: inline-block;
     background: var(--accent);
-    color: var(--bg-primary);
+    color: #FFFFFF;
     font-size: 0.875rem;
     font-weight: 700;
     padding: 0.65rem 1.25rem;
     border-radius: var(--radius);
     text-decoration: none;
     transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 3px 14px rgba(34, 211, 238, 0.25);
+    box-shadow: 0 3px 12px rgba(37, 99, 235, 0.25);
     width: fit-content;
     margin-top: auto;
   }
 
   .resource-cta-btn:hover {
     background: var(--accent-hover);
-    color: var(--bg-primary);
+    color: #FFFFFF;
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(34, 211, 238, 0.35);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
   }
 
   .resource-cta-btn--green {
-    background: #34d399;
-    box-shadow: 0 3px 14px rgba(52, 211, 153, 0.25);
+    background: #10B981;
+    box-shadow: 0 3px 12px rgba(16, 185, 129, 0.25);
   }
 
   .resource-cta-btn--green:hover {
-    background: #10b981;
-    color: var(--bg-primary);
-    box-shadow: 0 6px 20px rgba(52, 211, 153, 0.35);
+    background: #059669;
+    color: #FFFFFF;
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
   }
 
   /* ===== Disclaimer Section ===== */
@@ -520,8 +521,8 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   }
 
   .resources-disclaimer-box {
-    background: rgba(251, 191, 36, 0.05);
-    border: 1px solid rgba(251, 191, 36, 0.2);
+    background: #FFFBEB;
+    border: 1px solid #FDE68A;
     border-radius: var(--radius-lg);
     padding: 2rem 2rem;
   }
@@ -529,7 +530,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   .resources-disclaimer-box h2 {
     font-size: 1.1rem;
     font-weight: 700;
-    color: var(--warning);
+    color: #92400E;
     margin-bottom: 0.875rem;
     margin-top: 0;
   }
@@ -552,14 +553,14 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   .resources-disclaimer-link {
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--warning);
+    color: #92400E;
     text-decoration: underline;
     text-underline-offset: 2px;
     transition: color 0.2s;
   }
 
   .resources-disclaimer-link:hover {
-    color: #fcd34d;
+    color: #78350F;
   }
 
   /* ===== Responsive ===== */

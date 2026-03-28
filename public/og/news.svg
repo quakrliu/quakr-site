@@ -1,29 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a0e17;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0d1422;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#EFF6FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:1" />
     </linearGradient>
     <linearGradient id="bottomLine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#22d3ee;stop-opacity:0" />
-      <stop offset="30%" style="stop-color:#22d3ee;stop-opacity:1" />
-      <stop offset="70%" style="stop-color:#06b6d4;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:0" />
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:0" />
+      <stop offset="30%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#1D4ED8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1D4ED8;stop-opacity:0" />
     </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
 
   <!-- Background -->
   <rect width="1200" height="630" fill="url(#bgGrad)"/>
 
   <!-- Grid -->
-  <g opacity="0.04" stroke="#22d3ee" stroke-width="1">
+  <g opacity="0.04" stroke="#2563EB" stroke-width="1">
     <line x1="0" y1="105" x2="1200" y2="105"/>
     <line x1="0" y1="210" x2="1200" y2="210"/>
     <line x1="0" y1="315" x2="1200" y2="315"/>
@@ -36,49 +29,51 @@
     <line x1="1000" y1="0" x2="1000" y2="630"/>
   </g>
 
-  <!-- Chart/Analysis decoration -->
-  <!-- Chart bars going up = bullish signal -->
-  <rect x="980" y="360" width="24" height="60" rx="3" fill="#22d3ee" opacity="0.2"/>
-  <rect x="1014" y="320" width="24" height="100" rx="3" fill="#22d3ee" opacity="0.25"/>
-  <rect x="1048" y="280" width="24" height="140" rx="3" fill="#22d3ee" opacity="0.3"/>
-  <rect x="1082" y="240" width="24" height="180" rx="3" fill="#22d3ee" opacity="0.35"/>
-  <rect x="1116" y="200" width="24" height="220" rx="3" fill="#22d3ee" opacity="0.4"/>
+  <!-- Chart bars (light theme) -->
+  <rect x="980" y="360" width="24" height="60" rx="3" fill="#DBEAFE"/>
+  <rect x="980" y="360" width="24" height="60" rx="3" fill="none" stroke="#2563EB" stroke-width="1" opacity="0.3"/>
+  <rect x="1014" y="320" width="24" height="100" rx="3" fill="#BFDBFE"/>
+  <rect x="1014" y="320" width="24" height="100" rx="3" fill="none" stroke="#2563EB" stroke-width="1" opacity="0.4"/>
+  <rect x="1048" y="280" width="24" height="140" rx="3" fill="#93C5FD"/>
+  <rect x="1048" y="280" width="24" height="140" rx="3" fill="none" stroke="#2563EB" stroke-width="1" opacity="0.4"/>
+  <rect x="1082" y="240" width="24" height="180" rx="3" fill="#60A5FA"/>
+  <rect x="1082" y="240" width="24" height="180" rx="3" fill="none" stroke="#2563EB" stroke-width="1" opacity="0.5"/>
+  <rect x="1116" y="200" width="24" height="220" rx="3" fill="#2563EB"/>
+  <rect x="1116" y="200" width="24" height="220" rx="3" fill="none" stroke="#1D4ED8" stroke-width="1" opacity="0.7"/>
   <!-- Chart baseline -->
-  <line x1="975" y1="425" x2="1155" y2="425" stroke="#22d3ee" stroke-width="1" opacity="0.3"/>
+  <line x1="975" y1="425" x2="1155" y2="425" stroke="#2563EB" stroke-width="1" opacity="0.3"/>
   <!-- Trend line -->
-  <polyline points="992,375 1026,335 1060,295 1094,255 1128,215" fill="none" stroke="#22d3ee" stroke-width="2" opacity="0.5" stroke-dasharray="4,3"/>
-
+  <polyline points="992,375 1026,335 1060,295 1094,255 1128,215" fill="none" stroke="#2563EB" stroke-width="2" opacity="0.6" stroke-dasharray="4,3"/>
   <!-- Signal dot -->
-  <circle cx="1128" cy="215" r="5" fill="#22d3ee" opacity="0.8"/>
+  <circle cx="1128" cy="215" r="5" fill="#2563EB" opacity="0.9"/>
 
   <!-- Decorative circles -->
-  <circle cx="1100" cy="80" r="150" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.06"/>
-  <circle cx="100" cy="550" r="140" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.05"/>
+  <circle cx="1100" cy="80" r="150" fill="none" stroke="#2563EB" stroke-width="1" opacity="0.1"/>
+  <circle cx="100" cy="550" r="140" fill="none" stroke="#2563EB" stroke-width="1" opacity="0.07"/>
 
   <!-- Left accent bar -->
-  <rect x="60" y="160" width="4" height="310" rx="2" fill="#22d3ee" opacity="0.6"/>
+  <rect x="60" y="160" width="4" height="310" rx="2" fill="#2563EB" opacity="0.8"/>
 
   <!-- Logo -->
-  <text x="80" y="100" font-family="'Courier New', Courier, monospace" font-size="36" font-weight="700" fill="#22d3ee" filter="url(#glow)" letter-spacing="2">QUAKR</text>
-  <text x="80" y="122" font-family="'Courier New', Courier, monospace" font-size="13" fill="#22d3ee" opacity="0.6" letter-spacing="4">CRYPTO INTELLIGENCE</text>
-  <line x1="80" y1="135" x2="340" y2="135" stroke="#22d3ee" stroke-width="1" opacity="0.3"/>
+  <text x="80" y="100" font-family="'Arial Black', Arial, sans-serif" font-size="32" font-weight="900" fill="#2563EB" letter-spacing="1">CryptoYieldGuide</text>
+  <text x="80" y="122" font-family="Arial, sans-serif" font-size="13" fill="#64748B" letter-spacing="4">CRYPTO PASSIVE INCOME</text>
+  <line x1="80" y1="135" x2="420" y2="135" stroke="#2563EB" stroke-width="1" opacity="0.3"/>
 
   <!-- Main title -->
-  <text x="80" y="290" font-family="'Arial Black', Arial, sans-serif" font-size="72" font-weight="900" fill="#ffffff" letter-spacing="-1">Crypto News</text>
-  <text x="80" y="378" font-family="'Arial Black', Arial, sans-serif" font-size="72" font-weight="900" fill="#ffffff" letter-spacing="-1">&amp; Analysis</text>
+  <text x="80" y="290" font-family="'Arial Black', Arial, sans-serif" font-size="72" font-weight="900" fill="#1E293B" letter-spacing="-1">Crypto News</text>
+  <text x="80" y="378" font-family="'Arial Black', Arial, sans-serif" font-size="72" font-weight="900" fill="#1E293B" letter-spacing="-1">&amp; Analysis</text>
 
   <!-- Subtitle -->
-  <text x="80" y="435" font-family="Arial, sans-serif" font-size="24" fill="#94a3b8" letter-spacing="1">Signal over noise — what matters for passive income</text>
+  <text x="80" y="435" font-family="Arial, sans-serif" font-size="24" fill="#64748B" letter-spacing="0.5">Signal over noise — what matters for passive income</text>
 
   <!-- Category tag -->
-  <rect x="80" y="463" width="110" height="36" rx="18" fill="#22d3ee" opacity="0.15"/>
-  <rect x="80" y="463" width="110" height="36" rx="18" fill="none" stroke="#22d3ee" stroke-width="1" opacity="0.4"/>
-  <text x="135" y="486" font-family="Arial, sans-serif" font-size="14" fill="#22d3ee" text-anchor="middle" letter-spacing="2">NEWS</text>
+  <rect x="80" y="463" width="110" height="36" rx="18" fill="#2563EB" opacity="0.1"/>
+  <rect x="80" y="463" width="110" height="36" rx="18" fill="none" stroke="#2563EB" stroke-width="1.5" opacity="0.5"/>
+  <text x="135" y="486" font-family="Arial, sans-serif" font-size="14" fill="#2563EB" text-anchor="middle" letter-spacing="2" font-weight="700">NEWS</text>
 
   <!-- Domain -->
-  <text x="1140" y="600" font-family="'Courier New', Courier, monospace" font-size="20" fill="#22d3ee" text-anchor="end" opacity="0.8" letter-spacing="1">quakr.dev</text>
+  <text x="1140" y="600" font-family="Arial, sans-serif" font-size="20" fill="#2563EB" text-anchor="end" opacity="0.8" letter-spacing="1">cryptoyieldguide.com</text>
 
   <!-- Bottom gradient line -->
-  <rect x="0" y="618" width="1200" height="3" fill="url(#bottomLine)"/>
-  <rect x="0" y="621" width="1200" height="1" fill="url(#bottomLine)" opacity="0.3"/>
+  <rect x="0" y="618" width="1200" height="4" fill="url(#bottomLine)"/>
 </svg>
