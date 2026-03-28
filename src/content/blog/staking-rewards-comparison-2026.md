@@ -5,7 +5,7 @@ updatedDate: 2026-03-31
 description: "A hands-on comparison of staking APYs across major platforms in 2026 — including Ethereum, Solana, BNB, and more. We break down the real rates, risks, and which platforms are actually worth your time."
 seoTitle: "Staking Rewards Comparison 2026: Best APYs by Platform & Coin"
 seoDescription: "Compare staking rewards across ETH, SOL, BNB, ADA, and more in 2026. Real APY data, platform breakdowns, and honest risk assessment — so you can stake smarter."
-author: "Crypto Yield Guide Team"
+author: "Passive Yield Lab Team"
 category: staking
 tags: ["staking", "passive income", "crypto yield", "APY", "staking rewards"]
 level: intermediate

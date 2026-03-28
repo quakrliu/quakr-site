@@ -10,11 +10,13 @@ const posts = allPosts
 const categories = [
   { slug: 'staking', label: 'Staking' },
   { slug: 'defi', label: 'DeFi' },
+  { slug: 'ai-income', label: 'AI Income' },
   { slug: 'exchange-reviews', label: 'Exchange Reviews' },
   { slug: 'guides', label: 'Guides' },
   { slug: 'market-analysis', label: 'Market Analysis' },
   { slug: 'tools', label: 'Tools' },
   { slug: 'news', label: 'News' },
+  { slug: 'automation', label: 'Automation' },
 ];
 
 const levelLabels: Record<string, string> = {
@@ -23,31 +25,30 @@ const levelLabels: Record<string, string> = {
   advanced: 'Advanced',
 };
 
-// Start Here: fixed 3 beginner posts
-const startHereSlugs = [
+// Start Here: Crypto Yield column (3 posts)
+const cryptoYieldSlugs = [
   'how-to-earn-passive-income-with-crypto-2026',
   'best-crypto-passive-income-strategies-2026',
   'how-to-stake-sol-marinade-finance',
 ];
-const startHerePosts = startHereSlugs
+const cryptoYieldPosts = cryptoYieldSlugs
   .map((slug) => allPosts.find((p) => p.id === slug))
   .filter(Boolean) as typeof allPosts;
 ---
 
-<BaseLayout title="CryptoYieldGuide" ogImage="/og/default.svg">
+<BaseLayout title="Passive Yield Lab" ogImage="/og/default.svg">
   <section class="hero">
     <h1>
-      <span class="accent">Earn More</span> From Your Crypto
+      <span class="accent">Earn More.</span> Work Less.
     </h1>
     <p>
-      Practical guides on staking, DeFi yield, exchange lending, and every other
-      way to put your crypto to work — written by holders, for holders.
+      Practical guides on crypto yield, AI income, and every smart way to build passive income — tested by real practitioners.
     </p>
     <p class="hero-stat">
-      Holders who stake earn <strong>4–12% APY</strong> on assets they already own. We'll show you how.
+      Our readers earn <strong>4–20% APY</strong> on crypto and build <strong>$1K–$10K/month</strong> AI side income. We'll show you how.
     </p>
     <p class="hero-loss">
-      Every day your crypto sits idle, you're leaving yield on the table.
+      Every day your money sits idle, you're leaving yield on the table.
     </p>
     <a href="/blog" class="hero-cta">Read the Guides</a>
   </section>
@@ -56,28 +57,59 @@ const startHerePosts = startHereSlugs
   <section class="start-here">
     <div class="start-here-inner">
       <div class="start-here-header">
-        <span class="start-here-label">New to crypto passive income?</span>
+        <span class="start-here-label">New here? Pick your path.</span>
         <h2>Start Here</h2>
       </div>
-      <div class="start-here-grid">
-        {startHerePosts.map((post) => (
-          <a href={`/blog/${post.id}`} class="start-here-card">
-            <div class="start-here-card-badges">
-              <span class="card-category">{post.data.category}</span>
-              {post.data.level && (
-                <span class={`level-badge level-${post.data.level}`}>
-                  {levelLabels[post.data.level]}
-                </span>
-              )}
-              {post.data.trending && (
-                <span class="trending-badge">🔥 Trending</span>
-              )}
+      <div class="start-here-columns">
+
+        <!-- Left: Crypto Yield -->
+        <div class="start-here-column">
+          <div class="start-here-column-header">
+            <span class="column-icon">&#9670;</span>
+            <h3>Crypto Yield</h3>
+            <p>Staking, DeFi, lending — earn on what you hold.</p>
+          </div>
+          <div class="start-here-grid">
+            {cryptoYieldPosts.map((post) => (
+              <a href={`/blog/${post.id}`} class="start-here-card">
+                <div class="start-here-card-badges">
+                  <span class="card-category">{post.data.category}</span>
+                  {post.data.level && (
+                    <span class={`level-badge level-${post.data.level}`}>
+                      {levelLabels[post.data.level]}
+                    </span>
+                  )}
+                  {post.data.trending && (
+                    <span class="trending-badge">🔥 Trending</span>
+                  )}
+                </div>
+                <h4>{post.data.title}</h4>
+                <p>{post.data.description}</p>
+                <span class="start-here-read">Read guide &rarr;</span>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <!-- Right: AI Income -->
+        <div class="start-here-column">
+          <div class="start-here-column-header">
+            <span class="column-icon column-icon--ai">&#9670;</span>
+            <h3>AI Income</h3>
+            <p>Build income streams with AI tools and automation.</p>
+          </div>
+          <div class="start-here-coming-soon">
+            <div class="coming-soon-card">
+              <span class="coming-soon-badge">Coming Soon</span>
+              <h4>AI Income Guides</h4>
+              <p>
+                Step-by-step playbooks on using AI tools to build real income streams — from content automation to AI-powered side businesses.
+              </p>
+              <a href="/blog" class="start-here-read">Browse all guides &rarr;</a>
             </div>
-            <h3>{post.data.title}</h3>
-            <p>{post.data.description}</p>
-            <span class="start-here-read">Read guide &rarr;</span>
-          </a>
-        ))}
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -121,7 +153,7 @@ const startHerePosts = startHereSlugs
   <section class="email-signup">
     <div class="email-signup-box">
       <h2>Stay in the Loop</h2>
-      <p>Get weekly crypto passive income tips straight to your inbox.</p>
+      <p>Get weekly passive income tips — crypto yield and AI income — straight to your inbox.</p>
       <form
         action="https://app.beehiiv.com/forms/1c80f432-8696-4d95-b028-aa8bd75f08ba"
         method="POST"
@@ -138,3 +170,89 @@ const startHerePosts = startHereSlugs
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .start-here-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .start-here-column-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .start-here-column-header h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 0.25rem 0 0.4rem;
+  }
+
+  .start-here-column-header p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .column-icon {
+    font-size: 0.85rem;
+    color: var(--accent);
+  }
+
+  .column-icon--ai {
+    color: #7c3aed;
+  }
+
+  .start-here-coming-soon {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .coming-soon-card {
+    background: var(--bg-card);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .coming-soon-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #7c3aed;
+    background: rgba(124, 58, 237, 0.08);
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    width: fit-content;
+    margin-bottom: 0.25rem;
+  }
+
+  .coming-soon-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  .coming-soon-card p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .start-here-columns {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

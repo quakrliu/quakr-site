@@ -3,7 +3,7 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://cryptoyieldguide.com',
+  site: 'https://passiveyieldlab.com',
   output: 'static',
   integrations: [mdx(), sitemap()],
 });

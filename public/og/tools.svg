@@ -52,8 +52,8 @@
   <rect x="60" y="160" width="4" height="310" rx="2" fill="#2563EB" opacity="0.8"/>
 
   <!-- Logo -->
-  <text x="80" y="100" font-family="'Arial Black', Arial, sans-serif" font-size="32" font-weight="900" fill="#2563EB" letter-spacing="1">CryptoYieldGuide</text>
-  <text x="80" y="122" font-family="Arial, sans-serif" font-size="13" fill="#64748B" letter-spacing="4">CRYPTO PASSIVE INCOME</text>
+  <text x="80" y="100" font-family="'Arial Black', Arial, sans-serif" font-size="32" font-weight="900" fill="#2563EB" letter-spacing="1">PASSIVE YIELD LAB</text>
+  <text x="80" y="122" font-family="Arial, sans-serif" font-size="13" fill="#64748B" letter-spacing="4">EARN MORE. WORK LESS.</text>
   <line x1="80" y1="135" x2="420" y2="135" stroke="#2563EB" stroke-width="1" opacity="0.3"/>
 
   <!-- Main title -->
@@ -69,7 +69,7 @@
   <text x="135" y="486" font-family="Arial, sans-serif" font-size="14" fill="#2563EB" text-anchor="middle" letter-spacing="2" font-weight="700">TOOLS</text>
 
   <!-- Domain -->
-  <text x="1140" y="600" font-family="Arial, sans-serif" font-size="20" fill="#2563EB" text-anchor="end" opacity="0.8" letter-spacing="1">cryptoyieldguide.com</text>
+  <text x="1140" y="600" font-family="Arial, sans-serif" font-size="20" fill="#2563EB" text-anchor="end" opacity="0.8" letter-spacing="1">passiveyieldlab.com</text>
 
   <!-- Bottom gradient line -->
   <rect x="0" y="618" width="1200" height="4" fill="url(#bottomLine)"/>

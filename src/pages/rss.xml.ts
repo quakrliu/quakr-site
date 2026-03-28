@@ -6,9 +6,9 @@ export async function GET(context: APIContext) {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
 
   return rss({
-    title: 'Crypto Yield Guide — Crypto Passive Income',
+    title: 'Passive Yield Lab — Earn More. Work Less.',
     description:
-      'Practical guides on staking, DeFi yield, exchange lending, and every other way to put your crypto to work.',
+      'Practical guides on crypto yield, AI income, and every smart way to build passive income — tested by real practitioners.',
     site: context.site!.toString(),
     items: posts
       .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())

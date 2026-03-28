@@ -21,8 +21,8 @@ export function generateArticleSchema(input: ArticleSchemaInput): string {
     ...(input.ogImage && { image: input.ogImage }),
     publisher: {
       '@type': 'Organization',
-      name: 'Crypto Yield Guide',
-      url: 'https://cryptoyieldguide.com',
+      name: 'Passive Yield Lab',
+      url: 'https://passiveyieldlab.com',
     },
   };
   return JSON.stringify(schema);
@@ -32,14 +32,14 @@ export function generateWebsiteSchema(): string {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Crypto Yield Guide',
-    url: 'https://cryptoyieldguide.com',
+    name: 'Passive Yield Lab',
+    url: 'https://passiveyieldlab.com',
     description:
-      'Learn how to earn passive income from your crypto holdings with staking, DeFi, lending, and more.',
+      'Practical guides on crypto yield, AI income, and every smart way to build passive income — tested by real practitioners.',
     publisher: {
       '@type': 'Organization',
-      name: 'Crypto Yield Guide',
-      url: 'https://cryptoyieldguide.com',
+      name: 'Passive Yield Lab',
+      url: 'https://passiveyieldlab.com',
     },
   };
   return JSON.stringify(schema);

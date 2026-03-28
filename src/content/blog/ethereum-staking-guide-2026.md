@@ -199,7 +199,7 @@ The calculations below use a conservative **2.8% APY** baseline (exchange/liquid
 
 **The compound effect is real.** If ETH price appreciation follows even modest historical patterns, the USD value of your staked ETH grows on two axes simultaneously: more ETH from rewards, and higher ETH price. That's the structural advantage of staking a productive, deflationary asset.
 
-> For a personalized projection with your exact amount and current APY rates, use the [Crypto Yield Guide Staking Calculator](/tools/staking-calculator).
+> For a personalized projection with your exact amount and current APY rates, use the [Passive Yield Lab Staking Calculator](/tools/staking-calculator).
 
 **Why start now?** APY is compressing. Every additional validator that joins the network dilutes individual rewards slightly. The validators who locked in positions at 5%+ in 2022–2023 are still earning that on their original deposit. Waiting costs you in two ways: lower entry APY and missed compound growth.
 

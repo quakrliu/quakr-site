@@ -9,7 +9,7 @@
   <!-- Background with rounded corners -->
   <rect width="32" height="32" rx="7" fill="url(#bgG)"/>
 
-  <!-- CYG letters - bold, centered, white -->
+  <!-- PYL letters - bold, centered, white -->
   <text
     x="16"
     y="21"
@@ -19,7 +19,7 @@
     font-size="10"
     fill="#FFFFFF"
     letter-spacing="-0.5"
-  >CYG</text>
+  >PYL</text>
 
   <!-- Bottom accent line -->
   <rect x="6" y="27" width="20" height="1.5" rx="0.75" fill="#FFFFFF" opacity="0.4"/>

@@ -5,7 +5,7 @@ updatedDate: 2026-04-01
 description: "BTC can't be staked — but that doesn't mean your Bitcoin has to sit idle. Here's a beginner-friendly guide to earning yield on Bitcoin in 2026, from lending platforms to Babylon Protocol and beyond."
 seoTitle: "Bitcoin Passive Income 2026: Earn BTC Yield Without Selling"
 seoDescription: "Can't stake Bitcoin? Here are the real ways to earn passive income on BTC in 2026 — lending, wrapped BTC DeFi, Babylon Protocol, and more. Honest pros, cons, and risks."
-author: "Crypto Yield Guide Team"
+author: "Passive Yield Lab Team"
 category: guides
 tags: ["bitcoin", "passive income", "BTC yield", "bitcoin lending", "earn interest on BTC"]
 level: beginner

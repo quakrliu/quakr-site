@@ -10,10 +10,12 @@ const categoryLabels: Record<string, string> = {
   'market-analysis': 'Market Analysis',
   tools: 'Tools',
   news: 'News',
+  'ai-income': 'AI Income',
+  automation: 'Automation',
 };
 
 export function getStaticPaths() {
-  const cats = ['staking', 'defi', 'exchange-reviews', 'guides', 'market-analysis', 'tools', 'news'];
+  const cats = ['staking', 'defi', 'exchange-reviews', 'guides', 'market-analysis', 'tools', 'news', 'ai-income', 'automation'];
   return cats.map((cat) => ({
     params: { category: cat },
   }));
@@ -32,8 +34,8 @@ const posts = allPosts.sort(
 ---
 
 <BaseLayout
-  title={`${label} — Crypto Yield Guide`}
-  description={`Browse all ${label} articles on Crypto Yield Guide.`}
+  title={`${label} — Passive Yield Lab`}
+  description={`Browse all ${label} articles on Passive Yield Lab.`}
   category={category}
 >
   <div class="page-content">

@@ -13,7 +13,7 @@ interface Props {
 
 const {
   title,
-  description = 'Learn how to earn passive income from your crypto with staking, DeFi, lending, and more.',
+  description = 'Practical guides on crypto yield, AI income, and every smart way to build passive income — tested by real practitioners.',
   ogImage,
   category,
   canonicalUrl,
@@ -27,11 +27,13 @@ const categoryOgMap: Record<string, string> = {
   tools: '/og/tools.svg',
   news: '/og/news.svg',
   'exchange-reviews': '/og/default.svg',
+  'ai-income': '/og/default.svg',
+  automation: '/og/default.svg',
 };
 
 const resolvedOgImage = ogImage || (category ? (categoryOgMap[category] ?? '/og/default.svg') : '/og/default.svg');
 
-const siteTitle = title === 'CryptoYieldGuide' ? title : `${title} | CryptoYieldGuide`;
+const siteTitle = title === 'Passive Yield Lab' ? title : `${title} | Passive Yield Lab`;
 const websiteSchema = generateWebsiteSchema();
 const canonical = canonicalUrl || Astro.url.href;
 ---
@@ -49,7 +51,7 @@ const canonical = canonicalUrl || Astro.url.href;
     <link
       rel="alternate"
       type="application/rss+xml"
-      title="CryptoYieldGuide RSS"
+      title="Passive Yield Lab RSS"
       href="/rss.xml"
     />
 
@@ -58,7 +60,7 @@ const canonical = canonicalUrl || Astro.url.href;
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:site_name" content="CryptoYieldGuide" />
+    <meta property="og:site_name" content="Passive Yield Lab" />
     <meta property="og:image" content={resolvedOgImage} />
 
     <!-- Twitter -->
@@ -77,8 +79,8 @@ const canonical = canonicalUrl || Astro.url.href;
     <nav class="nav">
       <div class="nav-inner">
         <a href="/" class="nav-logo">
-          <span class="nav-logo-text">CryptoYieldGuide</span>
-          <span class="nav-logo-tagline">Crypto Passive Income</span>
+          <span class="nav-logo-text">Passive Yield Lab</span>
+          <span class="nav-logo-tagline">Earn More. Work Less.</span>
         </a>
         <button class="nav-toggle" aria-label="Toggle menu" id="nav-toggle">
           <span class="nav-toggle-bar"></span>
@@ -89,6 +91,7 @@ const canonical = canonicalUrl || Astro.url.href;
           <li><a href="/blog">Articles</a></li>
           <li><a href="/category/staking">Staking</a></li>
           <li><a href="/category/defi">DeFi</a></li>
+          <li><a href="/category/ai-income">AI Income</a></li>
           <li><a href="/category/guides">Guides</a></li>
           <li>
             <a href="/tools/staking-calculator" class="nav-link-tools">
@@ -114,7 +117,7 @@ const canonical = canonicalUrl || Astro.url.href;
           <li><a href="/privacy">Privacy</a></li>
           <li><a href="/rss.xml">RSS</a></li>
           <li>
-            <a href="https://x.com/quakrdev" target="_blank" rel="noopener noreferrer" aria-label="Follow CryptoYieldGuide on X (Twitter)" class="footer-social-link">
+            <a href="https://x.com/quakrdev" target="_blank" rel="noopener noreferrer" aria-label="Follow Passive Yield Lab on X (Twitter)" class="footer-social-link">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="vertical-align:-2px;margin-right:4px">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
               </svg>
@@ -123,7 +126,7 @@ const canonical = canonicalUrl || Astro.url.href;
           </li>
         </ul>
         <p class="footer-copy">
-          &copy; {new Date().getFullYear()} CryptoYieldGuide. Not financial advice.
+          &copy; {new Date().getFullYear()} Passive Yield Lab. Not financial advice.
         </p>
       </div>
     </footer>
