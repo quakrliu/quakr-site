@@ -40,7 +40,7 @@ Let me try to demystify it.
 
 ## The Core Idea: Using the Same ETH Twice (Sort Of)
 
-Here's the setup. You stake ETH, either natively or through a liquid staking protocol like Lido (getting stETH) or Rocket Pool (getting rETH). You're earning around 3–4% APY on that. Fine.
+Here's the setup. You stake ETH, either natively or through a liquid staking protocol like Lido (getting stETH) or Rocket Pool (getting rETH). You're earning around 2.8%–3.8% APY on that. Fine.
 
 Now imagine you could take that same staked ETH and *also* use it to secure other protocols — other networks or services that need economic security but don't want to bootstrap their own validator set from scratch. You earn rewards from those protocols on top of your base staking yield.
 
@@ -75,7 +75,7 @@ This requires running your own validator (32 ETH minimum), so it's not the begin
 This is where most regular users interact with restaking. Liquid restaking protocols — Ether.fi, Renzo, Puffer Finance, and others — handle the EigenLayer integration for you. You deposit ETH (or stETH), and you receive an LRT (liquid restaking token) in return, like eETH or ezETH.
 
 That token earns:
-- Base ETH staking yield (~3–4% as of early 2026)
+- Base ETH staking yield (~2.8%–3.8% as of early 2026)
 - Restaking rewards from the AVSs the protocol participates in
 - Often, points or additional token rewards from the LRT protocol itself
 
@@ -87,7 +87,7 @@ The total yield varies significantly depending on the protocol and current AVS a
 
 Let me make this concrete. Here's what a typical liquid restaking position might look like in 2026:
 
-- **ETH base staking yield:** ~3.5% APY
+- **ETH base staking yield:** ~2.8%–3.8% APY
 - **EigenLayer AVS rewards:** ~1–2% additional APY
 - **LRT protocol incentives (varies):** 0–1% or more during active campaigns
 
@@ -233,7 +233,7 @@ And if you have a large ETH position, I wouldn't put 100% of it into restaking. 
 
 | Factor | Standard ETH Staking | Liquid Restaking |
 |--------|---------------------|-----------------|
-| Approx. APY (early 2026) | ~3–4% | ~4.5–6.5% |
+| Approx. APY (early 2026) | ~2.8%–3.8% | ~4.5–6.5% |
 | Liquidity | Flexible (with LSTs) | Flexible (LRT, may depeg) |
 | Smart contract layers | 1–2 | 3–5+ |
 | Slashing risk | Validator only | Validator + AVS |

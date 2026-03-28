@@ -197,7 +197,7 @@ Operating since 2012, Bitfinex is one of the oldest exchanges still running. The
 
 ### 4. Aave — The DeFi Blue Chip
 
-**TVL:** $18B+ across all chains | Ethereum, Arbitrum, Polygon, Base, Optimism
+**TVL:** $25B+ across all chains | Ethereum, Arbitrum, Polygon, Base, Optimism
 
 Aave is to DeFi lending what Bitcoin is to crypto: the original, the battle-tested, the benchmark. Launched in 2020, Aave's smart contracts have secured billions in user funds through multiple market crashes without a protocol-level exploit. That track record means something.
 

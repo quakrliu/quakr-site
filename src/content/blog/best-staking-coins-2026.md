@@ -33,7 +33,7 @@ You've probably noticed that your savings account is still paying you crumbs whi
 
 Here's the thing: 2026 is not the same staking landscape as 2021. The SEC has clarified its stance on proof-of-stake rewards in the U.S., institutional money has flooded into liquid staking protocols, and the total value locked (TVL) across staking platforms has crossed **$400 billion**. This isn't a niche DeFi experiment anymore — it's a legitimate corner of the financial system.
 
-**The scale of what's already happening might surprise you.** Over **34 million ETH** is currently staked — representing more than $100 billion in staked value on Ethereum alone. More than **1.2 million ADA wallets** are actively delegating stake. Solana has over **1,700 active validators** securing a network with real transaction volume. These aren't speculative futures. They're operating infrastructure paying out real yield right now to holders who showed up.
+**The scale of what's already happening might surprise you.** Over **approximately 37 million ETH** is currently staked — representing more than $100 billion in staked value on Ethereum alone. More than **1.2 million ADA wallets** are actively delegating stake. Solana has over **1,700 active validators** securing a network with real transaction volume. These aren't speculative futures. They're operating infrastructure paying out real yield right now to holders who showed up.
 
 But the flip side? The easiest money is already gone. Yields are compressing as more capital piles in, and the gap between **knowing which coins to stake** versus blindly chasing the highest APY can mean the difference between a smart passive income stream and a costly mistake.
 
@@ -64,13 +64,13 @@ We weighted network health and risk equally with yield — because a 30% APY on 
 
 ### 1. Ethereum (ETH) — The Institutional Grade Choice
 
-**Current APY:** 3.5% – 5.2%
+**Current APY:** 2.8% – 3.8%
 **Market Cap:** ~$480B
 **Minimum Stake:** 32 ETH (solo) / No minimum via liquid staking
 **Lock-up Period:** Variable; ~27 hours exit queue (liquid staking: instant)
 **Risk Level:** Low–Medium
 
-Ethereum isn't the flashiest staking option in 2026, but it's the one institutional players trust the most — and that tells you something important. Since the Merge, over **34 million ETH** is now staked, representing roughly 28% of total supply. The validator queue has stabilized, and yields have settled into the 3.5–5.2% range depending on network congestion and MEV (Maximal Extractable Value) bonuses.
+Ethereum isn't the flashiest staking option in 2026, but it's the one institutional players trust the most — and that tells you something important. Since the Merge, over **approximately 37 million ETH** is now staked, representing roughly 31% of total supply. The validator queue has stabilized, and yields have settled into the 2.8–3.8% range depending on network congestion and MEV (Maximal Extractable Value) bonuses.
 
 **Why it still belongs at #1:** ETH staking is now integrated into major regulated custodial platforms. BlackRock's ETH ETF includes staking yield components. This is no longer "crypto risk" in the traditional sense — it's infrastructure income.
 
@@ -86,7 +86,7 @@ Ethereum isn't the flashiest staking option in 2026, but it's the one institutio
 
 ### 2. Solana (SOL) — High Performance, High Yield
 
-**Current APY:** 6.5% – 8.1%
+**Current APY:** 6.5% – 7.5% (up to 8% with MEV)
 **Market Cap:** ~$120B
 **Minimum Stake:** ~0.01 SOL
 **Lock-up Period:** ~2–3 day epoch cycle (liquid staking: instant via mSOL/jitoSOL)
@@ -94,7 +94,7 @@ Ethereum isn't the flashiest staking option in 2026, but it's the one institutio
 
 Solana's validator network has matured significantly. With over **1,700 active validators** and a Nakamoto coefficient of 33 (meaning you'd need 33 validators to collude to attack the network), SOL's decentralization story has improved dramatically from its early days.
 
-The staking yield is genuinely attractive: 6.5–8.1% annually, with inflation-funded rewards that are predictable and protocol-level. No smart contract gymnastics required for native staking.
+The staking yield is genuinely attractive: 6.5–7.5% annually (up to 8% with MEV rewards), with inflation-funded rewards that are predictable and protocol-level. No smart contract gymnastics required for native staking.
 
 **The surprise factor:** Most people know SOL staking. Fewer know that **liquid staking via Marinade Finance (mSOL) or Jito (jitoSOL)** adds MEV rewards on top of base yield, pushing effective returns 1–2% higher — and gives you a liquid token you can use in DeFi simultaneously.
 
@@ -134,15 +134,15 @@ ATOM is the one that surprises people. Fourteen to eighteen percent APY is not a
 
 ### 4. Polkadot (DOT) — The Parachain Powerhouse
 
-**Current APY:** 12% – 16%
+**Current APY:** 7% – 12%
 **Market Cap:** ~$14B
 **Minimum Stake:** ~250 DOT (nomination pools: as low as 1 DOT)
-**Lock-up Period:** 28-day unbonding period
+**Lock-up Period:** 24–48 hours (reduced from 28 days in March 2026)
 **Risk Level:** Medium
 
 Polkadot's nominated proof-of-stake (NPoS) system is one of the more sophisticated staking designs in crypto. Validators are selected algorithmically to maximize decentralization, and nominators share in both rewards and — critically — slashing risk.
 
-The yields are strong: 12–16% consistently, funded by DOT's inflation schedule. And with nomination pools, the 250 DOT minimum for direct nomination is no longer a barrier — you can join a pool with as little as 1 DOT.
+The yields are solid: 7–12% consistently, funded by DOT's inflation schedule. And with nomination pools, the 250 DOT minimum for direct nomination is no longer a barrier — you can join a pool with as little as 1 DOT.
 
 **The hidden complexity:** DOT's staking involves choosing which validators to nominate. Bad validator selection can expose you to slashing. Use a pool or exchange staking if you don't want to manage this actively.
 
@@ -156,7 +156,7 @@ The yields are strong: 12–16% consistently, funded by DOT's inflation schedule
 
 ### 5. Cardano (ADA) — No Lock-Up, Solid Fundamentals
 
-**Current APY:** 3% – 4.5%
+**Current APY:** 1.5% – 3.0%
 **Market Cap:** ~$22B
 **Minimum Stake:** No minimum (wallet delegation)
 **Lock-up Period:** None — liquid at all times
@@ -164,7 +164,7 @@ The yields are strong: 12–16% consistently, funded by DOT's inflation schedule
 
 Cardano earns its spot for one underrated reason: **there is no lock-up period**. Your ADA stays in your wallet, you delegate to a stake pool, you earn rewards, and you can move your ADA any time. This is genuinely rare among staking protocols.
 
-The yield is modest at 3–4.5%, but the risk-adjusted return is compelling for conservative investors. No slashing risk. No unbonding wait. Just steady, predictable rewards.
+The yield is modest at 1.5–3%, but the risk-adjusted return is compelling for conservative investors. No slashing risk. No unbonding wait. Just steady, predictable rewards.
 
 **For beginners:** Cardano staking via wallets like Eternl or Yoroi is one of the most user-friendly staking experiences in crypto. Exchange staking on Binance or OKX works too.
 
@@ -276,11 +276,11 @@ Staking yields vary widely based on validator performance, but the near-instant 
 
 | Coin | APY Range | Market Cap | Min. Stake | Lock-up | Risk Level |
 |------|-----------|------------|------------|---------|------------|
-| **ETH** | 3.5%–5.2% | ~$480B | None (liquid) | ~27hr exit queue | Low–Med |
-| **SOL** | 6.5%–8.1% | ~$120B | ~0.01 SOL | 2–3 days | Medium |
+| **ETH** | 2.8%–3.8% | ~$480B | None (liquid) | ~27hr exit queue | Low–Med |
+| **SOL** | 6.5%–7.5% | ~$120B | ~0.01 SOL | 2–3 days | Medium |
 | **ATOM** | 14%–18% | ~$8B | 0.001 ATOM | 21 days | Med–High |
-| **DOT** | 12%–16% | ~$14B | 1 DOT (pool) | 28 days | Medium |
-| **ADA** | 3%–4.5% | ~$22B | None | None | Low |
+| **DOT** | 7%–12% | ~$14B | 1 DOT (pool) | 24–48 hours | Medium |
+| **ADA** | 1.5%–3.0% | ~$22B | None | None | Low |
 | **AVAX** | 7%–9% | ~$18B | None (exchange) | 2 weeks | Medium |
 | **TON** | 4%–6% | ~$25B | None | ~36 hours | Med–High |
 | **INJ** | 10%–14% | ~$4B | None | 21 days | High |
@@ -310,7 +310,7 @@ This is where the real value is. A ranking table is only useful if it matches yo
 
 Ask yourself: **"What's the worst-case scenario if I need this money in the next 30 days?"**
 
-If that question gives you anxiety, stay away from ATOM (21 days), DOT (28 days), and AVAX (2 weeks). Stick to ETH liquid staking, ADA, TON, or SUI.
+If that question gives you anxiety, stay away from ATOM (21 days) and AVAX (2 weeks). Stick to ETH liquid staking, ADA, DOT (now 24–48 hours), TON, or SUI.
 
 ### Step 3: Consider Your Existing Holdings
 
@@ -344,7 +344,7 @@ For ATOM, if inflation is 10% and your APY is 15%, your real return in terms of 
 
 Here's an uncomfortable truth about the staking market in 2026: **yields are compressing and will continue to compress.**
 
-The mechanics are simple. As more capital flows into staking — and it is flowing in, at institutional scale — the yield per dollar staked mathematically decreases. This is already visible in Ethereum staking, where APY has dropped from ~5.5% to ~4% as staked ETH grew from 25M to 34M coins.
+The mechanics are simple. As more capital flows into staking — and it is flowing in, at institutional scale — the yield per dollar staked mathematically decreases. This is already visible in Ethereum staking, where APY has dropped from ~5.5% to ~2.8%–3.8% as staked ETH grew from 25M to approximately 37M coins.
 
 The investors who locked in 8% SOL staking rates in 2024 are earning proportionally more than those entering at 6.5% today — not because their coins are different, but because they arrived earlier when the yield pool was less crowded.
 
@@ -417,7 +417,7 @@ Staking a significant amount without tracking the tax implications is like runni
 
 ### What is the highest APY staking coin right now?
 
-As of Q1 2026, Cosmos (ATOM) offers the highest APY among established networks at 14–18%. However, APY alone is misleading — ATOM has a 21-day unbonding period and higher price volatility than blue-chip options like ETH. Among lower-risk options, Solana offers a strong balance of 6.5–8.1% APY with a more liquid structure.
+As of Q1 2026, Cosmos (ATOM) offers the highest APY among established networks at 14–18%. However, APY alone is misleading — ATOM has a 21-day unbonding period and higher price volatility than blue-chip options like ETH. Among lower-risk options, Solana offers a strong balance of 6.5–7.5% APY (up to 8% with MEV) with a more liquid structure.
 
 ### Is staking crypto safe?
 

@@ -23,9 +23,6 @@ affiliateLinks:
   - name: OKX
     url: https://www.okx.com/join/26575603
     cta: "Explore OKX Earn"
-  - name: Bitget
-    url: https://www.bitget.com/referral/register?from=referral&clacCode=YOUR_REF
-    cta: "Join Bitget"
   - name: CoinLedger
     url: https://coinledger.io?fpr=4bsqmx
     cta: "Track Your Crypto Taxes"
@@ -40,7 +37,7 @@ trending: true
 
 **Your money should work as hard as you do.** For tens of millions of people worldwide, crypto passive income has gone from a fringe concept to a mainstream financial strategy — and 2026 is shaping up to be the most accessible, regulated, and rewarding year yet to get started.
 
-In a 2025 survey by Crypto.com, **over 420 million people globally now own or hold crypto**. Of those, roughly 1 in 3 are actively using at least one passive income strategy. That community — stakers, lenders, liquidity providers — collectively earns billions of dollars annually in yield that never makes the news.
+In a 2025 survey by Crypto.com, **over 560 million people globally now own or hold crypto**. Of those, roughly 1 in 3 are actively using at least one passive income strategy. That community — stakers, lenders, liquidity providers — collectively earns billions of dollars annually in yield that never makes the news.
 
 Whether you're holding Bitcoin in a wallet doing nothing, or you're brand new to crypto and curious about what's possible, this guide is your roadmap. We'll break down 8 proven methods to earn passive income with crypto, complete with expected returns, risk levels, and the platforms you can trust to get started today.
 
@@ -50,7 +47,7 @@ Whether you're holding Bitcoin in a wallet doing nothing, or you're brand new to
 
 The landscape has shifted dramatically. Three years ago, crypto passive income was the wild west — high rewards, zero regulation, and horror stories of platforms collapsing overnight. Today, the story is different.
 
-**Regulatory clarity is here.** In late 2025, the SEC and CFTC jointly issued landmark guidance formally classifying proof-of-stake staking as a non-security income-generating activity. That means staking rewards are now treated with a clear legal framework in the United States — no more uncertainty about whether your ETH staking income would trigger securities violations.
+**Regulatory clarity is here.** In 2025, the SEC issued formal guidance on staking, formally classifying proof-of-stake staking as a non-security income-generating activity. In March 2026, the SEC and CFTC jointly released a landmark interpretive framework clarifying crypto asset classification. That means staking rewards are now treated with a clear legal framework in the United States — no more uncertainty about whether your ETH staking income would trigger securities violations.
 
 **Institutional money is flowing in.** BlackRock launched its Ethereum Staking ETF in early 2026, giving traditional investors exposure to ETH staking yields through familiar brokerage accounts. When the world's largest asset manager builds a product around crypto staking, it signals one thing: this is no longer a niche. It's mainstream.
 
@@ -189,7 +186,6 @@ Risk-averse investors who want consistent yield without exposure to crypto volat
 #### Recommended Platforms
 
 - **[Binance Earn](https://www.binance.com/en/register?ref=725285686)** — Simple stablecoin earn products, competitive rates
-- **[Bitget](https://www.bitget.com/referral/register?from=referral&clacCode=YOUR_REF)** — Launchpool and savings products with strong stablecoin options
 
 ---
 
@@ -288,7 +284,6 @@ Anyone with a network of crypto-curious friends, family, or online audience. Con
 #### Recommended Starting Points
 
 - **[Binance Referral Program](https://www.binance.com/en/register?ref=725285686)**
-- **[Bitget Referral Program](https://www.bitget.com/referral/register?from=referral&clacCode=YOUR_REF)**
 
 ---
 
@@ -365,7 +360,7 @@ Stick to the top tier. For 2026, that means platforms with:
 - Insurance or protection funds for user assets
 - At least 3 years of operational history
 
-Our top picks: **[Binance](https://www.binance.com/en/register?ref=725285686)**, **[OKX](https://www.okx.com/join/26575603)**, **[Bybit](https://www.bybit.com/invite?ref=WKNA1V)**, **[Bitget](https://www.bitget.com/referral/register?from=referral&clacCode=YOUR_REF)**.
+Our top picks: **[Binance](https://www.binance.com/en/register?ref=725285686)**, **[OKX](https://www.okx.com/join/26575603)**, **[Bybit](https://www.bybit.com/invite?ref=WKNA1V)**.
 
 ### Step 3: Start Small and Understand the Risk
 
@@ -406,7 +401,7 @@ For a comprehensive look at diversifying across strategies, see our guide: [Best
 
 ### The Basics (US Focus)
 
-In the United States, following the 2025 SEC/CFTC guidance:
+In the United States, following the 2025 SEC guidance and the March 2026 SEC/CFTC joint interpretive framework:
 
 - **Staking rewards** are treated as ordinary income, taxed at the time of receipt at fair market value
 - **Lending interest** is ordinary income
@@ -477,7 +472,7 @@ Yes. The risks vary by strategy: platform insolvency (CeFi lending), smart contr
 
 The biggest mistake most crypto holders make isn't picking the wrong coin. It's letting their assets sit idle when they could be generating consistent income.
 
-2026 is the year the excuse of "it's too complicated" or "it's not regulated" no longer holds. SEC/CFTC clarity has arrived. BlackRock is staking ETH. The tools are simpler than ever. The only thing left is to start.
+2026 is the year the excuse of "it's too complicated" or "it's not regulated" no longer holds. SEC and CFTC clarity has arrived. BlackRock is staking ETH. The tools are simpler than ever. The only thing left is to start.
 
 **Here's your action plan:**
 

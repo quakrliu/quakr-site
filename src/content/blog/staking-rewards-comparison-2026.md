@@ -52,13 +52,13 @@ The APY you see advertised isn't always what you get in practice. That's worth k
 
 ## Ethereum (ETH) Staking — Still the Benchmark
 
-ETH staking has matured a lot. As of early 2026, native staking APY is running at approximately **3–4% annually**, which is lower than some alternatives but arguably the most trustworthy yield in crypto. The Ethereum network is deeply established, the inflation is low, and the validator set is enormous.
+ETH staking has matured a lot. As of early 2026, native staking APY is running at approximately **2.8%–3.8% annually**, which is lower than some alternatives but arguably the most trustworthy yield in crypto. The Ethereum network is deeply established, the inflation is low, and the validator set is enormous.
 
 Where you stake matters though:
 
-**Via Binance:** Binance offers both flexible and locked ETH staking. Their liquid ETH product (WBETH) typically yields around 3–3.5% as of early 2026. You can unstake anytime, which is convenient — but Binance takes a platform fee off the top.
+**Via Binance:** Binance offers both flexible and locked ETH staking. Their liquid ETH product (WBETH) typically yields around 2.5–3.0% as of early 2026. You can unstake anytime, which is convenient — but Binance takes a platform fee off the top.
 
-**Via Lido (liquid staking):** You get stETH in return, which auto-compounds your rewards. Lido's rate typically tracks close to the network base rate (~3.5%), minus a 10% fee on rewards. This is a popular middle ground — you stay liquid while still earning.
+**Via Lido (liquid staking):** You get stETH in return, which auto-compounds your rewards. Lido's rate typically tracks close to the network base rate (~3.0%–3.5%), minus a 10% fee on rewards. This is a popular middle ground — you stay liquid while still earning.
 
 **Solo staking:** If you have 32 ETH and want to run your own validator, you keep the full reward rate. It's not beginner territory, but the yield is honest and you're not trusting a third party with your funds.
 
@@ -102,9 +102,9 @@ Most Cardano staking happens via wallets like Eternl or Daedalus, which means yo
 
 ## Polkadot (DOT) — Nominators and Lock-Up Trade-offs
 
-DOT staking offers some of the higher yields among established networks — approximately **12–15% APY** as of early 2026, though this fluctuates with network activity and the total staked ratio.
+DOT staking offers solid yields among established networks — approximately **7–12% APY** as of early 2026, though this fluctuates with network activity and the total staked ratio.
 
-The catch: there's a 28-day unbonding period. If you need liquidity suddenly, you're stuck. For long-term holders who believe in the Polkadot ecosystem, this is a reasonable trade. But it's not a decision to make casually.
+The unbonding period was reduced to **24–48 hours in March 2026** (down from the previous 28 days), significantly improving liquidity for stakers. For long-term holders who believe in the Polkadot ecosystem, this makes DOT staking far more accessible.
 
 OKX and Binance both list DOT staking with somewhat lower rates (platform cut), but easier entry. If you want native yields, you'll want to use the Polkadot.js wallet and nominate validators directly.
 
@@ -134,13 +134,13 @@ I'd be cautious about calling a definitive number here — the migration has int
 
 | Asset | Estimated APY | Lock-up | Custodial Risk |
 |-------|--------------|---------|----------------|
-| ETH (native) | ~3–4% | None (post-Shanghai) | Low (self-custody) |
-| ETH (via Binance) | ~3–3.5% | Flexible available | Medium (CEX) |
+| ETH (native) | ~2.8%–3.8% | None (post-Shanghai) | Low (self-custody) |
+| ETH (via Binance) | ~2.5%–3.0% | Flexible available | Medium (CEX) |
 | SOL (native) | ~6–8% | None | Low |
 | SOL (via CEX) | ~5–7% | Varies | Medium |
 | BNB (via Binance) | ~4–6% | Flexible/Locked | High (same platform) |
 | ADA (native) | ~3–4% | None | Low |
-| DOT (native) | ~12–15% | 28 days | Low |
+| DOT (native) | ~7%–12% | 24–48 hours | Low |
 | ATOM (native) | ~10–14% | 21 days | Low |
 
 *All figures are estimates as of early 2026. APYs fluctuate with network conditions. This is not financial advice.*
@@ -226,7 +226,7 @@ I've mentioned risks throughout this article, but let me consolidate them in one
 
 **Slashing risk** is the big one for native staking. If your validator misbehaves (double signs, goes offline at the wrong time), you can lose a portion of your stake. On most networks, slashing for minor offenses is small. For serious offenses it can be significant. Using a reputable validator (or a liquid staking protocol that manages validators professionally) substantially reduces this risk.
 
-**Lock-up / illiquidity risk.** If you're in a 28-day unbonding period and the market crashes, you can't sell. This is real. Size positions in locked staking products relative to your total portfolio such that an unexpected lock-up wouldn't be catastrophic.
+**Lock-up / illiquidity risk.** If you're in a long unbonding period (e.g., ATOM's 21 days) and the market crashes, you can't sell. This is real. Size positions in locked staking products relative to your total portfolio such that an unexpected lock-up wouldn't be catastrophic.
 
 **Smart contract risk.** Any liquid staking token involves smart contracts. Even audited contracts can have vulnerabilities. The longer a contract has been in production without issues, the more battle-tested it is — but it's never zero risk.
 
@@ -242,7 +242,7 @@ Here's the framework I actually use:
 
 Is this a core holding I plan to keep long-term? If yes, native staking or liquid staking is usually the better choice. You're earning yield without taking on platform risk.
 
-Do I need flexibility? If you might need to sell quickly, avoid long lock-up periods (DOT's 28 days, ATOM's 21 days can hurt). ETH and ADA give you more flexibility.
+Do I need flexibility? If you might need to sell quickly, be aware of lock-up periods (ATOM's 21 days can hurt). DOT's unbonding is now just 24–48 hours since March 2026. ETH and ADA give you the most flexibility.
 
 How big is the position? For smaller amounts, CEX staking is fine — the convenience is worth the small fee hit. For larger positions, the fee percentages add up, and self-custody staking starts to make more economic sense.
 

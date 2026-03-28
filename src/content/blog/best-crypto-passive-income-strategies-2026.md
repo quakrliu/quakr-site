@@ -12,9 +12,6 @@ tags:
   - strategies
   - beginner
 affiliateLinks:
-  - name: Ledger
-    url: https://shop.ledger.com/?r=YOUR_REF
-    cta: "Protect Your Crypto with Ledger"
   - name: Binance
     url: https://www.binance.com/en/register?ref=725285686
     cta: "Start Earning on Binance"
@@ -63,10 +60,10 @@ Proof-of-stake blockchains like Ethereum, Solana, Cosmos, and Polkadot pay valid
 
 | Network | Approximate APY | Lock Period |
 |---|---|---|
-| Ethereum (via Lido/Rocket Pool) | 3.5–4.5% | Liquid (stETH) |
+| Ethereum (via Lido/Rocket Pool) | 2.8%–3.8% | Liquid (stETH) |
 | Solana | 6.5–7.5% | ~2 days to unstake |
 | Cosmos (ATOM) | 15–20% | 21-day unbonding |
-| Polkadot | 12–15% | 28-day unbonding |
+| Polkadot | 7%–12% | 24–48 hours (reduced from 28 days in March 2026) |
 | Avalanche | 8–10% | 14-day unbonding |
 
 ### Why It's Low Risk
@@ -361,7 +358,7 @@ Set it up once. Let the system run. Revisit quarterly.
 
 Here's something worth understanding before you start: **the yields available today are higher than they'll likely be in two to three years.**
 
-As more capital flows into staking — which happens steadily as institutional adoption grows — staking APYs compress. On Ethereum, the staking yield has already dropped from over 5% in 2023 to roughly 3.5–4.5% today. Solana has followed the same arc: validators were paying out above 8% APY in 2023; early 2026's range is 6.5–7.5%.
+As more capital flows into staking — which happens steadily as institutional adoption grows — staking APYs compress. On Ethereum, the staking yield has already dropped from over 5% in 2023 to roughly 2.8%–3.8% today. Solana has followed the same arc: validators were paying out above 8% APY in 2023; early 2026's range is 6.5–7.5%.
 
 **The compounding math is unforgiving for late starters.** Consider two investors, each with $20,000 in SOL: one who started staking in Q1 2025 at 8% APY, and one who waits until Q4 2026 when yields have compressed to 5.5%. After three years, the early starter has accumulated roughly **$5,400 more** in rewards — not from superior skill, simply from starting six months earlier on a higher yield curve and letting that base compound.
 

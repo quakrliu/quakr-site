@@ -175,7 +175,7 @@ Curve is the most important stablecoin liquidity protocol in DeFi. Its pools (US
 
 **Best for:** Single-asset lending without impermanent loss exposure
 **Typical APY:** 3–8% on stablecoins, variable on volatile assets
-**TVL:** $15B+ across all chains
+**TVL:** $25B+ across all chains
 **Chain:** Ethereum, Polygon, Arbitrum, Base, and more
 
 Aave is a lending and borrowing protocol — you supply a single asset, borrowers pay interest to use it, and you collect a share. No liquidity pairing required, which means **zero impermanent loss**.

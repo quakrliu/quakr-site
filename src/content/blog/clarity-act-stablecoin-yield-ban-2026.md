@@ -28,7 +28,7 @@ Let me break it down in plain English, because I've seen a lot of coverage that'
 
 ## What Is the CLARITY Act, Exactly?
 
-The CLARITY Act (full name: the **Comprehensive Liquidity and Regulatory Innovation for Technology Year Act** — yes, they really reached for that acronym) is a proposed piece of U.S. federal legislation focused on stablecoins.
+The **Digital Asset Market Clarity Act (CLARITY Act)** is a proposed piece of U.S. federal legislation focused on stablecoins.
 
 The most recent version of the bill text was published on **March 23, 2026**. It's currently working through the Senate Banking Committee, with a hearing expected **around mid-April 2026**.
 

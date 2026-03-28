@@ -55,14 +55,14 @@ If you're new to liquid staking on Solana, our [Marinade Finance staking guide](
 
 | Asset | Validator APY | Liquid Staking APY | Notes |
 |-------|-------------|-------------------|-------|
-| ETH | 3.2–4.1% | 3.0–3.8% (Lido/Rocket Pool) | Post-Merge steady state |
+| ETH | 2.8–3.8% | 2.6–3.5% (Lido/Rocket Pool) | Post-Merge steady state |
 | SOL | 6.5–7.8% | 6.1–7.2% (Marinade/Jito) | Higher inflation schedule |
 | ADA | 3.0–4.5% | 3.0–4.2% (delegated) | Stable, predictable |
 | ATOM | 12–18% | 10–15% (varies by zone) | High inflation offsets somewhat |
 | DOT | 14–17% | 12–15% (liquid variants) | Active nomination required |
 | BNB | 2.8–4.2% | 2.5–3.8% (BNB Smart Chain) | Lower due to validator cap |
 
-> **Counter-intuitive finding:** Ethereum staking APY has compressed from ~5.2% in 2023 to ~3.5% in 2026 as more ETH got staked. More participation = lower individual reward. [CD7]
+> **Counter-intuitive finding:** Ethereum staking APY has compressed from ~5.2% in 2023 to ~2.8%–3.8% in 2026 as more ETH got staked. More participation = lower individual reward. [CD7]
 
 ### The Real Risks of Staking
 
@@ -265,7 +265,7 @@ The institutional playbook in 2026 looks something like this:
 
 Here's the uncomfortable truth: **the golden age of crypto yield is compressing.**
 
-- Ethereum staking APY fell from 5.2% → 3.5% as TVL in validators grew from $40B → $120B
+- Ethereum staking APY fell from 5.2% → 2.8%–3.8% as TVL in validators grew from $40B → $130B+
 - Stablecoin lending rates on Aave compressed from 12–18% in 2022 → 5–9% in 2026
 - Yield farming incentives on mature protocols have dropped 60–80% from peak
 

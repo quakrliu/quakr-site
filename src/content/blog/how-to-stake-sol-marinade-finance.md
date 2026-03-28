@@ -10,10 +10,6 @@ tags:
   - marinade
   - mSOL
   - passive-income
-affiliateLinks:
-  - name: Ledger
-    url: https://shop.ledger.com/?r=YOUR_REF
-    cta: "Secure Your SOL with Ledger"
 seoTitle: "How to Stake SOL with Marinade Finance (2026 Guide)"
 seoDescription: "Complete guide to staking Solana with Marinade Finance. Learn about mSOL liquid staking, expected yields, risks, and step-by-step setup instructions."
 draft: false

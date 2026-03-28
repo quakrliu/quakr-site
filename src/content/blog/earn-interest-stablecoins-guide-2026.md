@@ -81,8 +81,8 @@ Think of it this way: the US dollar is the concept, and USDT is a digital token 
 
 | Stablecoin | Issuer | Backing Mechanism | Market Cap (2026) |
 |------------|--------|-------------------|-------------------|
-| **USDT** (Tether) | Tether Ltd. | Fiat reserves + treasury bills | ~$130B+ |
-| **USDC** | Circle (regulated US company) | Fully backed by cash + short-term US Treasuries | ~$45B+ |
+| **USDT** (Tether) | Tether Ltd. | Fiat reserves + treasury bills | ~$185B+ |
+| **USDC** | Circle (regulated US company) | Fully backed by cash + short-term US Treasuries | ~$78B+ |
 | **DAI** | MakerDAO (decentralized protocol) | Over-collateralized crypto assets | ~$8B+ |
 
 **USDT** is the most widely traded stablecoin globally — high liquidity, available on virtually every platform, slightly less transparent historically but improving under regulatory pressure.
@@ -116,7 +116,7 @@ The stablecoin lending model cuts out step 3:
 - Institutional arbitrageurs borrow stablecoins to capture cross-exchange price gaps
 - Companies in emerging markets use stablecoins to access dollar-denominated capital without traditional banking infrastructure
 
-The demand for dollar-denominated borrowing in crypto is massive and growing. The stablecoin market exceeded **$150 billion** in 2026. And unlike the bond market or interbank lending, this market is accessible to retail participants — you and me — without minimums, lock-ins, or paperwork.
+The demand for dollar-denominated borrowing in crypto is massive and growing. The stablecoin market exceeded **$310 billion** in 2026. And unlike the bond market or interbank lending, this market is accessible to retail participants — you and me — without minimums, lock-ins, or paperwork.
 
 ---
 
@@ -344,7 +344,7 @@ If Binance, Bybit, or OKX were to collapse — the way FTX did in 2022 — funds
 DeFi protocols are software. Software can have bugs. If a vulnerability is exploited in Aave or Curve, funds in those protocols could be stolen.
 
 **How to manage it:**
-- Stick to the largest, most audited protocols (Aave and Compound have >$10B TVL and years of security track record)
+- Stick to the largest, most audited protocols (Aave has $25B+ TVL and years of security track record across multiple chains)
 - Use only the audit-verified versions of protocol interfaces (bookmark app.aave.com directly)
 - Consider DeFi insurance protocols (Nexus Mutual, Sherlock) for large positions
 
