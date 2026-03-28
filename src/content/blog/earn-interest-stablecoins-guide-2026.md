@@ -21,7 +21,7 @@ keywords:
   - best stablecoin yield 2026
 level: beginner
 trending: true
-author: cryptoyieldguide
+author: passiveyieldlab
 image: /images/blog/earn-interest-stablecoins-guide-2026.jpg
 affiliateLinks:
   - name: Binance

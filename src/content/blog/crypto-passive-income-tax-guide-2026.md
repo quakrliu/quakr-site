@@ -20,7 +20,7 @@ keywords:
   - defi tax 2026
   - coinledger review
 image: /images/blog/crypto-passive-income-tax-guide-2026.jpg
-author: cryptoyieldguide
+author: passiveyieldlab
 level: beginner
 trending: false
 affiliateLinks:
