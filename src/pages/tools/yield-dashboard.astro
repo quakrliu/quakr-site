@@ -60,8 +60,10 @@ const faqSchema = JSON.stringify({
         <div class="yd-panel-header">
           <h2 class="yd-section-title">Your Portfolio</h2>
           <div class="yd-header-actions">
-            <button class="yd-btn-sm" id="load-portfolio-btn" title="Load saved portfolio">Load Saved</button>
+            <button class="yd-btn-sm" id="save-portfolio-btn" title="Save portfolio">Save</button>
+            <button class="yd-btn-sm" id="load-portfolio-btn" title="Load saved portfolio">Load</button>
             <button class="yd-btn-sm yd-btn-outline" id="clear-portfolio-btn" title="Clear all coins">Clear</button>
+            <span class="yd-save-status" id="save-status"></span>
           </div>
         </div>
 
@@ -177,18 +179,14 @@ const faqSchema = JSON.stringify({
       </div>
     </section>
 
-    <!-- Save & Email CTA -->
+    <!-- Email CTA -->
     <section class="yd-section" id="cta-section" style="display:none">
       <div class="yd-cta-panel">
-        <div class="yd-cta-left">
-          <button class="yd-btn" id="save-portfolio-btn">&#128190; Save Portfolio</button>
-          <span class="yd-save-status" id="save-status"></span>
-        </div>
-        <div class="yd-cta-right">
+        <div class="yd-cta-right" style="width:100%">
           <h3>Get weekly yield updates</h3>
           <p>APY rates change constantly. We track the best opportunities so you don't miss out.</p>
-          <form class="yd-email-form" id="email-form" action="https://passiveyieldlab.com/api/subscribe" method="POST">
-            <input type="email" placeholder="you@example.com" aria-label="Email address" required />
+          <form class="yd-email-form" id="email-form" action="https://app.beehiiv.com/forms/1c80f432-8696-4d95-b028-aa8bd75f08ba" method="POST">
+            <input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required />
             <button type="submit" class="yd-btn">Subscribe</button>
           </form>
           <p class="yd-legal">Free. Unsubscribe anytime. We never share your email.</p>
