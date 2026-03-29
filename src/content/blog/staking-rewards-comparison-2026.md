@@ -9,7 +9,7 @@ author: "Passive Yield Lab Team"
 category: staking
 tags: ["staking", "passive income", "crypto yield", "APY", "staking rewards"]
 level: intermediate
-draft: true
+draft: false
 image:
   url: /images/blog/staking-rewards-comparison-2026.jpg
   alt: "Staking rewards comparison chart showing APY rates across platforms in 2026"

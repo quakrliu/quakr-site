@@ -9,7 +9,7 @@ author: "Passive Yield Lab Team"
 category: guides
 tags: ["bitcoin", "passive income", "BTC yield", "bitcoin lending", "earn interest on BTC"]
 level: beginner
-draft: true
+draft: false
 image:
   url: /images/blog/bitcoin-passive-income-guide-2026.jpg
   alt: "Bitcoin passive income guide 2026 — coins and yield chart"

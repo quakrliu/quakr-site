@@ -9,7 +9,7 @@ author: "Passive Yield Lab Team"
 category: staking
 tags: ["restaking", "EigenLayer", "ETH yield", "liquid restaking", "DeFi", "staking"]
 level: intermediate
-draft: true
+draft: false
 image:
   url: /images/blog/restaking-guide-eigenlayer-2026.jpg
   alt: "EigenLayer restaking diagram showing ETH yield stacking in 2026"

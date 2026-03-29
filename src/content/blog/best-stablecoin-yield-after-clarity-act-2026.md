@@ -6,7 +6,7 @@ category: guides
 tags: ["stablecoin yield after CLARITY Act", "best stablecoin yield 2026", "stablecoin passive income legal", "DeFi lending", "crypto passive income"]
 level: intermediate
 trending: true
-draft: true
+draft: false
 image: "/images/blog/best-stablecoin-yield-after-clarity-act-2026.jpg"
 ---
 

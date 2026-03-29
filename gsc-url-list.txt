@@ -1,0 +1,49 @@
+# Google Search Console URL Submission List
+# passiveyieldlab.com — Generated 2026-03-29
+# Total: 32 blog posts + 3 tools + 5 pages = 40 URLs
+
+## Pages
+https://passiveyieldlab.com/
+https://passiveyieldlab.com/about/
+https://passiveyieldlab.com/resources/
+https://passiveyieldlab.com/disclaimer/
+https://passiveyieldlab.com/privacy/
+
+## Tools
+https://passiveyieldlab.com/tools/staking-calculator/
+https://passiveyieldlab.com/tools/yield-dashboard/
+https://passiveyieldlab.com/tools/aeo-audit/
+
+## Blog Posts
+https://passiveyieldlab.com/blog/ai-automation-business-2026/
+https://passiveyieldlab.com/blog/ai-freelancing-guide-2026/
+https://passiveyieldlab.com/blog/ai-youtube-channel-guide-2026/
+https://passiveyieldlab.com/blog/automated-ai-company-claude-code-2026/
+https://passiveyieldlab.com/blog/beehiiv-review-2026/
+https://passiveyieldlab.com/blog/best-ai-tools-passive-income-2026/
+https://passiveyieldlab.com/blog/best-crypto-lending-platforms-2026/
+https://passiveyieldlab.com/blog/best-crypto-passive-income-strategies-2026/
+https://passiveyieldlab.com/blog/best-stablecoin-yield-after-clarity-act-2026/
+https://passiveyieldlab.com/blog/best-staking-coins-2026/
+https://passiveyieldlab.com/blog/bitcoin-passive-income-2026-earn-yield-wbtc-defi/
+https://passiveyieldlab.com/blog/bitcoin-passive-income-guide-2026/
+https://passiveyieldlab.com/blog/bitfinex-lending-guide-passive-income/
+https://passiveyieldlab.com/blog/clarity-act-stablecoin-yield-2026-update/
+https://passiveyieldlab.com/blog/clarity-act-stablecoin-yield-ban-2026/
+https://passiveyieldlab.com/blog/crypto-passive-income-tax-guide-2026/
+https://passiveyieldlab.com/blog/defi-yield-farming-beginners-guide-2026/
+https://passiveyieldlab.com/blog/earn-interest-stablecoins-guide-2026/
+https://passiveyieldlab.com/blog/elevenlabs-review-2026/
+https://passiveyieldlab.com/blog/ethereum-staking-guide-2026/
+https://passiveyieldlab.com/blog/how-to-earn-passive-income-with-crypto-2026/
+https://passiveyieldlab.com/blog/how-to-stake-sol-marinade-finance/
+https://passiveyieldlab.com/blog/lido-vs-rocket-pool-vs-eigenlayer-2026/
+https://passiveyieldlab.com/blog/make-money-with-ai-2026/
+https://passiveyieldlab.com/blog/make-vs-zapier-2026/
+https://passiveyieldlab.com/blog/restaking-guide-eigenlayer-2026/
+https://passiveyieldlab.com/blog/safest-crypto-interest-accounts-2026/
+https://passiveyieldlab.com/blog/sec-cftc-16-crypto-staking-legal-guide-2026/
+https://passiveyieldlab.com/blog/stablecoin-passive-income-guide-2026/
+https://passiveyieldlab.com/blog/staking-rewards-comparison-2026/
+https://passiveyieldlab.com/blog/staking-vs-yield-farming-vs-lending-2026/
+https://passiveyieldlab.com/blog/yield-bearing-stablecoins-comparison-2026/
