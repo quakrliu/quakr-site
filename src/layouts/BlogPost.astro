@@ -64,7 +64,8 @@ const levelLabels: Record<string, string> = {
 };
 
 // Related articles: same category 2 posts + different category 1 post (S6)
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const now = new Date();
+const allPosts = await getCollection('blog', ({ data }) => !data.draft && data.pubDate <= now);
 const currentUrl = Astro.url.pathname;
 const sameCatPosts = allPosts
   .filter((p) => p.data.category === category && `/blog/${p.id}` !== currentUrl)

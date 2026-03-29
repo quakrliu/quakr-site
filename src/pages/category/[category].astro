@@ -24,9 +24,10 @@ export function getStaticPaths() {
 const { category } = Astro.params;
 const label = categoryLabels[category!] || category;
 
+const now = new Date();
 const allPosts = await getCollection(
   'blog',
-  ({ data }) => !data.draft && data.category === category
+  ({ data }) => !data.draft && data.category === category && data.pubDate <= now
 );
 const posts = allPosts.sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
