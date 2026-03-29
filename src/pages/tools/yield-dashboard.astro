@@ -69,16 +69,6 @@ const faqSchema = JSON.stringify({
         <div class="yd-add-row">
           <select id="coin-add-select" aria-label="Select cryptocurrency">
             <option value="">Select a coin...</option>
-            <option value="ETH">ETH — Ethereum</option>
-            <option value="SOL">SOL — Solana</option>
-            <option value="DOT">DOT — Polkadot</option>
-            <option value="ATOM">ATOM — Cosmos</option>
-            <option value="AVAX">AVAX — Avalanche</option>
-            <option value="ADA">ADA — Cardano</option>
-            <option value="NEAR">NEAR — NEAR Protocol</option>
-            <option value="MATIC">MATIC — Polygon</option>
-            <option value="BNB">BNB — BNB Chain</option>
-            <option value="TIA">TIA — Celestia</option>
           </select>
           <div class="yd-input-wrap">
             <span class="yd-input-prefix">Qty</span>
@@ -889,16 +879,32 @@ const faqSchema = JSON.stringify({
 <script>
 // ── Coin metadata (fallback prices and DeFiLlama pool mappings) ─────
 const COIN_META = {
-  ETH:  { name: 'Ethereum',  fallbackPrice: 3200, fallbackApy: 3.8,  defiLlamaSymbol: 'ETH' },
-  SOL:  { name: 'Solana',    fallbackPrice: 180,  fallbackApy: 7.0,  defiLlamaSymbol: 'SOL' },
-  DOT:  { name: 'Polkadot',  fallbackPrice: 8.5,  fallbackApy: 14.0, defiLlamaSymbol: 'DOT' },
-  ATOM: { name: 'Cosmos',    fallbackPrice: 11,   fallbackApy: 18.0, defiLlamaSymbol: 'ATOM' },
-  AVAX: { name: 'Avalanche', fallbackPrice: 38,   fallbackApy: 8.5,  defiLlamaSymbol: 'AVAX' },
-  ADA:  { name: 'Cardano',   fallbackPrice: 0.52, fallbackApy: 4.0,  defiLlamaSymbol: 'ADA' },
-  NEAR: { name: 'NEAR',      fallbackPrice: 6.2,  fallbackApy: 9.0,  defiLlamaSymbol: 'NEAR' },
-  MATIC:{ name: 'Polygon',   fallbackPrice: 0.85, fallbackApy: 5.0,  defiLlamaSymbol: 'MATIC' },
-  BNB:  { name: 'BNB Chain', fallbackPrice: 600,  fallbackApy: 3.5,  defiLlamaSymbol: 'BNB' },
-  TIA:  { name: 'Celestia',  fallbackPrice: 12,   fallbackApy: 10.0, defiLlamaSymbol: 'TIA' },
+  ETH:  { name: 'Ethereum',      fallbackPrice: 3200,  fallbackApy: 3.8,  defiLlamaSymbol: 'ETH',   cgId: 'ethereum' },
+  BTC:  { name: 'Bitcoin',       fallbackPrice: 66000,  fallbackApy: 1.5,  defiLlamaSymbol: 'WBTC',  cgId: 'bitcoin' },
+  SOL:  { name: 'Solana',        fallbackPrice: 180,   fallbackApy: 7.0,  defiLlamaSymbol: 'SOL',   cgId: 'solana' },
+  BNB:  { name: 'BNB Chain',     fallbackPrice: 600,   fallbackApy: 3.5,  defiLlamaSymbol: 'BNB',   cgId: 'binancecoin' },
+  ADA:  { name: 'Cardano',       fallbackPrice: 0.52,  fallbackApy: 4.0,  defiLlamaSymbol: 'ADA',   cgId: 'cardano' },
+  AVAX: { name: 'Avalanche',     fallbackPrice: 38,    fallbackApy: 8.5,  defiLlamaSymbol: 'AVAX',  cgId: 'avalanche-2' },
+  DOT:  { name: 'Polkadot',      fallbackPrice: 8.5,   fallbackApy: 14.0, defiLlamaSymbol: 'DOT',   cgId: 'polkadot' },
+  ATOM: { name: 'Cosmos',        fallbackPrice: 11,    fallbackApy: 18.0, defiLlamaSymbol: 'ATOM',  cgId: 'cosmos' },
+  NEAR: { name: 'NEAR',          fallbackPrice: 6.2,   fallbackApy: 9.0,  defiLlamaSymbol: 'NEAR',  cgId: 'near' },
+  MATIC:{ name: 'Polygon',       fallbackPrice: 0.85,  fallbackApy: 5.0,  defiLlamaSymbol: 'MATIC', cgId: 'matic-network' },
+  TIA:  { name: 'Celestia',      fallbackPrice: 12,    fallbackApy: 10.0, defiLlamaSymbol: 'TIA',   cgId: 'celestia' },
+  XRP:  { name: 'XRP',           fallbackPrice: 0.62,  fallbackApy: 3.0,  defiLlamaSymbol: 'XRP',   cgId: 'ripple' },
+  SUI:  { name: 'Sui',           fallbackPrice: 1.5,   fallbackApy: 3.5,  defiLlamaSymbol: 'SUI',   cgId: 'sui' },
+  APT:  { name: 'Aptos',         fallbackPrice: 9,     fallbackApy: 7.0,  defiLlamaSymbol: 'APT',   cgId: 'aptos' },
+  INJ:  { name: 'Injective',     fallbackPrice: 25,    fallbackApy: 17.0, defiLlamaSymbol: 'INJ',   cgId: 'injective-protocol' },
+  FTM:  { name: 'Fantom',        fallbackPrice: 0.7,   fallbackApy: 6.0,  defiLlamaSymbol: 'FTM',   cgId: 'fantom' },
+  ALGO: { name: 'Algorand',      fallbackPrice: 0.22,  fallbackApy: 5.5,  defiLlamaSymbol: 'ALGO',  cgId: 'algorand' },
+  EGLD: { name: 'MultiversX',    fallbackPrice: 45,    fallbackApy: 8.0,  defiLlamaSymbol: 'EGLD',  cgId: 'elrond-erd-2' },
+  OSMO: { name: 'Osmosis',       fallbackPrice: 1.2,   fallbackApy: 10.0, defiLlamaSymbol: 'OSMO',  cgId: 'osmosis' },
+  SEI:  { name: 'Sei',           fallbackPrice: 0.5,   fallbackApy: 5.0,  defiLlamaSymbol: 'SEI',   cgId: 'sei-network' },
+  LINK: { name: 'Chainlink',     fallbackPrice: 15,    fallbackApy: 4.5,  defiLlamaSymbol: 'LINK',  cgId: 'chainlink' },
+  ARB:  { name: 'Arbitrum',      fallbackPrice: 1.1,   fallbackApy: 5.0,  defiLlamaSymbol: 'ARB',   cgId: 'arbitrum' },
+  OP:   { name: 'Optimism',      fallbackPrice: 2.5,   fallbackApy: 4.0,  defiLlamaSymbol: 'OP',    cgId: 'optimism' },
+  USDC: { name: 'USD Coin',      fallbackPrice: 1.0,   fallbackApy: 8.0,  defiLlamaSymbol: 'USDC',  cgId: 'usd-coin' },
+  USDT: { name: 'Tether',        fallbackPrice: 1.0,   fallbackApy: 7.5,  defiLlamaSymbol: 'USDT',  cgId: 'tether' },
+  DAI:  { name: 'Dai',           fallbackPrice: 1.0,   fallbackApy: 6.0,  defiLlamaSymbol: 'DAI',   cgId: 'dai' },
 };
 
 // Affiliate links per platform
@@ -985,17 +991,12 @@ async function fetchApyData() {
 
 async function fetchPrices() {
   try {
-    const ids = 'ethereum,solana,polkadot,cosmos,avalanche-2,cardano,near,matic-network,binancecoin,celestia';
+    const ids = Object.values(COIN_META).map(m => m.cgId).join(',');
     const res = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd`);
     if (!res.ok) throw new Error('Price API error');
     const data = await res.json();
-    const map = {
-      'ethereum': 'ETH', 'solana': 'SOL', 'polkadot': 'DOT', 'cosmos': 'ATOM',
-      'avalanche-2': 'AVAX', 'cardano': 'ADA', 'near': 'NEAR', 'matic-network': 'MATIC',
-      'binancecoin': 'BNB', 'celestia': 'TIA',
-    };
-    for (const [id, coin] of Object.entries(map)) {
-      if (data[id]?.usd) priceCache[coin] = data[id].usd;
+    for (const [coin, meta] of Object.entries(COIN_META)) {
+      if (data[meta.cgId]?.usd) priceCache[coin] = data[meta.cgId].usd;
     }
   } catch {
     // Fall back to hardcoded prices
@@ -1213,6 +1214,17 @@ document.getElementById('clear-portfolio-btn').addEventListener('click', () => {
   portfolio = [];
   renderAll();
 });
+
+// ── Populate coin dropdown ────────────────────────────────────────────
+(function populateDropdown() {
+  const select = document.getElementById('coin-add-select');
+  for (const [symbol, meta] of Object.entries(COIN_META)) {
+    const opt = document.createElement('option');
+    opt.value = symbol;
+    opt.textContent = `${symbol} — ${meta.name}`;
+    select.appendChild(opt);
+  }
+})();
 
 // ── Init ─────────────────────────────────────────────────────────────
 async function init() {
