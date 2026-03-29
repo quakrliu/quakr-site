@@ -93,7 +93,7 @@ const aiIncomePosts = aiIncomeSlugs
                     </span>
                   )}
                   {post.data.trending && (
-                    <span class="trending-badge">🔥 Trending</span>
+                    <span class="trending-badge">Trending</span>
                   )}
                 </div>
                 <h4>{post.data.title}</h4>
@@ -205,10 +205,12 @@ const aiIncomePosts = aiIncomeSlugs
   }
 
   .start-here-column-header h3 {
+    font-family: var(--font-display);
     font-size: 1.15rem;
     font-weight: 800;
     color: var(--text-primary);
     margin: 0.25rem 0 0.4rem;
+    letter-spacing: -0.02em;
   }
 
   .start-here-column-header p {
@@ -223,7 +225,7 @@ const aiIncomePosts = aiIncomeSlugs
   }
 
   .column-icon--ai {
-    color: #7c3aed;
+    color: var(--accent);
   }
 
   .start-here-coming-soon {
@@ -248,9 +250,9 @@ const aiIncomePosts = aiIncomeSlugs
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #7c3aed;
-    background: rgba(124, 58, 237, 0.08);
-    border: 1px solid rgba(124, 58, 237, 0.2);
+    color: var(--accent);
+    background: var(--accent-dim);
+    border: 1px solid rgba(74, 144, 217, 0.2);
     padding: 0.2rem 0.6rem;
     border-radius: 9999px;
     width: fit-content;
@@ -258,6 +260,7 @@ const aiIncomePosts = aiIncomeSlugs
   }
 
   .coming-soon-card h4 {
+    font-family: var(--font-display);
     font-size: 1rem;
     font-weight: 700;
     color: var(--text-primary);
