@@ -13,18 +13,17 @@ tags:
   - crypto-2026
 affiliateLinks:
   - name: Binance
-    url: https://www.binance.com/en/register?ref=YOUR_REF
+    url: https://www.binance.com/en/register?ref=725285686
     cta: "Get WBTC on Binance"
   - name: Ledger
-    url: https://shop.ledger.com/?r=YOUR_REF
+    url: https://shop.ledger.com/
     cta: "Secure Your BTC with Ledger"
   - name: CoinLedger
-    url: https://coinledger.io/?via=YOUR_REF
+    url: https://coinledger.io?fpr=4bsqmx
     cta: "Track Your Crypto Taxes"
 seoTitle: "Bitcoin Passive Income 2026: How to Earn Yield on BTC (WBTC + DeFi Guide)"
 seoDescription: "Learn 4 proven ways to earn yield on Bitcoin in 2026 — WBTC on Aave, CeFi lending, BTCfi on L2s, and yield aggregators. Step-by-step guide with real APY rates and risk ratings."
-draft: true
-noindex: true
+draft: false
 ---
 
 # Bitcoin Passive Income 2026: How to Earn Yield on BTC with WBTC + DeFi
@@ -163,7 +162,7 @@ This is the most popular entry point for Bitcoin holders moving into DeFi. Here'
 
 ### Step 1: Get BTC on an Exchange
 
-If you don't already have BTC, [Binance](https://www.binance.com/en/register?ref=YOUR_REF) is the most liquid option to buy BTC with fiat. Make sure you're comfortable with basic exchange use before proceeding.
+If you don't already have BTC, [Binance](https://www.binance.com/en/register?ref=725285686) is the most liquid option to buy BTC with fiat. Make sure you're comfortable with basic exchange use before proceeding.
 
 ### Step 2: Convert BTC to WBTC
 
@@ -171,7 +170,7 @@ If you don't already have BTC, [Binance](https://www.binance.com/en/register?ref
 
 **Option B (More decentralized):** Use a DEX like Uniswap or Curve on Ethereum mainnet to swap ETH for WBTC (you'll need some ETH to pay gas fees).
 
-**Before you convert**, make sure you have a self-custody Ethereum wallet set up — MetaMask or Rabby Wallet are the most compatible with Aave. Write down your seed phrase and store it offline. A hardware wallet like [Ledger](https://shop.ledger.com/?r=YOUR_REF) is strongly recommended for any significant amount.
+**Before you convert**, make sure you have a self-custody Ethereum wallet set up — MetaMask or Rabby Wallet are the most compatible with Aave. Write down your seed phrase and store it offline. A hardware wallet like [Ledger](https://shop.ledger.com/) is strongly recommended for any significant amount.
 
 ### Step 3: Connect to Aave v3
 
@@ -194,7 +193,7 @@ Aave's dashboard shows your current APY and health factor if you've also borrowe
 - **Skipping the small test transaction**: Always send a small amount first to verify the address and process before moving significant funds.
 - **Ignoring health factor (if borrowing)**: If you're using WBTC as collateral to borrow on Aave, a sharp BTC price drop can trigger liquidation. Keep health factor above 1.5.
 - **Trusting high APY without understanding the source**: If a BTCfi protocol is offering 30% APY on BTC, that yield has to come from somewhere. Unsustainable token emissions are common — and they don't last.
-- **Forgetting tax implications**: Every wrap, swap, and DeFi yield event is likely a taxable event in most jurisdictions. Use [CoinLedger](https://coinledger.io/?via=YOUR_REF) to track your transactions automatically — trying to reconstruct DeFi history manually is a nightmare.
+- **Forgetting tax implications**: Every wrap, swap, and DeFi yield event is likely a taxable event in most jurisdictions. Use [CoinLedger](https://coinledger.io?fpr=4bsqmx) to track your transactions automatically — trying to reconstruct DeFi history manually is a nightmare.
 - **Keeping your seed phrase digitally**: Photo on your phone, file on your computer, email to yourself — all bad ideas. Hardware wallets exist for this reason.
 
 ---
@@ -231,7 +230,7 @@ Start conservative: a small WBTC position on Aave, or a flexible BTC earn produc
 
 The key is understanding the risk you're taking on at each step. More yield almost always means more risk — whether it's counterparty risk in CeFi, smart contract risk in DeFi, or bridge risk on L2s.
 
-Start small. Test your setup. And for anything significant, keep your keys in hardware. A [Ledger](https://shop.ledger.com/?r=YOUR_REF) is one of the cheapest forms of insurance you can buy in crypto.
+Start small. Test your setup. And for anything significant, keep your keys in hardware. A [Ledger](https://shop.ledger.com/) is one of the cheapest forms of insurance you can buy in crypto.
 
 *Rates and platform availability are subject to change. Verify all APY figures on official platforms before depositing. This article was last updated March 2026.*
 
