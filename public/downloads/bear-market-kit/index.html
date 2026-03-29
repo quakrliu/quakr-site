@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>The Crypto Bear Market Survival Kit</title>
+<style>
+body { font-family: Georgia, serif; max-width: 700px; margin: 40px auto; padding: 20px; line-height: 1.7; color: #1a1a1a; }
+h1 { color: #1B3A5C; font-size: 28px; border-bottom: 3px solid #2E8B57; padding-bottom: 10px; }
+h2 { color: #1B3A5C; font-size: 22px; margin-top: 30px; }
+h3 { color: #2E8B57; font-size: 18px; }
+table { border-collapse: collapse; width: 100%; margin: 15px 0; }
+th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+th { background: #1B3A5C; color: white; }
+tr:nth-child(even) { background: #f8f9fa; }
+blockquote { border-left: 4px solid #2E8B57; padding-left: 16px; color: #555; margin: 20px 0; }
+code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; }
+a { color: #2E8B57; }
+ul, ol { padding-left: 24px; }
+li { margin-bottom: 6px; }
+</style>
+</head><body>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>The Crypto Bear Market Survival Kit</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">The Crypto Bear Market Survival Kit</h1>
+</header>
+<h1 id="the-crypto-bear-market-survival-kit">The Crypto Bear Market
+Survival Kit</h1>
+<h2 id="passive-income-strategies-that-work-when-prices-drop">7 Passive
+Income Strategies That Work When Prices Drop</h2>
+<p><strong>By Passive Yield Lab</strong> | <a
+href="https://passiveyieldlab.com">passiveyieldlab.com</a></p>
+<p><em>Free Guide — March 2026 Edition</em></p>
+<hr />
+<p>Most people panic when crypto prices drop. They sell at the worst
+possible time, lock in losses, and swear they will never touch crypto
+again — until the next bull run, when they buy back in at the top.</p>
+<p>You are reading this guide because you are not most people.</p>
+<p>Bear markets are not something that happens <em>to</em> you. They are
+something that happens <em>for</em> you — if you know how to use them.
+While speculators flee, the smartest participants in crypto are quietly
+building passive income streams that will compound through the downturn
+and explode when the market recovers.</p>
+<p>This guide gives you seven concrete strategies to generate yield even
+when your portfolio is deep in the red. No hype. No “trust me bro.” Just
+specific protocols, realistic numbers, and step-by-step instructions you
+can act on today.</p>
+<p>Let’s get to work.</p>
+<hr />
+<h2 id="why-bear-markets-are-the-best-time-for-passive-income">Why Bear
+Markets Are the Best Time for Passive Income</h2>
+<p>Here is a counterintuitive truth that experienced crypto investors
+understand: <strong>bear markets often produce higher yields than bull
+markets.</strong></p>
+<p>Why? Three reasons:</p>
+<ol type="1">
+<li><p><strong>Less competition for yield.</strong> When speculators
+leave, the remaining liquidity in DeFi protocols gets a larger share of
+the rewards. Lending pools thin out, which pushes interest rates up for
+those who stay.</p></li>
+<li><p><strong>Cheaper accumulation.</strong> If you believe ETH, SOL,
+or BTC will recover (and historically, they always have after every bear
+market since 2011), then staking at lower prices means you are earning
+yield on assets you are buying at a discount.</p></li>
+<li><p><strong>Protocol incentives increase.</strong> Projects need to
+retain users during downturns. Many increase their staking rewards,
+launch liquidity mining programs, or offer bonus incentives specifically
+to keep capital in their ecosystems.</p></li>
+</ol>
+<p>The bear market is not the time to sit on the sidelines. It is the
+time to position yourself so that when prices recover, you have more
+assets, more income streams, and more knowledge than everyone who
+panicked.</p>
+<p>Here are seven strategies to do exactly that.</p>
+<hr />
+<h2 id="strategy-1-stablecoin-yield-the-safe-haven">Strategy 1:
+Stablecoin Yield — The Safe Haven</h2>
+<p><strong>Risk level:</strong> Low <strong>Estimated APY:</strong>
+5–15% (as of March 2026; APY fluctuates based on market conditions)
+<strong>Best for:</strong> Capital preservation with modest returns</p>
+<p>If you want passive income without exposure to crypto price
+volatility, stablecoin yield is your starting point. You deposit USDC,
+USDT, or DAI into a lending protocol, and borrowers pay you interest.
+Your principal stays pegged to the dollar.</p>
+<h3 id="where-to-earn-stablecoin-yield">Where to earn stablecoin
+yield</h3>
+<ul>
+<li><strong>Aave (Ethereum, Arbitrum, Polygon):</strong> One of the
+oldest and most battle-tested lending protocols. USDC supply rates
+typically range from 5–10% APY during bear markets, sometimes spiking
+higher during periods of high borrowing demand.</li>
+<li><strong>Curve Finance:</strong> Stable pools (like 3pool:
+DAI/USDC/USDT) earn trading fees plus CRV token rewards. Combined APY
+often lands between 5–12%.</li>
+<li><strong>MakerDAO DSR (Dai Savings Rate):</strong> Deposit DAI
+directly into Maker’s savings contract. The rate is set by governance
+and has historically ranged from 5–8%.</li>
+</ul>
+<h3 id="why-this-works-in-a-bear-market">Why this works in a bear
+market</h3>
+<p>Borrowing demand does not disappear in a bear market — it shifts.
+Traders borrow stablecoins to short, protocols need liquidity for
+operations, and institutions use stablecoin lending for treasury
+management. This sustained demand keeps your yield healthy even when
+token prices are falling.</p>
+<h3 id="how-to-get-started">How to get started</h3>
+<ol type="1">
+<li>Move USDC or DAI to a self-custody wallet (MetaMask, Rabby, or
+Ledger)</li>
+<li>Go to <a href="https://app.aave.com">app.aave.com</a> or <a
+href="https://curve.fi">curve.fi</a></li>
+<li>Connect your wallet and deposit into the USDC or DAI supply
+pool</li>
+<li>Your yield accrues automatically — check back weekly</li>
+</ol>
+<p><strong>Important:</strong> Only use audited, established protocols
+with a track record of at least two years. Never chase the highest APY
+on an unknown platform. If a stablecoin yield looks too good to be true,
+it almost certainly is.</p>
+<blockquote>
+<p><em>APY figures are estimates as of March 2026 and will fluctuate.
+Past performance does not guarantee future results.</em></p>
+</blockquote>
+<hr />
+<h2 id="strategy-2-eth-staking-accumulate-while-its-cheap">Strategy 2:
+ETH Staking — Accumulate While It’s Cheap</h2>
+<p><strong>Risk level:</strong> Low to Medium (price exposure to ETH)
+<strong>Estimated APY:</strong> 3–5% (as of March 2026; varies with
+network activity) <strong>Best for:</strong> Long-term ETH believers who
+want to compound</p>
+<p>Ethereum staking is one of the simplest and most reliable passive
+income strategies in crypto. You lock up ETH to help secure the network,
+and you earn newly minted ETH as a reward.</p>
+<p>In a bear market, this becomes a powerful compounding machine: you
+are earning yield on an asset that you are acquiring at depressed
+prices. When ETH recovers, you benefit from both the price appreciation
+<em>and</em> the extra ETH you accumulated.</p>
+<h3 id="liquid-staking-options">Liquid staking options</h3>
+<ul>
+<li><strong>Lido (stETH):</strong> The largest liquid staking protocol.
+You deposit ETH, receive stETH (which earns staking rewards
+automatically), and can still use stETH across DeFi. Approximately 3–4%
+APY.</li>
+<li><strong>Rocket Pool (rETH):</strong> A more decentralized
+alternative. You receive rETH, which appreciates in value relative to
+ETH as staking rewards accrue. Approximately 3–5% APY.</li>
+</ul>
+<h3 id="the-bear-market-compounding-strategy">The bear market
+compounding strategy</h3>
+<ol type="1">
+<li><strong>Dollar-cost average into ETH</strong> weekly or monthly
+during the bear market</li>
+<li><strong>Immediately stake</strong> each purchase through Lido or
+Rocket Pool</li>
+<li><strong>Hold your liquid staking tokens</strong> (stETH or rETH) —
+they continue earning yield</li>
+<li><strong>Optionally:</strong> Use stETH as collateral on Aave to
+borrow stablecoins, then earn additional yield on those stablecoins
+(advanced — increases risk)</li>
+</ol>
+<p>Over a 12–18 month bear market, this approach means you end up with
+significantly more ETH than if you had simply bought and held.</p>
+<h3 id="what-you-need-to-know">What you need to know</h3>
+<ul>
+<li>Liquid staking tokens (stETH, rETH) can temporarily trade at a
+slight discount to ETH during market stress. This is normal and
+typically corrects.</li>
+<li>Staking rewards come from network transaction fees and new ETH
+issuance. The rate varies depending on how many validators are
+active.</li>
+<li>Your ETH is not locked — liquid staking tokens can be sold or
+redeemed at any time.</li>
+</ul>
+<blockquote>
+<p><em>APY figures are estimates as of March 2026. Staking rewards vary
+based on network conditions and validator participation rates.</em></p>
+</blockquote>
+<hr />
+<h2 id="strategy-3-sol-native-staking-high-yield-simple-setup">Strategy
+3: SOL Native Staking — High Yield, Simple Setup</h2>
+<p><strong>Risk level:</strong> Medium (price exposure to SOL)
+<strong>Estimated APY:</strong> 6–8% (as of March 2026; subject to
+network conditions) <strong>Best for:</strong> SOL holders who want
+straightforward staking income</p>
+<p>Solana’s native staking offers one of the highest base staking yields
+among major Layer 1 blockchains. The process is simple, the rewards are
+consistent, and you can set it up in under five minutes.</p>
+<h3 id="how-to-stake-sol">How to stake SOL</h3>
+<p><strong>Option A: Native staking via Phantom wallet</strong> 1. Open
+Phantom wallet and navigate to your SOL balance 2. Tap “Start earning
+SOL” 3. Choose a validator (look for high uptime, reasonable commission
+— typically 5–10%) 4. Confirm the delegation 5. Rewards begin accruing
+after the current epoch ends (approximately 2–3 days)</p>
+<p><strong>Option B: Liquid staking via Marinade (mSOL) or Jito
+(JitoSOL)</strong> - Marinade distributes your stake across many
+validators for better decentralization. You receive mSOL, which
+appreciates as staking rewards accrue. Approximately 7–8% APY. - Jito
+captures MEV (maximal extractable value) rewards on top of base staking
+yields. JitoSOL has historically offered a slight premium over standard
+staking. Approximately 7–9% APY.</p>
+<h3 id="why-sol-staking-shines-in-a-bear-market">Why SOL staking shines
+in a bear market</h3>
+<p>Solana’s staking yield is partially driven by inflation and partially
+by transaction fees. Even when trading volumes decline, the inflation
+component provides a consistent baseline return. You are effectively
+earning more SOL while buying it at lower prices — the same compounding
+logic as ETH staking, but with a higher base APY.</p>
+<h3 id="things-to-consider">Things to consider</h3>
+<ul>
+<li>When you unstake SOL natively, there is a cooldown period of
+approximately one epoch (2–3 days). Liquid staking tokens (mSOL,
+JitoSOL) can be swapped instantly.</li>
+<li>Choose validators with high uptime and reasonable commission rates.
+A validator with 100% commission keeps all your rewards.</li>
+<li>Diversify across multiple validators or use a liquid staking
+solution that does this automatically.</li>
+</ul>
+<blockquote>
+<p><em>APY figures are estimates as of March 2026. Actual yields depend
+on network inflation schedule, validator performance, and MEV capture
+rates.</em></p>
+</blockquote>
+<hr />
+<h2
+id="strategy-4-liquidity-provision-for-the-more-adventurous">Strategy 4:
+Liquidity Provision — For the More Adventurous</h2>
+<p><strong>Risk level:</strong> Medium to High <strong>Estimated
+APY:</strong> 5–30%+ (highly variable; as of March 2026) <strong>Best
+for:</strong> Experienced DeFi users comfortable with impermanent
+loss</p>
+<p>Liquidity provision (LP) means depositing pairs of tokens into a
+decentralized exchange so that other users can trade against your
+liquidity. In return, you earn a share of trading fees — and often
+additional token rewards.</p>
+<h3 id="where-to-provide-liquidity">Where to provide liquidity</h3>
+<ul>
+<li><strong>Curve Finance — Stable pools:</strong> Pairs like USDC/USDT
+or stETH/ETH experience minimal impermanent loss because the assets are
+closely correlated. Typical APY: 5–15%.</li>
+<li><strong>Uniswap V3 — Concentrated liquidity:</strong> Allows you to
+set a price range for your liquidity. Tighter ranges earn higher fees
+but require more active management. Typical APY: 10–30%+ for active
+managers.</li>
+<li><strong>Aerodrome (Base chain):</strong> Offers attractive LP
+rewards on the Base network with lower gas fees than Ethereum
+mainnet.</li>
+</ul>
+<h3 id="impermanent-loss-explained-simply">Impermanent loss — explained
+simply</h3>
+<p>Impermanent loss happens when the price ratio of your deposited
+tokens changes. If you deposit equal values of ETH and USDC, and ETH
+drops 50%, your position will be worth less than if you had simply held
+both assets separately.</p>
+<p><strong>When impermanent loss is manageable:</strong> -
+Stable-to-stable pairs (USDC/USDT) — almost zero impermanent loss -
+Correlated pairs (stETH/ETH) — minimal impermanent loss - High-fee pools
+where trading volume offsets the loss</p>
+<p><strong>When to avoid liquidity provision:</strong> - Volatile pairs
+during extreme market moves - Low-volume pools where fees do not
+compensate for impermanent loss - Any pool on an unaudited or brand-new
+protocol</p>
+<h3 id="bear-market-lp-strategy">Bear market LP strategy</h3>
+<p>Focus on stable pools during bear markets. The trading fees may be
+lower than during a bull run, but your impermanent loss risk is also
+minimized. This is about steady, consistent income — not chasing the
+highest number.</p>
+<blockquote>
+<p><em>APY figures are estimates as of March 2026 and vary significantly
+based on pool selection, trading volume, and market volatility.
+Impermanent loss can result in reduced principal.</em></p>
+</blockquote>
+<hr />
+<h2
+id="strategy-5-ai-powered-yield-monitoring-and-optimization">Strategy 5:
+AI-Powered Yield Monitoring and Optimization</h2>
+<p><strong>Risk level:</strong> Varies (depends on underlying
+strategies) <strong>Estimated APY:</strong> N/A (this is a tool
+strategy, not a yield source itself) <strong>Best for:</strong> Anyone
+running multiple yield strategies who wants to optimize returns</p>
+<p>One of the biggest advantages you have in 2026 that previous bear
+market survivors did not: AI tools that can monitor, compare, and alert
+you about yield opportunities across dozens of protocols
+simultaneously.</p>
+<h3 id="how-to-use-ai-for-yield-optimization">How to use AI for yield
+optimization</h3>
+<p><strong>1. Automated yield monitoring</strong></p>
+<p>Instead of manually checking Aave, Curve, Lido, and a dozen other
+protocols daily, set up automated monitoring:</p>
+<ul>
+<li>Use <a href="https://www.make.com/?pc=passiveyieldlab">Make.com</a>
+to create workflows that pull APY data from DeFi protocols via their
+APIs</li>
+<li>Set up alerts that notify you when yields cross certain thresholds
+(for example: “Alert me when USDC yield on Aave exceeds 10%”)</li>
+<li>Create a weekly digest that summarizes all your active positions and
+their current yields</li>
+</ul>
+<p><strong>2. Cross-protocol comparison</strong></p>
+<p>AI tools can analyze yield opportunities across chains and protocols
+faster than you can manually check. Use them to:</p>
+<ul>
+<li>Compare risk-adjusted yields (a 20% APY on an unaudited protocol is
+not better than 8% on Aave)</li>
+<li>Track historical yield trends to identify seasonal patterns</li>
+<li>Monitor smart contract risk scores and protocol health metrics</li>
+</ul>
+<p><strong>3. Portfolio rebalancing alerts</strong></p>
+<p>Set up automation workflows that alert you when: - A stablecoin
+depegs more than 0.5% (time to exit that pool) - A protocol’s TVL drops
+sharply (potential risk signal) - Better opportunities appear that
+justify the gas cost of moving your capital</p>
+<h3 id="getting-started-with-make.com">Getting started with
+Make.com</h3>
+<p><a href="https://www.make.com/?pc=passiveyieldlab">Make.com</a>
+(formerly Integromat) is one of the most powerful automation platforms
+for this purpose. You can connect DeFi data sources, spreadsheets,
+messaging apps, and email to build custom monitoring dashboards without
+writing code.</p>
+<p>A simple starter workflow: 1. Trigger: Run every 6 hours 2. Action:
+Pull USDC supply rate from Aave API 3. Filter: Only continue if rate
+&gt; 8% 4. Action: Send you a Telegram or email notification</p>
+<p>This takes about 15 minutes to set up and runs automatically
+forever.</p>
+<blockquote>
+<p><em>Make.com is a third-party tool. Always review the security
+implications of connecting financial data to any automation platform.
+Never share private keys or seed phrases with any service.</em></p>
+</blockquote>
+<hr />
+<h2 id="strategy-6-build-content-assets-during-the-downtime">Strategy 6:
+Build Content Assets During the Downtime</h2>
+<p><strong>Risk level:</strong> Zero (financial) <strong>Estimated
+return:</strong> Variable — potentially thousands per month once
+established <strong>Best for:</strong> Anyone willing to invest time
+instead of (or alongside) money</p>
+<p>This is the strategy that almost nobody talks about, but it might be
+the most valuable one in this entire guide.</p>
+<p>Bear markets are boring. Trading volume drops. Social media
+engagement declines. Most crypto content creators stop publishing
+because the clicks dry up.</p>
+<p>This is exactly why you should start now.</p>
+<h3 id="why-bear-market-content-wins">Why bear market content wins</h3>
+<ul>
+<li><strong>Less competition.</strong> The influencers who only show up
+for bull markets will disappear. The search results, newsletter inboxes,
+and social feeds have room for you.</li>
+<li><strong>SEO compounds over time.</strong> An article you publish
+today will be indexed, ranked, and generating organic traffic by the
+time the next bull run starts. You cannot buy that head start
+later.</li>
+<li><strong>Trust is built in hard times.</strong> The people who
+provide useful, honest information during a bear market earn a level of
+credibility that fair-weather creators never will.</li>
+</ul>
+<h3 id="what-to-build">What to build</h3>
+<p><strong>1. Start a crypto newsletter</strong></p>
+<p><a href="https://www.beehiiv.com/?via=passiveyieldlab">Beehiiv</a> is
+the platform we recommend for crypto newsletters. It is free to start,
+has built-in monetization tools (paid subscriptions, ad network,
+referral program), and scales with you.</p>
+<p>Your newsletter does not need to be daily. A weekly email covering: -
+The best yield opportunities you found that week - One educational
+concept explained clearly - A market sentiment check</p>
+<p>That is enough to build a loyal audience. When the bull market
+returns, you will have thousands of subscribers ready to engage with
+your content and recommendations.</p>
+<p><strong>2. Create educational content</strong></p>
+<p>Write guides, tutorials, and explainers about the strategies in this
+very PDF. Topics like “How to stake ETH” or “Best stablecoin yields” are
+searched thousands of times per month — even during bear markets.</p>
+<p>Publish on a blog, Medium, or your own website. Every piece of
+content is an asset that generates traffic for months or years.</p>
+<p><strong>3. Build tools and resources</strong></p>
+<p>Spreadsheet templates for tracking yield, comparison charts for
+staking providers, risk assessment checklists — these are the kinds of
+resources that people bookmark, share, and keep coming back to. They
+also make excellent lead magnets for growing your email list.</p>
+<h3 id="the-math">The math</h3>
+<p>If you publish one quality article per week during a 12-month bear
+market, you will have 52 articles indexed in search engines by the time
+the next bull run starts. At even a modest 100 visitors per article per
+month, that is 5,200 monthly visitors — and if you have affiliate links
+and a newsletter signup, those visitors turn into recurring revenue.</p>
+<p>This is the closest thing to “free money” in crypto, and it requires
+zero capital.</p>
+<blockquote>
+<p><em>Content income is not guaranteed. Results depend on quality,
+consistency, topic selection, and market conditions.</em></p>
+</blockquote>
+<hr />
+<h2 id="strategy-7-defi-lending-be-the-bank">Strategy 7: DeFi Lending —
+Be the Bank</h2>
+<p><strong>Risk level:</strong> Medium <strong>Estimated APY:</strong>
+3–12% (as of March 2026; varies by asset and protocol) <strong>Best
+for:</strong> Holders of major crypto assets who want yield without
+selling</p>
+<p>DeFi lending is the backbone of decentralized finance. You deposit
+your crypto into a lending protocol, borrowers put up collateral to
+borrow it, and you earn interest. No middlemen, no bank approval, no
+waiting.</p>
+<h3 id="where-to-lend">Where to lend</h3>
+<ul>
+<li><strong>Aave:</strong> The largest DeFi lending protocol. Supports
+ETH, WBTC, stablecoins, and dozens of other assets across Ethereum,
+Arbitrum, Polygon, Optimism, and more. Estimated APY: 1–8% depending on
+the asset.</li>
+<li><strong>Compound:</strong> One of the original DeFi lending
+protocols. Focused on Ethereum mainnet. Estimated APY: 2–7% for major
+assets.</li>
+<li><strong>Morpho:</strong> An optimization layer that sits on top of
+Aave and Compound, matching lenders and borrowers peer-to-peer for
+improved rates. Can offer 1–3% higher APY than the base protocol.</li>
+</ul>
+<h3 id="how-defi-lending-works">How DeFi lending works</h3>
+<ol type="1">
+<li>You deposit an asset (say, 10 ETH) into a lending pool</li>
+<li>Borrowers post collateral worth more than what they borrow
+(overcollateralized)</li>
+<li>Borrowers pay interest, which flows to you as the lender</li>
+<li>You can withdraw your deposit at any time (subject to pool
+liquidity)</li>
+</ol>
+<h3 id="risks-and-how-to-mitigate-them">Risks and how to mitigate
+them</h3>
+<p><strong>Smart contract risk:</strong> Even audited protocols can have
+vulnerabilities. Mitigation: only use protocols with a multi-year track
+record, multiple audits, and significant total value locked (TVL).</p>
+<p><strong>Liquidity risk:</strong> In extreme scenarios, all the assets
+in a lending pool may be borrowed, and you temporarily cannot withdraw.
+Mitigation: use large, liquid pools and monitor utilization rates. If a
+pool is above 90% utilization, consider moving to a less crowded
+pool.</p>
+<p><strong>Oracle manipulation:</strong> Lending protocols rely on price
+oracles. If an oracle is manipulated, it can trigger incorrect
+liquidations or allow undercollateralized borrowing. Mitigation: stick
+with protocols that use Chainlink or other reputable oracle
+providers.</p>
+<p><strong>Bad debt / cascading liquidations:</strong> If collateral
+prices crash faster than liquidators can act, the protocol may
+accumulate bad debt. Mitigation: prefer protocols with conservative
+loan-to-value ratios and proven liquidation mechanisms.</p>
+<h3 id="bear-market-lending-strategy">Bear market lending strategy</h3>
+<p>During bear markets, lending stablecoins tends to offer better
+risk-adjusted returns than lending volatile assets. Borrowing demand for
+stablecoins stays relatively high (shorts, operational needs), while the
+demand to borrow volatile assets often drops. Consider:</p>
+<ul>
+<li>Lending USDC or DAI on Aave for the most consistent returns</li>
+<li>Lending ETH on Aave or Compound if you want yield on your ETH stack
+without selling</li>
+<li>Using Morpho for optimized rates on top of these base protocols</li>
+</ul>
+<blockquote>
+<p><em>APY figures are estimates as of March 2026. DeFi lending involves
+smart contract risk, liquidity risk, and potential loss of principal.
+Only deposit what you can afford to lose.</em></p>
+</blockquote>
+<hr />
+<h2 id="your-30-day-bear-market-action-plan">Your 30-Day Bear Market
+Action Plan</h2>
+<p>Knowing seven strategies is useless if you never act. Here is a
+four-week plan to go from reading to earning.</p>
+<h3 id="week-1-foundation-days-17">Week 1: Foundation (Days 1–7)</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" /><strong>Day 1–2:</strong> Set up a
+self-custody wallet if you do not have one (MetaMask, Rabby, or Ledger
+hardware wallet for larger amounts)</label></li>
+<li><label><input type="checkbox" /><strong>Day 3:</strong> Move a small
+test amount (no more than $100) to your wallet</label></li>
+<li><label><input type="checkbox" /><strong>Day 4–5:</strong> Deposit
+into one stablecoin yield position (Aave USDC or Curve 3pool) — just to
+experience the process</label></li>
+<li><label><input type="checkbox" /><strong>Day 6–7:</strong> Research
+and choose one additional strategy from this guide that matches your
+risk tolerance</label></li>
+</ul>
+<h3 id="week-2-first-real-positions-days-814">Week 2: First Real
+Positions (Days 8–14)</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" /><strong>Day 8–9:</strong> Decide on
+your total capital allocation for passive income strategies. A
+conservative starting point: no more than 20% of your total crypto
+holdings</label></li>
+<li><label><input type="checkbox" /><strong>Day 10–11:</strong> Open
+your first real stablecoin yield position</label></li>
+<li><label><input type="checkbox" /><strong>Day 12–13:</strong> If you
+hold ETH or SOL, set up staking through one of the recommended liquid
+staking providers</label></li>
+<li><label><input type="checkbox" /><strong>Day 14:</strong> Set up a
+tracking spreadsheet or use a portfolio tracker (DeBank, Zapper) to
+monitor all your positions in one place</label></li>
+</ul>
+<h3 id="week-3-optimize-and-automate-days-1521">Week 3: Optimize and
+Automate (Days 15–21)</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" /><strong>Day 15–16:</strong> Set up
+yield monitoring alerts using <a
+href="https://www.make.com/?pc=passiveyieldlab">Make.com</a> or a simple
+spreadsheet you check weekly</label></li>
+<li><label><input type="checkbox" /><strong>Day 17–18:</strong> Compare
+your current yields against alternatives. Are you getting the best
+risk-adjusted return?</label></li>
+<li><label><input type="checkbox" /><strong>Day 19–21:</strong> Set up a
+recurring buy schedule (weekly or biweekly) for any assets you are
+staking. Automate this through your exchange</label></li>
+</ul>
+<h3 id="week-4-build-for-the-future-days-2230">Week 4: Build for the
+Future (Days 22–30)</h3>
+<ul class="task-list">
+<li><label><input type="checkbox" /><strong>Day 22–24:</strong> Start
+building a content asset: sign up for <a
+href="https://www.beehiiv.com/?via=passiveyieldlab">Beehiiv</a>, draft
+your first newsletter issue, or write your first blog post</label></li>
+<li><label><input type="checkbox" /><strong>Day 25–27:</strong> Review
+all your positions. Calculate your projected annual income at current
+rates. Adjust allocations if needed</label></li>
+<li><label><input type="checkbox" /><strong>Day 28–30:</strong> Plan
+your next three months. Which strategies will you expand? What
+percentage of yield will you reinvest versus take as
+income?</label></li>
+</ul>
+<p><strong>The key principle:</strong> Start small, learn by doing, then
+scale what works. You do not need to deploy all seven strategies at
+once. Even one well-executed strategy puts you ahead of 95% of crypto
+participants who are doing nothing during the bear market.</p>
+<hr />
+<h2 id="risk-disclaimer">Risk Disclaimer</h2>
+<p>This guide is provided for educational and informational purposes
+only. It does not constitute financial advice, investment advice, tax
+advice, or legal advice.</p>
+<p><strong>Key risks to understand:</strong></p>
+<ul>
+<li><strong>Crypto assets are volatile.</strong> Prices can drop
+significantly, and past performance does not predict future results. You
+may lose some or all of your principal.</li>
+<li><strong>DeFi protocols carry smart contract risk.</strong> Even
+audited protocols can contain undiscovered vulnerabilities. Hacks and
+exploits have resulted in significant losses for users of DeFi
+protocols.</li>
+<li><strong>APY figures are estimates.</strong> All yield percentages
+mentioned in this guide are approximate, based on conditions observed as
+of March 2026, and will fluctuate over time. No yield is
+guaranteed.</li>
+<li><strong>Regulatory risk.</strong> Crypto regulations vary by
+jurisdiction and are evolving rapidly. Some strategies described here
+may not be available or legal in all regions. Consult a qualified
+professional regarding the regulations that apply to you.</li>
+<li><strong>Tax obligations.</strong> Staking rewards, lending interest,
+and DeFi yield may be taxable events in your jurisdiction. Consult a tax
+professional to understand your obligations. Consider using a dedicated
+crypto tax tool such as <a
+href="https://coinledger.io/?via=passiveyieldlab">CoinLedger</a> to
+track your transactions.</li>
+<li><strong>This is not financial advice.</strong> Always do your own
+research (DYOR). Never invest more than you can afford to lose. Consider
+consulting a licensed financial advisor before making investment
+decisions.</li>
+</ul>
+<p>The author and Passive Yield Lab are not responsible for any losses
+incurred from acting on the information in this guide.</p>
+<hr />
+<h2 id="about-passive-yield-lab">About Passive Yield Lab</h2>
+<p>Passive Yield Lab is your reliable guide to generating passive income
+in crypto — in bull markets, bear markets, and everything in
+between.</p>
+<p>We publish weekly strategies, protocol reviews, and yield analysis to
+help you make smarter decisions with your crypto assets. No hype. No
+shilling. Just data-driven, honest guidance.</p>
+<p><strong>Get free weekly strategies delivered to your inbox:</strong>
+<a
+href="https://passiveyieldlab.com/newsletter">passiveyieldlab.com/newsletter</a></p>
+<p><strong>Visit our website:</strong> <a
+href="https://passiveyieldlab.com">passiveyieldlab.com</a></p>
+<p><strong>Follow us on X:</strong> <a
+href="https://x.com/passiveyieldlab"><span class="citation"
+data-cites="passiveyieldlab">@passiveyieldlab</span></a></p>
+<hr />
+<h2 id="recommended-tools-and-resources">Recommended Tools and
+Resources</h2>
+<p>These are the tools we use and recommend. Some links below are
+affiliate links, meaning we may earn a commission at no extra cost to
+you. We only recommend tools we genuinely use and trust.</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 42%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Staking Calculator</strong></td>
+<td>Model your staking returns across different scenarios</td>
+<td><a
+href="https://passiveyieldlab.com/tools/staking-calculator">passiveyieldlab.com/tools/staking-calculator</a></td>
+</tr>
+<tr>
+<td><strong>CoinLedger</strong></td>
+<td>Crypto tax reporting — auto-import transactions, generate tax
+forms</td>
+<td><a
+href="https://coinledger.io/?via=passiveyieldlab">coinledger.io</a></td>
+</tr>
+<tr>
+<td><strong>Beehiiv</strong></td>
+<td>Start your own crypto newsletter (free plan available)</td>
+<td><a
+href="https://www.beehiiv.com/?via=passiveyieldlab">beehiiv.com</a></td>
+</tr>
+<tr>
+<td><strong>Make.com</strong></td>
+<td>Automate yield monitoring and alerts without coding</td>
+<td><a href="https://www.make.com/?pc=passiveyieldlab">make.com</a></td>
+</tr>
+<tr>
+<td><strong>Ledger</strong></td>
+<td>Hardware wallet for securing your crypto assets</td>
+<td><a
+href="https://shop.ledger.com/?r=passiveyieldlab">ledger.com</a></td>
+</tr>
+<tr>
+<td><strong>DeBank</strong></td>
+<td>Track all your DeFi positions across chains in one dashboard</td>
+<td><a href="https://debank.com">debank.com</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Copyright 2026 Passive Yield Lab. All rights reserved.</em>
+<em>This guide may not be reproduced or distributed without
+permission.</em> <em>Last updated: March 2026</em></p>
+</body>
+</html>
+</body></html>
