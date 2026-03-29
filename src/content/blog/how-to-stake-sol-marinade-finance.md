@@ -16,6 +16,14 @@ draft: false
 level: beginner
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**Marinade Finance, Solana's largest liquid staking protocol with $1.8B TVL, pays 6.5–7.2% APY on mSOL as of March 2026. mSOL can be used as DeFi collateral while staking rewards compound automatically. No lockup period — mSOL can be swapped instantly on Solana DEXs.**
+
+*Last updated: 2026-03-29*
+
+</div>
+
 ## Why Stake SOL?
 
 Solana is one of the most popular proof-of-stake blockchains, and staking your SOL is one of the simplest ways to earn passive income in crypto. Instead of letting your tokens sit idle in a wallet, staking puts them to work securing the network — and you get rewarded for it.
@@ -198,6 +206,131 @@ In 2023, some validators offered above 8% APY. In early 2026, the range sits at 
 This compression happens slowly, and it doesn't make staking a bad deal — the network's growing transaction volume and MEV distribution partially offsets it. But it does mean that stakers who established their positions earlier benefit from the combination of higher historical yields and a larger compounded base.
 
 If you're waiting for a "better time" to start staking, it's worth asking what exactly you're waiting for. The price? Staking doesn't require selling — you keep your SOL exposure. The right amount? Start with whatever you're comfortable with. A more perfect protocol? Marinade has been running since 2021. The perfect time tends to be the time you actually started.
+
+---
+
+## FAQ
+
+### What APY does Marinade Finance pay on staked SOL? {#faq-marinade-apy}
+
+Marinade Finance pays 6.5–7.2% APY on mSOL as of March 2026. Yield fluctuates based on network-wide staking participation, validator commission rates, MEV rewards distribution, and Marinade's 2% protocol fee. Solana APY has compressed from 8%+ in 2023 as total staked SOL increased.
+
+*Last updated: 2026-03-29*
+
+### What is mSOL and how does it work? {#faq-msol-explained}
+
+mSOL is Marinade's liquid staking token. When you stake SOL with Marinade, you receive mSOL representing your staked SOL plus accumulated rewards. The mSOL/SOL exchange rate increases over time as staking rewards accrue — meaning mSOL automatically appreciates in value without requiring manual reward claims.
+
+*Last updated: 2026-03-29*
+
+### Is Marinade Finance safe for staking SOL? {#faq-marinade-safety}
+
+Marinade has operated since 2021 with $1.8B TVL and no major incidents. Smart contracts have been audited by multiple firms. The main risk is smart contract bugs — no code is perfectly secure. Marinade distributes stake across 400+ validators, minimizing single-validator risk. Never stake more than you can afford to lose.
+
+*Last updated: 2026-03-29*
+
+### How is liquid staking with Marinade different from native SOL staking? {#faq-liquid-vs-native-staking}
+
+Native staking locks SOL for ~2 days during unstaking and requires manual reward management. Marinade's liquid staking gives you mSOL — tradeable instantly on DEXs, usable as DeFi collateral, with automatic compounding. The trade-off is Marinade's 2% protocol fee and added smart contract risk.
+
+*Last updated: 2026-03-29*
+
+### Can I use mSOL in DeFi while still earning staking rewards? {#faq-msol-defi}
+
+Yes. mSOL earns staking rewards regardless of where it's held or deployed. You can lend mSOL on Kamino or marginfi, provide mSOL/SOL liquidity on Orca or Raydium, or use mSOL as collateral for borrowing — all while the underlying SOL stake continues compounding. Adding DeFi layers introduces additional smart contract risk.
+
+*Last updated: 2026-03-29*
+
+### How do I unstake SOL from Marinade Finance? {#faq-marinade-unstaking}
+
+Two options: swap mSOL back to SOL instantly on a DEX like Orca (small slippage), or use Marinade's delayed unstake (native unbonding, ~2 days, no slippage). Instant swaps are available as long as there's liquidity in mSOL/SOL pools. For large amounts, delayed unstake avoids price impact.
+
+*Last updated: 2026-03-29*
+
+### How are Marinade staking rewards taxed? {#faq-marinade-tax}
+
+In most jurisdictions (U.S., UK, EU), staking rewards are treated as ordinary income at the time of receipt, valued at the market price of the SOL received. When you later sell mSOL or convert back to SOL, any price appreciation is a separate capital gain. Use crypto tax software to track mSOL's accruing value accurately.
+
+*Last updated: 2026-03-29*
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What APY does Marinade Finance pay on staked SOL?",
+      "datePublished": "2026-03-08",
+      "dateModified": "2026-03-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Marinade Finance pays 6.5–7.2% APY on mSOL as of March 2026. Yield fluctuates based on network-wide staking participation, validator commission rates, MEV rewards distribution, and Marinade's 2% protocol fee. Solana APY has compressed from 8%+ in 2023 as total staked SOL increased."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is mSOL and how does it work?",
+      "datePublished": "2026-03-08",
+      "dateModified": "2026-03-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "mSOL is Marinade's liquid staking token. When you stake SOL with Marinade, you receive mSOL representing your staked SOL plus accumulated rewards. The mSOL/SOL exchange rate increases over time as staking rewards accrue — meaning mSOL automatically appreciates in value without requiring manual reward claims."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Marinade Finance safe for staking SOL?",
+      "datePublished": "2026-03-08",
+      "dateModified": "2026-03-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Marinade has operated since 2021 with $1.8B TVL and no major incidents. Smart contracts have been audited by multiple firms. The main risk is smart contract bugs — no code is perfectly secure. Marinade distributes stake across 400+ validators, minimizing single-validator risk. Never stake more than you can afford to lose."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is liquid staking with Marinade different from native SOL staking?",
+      "datePublished": "2026-03-08",
+      "dateModified": "2026-03-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Native staking locks SOL for ~2 days during unstaking and requires manual reward management. Marinade's liquid staking gives you mSOL — tradeable instantly on DEXs, usable as DeFi collateral, with automatic compounding. The trade-off is Marinade's 2% protocol fee and added smart contract risk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use mSOL in DeFi while still earning staking rewards?",
+      "datePublished": "2026-03-08",
+      "dateModified": "2026-03-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. mSOL earns staking rewards regardless of where it's held or deployed. You can lend mSOL on Kamino or marginfi, provide mSOL/SOL liquidity on Orca or Raydium, or use mSOL as collateral for borrowing — all while the underlying SOL stake continues compounding. Adding DeFi layers introduces additional smart contract risk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I unstake SOL from Marinade Finance?",
+      "datePublished": "2026-03-08",
+      "dateModified": "2026-03-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Two options: swap mSOL back to SOL instantly on a DEX like Orca (small slippage), or use Marinade's delayed unstake (native unbonding, ~2 days, no slippage). Instant swaps are available as long as there's liquidity in mSOL/SOL pools. For large amounts, delayed unstake avoids price impact."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are Marinade staking rewards taxed?",
+      "datePublished": "2026-03-08",
+      "dateModified": "2026-03-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In most jurisdictions (U.S., UK, EU), staking rewards are treated as ordinary income at the time of receipt, valued at the market price of the SOL received. When you later sell mSOL or convert back to SOL, any price appreciation is a separate capital gain. Use crypto tax software to track mSOL's accruing value accurately."
+      }
+    }
+  ]
+}
+</script>
 
 ---
 
