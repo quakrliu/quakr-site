@@ -1013,13 +1013,10 @@ function categorizePool(pool) {
 // ── Render functions ────────────────────────────────────────────────
 function renderPortfolio() {
   const tbody = document.getElementById('portfolio-tbody');
-  const emptyRow = document.getElementById('empty-row');
   const summary = document.getElementById('portfolio-summary');
 
   if (portfolio.length === 0) {
-    tbody.innerHTML = '';
-    tbody.appendChild(emptyRow);
-    emptyRow.style.display = '';
+    tbody.innerHTML = '<tr class="yd-empty-row"><td colspan="7">Add coins above to build your portfolio.</td></tr>';
     summary.style.display = 'none';
     document.getElementById('projections-section').style.display = 'none';
     document.getElementById('comparison-section').style.display = 'none';
@@ -1028,7 +1025,6 @@ function renderPortfolio() {
     return;
   }
 
-  emptyRow.style.display = 'none';
   tbody.innerHTML = '';
 
   let totalValue = 0;
