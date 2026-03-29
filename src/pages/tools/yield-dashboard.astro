@@ -1,0 +1,1239 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'Crypto Yield Dashboard 2026 — Compare APY Across Platforms';
+const description = 'Build your personalized crypto yield portfolio. Compare live APY rates across Binance, Lido, Aave & more. Track projected earnings with our free dashboard.';
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a crypto yield dashboard?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A crypto yield dashboard lets you track and compare staking and DeFi yields across multiple coins and platforms in one place. You can simulate projected earnings based on your holdings and current APY rates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does the APY data come from?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "APY data is fetched from DeFiLlama, an open-source DeFi analytics aggregator. Rates are approximate and change frequently — always verify on the platform before staking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my portfolio data stored anywhere?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your portfolio is saved locally in your browser using localStorage. No data is sent to any server. You can clear it at any time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the risk score mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The risk score is a simplified indicator based on platform type: centralized exchanges (lower risk but custodial), liquid staking protocols (medium risk), and DeFi lending protocols (higher risk due to smart contract exposure). It is not financial advice."
+      }
+    }
+  ]
+});
+---
+
+<BaseLayout title={title} description={description} ogImage="/og/tools.svg" articleSchema={faqSchema}>
+  <div class="yd-page">
+
+    <!-- Hero -->
+    <section class="yd-hero">
+      <span class="yd-badge">Free Tool</span>
+      <h1>Personalized Yield <span class="accent">Dashboard</span></h1>
+      <p>Build your crypto portfolio, compare live APY rates across platforms, and see exactly how much you could earn.</p>
+    </section>
+
+    <!-- Portfolio Builder -->
+    <section class="yd-section">
+      <div class="yd-panel">
+        <div class="yd-panel-header">
+          <h2 class="yd-section-title">Your Portfolio</h2>
+          <div class="yd-header-actions">
+            <button class="yd-btn-sm" id="load-portfolio-btn" title="Load saved portfolio">Load Saved</button>
+            <button class="yd-btn-sm yd-btn-outline" id="clear-portfolio-btn" title="Clear all coins">Clear</button>
+          </div>
+        </div>
+
+        <!-- Add coin form -->
+        <div class="yd-add-row">
+          <select id="coin-add-select" aria-label="Select cryptocurrency">
+            <option value="">Select a coin...</option>
+            <option value="ETH">ETH — Ethereum</option>
+            <option value="SOL">SOL — Solana</option>
+            <option value="DOT">DOT — Polkadot</option>
+            <option value="ATOM">ATOM — Cosmos</option>
+            <option value="AVAX">AVAX — Avalanche</option>
+            <option value="ADA">ADA — Cardano</option>
+            <option value="NEAR">NEAR — NEAR Protocol</option>
+            <option value="MATIC">MATIC — Polygon</option>
+            <option value="BNB">BNB — BNB Chain</option>
+            <option value="TIA">TIA — Celestia</option>
+          </select>
+          <div class="yd-input-wrap">
+            <span class="yd-input-prefix">Qty</span>
+            <input type="number" id="coin-add-amount" min="0" step="any" placeholder="e.g. 10" aria-label="Token amount" />
+          </div>
+          <button class="yd-btn" id="add-coin-btn">+ Add Coin</button>
+        </div>
+
+        <!-- Portfolio table -->
+        <div class="yd-portfolio-wrap">
+          <table class="yd-portfolio-table" id="portfolio-table">
+            <thead>
+              <tr>
+                <th>Coin</th>
+                <th>Holdings</th>
+                <th>Price (USD)</th>
+                <th>Value (USD)</th>
+                <th>Best APY</th>
+                <th>Platform</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="portfolio-tbody">
+              <tr class="yd-empty-row" id="empty-row">
+                <td colspan="7">Add coins above to build your portfolio.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="yd-portfolio-summary" id="portfolio-summary" style="display:none">
+          <div class="yd-summary-card">
+            <span class="yd-summary-label">Total Value</span>
+            <span class="yd-summary-value" id="total-value">$0</span>
+          </div>
+          <div class="yd-summary-card">
+            <span class="yd-summary-label">Weighted Avg APY</span>
+            <span class="yd-summary-value accent" id="avg-apy">0%</span>
+          </div>
+          <div class="yd-summary-card">
+            <span class="yd-summary-label">Est. Yearly Yield</span>
+            <span class="yd-summary-value success" id="yearly-yield">$0</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Yield Projections -->
+    <section class="yd-section" id="projections-section" style="display:none">
+      <div class="yd-panel">
+        <h2 class="yd-section-title">Yield Projections</h2>
+        <div class="yd-proj-cards">
+          <div class="yd-proj-card">
+            <div class="yd-proj-period">30 Days</div>
+            <div class="yd-proj-amount" id="proj-30d">$0</div>
+          </div>
+          <div class="yd-proj-card">
+            <div class="yd-proj-period">90 Days</div>
+            <div class="yd-proj-amount" id="proj-90d">$0</div>
+          </div>
+          <div class="yd-proj-card featured">
+            <div class="yd-proj-period">1 Year</div>
+            <div class="yd-proj-amount" id="proj-1y">$0</div>
+          </div>
+          <div class="yd-proj-card">
+            <div class="yd-proj-period">3 Years</div>
+            <div class="yd-proj-amount" id="proj-3y">$0</div>
+          </div>
+          <div class="yd-proj-card">
+            <div class="yd-proj-period">5 Years</div>
+            <div class="yd-proj-amount" id="proj-5y">$0</div>
+          </div>
+        </div>
+
+        <!-- Loss aversion -->
+        <div class="yd-loss-banner">
+          <div class="yd-loss-icon">&#9888;</div>
+          <div>
+            <strong>Every day you wait costs you money.</strong>
+            <span>Your portfolio could earn approximately <strong id="daily-yield">$0</strong> per day in staking rewards.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Comparison -->
+    <section class="yd-section" id="comparison-section" style="display:none">
+      <div class="yd-panel">
+        <h2 class="yd-section-title">Platform Comparison</h2>
+        <p class="yd-subtitle">Best APY rates by platform for your coins. Data from DeFiLlama — rates update frequently.</p>
+        <div class="yd-comparison-wrap">
+          <table class="yd-comparison-table" id="comparison-table">
+            <thead>
+              <tr>
+                <th>Coin</th>
+                <th>Platform</th>
+                <th>Type</th>
+                <th>APY</th>
+                <th>Risk</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="comparison-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Save & Email CTA -->
+    <section class="yd-section" id="cta-section" style="display:none">
+      <div class="yd-cta-panel">
+        <div class="yd-cta-left">
+          <button class="yd-btn" id="save-portfolio-btn">&#128190; Save Portfolio</button>
+          <span class="yd-save-status" id="save-status"></span>
+        </div>
+        <div class="yd-cta-right">
+          <h3>Get weekly yield updates</h3>
+          <p>APY rates change constantly. We track the best opportunities so you don't miss out.</p>
+          <form class="yd-email-form" id="email-form" action="https://passiveyieldlab.com/api/subscribe" method="POST">
+            <input type="email" placeholder="you@example.com" aria-label="Email address" required />
+            <button type="submit" class="yd-btn">Subscribe</button>
+          </form>
+          <p class="yd-legal">Free. Unsubscribe anytime. We never share your email.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Exchange CTAs -->
+    <section class="yd-section" id="exchange-cta" style="display:none">
+      <div class="yd-exchange-panel">
+        <h2>Ready to start earning?</h2>
+        <p>Open an account on a trusted exchange and put your crypto to work.</p>
+        <div class="yd-exchange-buttons">
+          <a href="https://www.binance.com/en/register?ref=725285686" target="_blank" rel="noopener noreferrer sponsored" class="yd-exchange-btn binance">
+            <span class="yd-exchange-name">Binance</span>
+            <span class="yd-exchange-sub">World's largest exchange</span>
+          </a>
+          <a href="https://www.okx.com/join/26575603" target="_blank" rel="noopener noreferrer sponsored" class="yd-exchange-btn okx">
+            <span class="yd-exchange-name">OKX</span>
+            <span class="yd-exchange-sub">Up to 20% APY on staking</span>
+          </a>
+          <a href="https://www.bybit.com/invite?ref=WKNA1V" target="_blank" rel="noopener noreferrer sponsored" class="yd-exchange-btn bybit">
+            <span class="yd-exchange-name">Bybit</span>
+            <span class="yd-exchange-sub">Simple on-chain staking</span>
+          </a>
+        </div>
+        <p class="yd-legal">Affiliate links — Passive Yield Lab may earn a commission at no cost to you. Not financial advice.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="yd-faq">
+      <div class="yd-faq-inner">
+        <h2>Frequently Asked Questions</h2>
+        <div class="yd-faq-item">
+          <h3>What is a crypto yield dashboard?</h3>
+          <p>A crypto yield dashboard lets you track and compare staking and DeFi yields across multiple coins and platforms in one place. You can simulate projected earnings based on your holdings and current APY rates.</p>
+        </div>
+        <div class="yd-faq-item">
+          <h3>Where does the APY data come from?</h3>
+          <p>APY data is fetched from DeFiLlama, an open-source DeFi analytics aggregator. Rates are approximate and change frequently — always verify on the platform before staking.</p>
+        </div>
+        <div class="yd-faq-item">
+          <h3>Is my portfolio data stored anywhere?</h3>
+          <p>Your portfolio is saved locally in your browser using localStorage. No data is sent to any server. You can clear it at any time.</p>
+        </div>
+        <div class="yd-faq-item">
+          <h3>What does the risk score mean?</h3>
+          <p>The risk score is a simplified indicator based on platform type: centralized exchanges (lower risk but custodial), liquid staking protocols (medium risk), and DeFi lending protocols (higher risk due to smart contract exposure). It is not financial advice.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="yd-disclaimer">
+      <p><strong>Disclaimer:</strong> This tool is for educational purposes only and does not constitute financial, tax, or investment advice. APY rates fluctuate and past performance does not guarantee future results. Always do your own research and consult a professional before making investment decisions. Passive Yield Lab may earn affiliate commissions at no cost to you.</p>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+/* ===== Page ===== */
+.yd-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ===== Hero ===== */
+.yd-hero {
+  text-align: center;
+  padding: 3.5rem 1rem 2.5rem;
+}
+
+.yd-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(37,99,235,0.25);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.yd-hero h1 {
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 0.9rem;
+}
+
+.yd-hero .accent { color: var(--accent); }
+
+.yd-hero p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== Sections ===== */
+.yd-section { margin-bottom: 2rem; }
+
+.yd-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+.yd-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.yd-panel-header .yd-section-title {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.yd-header-actions { display: flex; gap: 0.5rem; }
+
+.yd-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.yd-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: -0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ===== Buttons ===== */
+.yd-btn {
+  padding: 0.65rem 1.25rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.yd-btn:hover { background: var(--accent-hover); }
+.yd-btn:active { transform: scale(0.98); }
+
+.yd-btn-sm {
+  padding: 0.4rem 0.85rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.yd-btn-sm:hover { background: var(--accent-hover); }
+
+.yd-btn-outline {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.yd-btn-outline:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* ===== Add Coin Row ===== */
+.yd-add-row {
+  display: grid;
+  grid-template-columns: 1fr 140px auto;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  align-items: end;
+}
+
+.yd-input-wrap {
+  position: relative;
+}
+
+.yd-input-prefix {
+  position: absolute;
+  left: 0.65rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.yd-input-wrap input {
+  width: 100%;
+  padding: 0.65rem 0.65rem 0.65rem 2.25rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.yd-add-row select {
+  width: 100%;
+  padding: 0.65rem 2rem 0.65rem 0.9rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+}
+
+.yd-add-row select:focus,
+.yd-input-wrap input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+
+/* ===== Portfolio Table ===== */
+.yd-portfolio-wrap { overflow-x: auto; }
+
+.yd-portfolio-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.yd-portfolio-table th {
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.yd-portfolio-table td {
+  padding: 0.7rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.yd-portfolio-table tr:last-child td { border-bottom: none; }
+
+.yd-empty-row td {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 2rem;
+  font-style: italic;
+}
+
+.yd-remove-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0.25rem;
+  transition: color 0.2s;
+}
+
+.yd-remove-btn:hover { color: var(--danger); }
+
+/* ===== Portfolio Summary ===== */
+.yd-portfolio-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.yd-summary-card {
+  text-align: center;
+  padding: 0.75rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.yd-summary-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.yd-summary-value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.yd-summary-value.accent { color: var(--accent); }
+.yd-summary-value.success { color: var(--success); }
+
+/* ===== Projections ===== */
+.yd-proj-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.yd-proj-card {
+  text-align: center;
+  padding: 1rem 0.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  animation: fadeUp 0.4s ease both;
+}
+
+.yd-proj-card.featured {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, rgba(37,99,235,0.05), var(--bg-secondary));
+}
+
+.yd-proj-card:nth-child(1) { animation-delay: 0.05s; }
+.yd-proj-card:nth-child(2) { animation-delay: 0.1s; }
+.yd-proj-card:nth-child(3) { animation-delay: 0.15s; }
+.yd-proj-card:nth-child(4) { animation-delay: 0.2s; }
+.yd-proj-card:nth-child(5) { animation-delay: 0.25s; }
+
+.yd-proj-period {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.yd-proj-card.featured .yd-proj-period { color: var(--accent); }
+
+.yd-proj-amount {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--success);
+}
+
+/* ===== Loss Banner ===== */
+.yd-loss-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(248,113,113,0.08);
+  border: 1px solid rgba(248,113,113,0.25);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.yd-loss-icon {
+  color: var(--danger);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.yd-loss-banner strong { color: var(--danger); }
+
+/* ===== Comparison Table ===== */
+.yd-comparison-wrap { overflow-x: auto; }
+
+.yd-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.yd-comparison-table th {
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.yd-comparison-table td {
+  padding: 0.7rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.yd-comparison-table tr:last-child td { border-bottom: none; }
+
+.yd-apy-cell { font-weight: 700; color: var(--accent); }
+.yd-best-row { background: rgba(37,99,235,0.04); }
+
+.yd-risk-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.yd-risk-low {
+  background: rgba(16,185,129,0.12);
+  color: #065F46;
+  border: 1px solid rgba(16,185,129,0.3);
+}
+
+.yd-risk-med {
+  background: rgba(245,158,11,0.12);
+  color: #92400E;
+  border: 1px solid rgba(245,158,11,0.3);
+}
+
+.yd-risk-high {
+  background: rgba(239,68,68,0.12);
+  color: #991B1B;
+  border: 1px solid rgba(239,68,68,0.3);
+}
+
+.yd-stake-link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.yd-stake-link:hover { text-decoration: underline; }
+
+/* ===== CTA Panel ===== */
+.yd-cta-panel {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  align-items: start;
+}
+
+.yd-cta-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.yd-save-status {
+  font-size: 0.78rem;
+  color: var(--success);
+  font-weight: 600;
+  min-height: 1.2em;
+}
+
+.yd-cta-right h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.yd-cta-right p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.yd-email-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.yd-email-form input {
+  flex: 1;
+  padding: 0.65rem 0.9rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.yd-email-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+
+.yd-legal {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+/* ===== Exchange CTAs ===== */
+.yd-exchange-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.yd-exchange-panel h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.yd-exchange-panel > p {
+  color: var(--text-secondary);
+  margin-bottom: 1.75rem;
+}
+
+.yd-exchange-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.yd-exchange-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1.75rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  transition: transform 0.2s, box-shadow 0.2s;
+  min-width: 140px;
+  text-decoration: none;
+}
+
+.yd-exchange-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.yd-exchange-btn.binance { background: #F0B90B; color: #1a1a1a; }
+.yd-exchange-btn.okx { background: #1a1a1a; color: #fff; }
+.yd-exchange-btn.bybit { background: #F7A600; color: #1a1a1a; }
+
+.yd-exchange-name { font-size: 1.1rem; font-weight: 800; }
+.yd-exchange-sub { font-size: 0.72rem; font-weight: 500; opacity: 0.75; margin-top: 0.15rem; }
+
+/* ===== FAQ ===== */
+.yd-faq {
+  border-top: 1px solid var(--border);
+  padding-top: 3rem;
+  margin-top: 2rem;
+}
+
+.yd-faq-inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.yd-faq-inner h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+.yd-faq-item {
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.yd-faq-item:last-child { border-bottom: none; margin-bottom: 0; }
+.yd-faq-item h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
+.yd-faq-item p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; margin: 0; }
+
+/* ===== Disclaimer ===== */
+.yd-disclaimer {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.yd-disclaimer strong { color: var(--text-secondary); }
+
+/* Loading spinner */
+.yd-loading {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 800px) {
+  .yd-add-row {
+    grid-template-columns: 1fr;
+  }
+
+  .yd-proj-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .yd-cta-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .yd-portfolio-summary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .yd-proj-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .yd-portfolio-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .yd-exchange-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .yd-exchange-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .yd-email-form {
+    flex-direction: column;
+  }
+}
+</style>
+
+<script>
+// ── Coin metadata (fallback prices and DeFiLlama pool mappings) ─────
+const COIN_META = {
+  ETH:  { name: 'Ethereum',  fallbackPrice: 3200, fallbackApy: 3.8,  defiLlamaSymbol: 'ETH' },
+  SOL:  { name: 'Solana',    fallbackPrice: 180,  fallbackApy: 7.0,  defiLlamaSymbol: 'SOL' },
+  DOT:  { name: 'Polkadot',  fallbackPrice: 8.5,  fallbackApy: 14.0, defiLlamaSymbol: 'DOT' },
+  ATOM: { name: 'Cosmos',    fallbackPrice: 11,   fallbackApy: 18.0, defiLlamaSymbol: 'ATOM' },
+  AVAX: { name: 'Avalanche', fallbackPrice: 38,   fallbackApy: 8.5,  defiLlamaSymbol: 'AVAX' },
+  ADA:  { name: 'Cardano',   fallbackPrice: 0.52, fallbackApy: 4.0,  defiLlamaSymbol: 'ADA' },
+  NEAR: { name: 'NEAR',      fallbackPrice: 6.2,  fallbackApy: 9.0,  defiLlamaSymbol: 'NEAR' },
+  MATIC:{ name: 'Polygon',   fallbackPrice: 0.85, fallbackApy: 5.0,  defiLlamaSymbol: 'MATIC' },
+  BNB:  { name: 'BNB Chain', fallbackPrice: 600,  fallbackApy: 3.5,  defiLlamaSymbol: 'BNB' },
+  TIA:  { name: 'Celestia',  fallbackPrice: 12,   fallbackApy: 10.0, defiLlamaSymbol: 'TIA' },
+};
+
+// Affiliate links per platform
+const PLATFORM_LINKS = {
+  'Binance':   'https://www.binance.com/en/register?ref=725285686',
+  'OKX':       'https://www.okx.com/join/26575603',
+  'Bybit':     'https://www.bybit.com/invite?ref=WKNA1V',
+};
+
+// Risk levels by platform type
+const RISK_MAP = {
+  'Binance': 'low', 'OKX': 'low', 'Bybit': 'low', 'Coinbase': 'low', 'Kraken': 'low',
+  'Lido': 'med', 'Rocket Pool': 'med', 'Marinade': 'med', 'Jito': 'med', 'Stride': 'med',
+  'Aave': 'high', 'Compound': 'high', 'Morpho': 'high', 'Venus': 'high',
+};
+
+function getRisk(platform) {
+  for (const [key, risk] of Object.entries(RISK_MAP)) {
+    if (platform.toLowerCase().includes(key.toLowerCase())) return risk;
+  }
+  return 'med';
+}
+
+const RISK_LABELS = { low: 'Low', med: 'Medium', high: 'Higher' };
+
+// ── State ────────────────────────────────────────────────────────────
+let portfolio = []; // { coin, amount }
+let apyCache = {};  // { coin: [{ platform, apy, type }] }
+let priceCache = {}; // { coin: price }
+
+// ── Helpers ──────────────────────────────────────────────────────────
+function formatUSD(n) {
+  if (n >= 1_000_000) return '$' + (n / 1_000_000).toFixed(2) + 'M';
+  if (n >= 1_000) return '$' + n.toLocaleString('en-US', { maximumFractionDigits: 0 });
+  if (n >= 0.01) return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return '$' + n.toFixed(4);
+}
+
+function getPrice(coin) {
+  return priceCache[coin] || COIN_META[coin]?.fallbackPrice || 0;
+}
+
+function getBestApy(coin) {
+  const pools = apyCache[coin];
+  if (pools && pools.length > 0) return pools[0]; // sorted by APY desc
+  return { platform: 'Staking', apy: COIN_META[coin]?.fallbackApy || 0, type: 'Native Staking' };
+}
+
+// ── Fetch live data from DeFiLlama ──────────────────────────────────
+async function fetchApyData() {
+  try {
+    const res = await fetch('https://yields.llama.fi/pools');
+    if (!res.ok) throw new Error('API error');
+    const data = await res.json();
+    const pools = data.data || [];
+
+    const coinSymbols = Object.keys(COIN_META);
+
+    for (const coin of coinSymbols) {
+      const symbol = COIN_META[coin].defiLlamaSymbol;
+      const relevant = pools
+        .filter(p =>
+          p.symbol && p.symbol.toUpperCase() === symbol &&
+          p.apy != null && p.apy > 0 && p.apy < 100 &&
+          p.tvlUsd > 1_000_000
+        )
+        .map(p => ({
+          platform: p.project ? p.project.charAt(0).toUpperCase() + p.project.slice(1).replace(/-/g, ' ') : 'Unknown',
+          apy: Math.round(p.apy * 100) / 100,
+          type: categorizePool(p),
+          tvl: p.tvlUsd,
+        }))
+        .sort((a, b) => b.apy - a.apy)
+        .slice(0, 5);
+
+      if (relevant.length > 0) {
+        apyCache[coin] = relevant;
+      }
+    }
+  } catch {
+    // Silently fall back to hardcoded defaults
+  }
+}
+
+async function fetchPrices() {
+  try {
+    const ids = 'ethereum,solana,polkadot,cosmos,avalanche-2,cardano,near,matic-network,binancecoin,celestia';
+    const res = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${ids}&vs_currencies=usd`);
+    if (!res.ok) throw new Error('Price API error');
+    const data = await res.json();
+    const map = {
+      'ethereum': 'ETH', 'solana': 'SOL', 'polkadot': 'DOT', 'cosmos': 'ATOM',
+      'avalanche-2': 'AVAX', 'cardano': 'ADA', 'near': 'NEAR', 'matic-network': 'MATIC',
+      'binancecoin': 'BNB', 'celestia': 'TIA',
+    };
+    for (const [id, coin] of Object.entries(map)) {
+      if (data[id]?.usd) priceCache[coin] = data[id].usd;
+    }
+  } catch {
+    // Fall back to hardcoded prices
+  }
+}
+
+function categorizePool(pool) {
+  const proj = (pool.project || '').toLowerCase();
+  if (['lido', 'rocket-pool', 'marinade', 'jito', 'stride', 'benqi-staked-avax'].some(p => proj.includes(p))) return 'Liquid Staking';
+  if (['aave', 'compound', 'morpho', 'venus', 'spark'].some(p => proj.includes(p))) return 'DeFi Lending';
+  if (['binance', 'okx', 'bybit', 'coinbase', 'kraken'].some(p => proj.includes(p))) return 'CEX Staking';
+  return 'DeFi Protocol';
+}
+
+// ── Render functions ────────────────────────────────────────────────
+function renderPortfolio() {
+  const tbody = document.getElementById('portfolio-tbody');
+  const emptyRow = document.getElementById('empty-row');
+  const summary = document.getElementById('portfolio-summary');
+
+  if (portfolio.length === 0) {
+    tbody.innerHTML = '';
+    tbody.appendChild(emptyRow);
+    emptyRow.style.display = '';
+    summary.style.display = 'none';
+    document.getElementById('projections-section').style.display = 'none';
+    document.getElementById('comparison-section').style.display = 'none';
+    document.getElementById('cta-section').style.display = 'none';
+    document.getElementById('exchange-cta').style.display = 'none';
+    return;
+  }
+
+  emptyRow.style.display = 'none';
+  tbody.innerHTML = '';
+
+  let totalValue = 0;
+  let weightedApySum = 0;
+
+  portfolio.forEach((item, idx) => {
+    const price = getPrice(item.coin);
+    const value = item.amount * price;
+    const best = getBestApy(item.coin);
+    totalValue += value;
+    weightedApySum += best.apy * value;
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><strong>${item.coin}</strong></td>
+      <td>${item.amount.toLocaleString('en-US', { maximumFractionDigits: 4 })}</td>
+      <td>${formatUSD(price)}</td>
+      <td>${formatUSD(value)}</td>
+      <td class="yd-apy-cell">${best.apy.toFixed(2)}%</td>
+      <td>${best.platform}</td>
+      <td><button class="yd-remove-btn" data-idx="${idx}" title="Remove">&times;</button></td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  // Wire remove buttons
+  tbody.querySelectorAll('.yd-remove-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      portfolio.splice(parseInt(btn.dataset.idx), 1);
+      renderAll();
+    });
+  });
+
+  // Summary
+  const weightedApy = totalValue > 0 ? weightedApySum / totalValue : 0;
+  const yearlyYield = totalValue * weightedApy / 100;
+
+  document.getElementById('total-value').textContent = formatUSD(totalValue);
+  document.getElementById('avg-apy').textContent = weightedApy.toFixed(2) + '%';
+  document.getElementById('yearly-yield').textContent = formatUSD(yearlyYield);
+  summary.style.display = 'grid';
+}
+
+function renderProjections() {
+  if (portfolio.length === 0) return;
+
+  let totalValue = 0;
+  let weightedApySum = 0;
+
+  portfolio.forEach(item => {
+    const price = getPrice(item.coin);
+    const value = item.amount * price;
+    const best = getBestApy(item.coin);
+    totalValue += value;
+    weightedApySum += best.apy * value;
+  });
+
+  const weightedApy = totalValue > 0 ? weightedApySum / totalValue : 0;
+  const r = weightedApy / 100;
+
+  // Compound monthly (12x/yr)
+  const periods = [
+    { id: 'proj-30d', years: 30/365 },
+    { id: 'proj-90d', years: 90/365 },
+    { id: 'proj-1y',  years: 1 },
+    { id: 'proj-3y',  years: 3 },
+    { id: 'proj-5y',  years: 5 },
+  ];
+
+  periods.forEach(p => {
+    const total = totalValue * Math.pow(1 + r / 12, 12 * p.years);
+    const earned = total - totalValue;
+    document.getElementById(p.id).textContent = '+' + formatUSD(earned);
+  });
+
+  // Daily yield
+  const dailyYield = totalValue * r / 365;
+  document.getElementById('daily-yield').textContent = formatUSD(dailyYield);
+
+  document.getElementById('projections-section').style.display = 'block';
+}
+
+function renderComparison() {
+  if (portfolio.length === 0) return;
+
+  const tbody = document.getElementById('comparison-tbody');
+  tbody.innerHTML = '';
+
+  portfolio.forEach(item => {
+    const pools = apyCache[item.coin] || [{ platform: 'Native Staking', apy: COIN_META[item.coin]?.fallbackApy || 0, type: 'Native Staking' }];
+
+    pools.forEach((pool, i) => {
+      const risk = getRisk(pool.platform);
+      const riskClass = 'yd-risk-' + risk;
+      const isTop = i === 0;
+      const link = getAffiliateLink(pool.platform);
+
+      const tr = document.createElement('tr');
+      if (isTop) tr.classList.add('yd-best-row');
+      tr.innerHTML = `
+        <td><strong>${item.coin}</strong></td>
+        <td>${pool.platform}</td>
+        <td>${pool.type || 'Staking'}</td>
+        <td class="yd-apy-cell">${pool.apy.toFixed(2)}%</td>
+        <td><span class="yd-risk-badge ${riskClass}">${RISK_LABELS[risk]}</span></td>
+        <td>${link ? `<a href="${link}" target="_blank" rel="noopener noreferrer sponsored" class="yd-stake-link">Stake &rarr;</a>` : '—'}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  });
+
+  document.getElementById('comparison-section').style.display = 'block';
+}
+
+function getAffiliateLink(platform) {
+  for (const [key, url] of Object.entries(PLATFORM_LINKS)) {
+    if (platform.toLowerCase().includes(key.toLowerCase())) return url;
+  }
+  return '';
+}
+
+function renderAll() {
+  renderPortfolio();
+  renderProjections();
+  renderComparison();
+
+  if (portfolio.length > 0) {
+    document.getElementById('cta-section').style.display = 'block';
+    document.getElementById('exchange-cta').style.display = 'block';
+  }
+}
+
+// ── Add coin ────────────────────────────────────────────────────────
+document.getElementById('add-coin-btn').addEventListener('click', () => {
+  const coinSelect = document.getElementById('coin-add-select');
+  const amountInput = document.getElementById('coin-add-amount');
+  const coin = coinSelect.value;
+  const amount = parseFloat(amountInput.value);
+
+  if (!coin) { coinSelect.focus(); return; }
+  if (!amount || amount <= 0) { amountInput.focus(); return; }
+
+  // Check if coin already in portfolio — add to existing
+  const existing = portfolio.find(p => p.coin === coin);
+  if (existing) {
+    existing.amount += amount;
+  } else {
+    portfolio.push({ coin, amount });
+  }
+
+  coinSelect.value = '';
+  amountInput.value = '';
+  renderAll();
+});
+
+// Enter key in amount input
+document.getElementById('coin-add-amount').addEventListener('keydown', e => {
+  if (e.key === 'Enter') document.getElementById('add-coin-btn').click();
+});
+
+// ── Save / Load portfolio ───────────────────────────────────────────
+document.getElementById('save-portfolio-btn').addEventListener('click', () => {
+  try {
+    localStorage.setItem('pyl-yield-portfolio', JSON.stringify(portfolio));
+    const status = document.getElementById('save-status');
+    status.textContent = 'Saved!';
+    setTimeout(() => { status.textContent = ''; }, 2000);
+  } catch {
+    // localStorage unavailable
+  }
+});
+
+document.getElementById('load-portfolio-btn').addEventListener('click', () => {
+  try {
+    const saved = localStorage.getItem('pyl-yield-portfolio');
+    if (saved) {
+      portfolio = JSON.parse(saved);
+      renderAll();
+    }
+  } catch {
+    // localStorage unavailable
+  }
+});
+
+document.getElementById('clear-portfolio-btn').addEventListener('click', () => {
+  portfolio = [];
+  renderAll();
+});
+
+// ── Init ─────────────────────────────────────────────────────────────
+async function init() {
+  // Try to load saved portfolio
+  try {
+    const saved = localStorage.getItem('pyl-yield-portfolio');
+    if (saved) {
+      portfolio = JSON.parse(saved);
+    }
+  } catch { /* ignore */ }
+
+  // Fetch live data in parallel
+  await Promise.allSettled([fetchApyData(), fetchPrices()]);
+
+  // Render with live data
+  renderAll();
+}
+
+init();
+</script>
