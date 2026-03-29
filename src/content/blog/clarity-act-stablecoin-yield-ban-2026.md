@@ -14,6 +14,14 @@ image: "/images/blog/clarity-act-stablecoin-yield-ban-2026.jpg"
 
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**The CLARITY Act (proposed March 23, 2026) would ban balance-based stablecoin rewards on CeFi platforms for U.S. persons — not DeFi lending, LP fees, or margin funding. Senate Banking Committee hearings scheduled for mid-April 2026. Tokenized treasuries hold $11B+ TVL as compliant yield alternatives.**
+
+*Last updated: 2026-03-29*
+
+</div>
+
 I'll be honest with you — when I first saw the headlines about the CLARITY Act, I assumed it was the usual crypto FUD. Another week, another "crypto is getting banned" story, right?
 
 Then I actually read what's in the bill.
@@ -173,25 +181,126 @@ That said, the *direction* of stablecoin regulation is clear. Even if this speci
 
 ## FAQ
 
-**Q: Is my USDC on Coinbase or Kraken affected?**
+### What does the CLARITY Act ban specifically? {#faq-clarity-act-ban}
 
-It depends on the specific product. Coinbase's USDC rewards program and similar exchange offerings will need to be evaluated against the final bill text. Some exchange earn products are structured as staking or activity rewards (likely safe); others are closer to balance-based interest (potentially affected). Watch for announcements from your specific exchange.
+The CLARITY Act targets "balance-based rewards" — yield paid by CeFi platforms simply for holding stablecoins in an account. Classic examples: Nexo Earn, YouHodler interest, Ledn stablecoin accounts. DeFi lending, LP trading fees, staking, and margin funding are not targeted by current bill language.
 
-**Q: What about DAI savings rate or similar DeFi products?**
+*Last updated: 2026-03-29*
 
-The DAI Savings Rate (DSR) and similar DeFi-native mechanisms are interesting edge cases. They're protocol-level and don't involve a centralized issuer — that's structurally different from CeFi balance-based yield. The current bill text appears to focus on stablecoin *issuers*, not DeFi protocols generally. But I'll be honest: this is uncertain territory until we see final language and legal interpretations.
+### Is DeFi lending on Aave affected by the CLARITY Act? {#faq-aave-clarity-act}
 
-**Q: If I earn yield abroad (non-U.S. platforms), does U.S. law apply?**
+No, based on current bill text. The CLARITY Act targets centralized platforms promising balance-based yields. Aave operates through non-custodial smart contracts — no centralized party promises you a fixed rate. DeFi yield reflects real market borrowing demand, not a platform's interest payment to balance holders.
 
-U.S. law applies to U.S. persons and companies operating in the U.S. market — not to the platforms themselves based solely on geography. If you're a U.S. person, your income from foreign platforms is still U.S. taxable income, and U.S. regulations can still constrain how foreign platforms serve U.S. customers. This is not legal advice — talk to a professional for your specific situation.
+*Last updated: 2026-03-29*
 
-**Q: Should I move my stablecoins to a hardware wallet and wait this out?**
+### Is my USDC on Coinbase or Kraken affected by the CLARITY Act? {#faq-coinbase-kraken-usdc}
 
-A hardware wallet holds your assets — it doesn't generate yield. Moving to self-custody is smart for security, but it doesn't solve the yield question. If you want to keep earning while the regulatory picture clarifies, DeFi lending (where you hold your own keys) or margin funding models are worth exploring.
+It depends on product structure. Coinbase USDC rewards and similar exchange programs will be evaluated against final bill text. Products structured as staking or activity-based rewards are likely safe; balance-based interest products (you earn just for holding) are potentially affected. Monitor announcements from your specific exchange.
 
-**Q: What's the difference between this and the STABLE Act or other past stablecoin bills?**
+*Last updated: 2026-03-29*
 
-There have been several stablecoin bills circulating in recent years — the STABLE Act, the Lummis-Gillibrand bill, various drafts that never made it out of committee. The CLARITY Act is the most recent and is considered more likely to advance given the current political climate around crypto regulation. The key difference in this version is the explicit distinction between passive yield (balance-based) and active rewards — previous bills were more focused on reserve requirements and issuer licensing without drawing this specific yield line. That's what makes the current draft particularly significant for yield earners.
+### What is the difference between balance-based and activity-based stablecoin rewards? {#faq-balance-vs-activity-rewards}
+
+Balance-based rewards: you earn yield simply by holding stablecoins in an account (like a savings deposit). Activity-based rewards: you earn by doing something — providing liquidity, lending to active borrowers, staking for network security, or paying with stablecoins. The CLARITY Act bans the former, explicitly carves out the latter.
+
+*Last updated: 2026-03-29*
+
+### If I earn stablecoin yield on non-U.S. platforms, does U.S. law apply? {#faq-us-law-foreign-platforms}
+
+U.S. law applies to U.S. persons regardless of where the platform is based. If you're a U.S. person, income from foreign platforms is still U.S. taxable income, and U.S. regulations can constrain how foreign platforms serve U.S. customers. The CLARITY Act's yield ban applies to U.S. persons, not just U.S.-registered platforms.
+
+*Last updated: 2026-03-29*
+
+### What is the CLARITY Act timeline — when could it take effect? {#faq-clarity-act-timeline}
+
+The bill text was published March 23, 2026. Senate Banking Committee hearings are scheduled for mid-April 2026 — a review stage, not a vote. Full Senate vote, House vote, and presidential signature are all unknown timelines. Bills frequently take 6–18 months to pass after committee hearings, if they pass at all.
+
+*Last updated: 2026-03-29*
+
+### How is the CLARITY Act different from past stablecoin bills? {#faq-clarity-act-vs-past-bills}
+
+Previous bills (STABLE Act, Lummis-Gillibrand) focused on reserve requirements and issuer licensing. The CLARITY Act adds an explicit distinction between passive yield (balance-based, banned) and active rewards (activity-based, allowed). That yield-specific language makes this bill uniquely significant for stablecoin yield earners — previous bills didn't draw that line.
+
+*Last updated: 2026-03-29*
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does the CLARITY Act ban specifically?",
+      "datePublished": "2026-03-28",
+      "dateModified": "2026-03-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The CLARITY Act targets 'balance-based rewards' — yield paid by CeFi platforms simply for holding stablecoins in an account. Classic examples: Nexo Earn, YouHodler interest, Ledn stablecoin accounts. DeFi lending, LP trading fees, staking, and margin funding are not targeted by current bill language."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is DeFi lending on Aave affected by the CLARITY Act?",
+      "datePublished": "2026-03-28",
+      "dateModified": "2026-03-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, based on current bill text. The CLARITY Act targets centralized platforms promising balance-based yields. Aave operates through non-custodial smart contracts — no centralized party promises you a fixed rate. DeFi yield reflects real market borrowing demand, not a platform's interest payment to balance holders."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my USDC on Coinbase or Kraken affected by the CLARITY Act?",
+      "datePublished": "2026-03-28",
+      "dateModified": "2026-03-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on product structure. Coinbase USDC rewards and similar exchange programs will be evaluated against final bill text. Products structured as staking or activity-based rewards are likely safe; balance-based interest products (you earn just for holding) are potentially affected. Monitor announcements from your specific exchange."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between balance-based and activity-based stablecoin rewards?",
+      "datePublished": "2026-03-28",
+      "dateModified": "2026-03-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Balance-based rewards: you earn yield simply by holding stablecoins in an account (like a savings deposit). Activity-based rewards: you earn by doing something — providing liquidity, lending to active borrowers, staking for network security, or paying with stablecoins. The CLARITY Act bans the former, explicitly carves out the latter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "If I earn stablecoin yield on non-U.S. platforms, does U.S. law apply?",
+      "datePublished": "2026-03-28",
+      "dateModified": "2026-03-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "U.S. law applies to U.S. persons regardless of where the platform is based. If you're a U.S. person, income from foreign platforms is still U.S. taxable income, and U.S. regulations can constrain how foreign platforms serve U.S. customers. The CLARITY Act's yield ban applies to U.S. persons, not just U.S.-registered platforms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the CLARITY Act timeline — when could it take effect?",
+      "datePublished": "2026-03-28",
+      "dateModified": "2026-03-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The bill text was published March 23, 2026. Senate Banking Committee hearings are scheduled for mid-April 2026 — a review stage, not a vote. Full Senate vote, House vote, and presidential signature are all unknown timelines. Bills frequently take 6–18 months to pass after committee hearings, if they pass at all."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the CLARITY Act different from past stablecoin bills?",
+      "datePublished": "2026-03-28",
+      "dateModified": "2026-03-29",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Previous bills (STABLE Act, Lummis-Gillibrand) focused on reserve requirements and issuer licensing. The CLARITY Act adds an explicit distinction between passive yield (balance-based, banned) and active rewards (activity-based, allowed). That yield-specific language makes this bill uniquely significant for stablecoin yield earners — previous bills didn't draw that line."
+      }
+    }
+  ]
+}
+</script>
 
 ---
 
