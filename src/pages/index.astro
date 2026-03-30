@@ -69,6 +69,9 @@ const totalCategories = categories.length;
         <p class="hp-hero-desc">
           Practical, tested guides on earning 4-20% APY through staking, DeFi, and lending — plus AI-powered income strategies that actually work. Built by practitioners who lost money so you don't have to.
         </p>
+        <p class="hp-hero-milestone">
+          Your goal: go from $0 to your first $100/month in passive income. We'll show you how, step by step.
+        </p>
         <div class="hp-hero-actions">
           <a href="/blog" class="hp-btn-primary">Read the Guides</a>
           <a href="/tools/staking-calculator" class="hp-btn-secondary">Calculate Your Yield</a>
@@ -88,9 +91,14 @@ const totalCategories = categories.length;
           <span class="hp-stat-value">3</span>
           <span class="hp-stat-sub">Yield Dashboard / Staking Calculator / AEO Audit</span>
         </div>
-        <p class="hp-hero-loss">
-          APY rates shift daily. The opportunity you see today may not exist tomorrow.
-        </p>
+        <div class="hp-hero-urgency">
+          <p class="hp-hero-loss">
+            APY rates shift daily. The opportunity you see today may not exist tomorrow.
+          </p>
+          <p class="hp-hero-cost">
+            Every week you wait, your holdings lose potential yield. At 5% APY, $10,000 sitting idle costs you roughly $9.60 per week in missed rewards.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -101,7 +109,7 @@ const totalCategories = categories.length;
       <div class="hp-section-header">
         <span class="hp-section-tag">Your Toolkit</span>
         <h2>Build your portfolio with real data</h2>
-        <p>Interactive tools to model, track, and optimize your passive income strategy.</p>
+        <p>Your numbers, your strategy. Model, track, and optimize your passive income with tools built for practitioners.</p>
       </div>
       <div class="hp-tools-grid">
         <a href="/tools/yield-dashboard" class="hp-tool-card hp-tool-card--wide">
@@ -138,7 +146,23 @@ const totalCategories = categories.length;
       <div class="start-here-header">
         <span class="hp-section-tag">New here? Pick your path.</span>
         <h2>Start Here</h2>
-        <p>Two proven tracks to passive income. Choose the one that fits you.</p>
+        <p>Two proven tracks to passive income. Choose the one that fits you — and finish your first guide today.</p>
+        <div class="start-here-progress">
+          <div class="progress-step">
+            <span class="progress-num">1</span>
+            <span class="progress-text">Pick a path</span>
+          </div>
+          <span class="progress-arrow">&rarr;</span>
+          <div class="progress-step">
+            <span class="progress-num">2</span>
+            <span class="progress-text">Read the starter guide</span>
+          </div>
+          <span class="progress-arrow">&rarr;</span>
+          <div class="progress-step">
+            <span class="progress-num">3</span>
+            <span class="progress-text">Earn your first yield</span>
+          </div>
+        </div>
       </div>
       <div class="start-here-columns">
 
@@ -288,7 +312,7 @@ const totalCategories = categories.length;
       <div class="home-lm-text">
         <span class="home-lm-badge">Free Guide</span>
         <h2>The Crypto Bear Market Survival Kit</h2>
-        <p>7 passive income strategies that work when prices drop. Real protocols, realistic numbers, step-by-step instructions.</p>
+        <p>7 passive income strategies that work when prices drop. Real protocols, realistic numbers, step-by-step instructions. Includes APY snapshots that update quarterly — grab the latest version.</p>
         <a href="/resources/bear-market-survival-kit" class="home-lm-cta">
           Download Free PDF &rarr;
         </a>
@@ -301,7 +325,7 @@ const totalCategories = categories.length;
     <div class="email-signup-box">
       <h2>Your Weekly Yield Edge</h2>
       <p>Every Friday: 1 actionable APY opportunity, 1 platform update, and 1 AI income tip. Free forever.</p>
-      <p class="signup-proof">Join readers getting weekly yield picks.</p>
+      <p class="signup-proof">Curated by the same team that built the {totalArticles} guides above. No spam, unsubscribe anytime.</p>
       <form
         action="https://app.beehiiv.com/forms/1c80f432-8696-4d95-b028-aa8bd75f08ba"
         method="POST"
@@ -503,6 +527,31 @@ const totalCategories = categories.length;
     border-top: 1px solid var(--border-light);
   }
 
+  .hp-hero-milestone {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding: 0.6rem 1rem;
+    background: var(--accent-dim);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    max-width: 540px;
+  }
+
+  .hp-hero-urgency {
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .hp-hero-cost {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin-top: 0.4rem;
+    line-height: 1.55;
+  }
+
   /* ===== Section shared styles ===== */
   .hp-section-header {
     margin-bottom: 2rem;
@@ -636,6 +685,45 @@ const totalCategories = categories.length;
   .start-here-header p {
     font-size: 0.95rem;
     color: var(--text-secondary);
+  }
+
+  .start-here-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .progress-step {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .progress-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .progress-text {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .progress-arrow {
+    color: var(--text-muted);
+    font-size: 0.9rem;
   }
 
   .start-here-columns {
