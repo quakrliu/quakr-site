@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BlogPost from '@/layouts/BlogPost.astro';
+import { generateFAQSchema, generateHowToSchema } from '@/utils/seo';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
@@ -12,6 +13,14 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+const extraSchemas: string[] = [];
+if (post.data.faqItems && post.data.faqItems.length > 0) {
+  extraSchemas.push(generateFAQSchema(post.data.faqItems));
+}
+if (post.data.howToData) {
+  extraSchemas.push(generateHowToSchema(post.data.howToData));
+}
 ---
 
 <BlogPost
@@ -26,6 +35,9 @@ const { Content } = await render(post);
   seoDescription={post.data.seoDescription}
   canonicalUrl={post.data.canonicalUrl}
   ogImage={post.data.ogImage}
+  level={post.data.level}
+  trending={post.data.trending}
+  extraSchemas={extraSchemas}
 >
   <Content />
 </BlogPost>

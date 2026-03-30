@@ -36,6 +36,26 @@ const blog = defineCollection({
     draft: z.boolean().default(false),
     level: z.enum(['beginner', 'intermediate', 'advanced']).optional(),
     trending: z.boolean().default(false),
+    faqItems: z
+      .array(
+        z.object({
+          question: z.string(),
+          answer: z.string(),
+        })
+      )
+      .optional(),
+    howToData: z
+      .object({
+        name: z.string(),
+        description: z.string(),
+        steps: z.array(
+          z.object({
+            name: z.string(),
+            text: z.string(),
+          })
+        ),
+      })
+      .optional(),
   }),
 });
 

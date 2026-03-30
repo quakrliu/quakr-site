@@ -17,6 +17,7 @@ interface Props {
   ogImage?: string;
   level?: 'beginner' | 'intermediate' | 'advanced';
   trending?: boolean;
+  extraSchemas?: string[];
 }
 
 const {
@@ -33,6 +34,7 @@ const {
   ogImage,
   level,
   trending = false,
+  extraSchemas = [],
 } = Astro.props;
 
 const articleSchema = generateArticleSchema({
@@ -91,6 +93,7 @@ const twitterShareUrl = `https://x.com/intent/tweet?text=${shareText}&url=${shar
   category={category}
   canonicalUrl={canonicalUrl}
   articleSchema={articleSchema}
+  extraSchemas={extraSchemas}
 >
   <div class="affiliate-disclosure">
     <strong>Disclosure:</strong> This article may contain affiliate links. We earn
