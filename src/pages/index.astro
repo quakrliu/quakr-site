@@ -190,7 +190,14 @@ const aiIncomePosts = aiIncomeSlugs
       <h2>Your Weekly Yield Edge</h2>
       <p>Every Friday: 1 actionable APY opportunity, 1 platform update, and 1 AI income tip. Free forever.</p>
       <p class="signup-proof">Join readers getting weekly yield picks.</p>
-      <iframe src="https://subscribe-forms.beehiiv.com/1c80f432-8696-4d95-b028-aa8bd75f08ba" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 100%; max-width: 500px; height: 340px; margin: 0; background-color: transparent;"></iframe>
+      <form
+        action="https://subscribe-forms.beehiiv.com/1c80f432-8696-4d95-b028-aa8bd75f08ba"
+        method="POST"
+        target="_blank"
+      >
+        <input type="email" name="email" placeholder="you@example.com" required />
+        <button type="submit">Subscribe</button>
+      </form>
     </div>
   </section>
 </BaseLayout>
