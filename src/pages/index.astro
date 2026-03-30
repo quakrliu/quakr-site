@@ -78,26 +78,26 @@ const totalCategories = categories.length;
         </div>
       </div>
       <div class="hp-hero-aside">
-        <div class="hp-stat-card">
-          <span class="hp-stat-label">Published Guides</span>
-          <span class="hp-stat-value">{totalArticles}</span>
+        <div class="hp-hero-proof">
+          <div class="hp-proof-line">
+            <span class="hp-proof-number">{totalArticles}</span>
+            <span class="hp-proof-text">in-depth guides</span>
+          </div>
+          <span class="hp-proof-divider">·</span>
+          <div class="hp-proof-line">
+            <span class="hp-proof-number">3</span>
+            <span class="hp-proof-text">free tools</span>
+          </div>
+          <span class="hp-proof-divider">·</span>
+          <div class="hp-proof-line">
+            <span class="hp-proof-number">0</span>
+            <span class="hp-proof-text">fluff</span>
+          </div>
         </div>
-        <div class="hp-stat-card">
-          <span class="hp-stat-label">Categories Covered</span>
-          <span class="hp-stat-value">{totalCategories}</span>
-        </div>
-        <div class="hp-stat-card hp-stat-card--highlight">
-          <span class="hp-stat-label">Interactive Tools</span>
-          <span class="hp-stat-value">3</span>
-          <span class="hp-stat-sub">Yield Dashboard / Staking Calculator / AEO Audit</span>
-        </div>
-        <div class="hp-hero-urgency">
-          <p class="hp-hero-loss">
-            APY rates shift daily. The opportunity you see today may not exist tomorrow.
-          </p>
-          <p class="hp-hero-cost">
-            Every week you wait, your holdings lose potential yield. At 5% APY, $10,000 sitting idle costs you roughly $9.60 per week in missed rewards.
-          </p>
+        <div class="hp-hero-calc">
+          <p class="hp-calc-hook">How much is your idle crypto costing you?</p>
+          <p class="hp-calc-example">$10,000 at 5% APY = <strong>$9.60/week</strong> in missed yield</p>
+          <a href="/tools/yield-dashboard" class="hp-btn-calc">See your number →</a>
         </div>
       </div>
     </div>
@@ -449,42 +449,82 @@ const totalCategories = categories.length;
     transform: translateY(0) scale(0.98);
   }
 
-  /* Hero aside: stat cards */
+  /* Hero aside */
   .hp-hero-aside {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 1.5rem;
     padding-top: 2.5rem;
   }
 
-  .hp-stat-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1rem 1.25rem;
+  .hp-hero-proof {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .hp-proof-line {
     display: flex;
     align-items: baseline;
-    gap: 0.75rem;
-    transition: border-color 0.2s;
+    gap: 0.4rem;
   }
 
-  .hp-stat-card:hover {
-    border-color: var(--accent);
+  .hp-proof-number {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
   }
 
-  .hp-stat-card--highlight {
-    flex-direction: column;
-    gap: 0.35rem;
-    background: linear-gradient(135deg, rgba(27, 58, 92, 0.03) 0%, rgba(74, 144, 217, 0.05) 100%);
-    border-color: rgba(74, 144, 217, 0.2);
-  }
-
-  .hp-stat-label {
-    font-size: 0.82rem;
-    font-weight: 600;
+  .hp-proof-text {
+    font-size: 0.9rem;
     color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+
+  .hp-proof-divider {
+    color: var(--border);
+    font-size: 1.25rem;
+  }
+
+  .hp-hero-calc {
+    background: linear-gradient(135deg, rgba(27, 58, 92, 0.04) 0%, rgba(74, 144, 217, 0.06) 100%);
+    border: 1px solid rgba(74, 144, 217, 0.15);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .hp-calc-hook {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 0.5rem;
+  }
+
+  .hp-calc-example {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0 0 1rem;
+  }
+
+  .hp-calc-example strong {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .hp-btn-calc {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .hp-btn-calc:hover {
+    color: var(--text-primary);
   }
 
   .hp-stat-value {
