@@ -4,7 +4,7 @@ description: "Lido just launched EarnUSD, a multi-strategy stablecoin vault targ
 slug: "lido-earnusd-vs-aave-morpho-2026"
 pubDate: 2026-03-30
 updatedDate: 2026-03-30
-category: "DeFi"
+category: defi
 tags: ["Lido EarnUSD", "Aave", "Morpho", "stablecoin yield", "DeFi 2026", "USDC yield", "passive income crypto"]
 keywords: "Lido EarnUSD review, stablecoin DeFi yield comparison 2026, best stablecoin lending platform"
 author: "PassiveYieldLab"
