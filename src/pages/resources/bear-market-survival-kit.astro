@@ -1,0 +1,541 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Free Guide: The Crypto Bear Market Survival Kit"
+  description="7 passive income strategies that work when prices drop. Download the free PDF guide from Passive Yield Lab."
+  ogImage="/og/default.svg"
+>
+  <div class="lm-page">
+
+    <!-- Hero -->
+    <section class="lm-hero">
+      <div class="lm-hero-inner">
+        <span class="lm-badge">Free Guide</span>
+        <h1>The Crypto Bear Market<br/>Survival Kit</h1>
+        <p class="lm-subtitle">
+          7 passive income strategies that work when prices drop.
+          Real protocols, realistic numbers, step-by-step instructions.
+        </p>
+      </div>
+    </section>
+
+    <!-- Two-column: benefits + form -->
+    <section class="lm-main">
+      <div class="lm-content">
+
+        <!-- What You'll Learn -->
+        <div class="lm-benefits">
+          <h2>What's Inside</h2>
+          <ul>
+            <li>
+              <span class="lm-check">&#10003;</span>
+              <div>
+                <strong>Stablecoin Yield</strong> — earn 5-15% APY without price exposure
+              </div>
+            </li>
+            <li>
+              <span class="lm-check">&#10003;</span>
+              <div>
+                <strong>ETH &amp; SOL Staking</strong> — set-and-forget strategies for long-term holders
+              </div>
+            </li>
+            <li>
+              <span class="lm-check">&#10003;</span>
+              <div>
+                <strong>Liquidity Provision</strong> — advanced DeFi yield with managed risk
+              </div>
+            </li>
+            <li>
+              <span class="lm-check">&#10003;</span>
+              <div>
+                <strong>Margin Lending</strong> — lend idle crypto to traders for daily interest
+              </div>
+            </li>
+            <li>
+              <span class="lm-check">&#10003;</span>
+              <div>
+                <strong>Real-World Assets (RWA)</strong> — tokenized bonds and treasuries in DeFi
+              </div>
+            </li>
+            <li>
+              <span class="lm-check">&#10003;</span>
+              <div>
+                <strong>Dollar-Cost Averaging + Yield</strong> — buy the dip and earn while you wait
+              </div>
+            </li>
+            <li>
+              <span class="lm-check">&#10003;</span>
+              <div>
+                <strong>Risk Management Framework</strong> — how to size positions and protect capital
+              </div>
+            </li>
+          </ul>
+
+          <div class="lm-proof">
+            <p>Built by a crypto holder who lost money chasing 300% APY farms. This guide exists so you don't make the same mistakes.</p>
+          </div>
+        </div>
+
+        <!-- Email Gate Form -->
+        <div class="lm-form-card" id="lm-gate">
+          <div class="lm-form-header">
+            <span class="lm-pdf-icon">PDF</span>
+            <div>
+              <h3>Get Your Free Copy</h3>
+              <p>32-page guide. No fluff. Instant download.</p>
+            </div>
+          </div>
+
+          <form
+            id="lm-email-form"
+            action="https://app.beehiiv.com/forms/1c80f432-8696-4d95-b028-aa8bd75f08ba"
+            method="POST"
+            target="_blank"
+            class="lm-form"
+          >
+            <label for="lm-email" class="lm-label">Email address</label>
+            <input
+              type="email"
+              id="lm-email"
+              name="email"
+              placeholder="you@example.com"
+              required
+              class="lm-input"
+            />
+            <button type="submit" class="lm-submit">
+              Download Free Guide
+            </button>
+            <p class="lm-privacy">No spam. Unsubscribe anytime. We respect your inbox.</p>
+          </form>
+        </div>
+
+        <!-- Download reveal (hidden by default) -->
+        <div class="lm-download-card" id="lm-download" style="display:none;">
+          <div class="lm-download-inner">
+            <span class="lm-success-icon">&#10003;</span>
+            <h3>Your guide is ready!</h3>
+            <p>Check your email for a confirmation, and download your copy below.</p>
+            <a
+              href="/downloads/bear-market-survival-kit.pdf"
+              download
+              class="lm-download-btn"
+            >
+              Download PDF (6 MB)
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Social proof / trust -->
+    <section class="lm-trust">
+      <p>From <strong>Passive Yield Lab</strong> — trusted crypto yield guides read by thousands of investors worldwide.</p>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="lm-disclaimer">
+      <p>
+        <strong>Disclaimer:</strong> This guide is for educational purposes only and does not constitute financial advice.
+        APY rates fluctuate and past performance does not guarantee future returns. Crypto carries significant risk.
+        Always do your own research. <a href="/disclaimer">Full disclaimer</a>.
+      </p>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('lm-email-form');
+  const gate = document.getElementById('lm-gate');
+  const download = document.getElementById('lm-download');
+
+  form?.addEventListener('submit', () => {
+    setTimeout(() => {
+      if (gate) gate.style.display = 'none';
+      if (download) download.style.display = 'block';
+    }, 300);
+  });
+</script>
+
+<style>
+  /* ===== Page ===== */
+  .lm-page {
+    max-width: 100%;
+  }
+
+  /* ===== Hero ===== */
+  .lm-hero {
+    position: relative;
+    background: linear-gradient(180deg, rgba(27, 58, 92, 0.04) 0%, transparent 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 4rem 1.5rem 3.5rem;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .lm-hero::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(74, 144, 217, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .lm-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .lm-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    background: var(--accent-dim);
+    padding: 0.25rem 0.85rem;
+    border-radius: 9999px;
+    margin-bottom: 1.25rem;
+  }
+
+  .lm-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-wrap: balance;
+  }
+
+  .lm-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* ===== Main Content ===== */
+  .lm-main {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+
+  .lm-content {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 2.5rem;
+    align-items: start;
+  }
+
+  /* ===== Benefits ===== */
+  .lm-benefits h2 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .lm-benefits ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .lm-benefits li {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .lm-benefits li strong {
+    color: var(--text-primary);
+  }
+
+  .lm-check {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--accent-dim);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+
+  .lm-proof {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  .lm-proof p {
+    margin: 0;
+  }
+
+  /* ===== Form Card ===== */
+  .lm-form-card {
+    background: var(--bg-card);
+    border: 2px solid var(--accent);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(74, 144, 217, 0.12);
+    position: sticky;
+    top: calc(var(--header-height) + 1.5rem);
+  }
+
+  .lm-form-header {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .lm-pdf-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius);
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+
+  .lm-form-header h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 0.2rem;
+  }
+
+  .lm-form-header p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .lm-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .lm-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .lm-input {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .lm-input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.12);
+  }
+
+  .lm-submit {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.85rem 1.5rem;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: var(--shadow-accent);
+  }
+
+  .lm-submit:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(74, 144, 217, 0.3);
+  }
+
+  .lm-submit:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .lm-privacy {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin: 0;
+  }
+
+  /* ===== Download Card ===== */
+  .lm-download-card {
+    background: var(--bg-card);
+    border: 2px solid var(--accent);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(74, 144, 217, 0.12);
+    grid-column: 2;
+    position: sticky;
+    top: calc(var(--header-height) + 1.5rem);
+  }
+
+  .lm-download-inner {
+    text-align: center;
+  }
+
+  .lm-success-icon {
+    display: inline-flex;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--accent-dim);
+    color: var(--accent);
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .lm-download-inner h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .lm-download-inner p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .lm-download-btn {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.85rem 2rem;
+    background: var(--accent);
+    color: #fff;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: var(--shadow-accent);
+  }
+
+  .lm-download-btn:hover {
+    background: var(--accent-hover);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(74, 144, 217, 0.3);
+  }
+
+  /* ===== Trust ===== */
+  .lm-trust {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  .lm-trust strong {
+    color: var(--text-primary);
+  }
+
+  /* ===== Disclaimer ===== */
+  .lm-disclaimer {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+  }
+
+  .lm-disclaimer p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .lm-disclaimer a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 768px) {
+    .lm-hero {
+      padding: 3rem 1rem 2.5rem;
+    }
+
+    .lm-main {
+      padding: 2rem 1rem;
+    }
+
+    .lm-content {
+      grid-template-columns: 1fr;
+    }
+
+    .lm-form-card,
+    .lm-download-card {
+      position: static;
+      grid-column: auto;
+    }
+
+    .lm-submit {
+      width: 100%;
+    }
+
+    .lm-download-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>

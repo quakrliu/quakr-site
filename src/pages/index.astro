@@ -170,6 +170,20 @@ const aiIncomePosts = aiIncomeSlugs
     ))}
   </section>
 
+  <!-- Lead Magnet Feature -->
+  <section class="home-lead-magnet">
+    <div class="home-lm-inner">
+      <div class="home-lm-text">
+        <span class="home-lm-badge">Free Guide</span>
+        <h2>The Crypto Bear Market Survival Kit</h2>
+        <p>7 passive income strategies that work when prices drop. Real protocols, realistic numbers, step-by-step instructions.</p>
+        <a href="/resources/bear-market-survival-kit" class="home-lm-cta">
+          Download Free PDF &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="email-signup">
     <div class="email-signup-box">
       <h2>Your Weekly Yield Edge</h2>
@@ -274,9 +288,83 @@ const aiIncomePosts = aiIncomeSlugs
     margin: 0;
   }
 
+  /* ===== Home Lead Magnet ===== */
+  .home-lead-magnet {
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .home-lm-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(27, 58, 92, 0.04) 0%, rgba(74, 144, 217, 0.06) 100%);
+    border: 1px solid rgba(74, 144, 217, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 3rem;
+  }
+
+  .home-lm-text {
+    max-width: 600px;
+  }
+
+  .home-lm-badge {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border: 1px solid rgba(74, 144, 217, 0.2);
+    padding: 0.2rem 0.65rem;
+    border-radius: 9999px;
+    margin-bottom: 0.75rem;
+  }
+
+  .home-lm-text h2 {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+
+  .home-lm-text p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+  }
+
+  .home-lm-cta {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    box-shadow: var(--shadow-accent);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+
+  .home-lm-cta:hover {
+    background: var(--accent-hover);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(74, 144, 217, 0.3);
+  }
+
   @media (max-width: 768px) {
     .start-here-columns {
       grid-template-columns: 1fr;
+    }
+
+    .home-lm-inner {
+      padding: 2rem 1.5rem;
     }
   }
 </style>
