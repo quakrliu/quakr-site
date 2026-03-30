@@ -45,34 +45,100 @@ const aiIncomeSlugs = [
 const aiIncomePosts = aiIncomeSlugs
   .map((slug) => allPosts.find((p) => p.id === slug))
   .filter(Boolean) as typeof allPosts;
+
+// Featured post (latest)
+const featuredPost = posts[0];
+const remainingPosts = posts.slice(1, 9);
+
+// Stats
+const totalArticles = allPosts.length;
+const totalCategories = categories.length;
 ---
 
 <BaseLayout title="Passive Yield Lab" ogImage="/og/default.svg">
-  <section class="hero">
-    <h1>
-      <span class="accent">Earn More.</span> Work Less.
-    </h1>
-    <p>
-      Practical guides on crypto yield, AI income, and every smart way to build passive income — tested by real practitioners.
-    </p>
-    <p class="hero-stat">
-      Our readers earn <strong>4–20% APY</strong> on crypto and build <strong>$1K–$10K/month</strong> AI side income. We'll show you how.
-    </p>
-    <p class="hero-loss">
-      Every day your money sits idle, you're leaving yield on the table.
-    </p>
-    <p class="hero-origin">
-      Built by a crypto holder who lost money chasing 300% APY farms. This lab exists so you don't make the same mistakes. <a href="/about" class="hero-origin-link">Our story →</a>
-    </p>
-    <a href="/blog" class="hero-cta">Read the Guides</a>
+
+  <!-- HERO: Asymmetric split — Octalysis #1 Epic Meaning + #8 Loss Avoidance -->
+  <section class="hp-hero">
+    <div class="hp-hero-inner">
+      <div class="hp-hero-text">
+        <span class="hp-hero-tag">Crypto Yield + AI Income Lab</span>
+        <h1>
+          Your idle crypto is losing value.<br />
+          <span class="hp-hero-accent">Put it to work.</span>
+        </h1>
+        <p class="hp-hero-desc">
+          Practical, tested guides on earning 4-20% APY through staking, DeFi, and lending — plus AI-powered income strategies that actually work. Built by practitioners who lost money so you don't have to.
+        </p>
+        <div class="hp-hero-actions">
+          <a href="/blog" class="hp-btn-primary">Read the Guides</a>
+          <a href="/tools/staking-calculator" class="hp-btn-secondary">Calculate Your Yield</a>
+        </div>
+      </div>
+      <div class="hp-hero-aside">
+        <div class="hp-stat-card">
+          <span class="hp-stat-label">Published Guides</span>
+          <span class="hp-stat-value">{totalArticles}</span>
+        </div>
+        <div class="hp-stat-card">
+          <span class="hp-stat-label">Categories Covered</span>
+          <span class="hp-stat-value">{totalCategories}</span>
+        </div>
+        <div class="hp-stat-card hp-stat-card--highlight">
+          <span class="hp-stat-label">Interactive Tools</span>
+          <span class="hp-stat-value">3</span>
+          <span class="hp-stat-sub">Yield Dashboard / Staking Calculator / AEO Audit</span>
+        </div>
+        <p class="hp-hero-loss">
+          APY rates shift daily. The opportunity you see today may not exist tomorrow.
+        </p>
+      </div>
+    </div>
   </section>
 
-  <!-- Start Here -->
+  <!-- TOOLS: Octalysis #3 Empowerment + #4 Ownership -->
+  <section class="hp-tools">
+    <div class="hp-tools-inner">
+      <div class="hp-section-header">
+        <span class="hp-section-tag">Your Toolkit</span>
+        <h2>Build your portfolio with real data</h2>
+        <p>Interactive tools to model, track, and optimize your passive income strategy.</p>
+      </div>
+      <div class="hp-tools-grid">
+        <a href="/tools/yield-dashboard" class="hp-tool-card hp-tool-card--wide">
+          <div class="hp-tool-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </div>
+          <h3>Yield Dashboard</h3>
+          <p>Track staking yields across protocols. Compare APYs. Find the best opportunities right now.</p>
+          <span class="hp-tool-cta">Open Dashboard &rarr;</span>
+        </a>
+        <a href="/tools/staking-calculator" class="hp-tool-card">
+          <div class="hp-tool-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="8" y1="18" x2="8" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
+          </div>
+          <h3>Staking Calculator</h3>
+          <p>Model your rewards. See exactly what your holdings could earn.</p>
+          <span class="hp-tool-cta">Calculate &rarr;</span>
+        </a>
+        <a href="/tools/aeo-audit" class="hp-tool-card">
+          <div class="hp-tool-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3>AEO Audit</h3>
+          <p>Check how your content performs for AI Engine Optimization.</p>
+          <span class="hp-tool-cta">Run Audit &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- START HERE: Octalysis #2 Accomplishment + #7 Curiosity -->
   <section class="start-here">
     <div class="start-here-inner">
       <div class="start-here-header">
-        <span class="start-here-label">New here? Pick your path.</span>
+        <span class="hp-section-tag">New here? Pick your path.</span>
         <h2>Start Here</h2>
+        <p>Two proven tracks to passive income. Choose the one that fits you.</p>
       </div>
       <div class="start-here-columns">
 
@@ -135,6 +201,42 @@ const aiIncomePosts = aiIncomeSlugs
     </div>
   </section>
 
+  <!-- FEATURED + LATEST: Asymmetric zig-zag layout -->
+  {featuredPost && (
+    <section class="hp-featured">
+      <div class="hp-featured-inner">
+        <div class="hp-section-header">
+          <span class="hp-section-tag">Latest</span>
+          <h2>Fresh from the Lab</h2>
+        </div>
+        <a href={`/blog/${featuredPost.id}`} class="hp-featured-card">
+          <div class="hp-featured-meta">
+            <span class="card-category">{featuredPost.data.category}</span>
+            {featuredPost.data.level && (
+              <span class={`level-badge level-${featuredPost.data.level}`}>
+                {levelLabels[featuredPost.data.level]}
+              </span>
+            )}
+            {featuredPost.data.trending && (
+              <span class="trending-badge">Trending</span>
+            )}
+            <time datetime={featuredPost.data.pubDate.toISOString()}>
+              {featuredPost.data.pubDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              })}
+            </time>
+          </div>
+          <h3>{featuredPost.data.title}</h3>
+          <p>{featuredPost.data.description}</p>
+          <span class="hp-featured-read">Read this guide &rarr;</span>
+        </a>
+      </div>
+    </section>
+  )}
+
+  <!-- CATEGORY NAV -->
   <div class="category-filter">
     <a href="/blog" class="active">All</a>
     {categories.map((cat) => (
@@ -142,36 +244,45 @@ const aiIncomePosts = aiIncomeSlugs
     ))}
   </div>
 
-  <section class="article-grid">
-    {posts.map((post) => (
-      <a href={`/blog/${post.id}`} class="article-card">
-        <div class="card-badges">
-          <span class="card-category">{post.data.category}</span>
-          {post.data.level && (
-            <span class={`level-badge level-${post.data.level}`}>
-              {levelLabels[post.data.level]}
-            </span>
-          )}
-          {post.data.trending && (
-            <span class="trending-badge">🔥 Trending</span>
-          )}
-        </div>
-        <h3>{post.data.title}</h3>
-        <p>{post.data.description}</p>
-        <div class="card-meta">
-          <time datetime={post.data.pubDate.toISOString()}>
-            {post.data.pubDate.toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'short',
-              day: 'numeric',
-            })}
-          </time>
-        </div>
-      </a>
-    ))}
+  <!-- ARTICLE GRID: Asymmetric 2-column + 1 wide pattern -->
+  <section class="hp-articles">
+    <div class="hp-articles-grid">
+      {remainingPosts.map((post, i) => (
+        <a
+          href={`/blog/${post.id}`}
+          class={`article-card ${i === 0 ? 'article-card--wide' : ''}`}
+        >
+          <div class="card-badges">
+            <span class="card-category">{post.data.category}</span>
+            {post.data.level && (
+              <span class={`level-badge level-${post.data.level}`}>
+                {levelLabels[post.data.level]}
+              </span>
+            )}
+            {post.data.trending && (
+              <span class="trending-badge">Trending</span>
+            )}
+          </div>
+          <h3>{post.data.title}</h3>
+          <p>{post.data.description}</p>
+          <div class="card-meta">
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              })}
+            </time>
+          </div>
+        </a>
+      ))}
+    </div>
+    <div class="hp-articles-more">
+      <a href="/blog" class="hp-btn-secondary">View All Guides &rarr;</a>
+    </div>
   </section>
 
-  <!-- Lead Magnet Feature -->
+  <!-- LEAD MAGNET: Octalysis #6 Scarcity + #7 Curiosity -->
   <section class="home-lead-magnet">
     <div class="home-lm-inner">
       <div class="home-lm-text">
@@ -185,6 +296,7 @@ const aiIncomePosts = aiIncomeSlugs
     </div>
   </section>
 
+  <!-- EMAIL SIGNUP: Octalysis #5 Social Influence + #2 Accomplishment -->
   <section class="email-signup">
     <div class="email-signup-box">
       <h2>Your Weekly Yield Edge</h2>
@@ -208,6 +320,324 @@ const aiIncomePosts = aiIncomeSlugs
 </BaseLayout>
 
 <style>
+  /* ===== Hero: Asymmetric Split ===== */
+  .hp-hero {
+    padding: 5rem 1.5rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hp-hero::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -200px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(ellipse at center, rgba(74, 144, 217, 0.06) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hp-hero-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hp-hero-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border: 1px solid rgba(74, 144, 217, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    margin-bottom: 1.25rem;
+  }
+
+  .hp-hero-text h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .hp-hero-accent {
+    color: var(--accent);
+  }
+
+  .hp-hero-desc {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 540px;
+    margin-bottom: 2rem;
+  }
+
+  .hp-hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hp-btn-primary {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 700;
+    padding: 0.8rem 2rem;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    box-shadow: var(--shadow-accent);
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    text-decoration: none;
+  }
+
+  .hp-btn-primary:hover {
+    background: var(--accent-hover);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(74, 144, 217, 0.3);
+  }
+
+  .hp-btn-primary:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .hp-btn-secondary {
+    display: inline-block;
+    color: var(--accent);
+    font-family: var(--font-display);
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    border: 1px solid var(--border);
+    background: var(--bg-primary);
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    text-decoration: none;
+  }
+
+  .hp-btn-secondary:hover {
+    border-color: var(--accent);
+    background: var(--accent-dim);
+    color: var(--accent);
+    transform: translateY(-1px);
+  }
+
+  .hp-btn-secondary:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  /* Hero aside: stat cards */
+  .hp-hero-aside {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-top: 2.5rem;
+  }
+
+  .hp-stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    transition: border-color 0.2s;
+  }
+
+  .hp-stat-card:hover {
+    border-color: var(--accent);
+  }
+
+  .hp-stat-card--highlight {
+    flex-direction: column;
+    gap: 0.35rem;
+    background: linear-gradient(135deg, rgba(27, 58, 92, 0.03) 0%, rgba(74, 144, 217, 0.05) 100%);
+    border-color: rgba(74, 144, 217, 0.2);
+  }
+
+  .hp-stat-label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .hp-stat-value {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+  }
+
+  .hp-stat-sub {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .hp-hero-loss {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  /* ===== Section shared styles ===== */
+  .hp-section-header {
+    margin-bottom: 2rem;
+  }
+
+  .hp-section-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    background: var(--accent-dim);
+    border: 1px solid rgba(74, 144, 217, 0.15);
+    padding: 0.2rem 0.65rem;
+    border-radius: 9999px;
+    margin-bottom: 0.75rem;
+  }
+
+  .hp-section-header h2 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.025em;
+    margin-bottom: 0.35rem;
+  }
+
+  .hp-section-header p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    max-width: 520px;
+  }
+
+  /* ===== Tools Section ===== */
+  .hp-tools {
+    padding: 2rem 1.5rem 3rem;
+    background: var(--bg-secondary);
+  }
+
+  .hp-tools-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .hp-tools-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .hp-tool-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s, box-shadow 0.3s;
+  }
+
+  .hp-tool-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 32px rgba(27, 58, 92, 0.08);
+    color: inherit;
+  }
+
+  .hp-tool-card:active {
+    transform: translateY(-1px) scale(0.995);
+  }
+
+  .hp-tool-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: var(--accent-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .hp-tool-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .hp-tool-card p {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+
+  .hp-tool-cta {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  /* ===== Start Here (inherited) ===== */
+  .start-here {
+    padding: 3rem 1.5rem;
+  }
+
+  .start-here-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .start-here-header {
+    margin-bottom: 2rem;
+  }
+
+  .start-here-header h2 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.025em;
+    margin-bottom: 0.35rem;
+  }
+
+  .start-here-header p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+  }
+
   .start-here-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -243,53 +673,155 @@ const aiIncomePosts = aiIncomeSlugs
     color: var(--accent);
   }
 
-  .start-here-coming-soon {
+  .start-here-grid {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
   }
 
-  .coming-soon-card {
+  .start-here-card {
     background: var(--bg-card);
-    border: 1px dashed var(--border);
+    border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s, box-shadow 0.3s;
   }
 
-  .coming-soon-badge {
-    display: inline-block;
-    font-size: 0.68rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--accent);
-    background: var(--accent-dim);
-    border: 1px solid rgba(74, 144, 217, 0.2);
-    padding: 0.2rem 0.6rem;
-    border-radius: 9999px;
-    width: fit-content;
-    margin-bottom: 0.25rem;
+  .start-here-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 24px rgba(27, 58, 92, 0.08);
+    color: inherit;
   }
 
-  .coming-soon-card h4 {
+  .start-here-card:active {
+    transform: translateY(-1px) scale(0.995);
+  }
+
+  .start-here-card-badges {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .start-here-card h4 {
     font-family: var(--font-display);
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--text-primary);
-    margin: 0;
+    line-height: 1.35;
   }
 
-  .coming-soon-card p {
-    font-size: 0.875rem;
+  .start-here-card p {
+    font-size: 0.82rem;
     color: var(--text-secondary);
-    line-height: 1.6;
-    margin: 0;
+    line-height: 1.55;
   }
 
-  /* ===== Home Lead Magnet ===== */
+  .start-here-read {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: auto;
+  }
+
+  /* ===== Featured ===== */
+  .hp-featured {
+    padding: 2rem 1.5rem 1rem;
+  }
+
+  .hp-featured-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .hp-featured-card {
+    display: block;
+    background: linear-gradient(135deg, rgba(27, 58, 92, 0.03) 0%, rgba(74, 144, 217, 0.04) 100%);
+    border: 1px solid rgba(74, 144, 217, 0.15);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s, box-shadow 0.3s;
+  }
+
+  .hp-featured-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 16px 40px rgba(27, 58, 92, 0.1);
+    color: inherit;
+  }
+
+  .hp-featured-card:active {
+    transform: translateY(-1px) scale(0.998);
+  }
+
+  .hp-featured-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+
+  .hp-featured-meta time {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+
+  .hp-featured-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.025em;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .hp-featured-card p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    max-width: 680px;
+    margin-bottom: 1rem;
+  }
+
+  .hp-featured-read {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  /* ===== Articles Grid: Asymmetric ===== */
+  .hp-articles {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem 2rem;
+  }
+
+  .hp-articles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .hp-articles-grid .article-card--wide {
+    grid-column: 1 / -1;
+  }
+
+  .hp-articles-more {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  /* ===== Lead Magnet (inherited) ===== */
   .home-lead-magnet {
     padding: 0 1.5rem;
     margin-bottom: 2rem;
@@ -359,9 +891,47 @@ const aiIncomePosts = aiIncomeSlugs
     box-shadow: 0 6px 20px rgba(74, 144, 217, 0.3);
   }
 
+  /* ===== Responsive ===== */
   @media (max-width: 768px) {
+    .hp-hero-inner {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .hp-hero-aside {
+      padding-top: 0;
+    }
+
+    .hp-hero-text h1 {
+      font-size: 2rem;
+    }
+
+    .hp-tools-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hp-tool-card--wide {
+      grid-column: auto;
+    }
+
     .start-here-columns {
       grid-template-columns: 1fr;
+    }
+
+    .hp-featured-card {
+      padding: 1.75rem;
+    }
+
+    .hp-featured-card h3 {
+      font-size: 1.2rem;
+    }
+
+    .hp-articles-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hp-articles-grid .article-card--wide {
+      grid-column: auto;
     }
 
     .home-lm-inner {
