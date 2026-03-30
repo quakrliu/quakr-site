@@ -31,15 +31,15 @@ seoDescription: "Learn how to stake ETH in 2026. Compare solo staking, exchange 
 
 <div class="aeo-overview" id="article-overview">
 
-**Ethereum staking in 2026 yields 2.8–4.2% APY** through three methods: solo staking (3.5–4.2% APY, requires 32 ETH), exchange staking (2.5–3.5%, no minimum), and liquid staking via Lido stETH or Rocket Pool rETH (2.8–3.8% base, DeFi-stackable to 7.8%). Approximately 37 million ETH is currently staked, representing 31% of total circulating supply.
+**Ethereum staking in 2026 yields 2.8–4.2% APY** through three methods: solo staking (3.5–4.2% APY, requires 32 ETH), exchange staking (2.5–3.5%, no minimum), and liquid staking via Lido stETH or Rocket Pool rETH (2.8–3.8% base, DeFi-stackable to 7.8%). According to beaconcha.in (as of March 2026), approximately 37 million ETH is currently staked, representing 31% of total circulating supply. APY fluctuates — verify current rates at StakingRewards.com.
 
-*Last updated: 2026-03-29*
+*Last updated: 2026-03-30*
 
 </div>
 
 ## The Big Picture: ETH Staking Has Changed Everything
 
-Here's a number that should get your attention: **approximately 37 million ETH** is currently staked on the Ethereum network. That's roughly 31% of the entire circulating supply, locked in by validators who are collectively securing a blockchain that processes billions of dollars in value every single day.
+Here's a number that should get your attention: according to beaconcha.in (as of March 2026), **approximately 37 million ETH** is currently staked on the Ethereum network. That's roughly 31% of the entire circulating supply, locked in by validators who are collectively securing a blockchain that processes billions of dollars in value every single day.
 
 And yet, the conversation around ETH staking in 2026 has shifted dramatically from even two years ago. The SEC has formally clarified that staking-as-a-service is legal for retail investors in the US. BlackRock launched its ETH Staking ETF, bringing institutional legitimacy that even the most optimistic crypto bulls didn't expect this fast. Fidelity, Grayscale, and a wave of sovereign wealth funds are quietly accumulating staked ETH positions.
 
@@ -47,7 +47,7 @@ This is not 2021 DeFi speculation. This is infrastructure-level yield.
 
 > **Here's the fundamental shift worth understanding:** When you stake ETH, you're not handing your money to a fund manager who promises returns. You're putting *your* asset to work in a protocol *you* chose, earning rewards that flow directly back to *your* wallet. No intermediary takes a management fee. No bank decides your interest rate. The yield comes from the protocol itself — and it belongs to you from the moment it's earned. That's a different relationship with your money than anything traditional finance offers.
 
-But here's the uncomfortable truth nobody talks about in the headlines: **APY has compressed**. When Ethereum first transitioned to Proof of Stake, early validators were earning 5%+ annualized. Today, with 37M+ ETH competing for the same block rewards, the baseline rate sits around **2.8%–3.8% APY** depending on network activity and the method you choose.
+But here's the uncomfortable truth nobody talks about in the headlines: **APY has compressed**. When Ethereum first transitioned to Proof of Stake, early validators were earning 5%+ annualized (per beaconcha.in historical data). Today, with 37M+ ETH competing for the same block rewards, the baseline rate sits around **2.8%–3.8% APY** depending on network activity and the method you choose (Source: StakingRewards.com, March 2026). APY fluctuates.
 
 So the question isn't just "should I stake ETH?" The question is: **how much can you realistically earn in 2026, which method fits your situation, and how do you squeeze every basis point out of your position?**
 
@@ -79,6 +79,16 @@ The APY fluctuates based on how many validators are active. More validators = lo
 **The key insight**: Your ETH isn't just sitting idle when staked. It's actively working to secure a network with hundreds of billions in total value locked. That work gets rewarded.
 
 ---
+
+<div class="evidence-panel" id="evidence-eth-staking-2026">
+
+**Claim:** Approximately 37 million ETH is staked as of March 2026, representing ~31% of circulating supply, yielding 2.8–4.2% APY depending on method.
+**Methodology:** Active validator count and staked ETH balance tracked on-chain by the Ethereum Beacon Chain consensus layer.
+**Sources:** beaconcha.in (beacon chain explorer); StakingRewards.com (APY benchmarks); DeFiLlama (liquid staking market share).
+**Date of data:** March 2026
+**Limitations:** APY fluctuates based on active validator count, network transaction volume, and MEV market conditions. Figures represent typical ranges, not guarantees.
+
+</div>
 
 ## Three Ways to Stake ETH: Choose Your Path
 
@@ -269,7 +279,7 @@ Liquid staking is where ETH staking gets genuinely interesting for intermediate 
 
 ### Lido Finance — stETH
 
-**Lido** is the dominant liquid staking protocol with roughly 30% market share among all staked ETH. When you stake ETH with Lido, you receive **stETH** (staked ETH) in return.
+**Lido** is the dominant liquid staking protocol with roughly 30% market share among all staked ETH (according to DeFiLlama liquid staking data, as of March 2026). When you stake ETH with Lido, you receive **stETH** (staked ETH) in return.
 
 **How stETH works**:
 - stETH is a **rebasing token** — its balance automatically increases daily to reflect accrued staking rewards
@@ -391,43 +401,43 @@ If you're staking any meaningful amount of ETH — especially via liquid staking
 
 Solo staking requires exactly 32 ETH. Exchange staking and liquid staking via Lido or Rocket Pool can be started with as little as 0.001 ETH. For practical purposes, staking under 0.1 ETH produces negligible rewards, but there is no technical minimum barrier for exchange or liquid staking methods.
 
-*Last updated: 2026-03-29*
+*Last updated: 2026-03-30*
 
 ### Is ETH staking safe in 2026? {#faq-eth-staking-safety}
 
 ETH staking is considered low-to-medium risk. Ethereum's Proof of Stake has operated securely since September 2022. Primary risks are smart contract bugs in liquid staking protocols (low probability for Lido and Rocket Pool), exchange insolvency for custodial staking, and slashing for solo validators running misconfigured hardware. Established ETH staking carries lower risk than most other crypto yield strategies.
 
-*Last updated: 2026-03-29*
+*Last updated: 2026-03-30*
 
 ### Can I unstake ETH whenever I want? {#faq-unstaking-flexibility}
 
 Liquid staking tokens (stETH, rETH) are fully liquid—you can swap the liquid staking tokens on DEXes at any time. Exchange flexible staking is also liquid. Exchange locked staking has fixed terms (30–120 days). Solo staking requires the network's withdrawal queue, typically 1–5 days under normal conditions and potentially weeks during high unstaking demand.
 
-*Last updated: 2026-03-29*
+*Last updated: 2026-03-30*
 
 ### What happens to my staking rewards if ETH price drops? {#faq-price-drop-impact}
 
 ETH reward accrual in ETH terms continues unchanged regardless of price. A price drop affects the USD value of both staked ETH and accrued rewards, but not the rate at which ETH accumulates. At 3% APY, 10 staked ETH earns 0.38 ETH per year whether ETH is priced at $1,000 or $5,000.
 
-*Last updated: 2026-03-29*
+*Last updated: 2026-03-30*
 
 ### Is liquid staking better than regular staking? {#faq-liquid-vs-regular}
 
 Liquid staking (stETH, rETH) wins on capital flexibility and DeFi composability—the liquid staking tokens can be deployed in Aave, Curve, or EigenLayer while earning base staking yield. Regular staking wins on simplicity, lower smart contract risk, and slightly higher yield for solo validators. Most beginners should start with exchange staking; DeFi-comfortable users benefit from liquid staking's additional yield potential.
 
-*Last updated: 2026-03-29*
+*Last updated: 2026-03-30*
 
 ### What is the difference between stETH and rETH? {#faq-steth-vs-reth}
 
 stETH (Lido) is a rebasing token—its balance increases daily to reflect staking rewards, creating frequent taxable events. rETH (Rocket Pool) is an exchange-rate token—the balance stays fixed but each rETH becomes redeemable for more ETH over time, simplifying tax reporting. Lido offers more DeFi integrations; Rocket Pool offers greater decentralization with permissionless node operators.
 
-*Last updated: 2026-03-29*
+*Last updated: 2026-03-30*
 
 ### How do MEV rewards affect ETH staking APY? {#faq-mev-rewards}
 
 MEV (Maximal Extractable Value) rewards add approximately 0.5–1% above base staking yield for validators using MEV-boost software. Liquid staking protocols like Lido and Rocket Pool automatically capture MEV rewards and distribute the yield to stakers. Solo validators using MEV-boost consistently earn 3.5–4.2% APY versus the 2.8–3.8% base consensus layer rate.
 
-*Last updated: 2026-03-29*
+*Last updated: 2026-03-30*
 
 <script type="application/ld+json">
 {
@@ -438,7 +448,7 @@ MEV (Maximal Extractable Value) rewards add approximately 0.5–1% above base st
       "@type": "Question",
       "name": "How much ETH do I need to start staking?",
       "datePublished": "2026-03-19",
-      "dateModified": "2026-03-29",
+      "dateModified": "2026-03-30",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Solo staking requires exactly 32 ETH. Exchange staking and liquid staking via Lido or Rocket Pool can be started with as little as 0.001 ETH. For practical purposes, staking under 0.1 ETH produces negligible rewards, but there is no technical minimum barrier for exchange or liquid staking methods."
@@ -448,7 +458,7 @@ MEV (Maximal Extractable Value) rewards add approximately 0.5–1% above base st
       "@type": "Question",
       "name": "Is ETH staking safe in 2026?",
       "datePublished": "2026-03-19",
-      "dateModified": "2026-03-29",
+      "dateModified": "2026-03-30",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "ETH staking is considered low-to-medium risk. Ethereum's Proof of Stake has operated securely since September 2022. Primary risks are smart contract bugs in liquid staking protocols (low probability for Lido and Rocket Pool), exchange insolvency for custodial staking, and slashing for solo validators running misconfigured hardware. Established ETH staking carries lower risk than most other crypto yield strategies."
@@ -458,7 +468,7 @@ MEV (Maximal Extractable Value) rewards add approximately 0.5–1% above base st
       "@type": "Question",
       "name": "Can I unstake ETH whenever I want?",
       "datePublished": "2026-03-19",
-      "dateModified": "2026-03-29",
+      "dateModified": "2026-03-30",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Liquid staking tokens (stETH, rETH) are fully liquid—you can swap the liquid staking tokens on DEXes at any time. Exchange flexible staking is also liquid. Exchange locked staking has fixed terms (30–120 days). Solo staking requires the network's withdrawal queue, typically 1–5 days under normal conditions."
@@ -468,7 +478,7 @@ MEV (Maximal Extractable Value) rewards add approximately 0.5–1% above base st
       "@type": "Question",
       "name": "What happens to my staking rewards if ETH price drops?",
       "datePublished": "2026-03-19",
-      "dateModified": "2026-03-29",
+      "dateModified": "2026-03-30",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "ETH reward accrual in ETH terms continues unchanged regardless of price. A price drop affects the USD value of both staked ETH and accrued rewards, but not the rate at which ETH accumulates. At 3% APY, 10 staked ETH earns 0.38 ETH per year whether ETH is priced at $1,000 or $5,000."
@@ -478,7 +488,7 @@ MEV (Maximal Extractable Value) rewards add approximately 0.5–1% above base st
       "@type": "Question",
       "name": "Is liquid staking better than regular staking?",
       "datePublished": "2026-03-19",
-      "dateModified": "2026-03-29",
+      "dateModified": "2026-03-30",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Liquid staking (stETH, rETH) wins on capital flexibility and DeFi composability—the liquid staking tokens can be deployed in Aave, Curve, or EigenLayer while earning base staking yield. Regular staking wins on simplicity, lower smart contract risk, and slightly higher yield for solo validators. Most beginners should start with exchange staking; DeFi-comfortable users benefit from liquid staking's additional yield potential."
@@ -488,7 +498,7 @@ MEV (Maximal Extractable Value) rewards add approximately 0.5–1% above base st
       "@type": "Question",
       "name": "What is the difference between stETH and rETH?",
       "datePublished": "2026-03-19",
-      "dateModified": "2026-03-29",
+      "dateModified": "2026-03-30",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "stETH (Lido) is a rebasing token—its balance increases daily to reflect staking rewards, creating frequent taxable events. rETH (Rocket Pool) is an exchange-rate token—the balance stays fixed but each rETH becomes redeemable for more ETH over time, simplifying tax reporting. Lido offers more DeFi integrations; Rocket Pool offers greater decentralization with permissionless node operators."
@@ -498,7 +508,7 @@ MEV (Maximal Extractable Value) rewards add approximately 0.5–1% above base st
       "@type": "Question",
       "name": "How do MEV rewards affect ETH staking APY?",
       "datePublished": "2026-03-19",
-      "dateModified": "2026-03-29",
+      "dateModified": "2026-03-30",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "MEV (Maximal Extractable Value) rewards add approximately 0.5–1% above base staking yield for validators using MEV-boost software. Liquid staking protocols like Lido and Rocket Pool automatically capture MEV rewards and distribute the yield to stakers. Solo validators using MEV-boost consistently earn 3.5–4.2% APY versus the 2.8–3.8% base consensus layer rate."
