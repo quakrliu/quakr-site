@@ -1,7 +1,7 @@
 ---
 title: "SEC 2026 Staking Ruling: Is Crypto Staking Still Legal? What ETH and SOL Holders Need to Know"
 description: "The SEC's landmark March 17, 2026 ruling clarified that staking is not a securities offering. Here's what that means for ETH stakers (3.3–4.2% APY) and SOL stakers (6–7.5% APY) — plus the tax reality the ruling didn't change."
-pubDate: 2026-03-30
+pubDate: 2026-03-26
 category: guides
 tags:
   - regulation

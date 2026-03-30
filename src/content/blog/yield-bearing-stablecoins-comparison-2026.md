@@ -13,6 +13,14 @@ image: "/og/yield-bearing-stablecoins-comparison-2026.jpg"
 affiliateLinks: []
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**In 2026, the Clarity Act banned yield on payment stablecoins like USDC, making purpose-built yield-bearing tokens — USDY, sDAI, USDe, and USDM — the primary way to earn passive income on dollar-pegged assets; this guide compares all four on APY, risk, KYC requirements, and how to access them.**
+
+*Last updated: 2026-03-29*
+
+</div>
+
 # Yield-Bearing Stablecoins Compared: USDY vs sDAI vs USDe vs USDM (2026)
 
 The Clarity Act changed the stablecoin landscape in one sentence: **payment stablecoins cannot pay yield.**
@@ -251,25 +259,49 @@ You *can* still earn yield on USDC as an *input asset* — by depositing it into
 
 ## Frequently Asked Questions
 
-**Are yield-bearing stablecoins safe?**
+<a id="faq-are-yield-bearing-stablecoins-safe"></a>
+
+### Are yield-bearing stablecoins safe?
 
 No on-chain asset is completely safe — all carry some combination of smart contract risk, collateral risk, and regulatory risk. T-bill-backed options (USDY, USDM) are the most conservative. sDAI carries protocol risk. USDe carries funding rate and exchange counterparty risk. Understand the specific risks before depositing.
 
-**Do I owe taxes on yield-bearing stablecoin income?**
+<a id="faq-what-is-the-best-yield-bearing-stablecoin-in-2026"></a>
 
-In most jurisdictions, yes. Yield from sDAI, sUSDe, and USDM (rebases) typically triggers ordinary income. USDY's price appreciation may be treated as capital gains in some jurisdictions. Consult a tax professional — this area of crypto tax law is still evolving.
+### What is the best yield-bearing stablecoin in 2026?
 
-**Can I use yield-bearing stablecoins as DeFi collateral?**
+There is no single best option. sDAI is the top pick for permissionless DeFi access; USDY and USDM suit non-U.S. investors wanting T-bill-backed safety; sUSDe delivers the highest potential APY for experienced users comfortable with funding rate volatility.
 
-Yes, and this is one of their key advantages. USDY on Arbitrum and USDM on Base are accepted as collateral in several lending protocols. sDAI is deeply integrated in Spark Protocol. When you deposit them as collateral, you continue earning yield on the collateral — you're not forgoing yield to borrow.
+<a id="faq-do-i-owe-taxes-on-yield-bearing-stablecoin-income"></a>
 
-**What happens if Ethena's funding rate goes negative?**
+### Do I owe taxes on yield-bearing stablecoin income?
 
-Ethena has a reserve fund specifically for this scenario. The protocol doesn't break if funding goes negative — sUSDe yield simply compresses. During the longest sustained negative funding periods on record, Ethena's reserve has been sufficient to maintain the peg. But it's a known risk, and the reserve has limits.
+In most jurisdictions, yes. Yield from sDAI, sUSDe, and USDM rebases typically triggers ordinary income tax. USDY's price appreciation may be treated as capital gains in some countries. Tax rules for crypto are still evolving — consult a qualified tax professional. This is not tax advice.
 
-**Is USDY available to U.S. investors?**
+<a id="faq-can-i-use-yield-bearing-stablecoins-as-defi-collateral"></a>
 
-Not under the current Regulation S structure targeting non-U.S. investors. Ondo has been exploring pathways for U.S. retail access through registered fund structures, but as of early 2026, direct USDY purchase is not available to U.S. retail investors.
+### Can I use yield-bearing stablecoins as DeFi collateral?
+
+Yes. USDY on Arbitrum and USDM on Base are accepted as collateral in several lending protocols. sDAI is deeply integrated in Spark Protocol. Crucially, yield continues to accrue on the collateral while it is deposited — you do not forfeit earnings while borrowing against it.
+
+<a id="faq-what-happens-if-ethena-funding-rate-goes-negative"></a>
+
+### What happens if Ethena's funding rate goes negative?
+
+Ethena maintains a reserve fund to buffer against negative funding periods. The protocol does not break — sUSDe yield simply compresses, potentially to near zero. The reserve has historically been sufficient to maintain USDe's peg, but the risk is real and the reserve has limits.
+
+<a id="faq-is-usdy-available-to-us-investors"></a>
+
+### Is USDY available to U.S. investors?
+
+Not under the current Regulation S structure. USDY is offered to non-U.S. persons and qualified buyers only. As of early 2026, U.S. retail investors cannot purchase USDY directly. Ondo has explored registered fund structures for U.S. access, but none are currently available at retail.
+
+<a id="faq-what-is-the-difference-between-usdy-and-usdm"></a>
+
+### What is the difference between USDY and USDM?
+
+Both are T-bill-backed stablecoins yielding approximately 5% APY. The key difference is the yield mechanism: USDY appreciates in price over time (better for DeFi collateral), while USDM uses a daily rebase that adds new tokens to your wallet (more familiar to TradFi users). DeFi composability is currently deeper for USDY.
+
+*Last updated: 2026-03-29*
 
 ---
 
@@ -282,5 +314,72 @@ USDY and USDM bring T-bill returns on-chain with institutional-grade compliance.
 The stablecoin yield space in 2026 is more mature, more diversified, and more capital-efficient than it's ever been. The question isn't whether you can earn meaningful yield on stablecoins — it's which structure makes sense for your risk tolerance, jurisdiction, and yield target.
 
 ---
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "datePublished": "2026-03-29",
+  "dateModified": "2026-03-29",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are yield-bearing stablecoins safe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No on-chain asset is completely safe — all carry some combination of smart contract risk, collateral risk, and regulatory risk. T-bill-backed options (USDY, USDM) are the most conservative. sDAI carries protocol risk. USDe carries funding rate and exchange counterparty risk. Understand the specific risks before depositing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best yield-bearing stablecoin in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There is no single best option. sDAI is the top pick for permissionless DeFi access; USDY and USDM suit non-U.S. investors wanting T-bill-backed safety; sUSDe delivers the highest potential APY for experienced users comfortable with funding rate volatility."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I owe taxes on yield-bearing stablecoin income?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In most jurisdictions, yes. Yield from sDAI, sUSDe, and USDM rebases typically triggers ordinary income tax. USDY's price appreciation may be treated as capital gains in some countries. Tax rules for crypto are still evolving — consult a qualified tax professional. This is not tax advice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use yield-bearing stablecoins as DeFi collateral?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. USDY on Arbitrum and USDM on Base are accepted as collateral in several lending protocols. sDAI is deeply integrated in Spark Protocol. Yield continues to accrue on the collateral while it is deposited — you do not forfeit earnings while borrowing against it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if Ethena's funding rate goes negative?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ethena maintains a reserve fund to buffer against negative funding periods. The protocol does not break — sUSDe yield simply compresses, potentially to near zero. The reserve has historically been sufficient to maintain USDe's peg, but the risk is real and the reserve has limits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is USDY available to U.S. investors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not under the current Regulation S structure. USDY is offered to non-U.S. persons and qualified buyers only. As of early 2026, U.S. retail investors cannot purchase USDY directly. Ondo has explored registered fund structures for U.S. access, but none are currently available at retail."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between USDY and USDM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both are T-bill-backed stablecoins yielding approximately 5% APY. The key difference is the yield mechanism: USDY appreciates in price over time (better for DeFi collateral), while USDM uses a daily rebase that adds new tokens to your wallet (more familiar to TradFi users). DeFi composability is currently deeper for USDY."
+      }
+    }
+  ]
+}
+</script>
 
 *PassiveYieldLab provides educational content about DeFi and crypto yield strategies. Nothing on this site constitutes financial, investment, or legal advice. Always conduct your own research and consult appropriate professionals before making financial decisions.*

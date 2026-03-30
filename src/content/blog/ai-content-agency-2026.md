@@ -3,7 +3,7 @@ title: "AI Content Agency 2026: How to Start, Price, and Scale a $10K/Month Writ
 description: "The complete guide to starting an AI-powered content agency in 2026 — tools, pricing, client acquisition, and how to run it as a lean two-person operation."
 seoTitle: "AI Content Agency 2026: Start, Price & Scale a $10K/Month Writing Business"
 seoDescription: "Start an AI content agency in 2026. Tools, pricing ($2,500–$9,500/month packages), client acquisition, and workflows to run a lean two-person content operation."
-pubDate: 2026-03-30
+pubDate: 2026-03-28
 category: ai-income
 level: intermediate
 trending: false

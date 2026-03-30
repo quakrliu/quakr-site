@@ -3,7 +3,7 @@ title: "CLARITY Act 2026: What the Stablecoin Yield Agreement Means for DeFi Inv
 description: "Senators and the White House just reached a principled agreement on stablecoin yield provisions in the CLARITY Act. Here's what changed, how it affects DeFi investors, and what to do right now."
 seoTitle: "CLARITY Act Stablecoin Yield 2026: What the New Agreement Means for DeFi"
 seoDescription: "The CLARITY Act just got a major update — a principled agreement on stablecoin yield provisions. Learn what changed, which DeFi strategies are affected, and what to do now."
-pubDate: 2026-03-30
+pubDate: 2026-03-25
 category: guides
 level: intermediate
 trending: true
@@ -20,6 +20,14 @@ affiliateLinks:
     url: https://coinledger.io?fpr=4bsqmx
     cta: Auto-track your DeFi and stablecoin yield taxes
 ---
+
+<div class="aeo-overview" id="article-overview">
+
+**The CLARITY Act's March 2026 principled agreement preserves DeFi stablecoin yield under an explicit carve-out while requiring centralized platforms to obtain a license within an 18-month transition window — fundamentally reshaping who can legally offer stablecoin yield to US investors.**
+
+*Last updated: 2026-03-29*
+
+</div>
 
 > **Disclaimer:** This article is for informational purposes only and does not constitute legal or financial advice. The CLARITY Act is proposed legislation and has NOT been signed into law as of March 2026. Legislative details may change before final passage. This is not tax advice — consult a qualified professional for your specific situation.
 
@@ -234,6 +242,93 @@ If the CLARITY Act passes with the current provisions, CeFi platforms offering b
 ### Do I need to pay taxes on stablecoin yield?
 
 Yes. Stablecoin yield — whether from DeFi lending, CeFi earn products, LP rewards, or margin funding — is treated as ordinary income in most jurisdictions, including the United States. You owe income tax on the fair market value of rewards at the time you receive them. The CLARITY Act would expand IRS reporting requirements, making it even more important to track your yield income accurately. Tools like [CoinLedger](https://coinledger.io?fpr=4bsqmx) can automate this across all your platforms and wallets.
+
+<a id="faq-when-does-clarity-act-take-effect"></a>
+
+### When does the CLARITY Act take effect?
+
+The CLARITY Act has not been signed into law as of March 2026. With bipartisan agreement and White House backing, the earliest realistic passage is Q3 2026. The 18-month compliance window for CeFi platforms would then begin from the signing date, meaning enforcement would not start until approximately early 2028.
+
+<a id="faq-clarity-act-non-us-investors"></a>
+
+### Does the CLARITY Act affect non-US stablecoin investors?
+
+The CLARITY Act is US legislation and does not directly regulate non-US investors. However, US-headquartered platforms may simplify compliance by restricting or removing yield products for all users rather than geo-fencing. Non-US users on US platforms should monitor product announcements over the next 6–12 months after passage.
+
+<a id="faq-clarity-act-what-is-licensed-stablecoin-issuer"></a>
+
+### What does it mean for a platform to be "licensed" under the CLARITY Act?
+
+Under the principled agreement, a licensed stablecoin issuer must hold 1:1 reserve backing in cash or approved equivalents, submit to quarterly third-party audits, disclose yield rates and reserve composition to users, and obtain a formal charter under the CLARITY Act's new regulatory framework. Only licensed issuers and regulated financial institutions would be permitted to offer stablecoin yield to US persons.
+
+*Last updated: 2026-03-29*
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "datePublished": "2026-03-30",
+  "dateModified": "2026-03-29",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is stablecoin yield legal in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of March 2026, yes — stablecoin yield is legal in the United States. The CLARITY Act has not been signed into law. If and when it passes, the legality would depend on the platform type: DeFi protocols would remain legal under the explicit carve-out, while CeFi platforms would need to obtain a license to continue offering yield to US persons. An 18-month transition period is included in the current agreement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the CLARITY Act affect Aave, Curve, or other DeFi protocols?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Based on the principled agreement reached on March 27, 2026, non-custodial DeFi protocols are explicitly excluded from the yield provisions. Lending on Aave, providing liquidity on Curve, or using Compound would not be affected. However, this carve-out depends on how 'decentralized' is defined and interpreted during enforcement — which remains to be seen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my CeFi stablecoin savings if the CLARITY Act passes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If the CLARITY Act passes with the current provisions, CeFi platforms offering balance-based stablecoin yield would have 18 months to either obtain a license under the new framework or discontinue those products for US users. During the transition period, existing products can continue operating. Your funds are not at risk of being seized — the worst case is that a product gets discontinued and you need to withdraw."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to pay taxes on stablecoin yield?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Stablecoin yield — whether from DeFi lending, CeFi earn products, LP rewards, or margin funding — is treated as ordinary income in most jurisdictions, including the United States. You owe income tax on the fair market value of rewards at the time you receive them. The CLARITY Act would expand IRS reporting requirements, making accurate yield tracking essential."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When does the CLARITY Act take effect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The CLARITY Act has not been signed into law as of March 2026. With bipartisan agreement and White House backing, the earliest realistic passage is Q3 2026. The 18-month compliance window for CeFi platforms would begin from the signing date, meaning actual enforcement would not start until approximately early 2028."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the CLARITY Act affect non-US stablecoin investors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The CLARITY Act is US legislation and does not directly regulate non-US investors. However, US-headquartered platforms may restrict yield products for all users rather than geo-fencing. Non-US users on US platforms should monitor product announcements over the next 6–12 months after the bill passes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it mean for a platform to be licensed under the CLARITY Act?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Under the principled agreement, a licensed stablecoin issuer must hold 1:1 reserve backing in cash or approved equivalents, submit to quarterly third-party audits, disclose yield rates and reserve composition to users, and obtain a formal charter under the CLARITY Act's new regulatory framework. Only licensed issuers and regulated financial institutions may offer stablecoin yield to US persons."
+      }
+    }
+  ]
+}
+</script>
 
 ---
 
