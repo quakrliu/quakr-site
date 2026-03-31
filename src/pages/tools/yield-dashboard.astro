@@ -156,6 +156,27 @@ const faqSchema = JSON.stringify({
       </div>
     </section>
 
+    <!-- Email Gate Banner (shown after 2+ coins) -->
+    <section class="yd-section" id="email-gate" style="display:none">
+      <div class="yd-gate-panel">
+        <button class="yd-gate-dismiss" id="gate-dismiss" title="Dismiss" aria-label="Dismiss">&times;</button>
+        <div class="yd-gate-content">
+          <div class="yd-gate-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg>
+          </div>
+          <div class="yd-gate-text">
+            <h3>APY rates shift weekly. Stay ahead.</h3>
+            <p>Get a free weekly briefing with the best yield opportunities for your portfolio — before everyone else moves.</p>
+          </div>
+        </div>
+        <form class="yd-gate-form" id="gate-form" action="https://subscribe-forms.beehiiv.com/1c80f432-8696-4d95-b028-aa8bd75f08ba" method="POST">
+          <input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required />
+          <button type="submit" class="yd-btn">Get Weekly Alerts</button>
+        </form>
+        <p class="yd-gate-legal">Free forever. Unsubscribe anytime. No spam.</p>
+      </div>
+    </section>
+
     <!-- Platform Comparison -->
     <section class="yd-section" id="comparison-section" style="display:none">
       <div class="yd-panel">
@@ -814,6 +835,96 @@ const faqSchema = JSON.stringify({
 
 .yd-disclaimer strong { color: var(--text-secondary); }
 
+/* ===== Email Gate Banner ===== */
+.yd-gate-panel {
+  position: relative;
+  background: linear-gradient(135deg, rgba(27,58,92,0.04) 0%, rgba(74,144,217,0.06) 100%);
+  border: 1px solid rgba(74,144,217,0.2);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem 1.5rem;
+  text-align: center;
+  animation: fadeUp 0.5s ease both;
+}
+
+.yd-gate-dismiss {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+  transition: color 0.2s, background 0.2s;
+  line-height: 1;
+}
+
+.yd-gate-dismiss:hover {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+}
+
+.yd-gate-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.yd-gate-icon {
+  color: var(--accent);
+  opacity: 0.8;
+}
+
+.yd-gate-text h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.01em;
+}
+
+.yd-gate-text p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.55;
+}
+
+.yd-gate-form {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.yd-gate-form input {
+  flex: 1;
+  padding: 0.7rem 0.9rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.yd-gate-form input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(74,144,217,0.12);
+}
+
+.yd-gate-legal {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 0.6rem;
+}
+
 /* Loading spinner */
 .yd-loading {
   display: inline-block;
@@ -875,6 +986,10 @@ const faqSchema = JSON.stringify({
   }
 
   .yd-email-form {
+    flex-direction: column;
+  }
+
+  .yd-gate-form {
     flex-direction: column;
   }
 }
@@ -1155,10 +1270,43 @@ function renderAll() {
   renderPortfolio();
   renderProjections();
   renderComparison();
+  renderEmailGate();
 
   if (portfolio.length > 0) {
     document.getElementById('cta-section').style.display = 'block';
     document.getElementById('exchange-cta').style.display = 'block';
+  }
+}
+
+// ── Email Gate Logic ──────────────────────────────────────────────────
+const GATE_DISMISS_KEY = 'pyl-yield-gate-dismissed';
+const GATE_DISMISS_DAYS = 7;
+
+function isGateDismissed() {
+  try {
+    const dismissed = localStorage.getItem(GATE_DISMISS_KEY);
+    if (!dismissed) return false;
+    const dismissedAt = parseInt(dismissed, 10);
+    const daysSince = (Date.now() - dismissedAt) / (1000 * 60 * 60 * 24);
+    return daysSince < GATE_DISMISS_DAYS;
+  } catch {
+    return false;
+  }
+}
+
+function dismissGate() {
+  try {
+    localStorage.setItem(GATE_DISMISS_KEY, Date.now().toString());
+  } catch { /* localStorage unavailable */ }
+  document.getElementById('email-gate').style.display = 'none';
+}
+
+function renderEmailGate() {
+  const gate = document.getElementById('email-gate');
+  if (portfolio.length >= 2 && !isGateDismissed()) {
+    gate.style.display = 'block';
+  } else {
+    gate.style.display = 'none';
   }
 }
 
@@ -1229,6 +1377,14 @@ document.getElementById('clear-portfolio-btn').addEventListener('click', () => {
     select.appendChild(opt);
   }
 })();
+
+// ── Email Gate events ────────────────────────────────────────────────
+document.getElementById('gate-dismiss').addEventListener('click', dismissGate);
+
+document.getElementById('gate-form').addEventListener('submit', () => {
+  // Mark as dismissed after subscribe so it doesn't reappear
+  dismissGate();
+});
 
 // ── Init ─────────────────────────────────────────────────────────────
 async function init() {
