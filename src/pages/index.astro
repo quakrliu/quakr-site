@@ -226,6 +226,84 @@ const totalCategories = categories.length;
     </div>
   </section>
 
+  <!-- DAILY PULSE: Stickiness features — Octalysis #2 Accomplishment + #7 Curiosity + #4 Ownership -->
+  <section class="dp-section">
+    <div class="dp-inner">
+      <div class="hp-section-header">
+        <span class="hp-section-tag">Today's Pulse</span>
+        <h2>Your Daily Edge</h2>
+        <p>Live yields, daily tips, and your personal progress — updated every day.</p>
+      </div>
+
+      <div class="dp-grid">
+
+        <!-- 1. Today's Best APY -->
+        <div class="dp-card dp-card--apy" id="dp-apy">
+          <div class="dp-card-header">
+            <svg class="dp-card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            <h3>Top Yields Right Now</h3>
+          </div>
+          <div class="dp-apy-list" id="dp-apy-list">
+            <div class="dp-apy-skeleton">
+              <div class="dp-skeleton-line dp-skeleton-line--w60"></div>
+              <div class="dp-skeleton-line dp-skeleton-line--w40"></div>
+            </div>
+            <div class="dp-apy-skeleton">
+              <div class="dp-skeleton-line dp-skeleton-line--w50"></div>
+              <div class="dp-skeleton-line dp-skeleton-line--w35"></div>
+            </div>
+            <div class="dp-apy-skeleton">
+              <div class="dp-skeleton-line dp-skeleton-line--w55"></div>
+              <div class="dp-skeleton-line dp-skeleton-line--w45"></div>
+            </div>
+          </div>
+          <p class="dp-apy-disclaimer" id="dp-apy-disclaimer" style="display:none">APYs fluctuate. Data via DeFiLlama. Not financial advice.</p>
+        </div>
+
+        <!-- 2. Daily Yield Tip -->
+        <div class="dp-card dp-card--tip">
+          <div class="dp-card-header">
+            <svg class="dp-card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v1m0 18v1m8.66-15.66l-.71.71M4.05 19.95l-.71.71M22 12h-1M3 12H2m15.66 7.66l-.71-.71M4.05 4.05l-.71-.71"/><circle cx="12" cy="12" r="4"/></svg>
+            <h3>Daily Yield Tip</h3>
+          </div>
+          <blockquote class="dp-tip-quote" id="dp-tip-text">Loading tip...</blockquote>
+          <span class="dp-tip-day" id="dp-tip-day"></span>
+        </div>
+
+        <!-- 3. My Portfolio Earnings -->
+        <div class="dp-card dp-card--portfolio" id="dp-portfolio">
+          <div class="dp-card-header">
+            <svg class="dp-card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8l-2 4h12l-2-4z"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
+            <h3>Your Earnings Today</h3>
+          </div>
+          <div class="dp-portfolio-content" id="dp-portfolio-content">
+            <p class="dp-portfolio-empty">
+              No portfolio saved yet.
+              <a href="/tools/yield-dashboard">Set up your dashboard</a> to see daily earnings here.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4. 30-Day Challenge -->
+        <div class="dp-card dp-card--challenge">
+          <div class="dp-card-header">
+            <svg class="dp-card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            <h3>30-Day Challenge</h3>
+          </div>
+          <p class="dp-challenge-title">$0 to $100/month in passive income</p>
+          <div class="dp-challenge-progress" id="dp-challenge-progress">
+            <div class="dp-challenge-bar">
+              <div class="dp-challenge-fill" id="dp-challenge-fill" style="width:0%"></div>
+            </div>
+            <span class="dp-challenge-label" id="dp-challenge-label">Day 0 / 30</span>
+          </div>
+          <button class="dp-challenge-btn" id="dp-challenge-btn">Start the Challenge</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- FEATURED + LATEST: Asymmetric zig-zag layout -->
   {featuredPost && (
     <section class="hp-featured">
@@ -1049,5 +1127,490 @@ const totalCategories = categories.length;
     .home-lm-inner {
       padding: 2rem 1.5rem;
     }
+
+    .dp-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ===== Daily Pulse Section ===== */
+  .dp-section {
+    padding: 2rem 1.5rem 3rem;
+    background: var(--bg-secondary);
+  }
+
+  .dp-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .dp-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1rem;
+  }
+
+  .dp-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: border-color 0.2s, box-shadow 0.3s;
+  }
+
+  .dp-card:hover {
+    border-color: rgba(74, 144, 217, 0.25);
+    box-shadow: 0 8px 24px rgba(27, 58, 92, 0.06);
+  }
+
+  .dp-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .dp-card-icon {
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .dp-card-header h3 {
+    font-family: var(--font-display);
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+
+  /* APY Card */
+  .dp-apy-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .dp-apy-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0.75rem;
+    background: rgba(74, 144, 217, 0.04);
+    border-radius: var(--radius);
+    transition: background 0.2s;
+  }
+
+  .dp-apy-row:hover {
+    background: rgba(74, 144, 217, 0.08);
+  }
+
+  .dp-apy-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .dp-apy-protocol {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .dp-apy-pool {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  .dp-apy-value {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .dp-apy-disclaimer {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: auto;
+  }
+
+  /* Skeleton */
+  .dp-apy-skeleton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0.75rem;
+    background: rgba(74, 144, 217, 0.04);
+    border-radius: var(--radius);
+  }
+
+  .dp-skeleton-line {
+    height: 14px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, rgba(74, 144, 217, 0.08) 25%, rgba(74, 144, 217, 0.15) 50%, rgba(74, 144, 217, 0.08) 75%);
+    background-size: 200% 100%;
+    animation: dp-shimmer 1.5s infinite;
+  }
+
+  .dp-skeleton-line--w60 { width: 60%; }
+  .dp-skeleton-line--w50 { width: 50%; }
+  .dp-skeleton-line--w55 { width: 55%; }
+  .dp-skeleton-line--w40 { width: 40%; }
+  .dp-skeleton-line--w35 { width: 35%; }
+  .dp-skeleton-line--w45 { width: 45%; }
+
+  @keyframes dp-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* Tip Card */
+  .dp-tip-quote {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    border-left: 3px solid var(--accent);
+    padding-left: 1rem;
+    margin: 0;
+    font-style: normal;
+  }
+
+  .dp-tip-day {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: auto;
+  }
+
+  /* Portfolio Card */
+  .dp-portfolio-empty {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .dp-portfolio-empty a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .dp-portfolio-empty a:hover {
+    text-decoration: underline;
+  }
+
+  .dp-portfolio-earning {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .dp-portfolio-amount {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.03em;
+  }
+
+  .dp-portfolio-label {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  .dp-portfolio-detail {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+
+  .dp-portfolio-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    margin-top: auto;
+  }
+
+  .dp-portfolio-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Challenge Card */
+  .dp-challenge-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  .dp-challenge-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .dp-challenge-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(74, 144, 217, 0.1);
+    border-radius: 9999px;
+    overflow: hidden;
+  }
+
+  .dp-challenge-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 9999px;
+    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .dp-challenge-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .dp-challenge-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.6rem 1.25rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    box-shadow: var(--shadow-accent);
+    transition: background 0.2s, transform 0.15s;
+    margin-top: auto;
+    align-self: flex-start;
+  }
+
+  .dp-challenge-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+  }
+
+  .dp-challenge-btn:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .dp-challenge-btn--active {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    box-shadow: none;
+  }
+
+  .dp-challenge-btn--active:hover {
+    background: var(--accent-dim);
+  }
+
+  /* APY error */
+  .dp-apy-error {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding: 0.75rem;
+    text-align: center;
+  }
+
+  .dp-apy-error a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
   }
 </style>
+
+<script>
+  // === Daily Pulse: Client-side hydration ===
+
+  // 1. Today's Best APY (DeFiLlama)
+  (async function loadTopYields() {
+    const list = document.getElementById('dp-apy-list');
+    const disclaimer = document.getElementById('dp-apy-disclaimer');
+    if (!list) return;
+
+    try {
+      const res = await fetch('https://yields.llama.fi/pools');
+      if (!res.ok) throw new Error('API error');
+      const { data } = await res.json();
+
+      // Filter: stablecoin or major token pools, TVL > $1M, from reputable protocols
+      const reputable = ['aave-v3', 'lido', 'compound-v3', 'maker', 'jito', 'marinade-finance', 'rocket-pool', 'spark', 'ethena', 'morpho', 'pendle', 'jupiter', 'raydium'];
+      const filtered = data
+        .filter((p) => p.tvlUsd > 1_000_000 && p.apy > 0.5 && p.apy < 50 && reputable.some((r) => p.project.toLowerCase().includes(r)))
+        .sort((a, b) => b.apy - a.apy)
+        .slice(0, 3);
+
+      if (filtered.length === 0) throw new Error('No qualifying pools');
+
+      list.innerHTML = filtered
+        .map(
+          (p) => `
+        <div class="dp-apy-row">
+          <div class="dp-apy-info">
+            <span class="dp-apy-protocol">${p.project}</span>
+            <span class="dp-apy-pool">${p.symbol} · ${p.chain}</span>
+          </div>
+          <span class="dp-apy-value">${p.apy.toFixed(2)}%</span>
+        </div>`
+        )
+        .join('');
+
+      if (disclaimer) disclaimer.style.display = 'block';
+    } catch {
+      list.innerHTML = `<p class="dp-apy-error">Could not load live yields. <a href="/tools/yield-dashboard">Check the dashboard</a> instead.</p>`;
+    }
+  })();
+
+  // 2. Daily Yield Tip
+  (function loadDailyTip() {
+    const tips = [
+      "Staking ETH via Lido gives you stETH, which you can use in DeFi while still earning staking rewards. Double-dip your yield.",
+      "Dollar-cost averaging into staking positions smooths out APY volatility. Don't chase the highest rate — chase consistency.",
+      "Always check a protocol's TVL trend before depositing. Rising TVL + stable APY = healthy protocol. Falling TVL + rising APY = red flag.",
+      "Diversify across at least 3 protocols and 2 chains. One exploit shouldn't wipe out your entire passive income.",
+      "Restaking (EigenLayer, Symbiotic) can boost rewards 2-3x, but adds smart contract risk layers. Size positions accordingly.",
+      "Stablecoin yields (USDC/USDT lending) are the 'savings account' of DeFi. Currently 4-8% on Aave/Compound. Lower risk, steady income.",
+      "Gas fees eat into yields on small positions. On Ethereum, aim for at least $5,000 per position. For smaller amounts, use Solana or L2s.",
+      "Auto-compounding vaults (like Yearn or Beefy) reinvest rewards automatically. The compounding effect adds 15-30% more yield annually.",
+      "Check your staking rewards tax obligations. In many jurisdictions, staking rewards are taxable as income when received.",
+      "The best yield strategy is the one you understand. If you can't explain how a protocol generates its APY, don't deposit there.",
+      "Liquid staking tokens (stETH, mSOL, jitoSOL) let you exit positions faster than traditional staking lockups. Liquidity matters.",
+      "Set a calendar reminder to review your positions monthly. APYs drift, protocols change, and better opportunities appear.",
+      "Impermanent loss in LP positions is real. If you're providing liquidity, pair correlated assets (ETH/stETH, USDC/USDT) to minimize it.",
+      "Hardware wallets + DeFi = best security combo. Never stake from a hot wallet holding your entire portfolio.",
+      "Track your actual realized yield, not just the advertised APY. Fees, slippage, and reward timing all affect real returns.",
+      "New protocols often offer higher APYs to attract deposits. Early yields are real, but they won't last — have an exit plan.",
+      "Governance tokens earned from staking/farming often lose 60-80% of value. Consider selling rewards regularly rather than holding.",
+      "Before bridging assets to chase yield on another chain, factor in bridge fees and the added smart contract risk.",
+      "The 'risk-free rate' in DeFi is roughly what USDC lending pays on Aave (~4-6%). Anything above that has additional risk.",
+      "Solana staking (via Jito or Marinade) offers 7-8% APY with MEV rewards included. Lower fees make it accessible with smaller amounts.",
+      "Never stake more than you can afford to have locked for 30 days. Unbonding periods are real, and markets move fast.",
+      "Yield aggregators like DeFiLlama and Vaults.fyi make comparing opportunities across protocols and chains effortless — use them daily.",
+      "Consider splitting your portfolio: 60% in stable yield (lending, ETH staking), 30% in moderate (LP, restaking), 10% in aggressive plays.",
+      "Bookmark your protocol dashboards and check them with morning coffee. Five minutes of monitoring prevents weeks of missed problems.",
+      "The power of compounding at 8% APY: $10,000 becomes $21,589 in 10 years. Start now. Time is your biggest edge.",
+      "Airdrops from protocols you're actively using are bonus yield. Track your eligibility on sites like earni.fi.",
+      "If a protocol offers 100%+ APY on a non-meme token, the yield is coming from token emissions — and the token is likely inflating away.",
+      "Run the numbers on your staking calculator before committing. A 2% APY difference on $10k is only $200/year — is the extra risk worth it?",
+      "Multi-sig treasury protocols (like Gnosis Safe) add security for larger portfolios. Worth the setup if you're managing $50k+.",
+      "Your first $100/month in passive income is the hardest. After that, you have the knowledge and infrastructure to scale to $500+.",
+    ];
+
+    const today = new Date();
+    const dayOfYear = Math.floor((today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / 86400000);
+    const tipIndex = dayOfYear % tips.length;
+
+    const tipEl = document.getElementById('dp-tip-text');
+    const dayEl = document.getElementById('dp-tip-day');
+    if (tipEl) tipEl.textContent = tips[tipIndex];
+    if (dayEl) dayEl.textContent = today.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
+  })();
+
+  // 3. Portfolio Earnings
+  (function loadPortfolio() {
+    const content = document.getElementById('dp-portfolio-content');
+    if (!content) return;
+
+    try {
+      const saved = localStorage.getItem('yd-portfolio');
+      if (!saved) return;
+
+      const portfolio = JSON.parse(saved);
+      if (!Array.isArray(portfolio) || portfolio.length === 0) return;
+
+      let totalDailyUsd = 0;
+      const lines = [];
+
+      for (const pos of portfolio) {
+        const amount = parseFloat(pos.amount) || 0;
+        const apy = parseFloat(pos.apy) || 0;
+        const price = parseFloat(pos.price) || 0;
+        const dailyYield = (amount * price * apy) / 100 / 365;
+        totalDailyUsd += dailyYield;
+        if (dailyYield > 0.01) {
+          lines.push(`${pos.coin || pos.symbol || 'Token'}: ~$${dailyYield.toFixed(2)}/day at ${apy}% APY`);
+        }
+      }
+
+      if (totalDailyUsd < 0.01) return;
+
+      content.innerHTML = `
+        <div class="dp-portfolio-earning">
+          <span class="dp-portfolio-amount">~$${totalDailyUsd.toFixed(2)}</span>
+          <span class="dp-portfolio-label">estimated today</span>
+        </div>
+        ${lines.length > 0 ? `<p class="dp-portfolio-detail">${lines.slice(0, 3).join(' · ')}</p>` : ''}
+        <a href="/tools/yield-dashboard" class="dp-portfolio-link">View full dashboard &rarr;</a>
+      `;
+    } catch {
+      // If localStorage parse fails, keep showing the empty state
+    }
+  })();
+
+  // 4. 30-Day Challenge
+  (function loadChallenge() {
+    const KEY = 'pyl-30day-challenge';
+    const btn = document.getElementById('dp-challenge-btn');
+    const fill = document.getElementById('dp-challenge-fill');
+    const label = document.getElementById('dp-challenge-label');
+    if (!btn || !fill || !label) return;
+
+    function getState() {
+      try {
+        const raw = localStorage.getItem(KEY);
+        return raw ? JSON.parse(raw) : null;
+      } catch {
+        return null;
+      }
+    }
+
+    function render() {
+      const state = getState();
+      if (!state || !state.startDate) {
+        fill.style.width = '0%';
+        label.textContent = 'Day 0 / 30';
+        btn.textContent = 'Start the Challenge';
+        btn.classList.remove('dp-challenge-btn--active');
+        return;
+      }
+
+      const start = new Date(state.startDate);
+      const now = new Date();
+      const dayNum = Math.min(30, Math.max(1, Math.floor((now.getTime() - start.getTime()) / 86400000) + 1));
+      const pct = Math.round((dayNum / 30) * 100);
+
+      fill.style.width = pct + '%';
+      label.textContent = dayNum >= 30 ? 'Challenge Complete!' : `Day ${dayNum} / 30`;
+      btn.textContent = dayNum >= 30 ? 'Restart Challenge' : 'Day ' + dayNum + ' — Keep Going';
+      btn.classList.add('dp-challenge-btn--active');
+    }
+
+    btn.addEventListener('click', () => {
+      const state = getState();
+      if (!state || !state.startDate) {
+        localStorage.setItem(KEY, JSON.stringify({ startDate: new Date().toISOString() }));
+      } else {
+        const start = new Date(state.startDate);
+        const dayNum = Math.floor((new Date().getTime() - start.getTime()) / 86400000) + 1;
+        if (dayNum >= 30) {
+          localStorage.setItem(KEY, JSON.stringify({ startDate: new Date().toISOString() }));
+        } else {
+          window.location.href = '/blog/how-to-earn-passive-income-with-crypto-2026';
+        }
+      }
+      render();
+    });
+
+    render();
+  })();
+</script>
