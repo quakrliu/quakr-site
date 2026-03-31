@@ -1,310 +1,291 @@
 ---
-title: "What Is Restaking? The EigenLayer Guide for Extra ETH Yield in 2026"
-pubDate: 2026-04-02
-updatedDate: 2026-04-02
-description: "Restaking lets you earn additional yield on ETH you've already staked — without unstaking it. Here's how EigenLayer works, what risks you're actually taking, and whether it's worth it in 2026."
-seoTitle: "EigenLayer Restaking Guide 2026: Earn Extra ETH Yield Explained"
-seoDescription: "What is restaking? How does EigenLayer work in 2026? Learn how to earn additional yield on staked ETH, understand liquid restaking tokens, and assess the real risks before committing."
-author: "Passive Yield Lab Team"
+title: "EigenLayer Restaking Guide 2026: Earn Extra Yield on Staked ETH"
+description: "A complete guide to EigenLayer restaking — how it works, current APY rates, step-by-step tutorial for native and LST restaking, risks, and whether the extra yield is worth it in 2026."
+pubDate: 2026-03-31
+updatedDate: 2026-03-31
 category: staking
-tags: ["restaking", "EigenLayer", "ETH yield", "liquid restaking", "DeFi", "staking"]
+tags: ["eigenlayer", "restaking", "ethereum", "defi", "passive income", "staking"]
+seoTitle: "EigenLayer Restaking Guide 2026: Earn Extra Yield on Staked ETH"
+seoDescription: "Complete EigenLayer restaking guide for 2026. Learn how to earn extra yield on staked ETH via native and LST restaking, understand slashing risks, and follow step-by-step tutorials."
 level: intermediate
 draft: false
-image:
-  url: /images/blog/restaking-guide-eigenlayer-2026.jpg
-  alt: "EigenLayer restaking diagram showing ETH yield stacking in 2026"
 affiliateLinks:
   - name: Binance
     url: https://www.binance.com/en/register?ref=725285686
-    description: "Get ETH to start your staking and restaking journey"
+    cta: "Buy ETH on Binance"
   - name: Bybit
     url: https://www.bybit.com/invite?ref=WKNA1V
-    description: "Purchase ETH with competitive fees"
+    cta: "Buy ETH on Bybit"
   - name: OKX
     url: https://www.okx.com/join/26575603
-    description: "Another solid option for ETH acquisition"
+    cta: "Buy ETH on OKX"
   - name: CoinLedger
     url: https://coinledger.io?fpr=4bsqmx
-    description: "Track restaking rewards and generate crypto tax reports"
-internalLinks:
-  - /blog/ethereum-staking-guide-2026
-  - /blog/best-staking-coins-2026
-  - /blog/how-to-earn-passive-income-with-crypto-2026
+    cta: "Track Restaking Taxes with CoinLedger"
+faqItems:
+  - question: "What is EigenLayer restaking?"
+    answer: "EigenLayer restaking allows ETH holders to extend their staked ETH's economic security to other networks (Actively Validated Services) and earn additional yield beyond standard Ethereum staking rewards."
+  - question: "What APY can I earn from EigenLayer restaking?"
+    answer: "As of March 2026, conservative EigenLayer restaking setups earn approximately 4–6% total APY (including base staking yield). Higher-yield positions with more AVS exposure can reach 8–12%+ but carry increased slashing risk."
+  - question: "Is EigenLayer restaking safe?"
+    answer: "EigenLayer is non-custodial but not risk-free. Key risks include slashing (losing ETH if your operator misbehaves), smart contract bugs, and withdrawal delays. Research your operator carefully and only restake what you can afford to have illiquid."
+  - question: "What is the minimum to restake on EigenLayer?"
+    answer: "There is no minimum for LST restaking (stETH, rETH, etc.). Native restaking requires a full 32 ETH Ethereum validator. Note that mainnet gas costs can reduce net yield for very small positions."
 ---
 
-If you've been in the Ethereum staking world for a while, you've probably heard the word "restaking" thrown around more and more. It's become one of the most talked-about yield strategies in DeFi going into 2026 — and honestly, it deserves the attention. But it also carries risks that aren't always explained clearly.
+Your ETH is already staked. It's earning the standard ~3% a year from Ethereum's proof-of-stake consensus. Good, but not exciting.
 
-Let me try to demystify it.
+EigenLayer changes the math. By *restaking* that same ETH, you let other networks borrow Ethereum's security infrastructure — and pay you for the privilege. The same capital, working two jobs at once.
 
----
+That's the pitch. The reality is a little more nuanced, which is exactly why you need this guide before committing funds.
 
-## The Core Idea: Using the Same ETH Twice (Sort Of)
+As of March 2026, EigenLayer holds over **$15 billion in TVL** with 4.3+ million ETH restaked, commanding roughly 94% of the restaking market. It has paid out more than $28 million in cumulative rewards to participants. This is no longer an experiment — but it's still a protocol with risks most guides gloss over.
 
-Here's the setup. You stake ETH, either natively or through a liquid staking protocol like Lido (getting stETH) or Rocket Pool (getting rETH). You're earning around 2.8%–3.8% APY on that. Fine.
-
-Now imagine you could take that same staked ETH and *also* use it to secure other protocols — other networks or services that need economic security but don't want to bootstrap their own validator set from scratch. You earn rewards from those protocols on top of your base staking yield.
-
-That's restaking in a nutshell. And EigenLayer is the protocol that made this possible on Ethereum.
-
----
-
-## What Is EigenLayer?
-
-EigenLayer is a smart contract layer on Ethereum that allows ETH stakers to "opt in" to securing additional services called **Actively Validated Services (AVSs)**. These are things like data availability layers, oracle networks, cross-chain bridges, or other infrastructure that need economic security.
-
-When you restake through EigenLayer, you're extending the cryptoeconomic security of your ETH stake to these AVSs. In return, you earn rewards from those services — on top of your base ETH staking yield.
-
-The concept is called **"pooled security"** — AVSs borrow the trust that Ethereum's validator set has built up over years, rather than having to build their own from scratch. It's a meaningful value proposition from the AVS side.
-
-From the restaker's side, the pitch is: earn more yield on ETH you were already staking anyway.
+Let's get into it.
 
 ---
 
-## How Restaking Actually Works in Practice
+## What Is Restaking?
 
-There are two main ways to participate in restaking through EigenLayer in 2026:
+Standard ETH staking is simple: lock 32 ETH (or a fractional amount via liquid staking), help validate Ethereum transactions, earn ~3–4% APY. Your stake only secures Ethereum.
 
-**1. Native Restaking**
+**Restaking** takes that already-staked ETH and extends its economic security to other protocols — called Actively Validated Services (AVSs). Think of AVSs as new networks, middleware layers, or decentralized services that need cryptoeconomic security but can't bootstrap their own validator set from scratch.
 
-This is for solo validators who run their own Ethereum node. You point your validator's withdrawal credentials to an EigenLayer smart contract, which then allows you to also opt into AVSs. You're securing both the Ethereum mainnet and whatever AVSs you choose.
+Instead of waiting years to build a validator base, an AVS can rent Ethereum's security through EigenLayer. Restakers who opt into an AVS earn additional yield from that AVS. In exchange, they accept that their stake can be slashed if the operator they delegate to misbehaves.
 
-This requires running your own validator (32 ETH minimum), so it's not the beginner path. But it gives you the most direct control over which AVSs you're securing and how your rewards accumulate.
-
-**2. Liquid Restaking Tokens (LRTs)**
-
-This is where most regular users interact with restaking. Liquid restaking protocols — Ether.fi, Renzo, Puffer Finance, and others — handle the EigenLayer integration for you. You deposit ETH (or stETH), and you receive an LRT (liquid restaking token) in return, like eETH or ezETH.
-
-That token earns:
-- Base ETH staking yield (~2.8%–3.8% as of early 2026)
-- Restaking rewards from the AVSs the protocol participates in
-- Often, points or additional token rewards from the LRT protocol itself
-
-The total yield varies significantly depending on the protocol and current AVS activity. As of early 2026, liquid restaking protocols typically advertise additional yield of approximately **1–3% on top of base ETH staking**, though this fluctuates and some protocols have offered higher during promotional or points phases.
+That trade-off — extra yield versus extra slashing risk — is the core tension you need to understand.
 
 ---
 
-## The Yield Stack: What You're Actually Earning
+## How EigenLayer Actually Works
 
-Let me make this concrete. Here's what a typical liquid restaking position might look like in 2026:
+### The Three Actors
 
-- **ETH base staking yield:** ~2.8%–3.8% APY
-- **EigenLayer AVS rewards:** ~1–2% additional APY
-- **LRT protocol incentives (varies):** 0–1% or more during active campaigns
+**Restakers** deposit ETH (natively or via LSTs) into EigenLayer and delegate to an operator. They earn yield from the AVSs their operator validates.
 
-**Rough total: approximately 4.5–6.5% APY** depending on protocol and timing.
+**Operators** are professional node operators who register with EigenLayer and opt into AVSs. They run the actual infrastructure. Operators stake their reputation on correct behavior — if they misbehave on an AVS, their delegators' funds get slashed.
 
-That's a meaningful bump over vanilla staking. Whether it's worth the additional complexity and risk is the real question — and I want to be honest that these numbers are estimates and the restaking reward layer is less predictable than base staking.
+**AVSs (Actively Validated Services)** are the protocols using EigenLayer's shared security. Examples include decentralized sequencers, data availability layers, oracle networks, and cross-chain bridges. Each AVS sets its own slashing conditions and reward structure.
 
----
+### The EigenPod
 
-## The Risks — Let's Not Skip These
+For native restaking (full 32 ETH validators), you create an **EigenPod** — a smart contract that your Ethereum validator's withdrawal credentials point to. This is how EigenLayer gets cryptoeconomic leverage over your staked ETH without actually taking custody.
 
-Restaking gets exciting quickly, but the risk profile is genuinely different from regular staking. I'd be doing you a disservice if I glossed over this.
+For LST restaking (stETH, rETH, cbETH, etc.), no EigenPod is needed. You deposit the LST directly into EigenLayer's strategy contracts.
 
-**Slashing risk is compounded.** In regular staking, you can be slashed (penalized) for misbehaving as a validator — double signing, for example. With restaking, you're also subject to the slashing conditions of each AVS you opt into. If an AVS has a bug or a poorly designed slashing condition, your restaked ETH could be at risk even if you did nothing wrong.
+### The EIGEN Token
 
-EigenLayer has designed various safeguards here, and AVSs go through an auditing process, but the risk is real and worth understanding.
+EIGEN is EigenLayer's native token. As of Q1 2026, the Incentives Committee launched to direct EIGEN rewards toward "productive stake" — ETH that is actively securing live AVSs, not just passively sitting in the protocol. This means restakers who engage with real AVSs earn more than those who don't.
 
-**Smart contract risk is layered.** You're now trusting: Ethereum's staking contracts, the liquid staking protocol (Lido, etc.), EigenLayer's contracts, the LRT protocol's contracts, *and* the individual AVS contracts. That's a longer chain of trust than vanilla staking. Each link is another potential attack surface.
-
-**Liquidity risk on LRTs.** Liquid restaking tokens can depeg from ETH, especially during periods of market stress. If you need to exit quickly, you may not be able to at 1:1 parity. We've seen this happen with stETH during extreme conditions — LRTs carry similar or greater risk.
-
-**Centralization and protocol concentration.** A handful of large LRT protocols now control significant portions of restaked ETH. This is a systemic risk for the Ethereum ecosystem that's been actively discussed in the community.
-
-I'm not saying avoid restaking. I'm saying understand what you're signing up for.
+EIGEN holders can also participate in governance and are exposed to slashing for intersubjective faults (disputes that can't be resolved on-chain by cryptographic proof alone).
 
 ---
 
-## EigenLayer in 2026: Where Things Stand
+## Current Restaking Yields (as of March 2026)
 
-EigenLayer launched its mainnet in early 2024 and has grown substantially. As of early 2026, the TVL (total value locked) in EigenLayer is in the tens of billions of dollars, making it one of the largest DeFi protocols by that metric.
+APY varies significantly by how you restake and which operators/AVSs you choose.
 
-The AVS ecosystem has matured meaningfully. Some significant AVSs that have launched or are in production include data availability layers (EigenDA is EigenLayer's own offering), oracle networks, and cross-chain messaging protocols. Rewards from these services have started flowing to restakers, which is a meaningful milestone from the proof-of-concept phase.
+| Strategy | Approximate APY |
+|---|---|
+| ETH staking baseline (Lido stETH) | ~3.5–4% |
+| LST restaking via EigenLayer (1–2 AVSs) | ~3.8–6% total |
+| Native restaking + active AVS selection | ~5–8% total |
+| High-AVS-exposure operators | 8–12%+ (higher risk) |
 
-That said, I think it's fair to say the restaking rewards market is still finding its equilibrium. The reward rates have evolved as more ETH flows in and as AVSs calibrate their token emissions. Expect some continued variability here.
+*APY figures are estimates as of March 2026 and fluctuate based on ETH price, operator selection, AVS fee structures, and EIGEN incentive programs. These are not guaranteed returns.*
 
----
+The "extra" yield on top of base staking typically comes from:
+1. AVS service fees paid by the AVS to operators/restakers
+2. EIGEN token incentives for productive stake
+3. Potential airdrop/point programs from AVS protocols themselves
 
-## Liquid Restaking Protocols: A Quick Rundown
-
-If you're going the LRT route, here are the main players as of early 2026:
-
-**Ether.fi (eETH)**
-One of the largest by TVL. They operate their own validator infrastructure and have a non-custodial model where they claim users maintain withdrawal keys. Their eETH token is widely integrated in DeFi.
-
-**Renzo (ezETH)**
-Popular for its points system and cross-chain support. ezETH is available on multiple chains. Has had some volatility events in the past — worth researching their current architecture.
-
-**Puffer Finance (pufETH)**
-Takes an interesting approach focused on reducing validator slashing risk through secure enclave hardware. A bit more technically sophisticated in their validator setup.
-
-**Kelp DAO (rsETH)**
-Multi-protocol restaking — accepts multiple liquid staking tokens and restakes across EigenLayer. Good for users who want to bring stETH or rETH.
-
-Each has different risk profiles, fee structures, and DeFi integrations. I'm honestly not prepared to tell you definitively which is "best" — they're all relatively young protocols and the landscape keeps shifting. Read their documentation, check audit reports, and size your position accordingly.
+One honest note: the highest-yield operators on EigenLayer carry materially more slashing risk. Chasing 12% APY by delegating to operators running 10+ AVSs is a different risk profile than 5% from a conservative operator on 2 AVSs.
 
 ---
 
-## The EigenLayer Points System and EIGEN Token
+## Who Should Consider EigenLayer Restaking?
 
-One dimension of restaking that's driven a lot of participation — honestly, maybe more than the base yield — is the points and token incentive layer.
+EigenLayer restaking makes sense if you:
 
-EigenLayer ran multiple restaking campaigns where depositors earned "EigenLayer points," which were later convertible to EIGEN tokens. The EIGEN token launched in 2024 and gave early restakers additional returns beyond the ETH yield. This pattern of points-to-token has become common across liquid restaking protocols as well.
+- Already hold stETH, rETH, or other LSTs earning base staking yield
+- Have long-term ETH conviction (restaked positions can face withdrawal delays)
+- Understand smart contract and slashing risks and accept them
+- Are comfortable monitoring operator behavior periodically
 
-As of early 2026, the initial airdrop phases are complete, but ongoing EIGEN staking and AVS reward emissions continue. The value of these rewards depends on EIGEN's market price, which fluctuates like any token.
+It's probably *not* for you if you:
 
-The important thing to understand: a chunk of the "restaking APY" that circulated during 2024–2025 included the inflated value of points and early token rewards. Now that restaking is more mature, the underlying yield from AVS fees is the more sustainable long-term component. That yield is real and growing, but it's likely to be more modest than the headline numbers from the early points phase.
-
-Don't go into restaking expecting 2024-era returns in 2026. Manage expectations accordingly.
-
----
-
-## Actively Validated Services: What Are You Actually Securing?
-
-It's worth understanding what AVSs actually are, because you're literally putting your ETH at risk to secure them. Knowing what you're backing is useful.
-
-**EigenDA:** EigenLayer's own data availability service. Provides cheap, scalable data availability for Layer 2 rollups that opt in. This is one of the most established AVSs and probably the one securing the most economic value.
-
-**AltLayer:** Provides "restaked rollups" — rollups with enhanced security properties via EigenLayer. Used by several DeFi protocols to launch application-specific chains.
-
-**Lagrange:** A cross-chain state committee protocol — think of it as a way to verify that something happened on one chain and communicate that to another chain trustlessly. Important infrastructure for bridges and cross-chain DeFi.
-
-**Omni Network:** A messaging layer that helps different Ethereum rollups communicate with each other. Critical infrastructure if you believe the future is multi-rollup.
-
-These are legitimate infrastructure projects solving real problems. They're not random DeFi tokens offering unsustainable yields — they're protocol-level services that need economic security to function reliably. That distinction matters when you're assessing the sustainability of restaking rewards.
+- Need quick liquidity (withdrawal delays can be weeks during high congestion)
+- Don't understand how slashing works and just want yield
+- Are treating this like a savings account with guaranteed returns
 
 ---
 
-## The Systemic Risk Debate
+## Step-by-Step: How to Restake on EigenLayer
 
-I want to touch on a concern that's been discussed seriously in the Ethereum research community: what happens if restaking goes wrong at scale?
+There are two paths: **LST Restaking** (easier, lower barrier) and **Native Restaking** (requires a full 32 ETH validator).
 
-The worry, articulated by Ethereum researchers including Vitalik Buterin in public posts, is that if a large fraction of ETH's stake is restaked, and a serious slashing event occurs across multiple AVSs simultaneously, it could create cascading effects that stress the Ethereum network itself.
+### Option A: LST Restaking (Recommended for Most)
 
-The counter-argument from EigenLayer is that their system is designed with careful risk parameters, and AVS slashing conditions are intentionally narrow to prevent accidents.
+**Step 1: Acquire ETH and stake for LSTs**
 
-I'm not in a position to definitively resolve this debate — it's a genuinely complex systems-level question. What I'll say is: the concern is credible enough to be taken seriously by smart people, and it's part of why I'd advocate for not putting your entire ETH stake into restaking. Keeping some portion in vanilla staking supports network decentralization and doesn't amplify potential systemic risk.
+If you don't have stETH or rETH yet, buy ETH first. [Binance](https://www.binance.com/en/register?ref=725285686) is one of the most liquid exchanges for ETH purchases globally.
 
----
+After acquiring ETH, stake on Lido to receive stETH or Rocket Pool to receive rETH. Both integrate with EigenLayer's LST strategies.
 
-## Gas Costs and the Minimum Viable Position
+**Step 2: Go to app.eigenlayer.xyz**
 
-One practical consideration that gets overlooked: Ethereum gas fees.
+Connect your wallet (MetaMask, Coinbase Wallet, WalletConnect, or OKX Wallet). Ensure you're on Ethereum mainnet.
 
-Interacting with EigenLayer or LRT protocols involves Ethereum transactions. During periods of high network activity, these can cost $10–$50+ per transaction. If you're restaking a small amount of ETH (say, 0.1–0.5 ETH), gas costs can significantly eat into your yield, especially if you're frequently claiming rewards or adjusting positions.
+**Step 3: Deposit your LST**
 
-As a rough heuristic: liquid restaking starts to make clear economic sense at around 1–2 ETH and above, where the annual yield meaningfully exceeds a few hundred dollars in expected gas costs. Below that threshold, vanilla staking via a liquid staking protocol with automatic compounding (like stETH) may be more efficient.
+Navigate to the **Restake** tab. You'll see the list of accepted LSTs. Select your asset (stETH, rETH, cbETH, etc.) and click **Deposit**. Approve the token spend and confirm the deposit transaction.
 
-Layer 2 options are emerging — some LRT protocols are building on L2s where gas is cheaper — but the primary EigenLayer infrastructure remains on Ethereum mainnet as of early 2026.
+Gas fees apply — Ethereum mainnet gas, typically $5–20 depending on network conditions.
 
----
+**Step 4: Delegate to an Operator**
 
-## Should You Actually Restake? An Honest Take
+After depositing, go to the **Operator** tab. This is the most important decision you'll make.
 
-Here's my genuine view: if you're already an ETH staker with a long time horizon and you're comfortable with DeFi mechanics, restaking via a reputable LRT protocol is worth considering for a portion of your position. The additional yield is real, and the protocol risk, while meaningful, is spread across a system that's been in production for a couple of years now.
+Research operators before delegating:
+- How many AVSs do they run? More = higher yield potential but higher slashing exposure
+- What's their track record? Look for established names with long operational history
+- What are their slashing conditions per AVS?
 
-If you're new to staking or DeFi, I'd get comfortable with basic ETH staking first. Understand how liquid staking tokens work. Then add restaking as a next step once you're confident in the foundations.
+Click **Delegate** next to your chosen operator and sign the transaction.
 
-And if you have a large ETH position, I wouldn't put 100% of it into restaking. Diversification across different yield methods (some vanilla staking, some liquid staking, some restaking) is a reasonable approach to managing the layered risk.
+**Step 5: Monitor your position**
 
-→ Start with our [Ethereum Staking Guide for 2026](/blog/ethereum-staking-guide-2026) if you haven't staked ETH before.
-
----
-
-## How to Start with Liquid Restaking (High-Level Steps)
-
-1. **Acquire ETH.** If you need to, [Binance](https://www.binance.com/en/register?ref=725285686), [Bybit](https://www.bybit.com/invite?ref=WKNA1V), or [OKX](https://www.okx.com/join/26575603) are solid starting points for purchasing.
-
-2. **Set up a self-custody wallet.** MetaMask or a hardware wallet like Ledger is the standard. Your LRT position should be in a wallet you control.
-
-3. **Bridge to Ethereum mainnet** if needed.
-
-4. **Visit the LRT protocol of your choice** (Ether.fi, Renzo, Puffer, etc.) and connect your wallet.
-
-5. **Deposit ETH.** You'll receive the LRT token in return.
-
-6. **Optionally, use the LRT in DeFi** — many are accepted as collateral in Aave and other protocols, which adds another layer of yield (and another layer of risk).
-
-7. **Track your rewards** — [CoinLedger](https://coinledger.io?fpr=4bsqmx) is useful here, as restaking rewards can come in multiple token types and tracking them manually gets complex quickly.
+Your dashboard shows your deposited assets, delegated operator, and earned rewards. Check in periodically — especially if an AVS announces rule changes or your operator's behavior raises flags.
 
 ---
 
-## Restaking vs. Standard Staking: Quick Reference
+### Option B: Native Restaking (32 ETH Validators)
 
-| Factor | Standard ETH Staking | Liquid Restaking |
-|--------|---------------------|-----------------|
-| Approx. APY (early 2026) | ~2.8%–3.8% | ~4.5–6.5% |
-| Liquidity | Flexible (with LSTs) | Flexible (LRT, may depeg) |
-| Smart contract layers | 1–2 | 3–5+ |
-| Slashing risk | Validator only | Validator + AVS |
-| Complexity | Low-Medium | Medium-High |
+This is for users who already run their own Ethereum validator node with 32 ETH.
 
----
+**Step 1: Create an EigenPod**
 
-## Restaking Yield: How to Think About Sustainability
+In the Restake tab, click **Create EigenPod** next to "Beacon Ether." Review the warning carefully — you're changing your validator's withdrawal credentials. Confirm the transaction.
 
-One thing worth spending time on: is the yield from restaking sustainable long-term, or is it driven primarily by token inflation and incentive programs that will eventually wind down?
+Your EigenPod address is now deployed on Ethereum mainnet.
 
-Honest answer: it's a mix of both, and the proportion shifts over time.
+**Step 2: Point your validator's withdrawal credentials to the EigenPod**
 
-In the early phases of EigenLayer (2024–2025), a significant portion of "restaking yield" came from EIGEN token distributions and LRT protocol points that converted to tokens. These were bootstrapping incentives — essentially, protocols paying users to participate early.
+This is a one-way operation on the Ethereum Beacon Chain. Your validator's withdrawal address must be set to your EigenPod's Ethereum address. If you're running a fresh validator, do this at setup. If you have an existing validator with BLS withdrawal credentials (0x00), you can update to your EigenPod (0x01).
 
-As the ecosystem matures in 2026 and beyond, the more sustainable component is **actual fees paid by AVSs to restakers** in exchange for the security they're providing. AVSs like EigenDA charge fees from the rollups using their services, and a portion flows back to restakers.
+*If you're unsure how to do this, consult your validator client's documentation (Lighthouse, Prysm, Teku, Nimbus, Lodestar) before proceeding.*
 
-Whether that fee revenue grows enough to sustain meaningful yield as more ETH gets restaked (diluting rewards) depends on how much demand grows for AVS services. That's a real growth story — rollups are expanding, cross-chain infrastructure is getting more complex — but it's not guaranteed.
+**Step 3: Verify your validator on EigenLayer**
 
-My take: think of base ETH staking yield as your floor (~3–4%), and restaking as an optional bonus layer that could add 1–3% if the ecosystem continues growing. That framing is more conservative than some projections you'll see, but it's more realistic for setting expectations.
+After your validator is active with the EigenPod withdrawal address, you'll need to submit a balance verification proof on EigenLayer. This involves a Merkle proof of your validator's balance — EigenLayer walks you through it in the app.
 
----
+Gas note: Native restaking proof verification costs approximately 200k gas (~0.0002 ETH) plus a fixed ~0.01 ETH commission per proof.
 
-## Practical Notes on Managing a Restaking Position
+**Step 4: Delegate to an Operator**
 
-A few operational things I've learned from actually doing this:
-
-**Monitor your LRT peg.** Check occasionally that your LRT (eETH, ezETH, etc.) is trading close to its expected ETH value. A significant depeg can be a signal of a problem with the underlying protocol. You can check this on Dexscreener or Coingecko.
-
-**Watch for protocol upgrades.** EigenLayer and LRT protocols push upgrades regularly. Sometimes these require you to migrate positions or re-approve contracts. Keep an eye on their Discord and governance forums — missing a migration window occasionally has consequences.
-
-**Understand exit queues.** If you need to exit your LRT position, you may face withdrawal queues depending on network conditions. Most LRT protocols maintain secondary market liquidity (you can swap eETH back to ETH on Curve or Uniswap), but at times of stress, the price may not be 1:1. Size your position accordingly so you don't need to exit under duress.
-
-**Set up alerts.** Services like DeBank or Zapper can alert you if your wallet interacts with something unexpected. Given the number of smart contract layers in restaking, monitoring is more important than in simpler strategies.
+Same as LST path — go to Operators tab, choose your operator, delegate.
 
 ---
 
-## Frequently Asked Questions About Restaking
+## The Risks You Need to Understand
 
-**Do I need to unstake my ETH to restake it?**
+### 1. Slashing Risk
 
-If you're using a liquid restaking protocol, no. You can deposit ETH (or existing liquid staking tokens like stETH) directly into the LRT protocol. For native restaking via EigenLayer directly, you do need to modify your validator's withdrawal credentials — but that's only relevant for solo validators.
+This is the big one. If the operator you delegate to violates an AVS's rules (double-signing, downtime, protocol-specific faults), your restaked ETH can be partially or fully slashed.
 
-**Is restaking the same as yield farming?**
+In practice, major slashing events have been rare in EigenLayer's history. But rare isn't zero. And as more AVSs launch with complex slashing conditions, this risk increases.
 
-Not exactly. Yield farming typically involves providing liquidity to trading pools and earning fees plus token incentives. Restaking involves providing cryptoeconomic security to protocols and earning rewards for that security. The risk profiles are different — slashing risk vs. impermanent loss, for example.
+**Mitigation:** Choose well-established operators with conservative AVS exposure. Diversify across multiple operators if your position is large.
 
-**What happens to my restaked ETH if EigenLayer gets hacked?**
+### 2. Smart Contract Risk
 
-This is the key question. EigenLayer's contracts are audited and have significant TVL making them a major target. If a bug in EigenLayer's core contracts was exploited, restaked ETH could be at risk. This is why restaking should be a portion of your ETH position rather than all of it.
+EigenLayer is a complex system of interacting smart contracts. A bug in EigenLayer's core contracts, an AVS's contracts, or operator middleware could result in fund loss. The protocol has been audited, but no audit eliminates all risk.
 
-**Can I use restaking on other chains besides Ethereum?**
+**Mitigation:** Don't put more in than you'd be comfortable losing in a worst-case scenario.
 
-EigenLayer is Ethereum-native. There are analogous restaking projects on other chains (Symbiotic works with multiple chains, and some Solana projects are exploring similar concepts), but EigenLayer is the most established as of early 2026.
+### 3. Withdrawal Delay Risk
+
+Withdrawals from EigenLayer aren't instant. There are standard unstaking delays (similar to ETH staking's ~days-to-weeks withdrawal queue) plus potential additional delays if an AVS has active slashing disputes.
+
+If you need quick liquidity, liquid restaking tokens (LRTs) like those from Renzo or Kelp DAO are designed to give you tradeable exposure to EigenLayer positions — but they add another layer of smart contract risk.
+
+**Mitigation:** Only restake ETH you can afford to have illiquid for weeks to months.
+
+### 4. Operator Risk
+
+Not all operators are equal. Some are anonymous, understaffed, or running too many AVSs with thin margins for error. If an operator makes mistakes across multiple AVSs simultaneously, losses compound.
+
+**Mitigation:** Research your operator thoroughly. Stick to established operators with long track records, transparent operations, and appropriate AVS scope.
+
+### 5. Yield Isn't Guaranteed
+
+The extra yield over base staking depends on AVS fee revenue and EIGEN incentive programs — both of which can change. The 8%+ figures circulating online often represent optimistic scenarios or include volatile token rewards. Base case is probably 4–6% total for a conservative setup.
 
 ---
 
-## More Reading
+## EigenLayer vs. Liquid Restaking Protocols
 
-- [Best Staking Coins in 2026](/blog/best-staking-coins-2026) — if you're weighing ETH against other staking assets
-- [How to Earn Passive Income with Crypto in 2026](/blog/how-to-earn-passive-income-with-crypto-2026) — broader passive income strategies beyond staking
-- [Ethereum Staking Guide 2026](/blog/ethereum-staking-guide-2026) — the foundation before adding restaking on top
+You don't have to interact with EigenLayer directly. Several **liquid restaking protocols** (LRTs) do it for you and issue a tradeable token representing your restaked position:
+
+- **Renzo** (ezETH) — auto-selects operators, issues liquid token
+- **Kelp DAO** (rsETH) — similar model
+- **Puffer Finance** (pufETH) — focuses on native restaking
+
+The appeal: easier UX, immediate liquidity via the LRT token. The tradeoff: you add another protocol's smart contract risk on top of EigenLayer's, and you give up control over operator selection.
+
+For users who want simplicity over control, LRTs are worth exploring. For users who want to understand and manage their own risk exposure, direct EigenLayer restaking gives more transparency.
+
+---
+
+## The Real Math: Is It Worth It?
+
+Let's say you hold 10 ETH in stETH, earning 3.5% base APY.
+
+**Without restaking:**
+- Annual yield: ~0.35 ETH (~$1,050 at $3,000/ETH)
+
+**With conservative EigenLayer restaking (5.5% total):**
+- Annual yield: ~0.55 ETH (~$1,650 at $3,000/ETH)
+- Extra yield: ~0.2 ETH per year (~$600)
+
+That extra $600/year comes with slashing exposure on your full 10 ETH position. Whether that's a good trade depends on your risk tolerance and how carefully you select operators.
+
+For large ETH holders, the math becomes more interesting. For smaller positions under 1 ETH, the gas costs of restaking on mainnet can eat into the incremental yield — consider whether the net benefit justifies the friction.
+
+---
+
+## Frequently Asked Questions
+
+**Is my ETH safe in EigenLayer?**
+EigenLayer is non-custodial — you retain control of your assets via your wallet. However, you accept slashing risk when you restake. Your ETH is not "safe" in the way a savings account is safe. It's an active DeFi position with meaningful risk.
+
+**What is the minimum amount to restake?**
+For LST restaking, there's no minimum — you can restake any amount of stETH or rETH. For native restaking, you need a full 32 ETH validator. Note that small positions on Ethereum mainnet will see gas costs eat into returns significantly.
+
+**Can I unstake any time?**
+You can initiate a withdrawal, but it's not instant. Expect Ethereum's standard unstaking queue (typically days, sometimes weeks during congestion) plus any additional delays for ongoing slashing resolutions.
+
+**What chains does EigenLayer support?**
+EigenLayer's core protocol is on Ethereum mainnet. Some AVSs may have components on Layer 2 networks, but the base restaking happens on L1.
+
+**What is EigenCloud?**
+EigenCloud is the brand under which EigenLayer's AVS ecosystem now operates, reflecting its expansion beyond simple restaking to a broader decentralized cloud computing infrastructure.
+
+**Do I need the EIGEN token to restake?**
+No. You restake ETH or LSTs. EIGEN is a separate token used for governance and for securing intersubjective AVSs. Holding EIGEN is optional.
 
 ---
 
 ## The Bottom Line
 
-Restaking through EigenLayer is one of the genuinely interesting yield innovations of this crypto cycle. It's not magic — you're taking on more risk for more yield, and that's a real trade-off. But for intermediate ETH holders who want to squeeze more out of already-staked assets, it's a legitimate strategy with a growing track record.
+EigenLayer is a legitimate yield amplification layer for ETH holders who understand what they're getting into. At $15+ billion TVL and 28M+ in paid rewards, it has moved well past the "experimental" phase.
 
-Just go in with clear eyes about the layered risks, start with a portion of your holdings rather than going all-in, and track everything carefully. The yield is real. So is the complexity.
+The extra 1.5–4% APY it offers over base staking is real, but it comes with real slashing risk, real withdrawal illiquidity, and real operator selection decisions that matter. This isn't a passive "deposit and forget" setup — it rewards informed participants.
+
+If you're new to crypto and want to buy ETH to start your staking journey, [Binance](https://www.binance.com/en/register?ref=725285686) is a solid starting point for purchasing ETH before exploring staking and restaking options.
+
+For existing ETH holders with clear risk tolerance and a long-term mindset, EigenLayer is one of the most compelling yield-enhancement tools available in DeFi today.
 
 ---
 
-*Disclaimer: This article is for educational purposes only and does not constitute financial advice. Restaking involves layered smart contract risk, slashing risk, and potential loss of staked funds. APY figures are estimates as of early 2026 and are subject to change. Always review the documentation and audits of any protocol before using it. Do your own research.*
+*Risk Disclaimer: This article is for informational purposes only and does not constitute financial or investment advice. Restaking involves significant risks including loss of principal through slashing, smart contract vulnerabilities, and market volatility. APY figures cited are estimates as of March 2026 and are not guaranteed. Always do your own research and consult a financial advisor before committing funds. Never invest more than you can afford to lose.*
