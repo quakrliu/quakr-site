@@ -18,6 +18,7 @@ const blog = defineCollection({
       'news',
       'ai-income',
       'automation',
+      'investing',
     ]),
     tags: z.array(z.string()).default([]),
     affiliateLinks: z

@@ -12,10 +12,11 @@ const categoryLabels: Record<string, string> = {
   news: 'News',
   'ai-income': 'AI Income',
   automation: 'Automation',
+  investing: 'Investing',
 };
 
 export function getStaticPaths() {
-  const cats = ['staking', 'defi', 'exchange-reviews', 'guides', 'market-analysis', 'tools', 'news', 'ai-income', 'automation'];
+  const cats = ['staking', 'defi', 'exchange-reviews', 'guides', 'market-analysis', 'tools', 'news', 'ai-income', 'automation', 'investing'];
   return cats.map((cat) => ({
     params: { category: cat },
   }));
