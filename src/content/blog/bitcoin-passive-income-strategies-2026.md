@@ -23,7 +23,7 @@ affiliateLinks:
     cta: "Track Your Crypto Taxes"
 seoTitle: "Bitcoin Passive Income Strategies 2026: Earn Yield on BTC (4 Proven Methods)"
 seoDescription: "Earn passive income on Bitcoin in 2026 with BTC lending, WBTC DeFi, Stacks dual stacking, and covered call ETFs. Real APY data and risk analysis."
-ogImage: "/images/bitcoin-passive-income-strategies-2026.jpg"
+ogImage: "/og/bitcoin-passive-income-strategies-2026.jpg"
 draft: false
 level: intermediate
 faqItems:
