@@ -6,6 +6,7 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  ogType?: string;
   category?: string;
   canonicalUrl?: string;
   articleSchema?: string;
@@ -16,11 +17,14 @@ const {
   title,
   description = 'Practical guides on every way to build passive income — crypto, AI, dividends, real estate, digital products, and more. Tested by real practitioners.',
   ogImage,
+  ogType = 'website',
   category,
   canonicalUrl,
   articleSchema,
   extraSchemas = [],
 } = Astro.props;
+
+const SITE_URL = 'https://passiveyieldlab.com';
 
 const categoryOgMap: Record<string, string> = {
   staking: '/og/staking.svg',
@@ -34,7 +38,8 @@ const categoryOgMap: Record<string, string> = {
   investing: '/og/default.svg',
 };
 
-const resolvedOgImage = ogImage || (category ? (categoryOgMap[category] ?? '/og/default.svg') : '/og/default.svg');
+const resolvedOgImageRel = ogImage || (category ? (categoryOgMap[category] ?? '/og/default.svg') : '/og/default.svg');
+const resolvedOgImage = resolvedOgImageRel.startsWith('http') ? resolvedOgImageRel : SITE_URL + resolvedOgImageRel;
 
 const siteTitle = title === 'Passive Yield Lab' ? title : `${title} | Passive Yield Lab`;
 const websiteSchema = generateWebsiteSchema();
@@ -60,7 +65,7 @@ const canonical = canonicalUrl || Astro.url.href;
     />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
