@@ -288,7 +288,7 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
 
   <!-- Comments -->
   <div class="post-content">
-    <div class="post-comments">
+    <div class="post-comments" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(75, 85, 99, 0.1);">
       <h2>Join the Discussion</h2>
       <div
         id="cusdis_thread"
@@ -298,10 +298,18 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
         data-page-url={canonicalUrl || Astro.url.href}
         data-page-title={title}
         data-theme="light"
+        style="min-height: 350px;"
       ></div>
       <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
     </div>
   </div>
+  <style>
+    :global(#cusdis_thread iframe) {
+      width: 100% !important;
+      min-height: 350px !important;
+      border: none !important;
+    }
+  </style>
 
   <!-- Related Articles -->
   {relatedPosts.length > 0 && (
