@@ -286,6 +286,23 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     </div>
   </div>
 
+  <!-- Comments -->
+  <div class="post-content">
+    <div class="post-comments">
+      <h2>Join the Discussion</h2>
+      <div
+        id="cusdis_thread"
+        data-host="https://cusdis.com"
+        data-app-id="452c89df-5af8-42bc-b36a-ba3d46adc918"
+        data-page-id={canonicalUrl || Astro.url.pathname}
+        data-page-url={canonicalUrl || Astro.url.href}
+        data-page-title={title}
+        data-theme="light"
+      ></div>
+      <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+    </div>
+  </div>
+
   <!-- Related Articles -->
   {relatedPosts.length > 0 && (
     <div class="post-content">
