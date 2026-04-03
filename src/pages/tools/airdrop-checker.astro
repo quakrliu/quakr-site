@@ -1,0 +1,844 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'Airdrop Eligibility Checker 2026 — Am I Eligible for Crypto Airdrops?';
+const description = 'Check which crypto airdrops you might qualify for based on your on-chain activity. Bridge, stake, swap — see your eligibility score instantly. Free tool by Passive Yield Lab.';
+---
+
+<BaseLayout title={title} description={description} ogImage="/og/tools.svg">
+  <div class="ad-page">
+
+    <!-- Hero -->
+    <section class="ad-hero">
+      <span class="ad-badge">Free Tool</span>
+      <h1>Airdrop Eligibility <span class="accent">Checker</span></h1>
+      <p>Tick your on-chain activities and see which upcoming and historical airdrops you're likely eligible for. Based on known snapshot criteria.</p>
+    </section>
+
+    <!-- Main tool -->
+    <section class="ad-wrapper">
+      <div class="ad-grid">
+
+        <!-- LEFT: Activity Checklist -->
+        <div class="ad-checklist-panel">
+          <h2 class="ad-section-title">Your On-Chain Activity</h2>
+          <p class="ad-checklist-intro">Check all that apply to your wallet(s). Be honest — this is for your own estimate.</p>
+
+          <div class="activity-list" id="activity-list">
+
+            <div class="activity-group">
+              <div class="activity-group-label">Bridging & L2 Activity</div>
+
+              <label class="activity-item" data-points="15" data-tag="bridge,l2">
+                <input type="checkbox" class="activity-check" id="act-bridge-l2" />
+                <div class="activity-content">
+                  <span class="activity-name">Bridged to an L2</span>
+                  <span class="activity-desc">Used any bridge to move funds to Arbitrum, Optimism, Base, zkSync, Scroll, Linea, Starknet, etc.</span>
+                </div>
+                <span class="activity-pts">+15</span>
+              </label>
+
+              <label class="activity-item" data-points="12" data-tag="l2,multi">
+                <input type="checkbox" class="activity-check" id="act-multi-l2" />
+                <div class="activity-content">
+                  <span class="activity-name">Used 3+ different L2s</span>
+                  <span class="activity-desc">Active on multiple Layer 2 networks — highly valued in multi-chain airdrop criteria</span>
+                </div>
+                <span class="activity-pts">+12</span>
+              </label>
+
+              <label class="activity-item" data-points="10" data-tag="testnet,l2">
+                <input type="checkbox" class="activity-check" id="act-testnet" />
+                <div class="activity-content">
+                  <span class="activity-name">Used a testnet</span>
+                  <span class="activity-desc">Transacted on testnet (Scroll Alpha, Starknet Goerli, Linea Goerli, etc.)</span>
+                </div>
+                <span class="activity-pts">+10</span>
+              </label>
+            </div>
+
+            <div class="activity-group">
+              <div class="activity-group-label">DeFi Activity</div>
+
+              <label class="activity-item" data-points="15" data-tag="liquidity,defi">
+                <input type="checkbox" class="activity-check" id="act-liquidity" />
+                <div class="activity-content">
+                  <span class="activity-name">Provided liquidity</span>
+                  <span class="activity-desc">Added liquidity to any DEX (Uniswap, Curve, Velodrome, etc.) on any chain</span>
+                </div>
+                <span class="activity-pts">+15</span>
+              </label>
+
+              <label class="activity-item" data-points="12" data-tag="dex,swap">
+                <input type="checkbox" class="activity-check" id="act-dex" />
+                <div class="activity-content">
+                  <span class="activity-name">Used a DEX regularly</span>
+                  <span class="activity-desc">Made 5+ swaps on decentralized exchanges (Uniswap, 1inch, dYdX, GMX, etc.)</span>
+                </div>
+                <span class="activity-pts">+12</span>
+              </label>
+
+              <label class="activity-item" data-points="10" data-tag="staking,defi">
+                <input type="checkbox" class="activity-check" id="act-staking" />
+                <div class="activity-content">
+                  <span class="activity-name">Staked tokens</span>
+                  <span class="activity-desc">Staked ETH, SOL, or any other token via a protocol (Lido, Rocket Pool, etc.)</span>
+                </div>
+                <span class="activity-pts">+10</span>
+              </label>
+
+              <label class="activity-item" data-points="8" data-tag="lending,defi">
+                <input type="checkbox" class="activity-check" id="act-lending" />
+                <div class="activity-content">
+                  <span class="activity-name">Used a lending protocol</span>
+                  <span class="activity-desc">Deposited or borrowed on Aave, Compound, Morpho, Spark, etc.</span>
+                </div>
+                <span class="activity-pts">+8</span>
+              </label>
+            </div>
+
+            <div class="activity-group">
+              <div class="activity-group-label">Ecosystem Participation</div>
+
+              <label class="activity-item" data-points="15" data-tag="governance,dao">
+                <input type="checkbox" class="activity-check" id="act-governance" />
+                <div class="activity-content">
+                  <span class="activity-name">Voted in governance</span>
+                  <span class="activity-desc">Voted in any DAO (Snapshot, on-chain) — Uniswap, Aave, ENS, Gitcoin, etc.</span>
+                </div>
+                <span class="activity-pts">+15</span>
+              </label>
+
+              <label class="activity-item" data-points="8" data-tag="nft,ecosystem">
+                <input type="checkbox" class="activity-check" id="act-nft" />
+                <div class="activity-content">
+                  <span class="activity-name">Held an NFT</span>
+                  <span class="activity-desc">Currently holds or has previously held any NFT in your wallet</span>
+                </div>
+                <span class="activity-pts">+8</span>
+              </label>
+
+              <label class="activity-item" data-points="10" data-tag="social,ecosystem">
+                <input type="checkbox" class="activity-check" id="act-social" />
+                <div class="activity-content">
+                  <span class="activity-name">On-chain social / SBT</span>
+                  <span class="activity-desc">Used Lens Protocol, Farcaster, ENS, or holds a soulbound token / on-chain identity</span>
+                </div>
+                <span class="activity-pts">+10</span>
+              </label>
+
+              <label class="activity-item" data-points="5" data-tag="early,ecosystem">
+                <input type="checkbox" class="activity-check" id="act-early" />
+                <div class="activity-content">
+                  <span class="activity-name">Early adopter (pre-2022 wallet)</span>
+                  <span class="activity-desc">Your primary wallet was created and active before January 2022</span>
+                </div>
+                <span class="activity-pts">+5</span>
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT: Score + Eligibility -->
+        <div class="ad-results-panel">
+          <h2 class="ad-section-title">Your Eligibility Score</h2>
+
+          <!-- Score display -->
+          <div class="score-display">
+            <div class="score-ring-wrap">
+              <svg class="score-svg" viewBox="0 0 80 80">
+                <circle cx="40" cy="40" r="32" fill="none" stroke="var(--border-light)" stroke-width="6"/>
+                <circle id="score-arc" cx="40" cy="40" r="32" fill="none" stroke="var(--accent)" stroke-width="6"
+                  stroke-linecap="round" stroke-dasharray="201.1" stroke-dashoffset="201.1"
+                  transform="rotate(-90 40 40)" style="transition:stroke-dashoffset 0.5s ease"/>
+              </svg>
+              <div class="score-ring-value">
+                <span id="score-value">0</span>
+                <span class="score-max">/120</span>
+              </div>
+            </div>
+            <div class="score-meta">
+              <div class="score-tier" id="score-tier">No Activity</div>
+              <p class="score-desc" id="score-desc">Check your on-chain activities to see which airdrops you likely qualify for.</p>
+            </div>
+          </div>
+
+          <!-- Progress bar -->
+          <div class="score-progress-wrap">
+            <div class="score-progress-track">
+              <div class="score-progress-fill" id="score-progress" style="width:0%"></div>
+            </div>
+            <div class="score-tiers-labels">
+              <span>Low</span>
+              <span>Mid</span>
+              <span>High</span>
+              <span>Max</span>
+            </div>
+          </div>
+
+          <!-- Eligible airdrops -->
+          <div class="eligible-section">
+            <h3 class="eligible-title">Potential Airdrops You May Qualify For</h3>
+            <div class="airdrop-list" id="airdrop-list">
+              <p class="no-activity-msg">Start checking activities above to see your eligible airdrops.</p>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="ad-cta-box">
+            <div class="ad-cta-content">
+              <strong>Don't miss the next big airdrop</strong>
+              <p>Our complete airdrop farming guide covers the exact steps to maximize your eligibility for LayerZero, zkSync, Scroll, and 20+ upcoming protocols.</p>
+            </div>
+            <a href="/blog" class="ad-cta-btn">Track All Airdrops with Our Guide →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Airdrop database -->
+    <section class="ad-section">
+      <div class="ad-panel">
+        <h2 class="ad-section-title">Upcoming & Recent Airdrop Database</h2>
+        <div class="airdrop-db-grid" id="airdrop-db"></div>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="ad-section">
+      <div class="ad-disclaimer">
+        <strong>Disclaimer:</strong> Airdrop eligibility shown here is based on publicly known snapshot criteria and community research. Actual eligibility is determined solely by each project. Always verify directly with the project. This is not financial advice.
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+.ad-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* Hero */
+.ad-hero {
+  text-align: center;
+  padding: 3.5rem 1rem 2.5rem;
+}
+
+.ad-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(37,99,235,0.25);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.ad-hero h1 {
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 0.9rem;
+}
+
+.ad-hero .accent { color: var(--accent); }
+
+.ad-hero p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+/* Layout */
+.ad-wrapper { margin-bottom: 3rem; }
+
+.ad-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.ad-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.ad-checklist-panel, .ad-results-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+.ad-checklist-intro {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: -1rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Activity list */
+.activity-group { margin-bottom: 1.5rem; }
+
+.activity-group-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.65rem;
+}
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  margin-bottom: 0.5rem;
+}
+
+.activity-item:hover {
+  border-color: var(--accent);
+  background: rgba(37,99,235,0.03);
+}
+
+.activity-item input[type="checkbox"] {
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+.activity-item.checked {
+  border-color: var(--accent);
+  background: rgba(37,99,235,0.05);
+}
+
+.activity-content { flex: 1; }
+
+.activity-name {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.15rem;
+}
+
+.activity-desc {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.activity-pts {
+  flex-shrink: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-dim);
+  padding: 0.15rem 0.45rem;
+  border-radius: 9999px;
+  margin-top: 0.1rem;
+}
+
+/* Score display */
+.score-display {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.score-ring-wrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+}
+
+.score-svg {
+  width: 80px;
+  height: 80px;
+}
+
+.score-ring-value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  line-height: 1;
+}
+
+#score-value {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.score-max {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.score-tier {
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+  color: var(--accent);
+}
+
+.score-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Progress bar */
+.score-progress-wrap { margin-bottom: 1.5rem; }
+
+.score-progress-track {
+  height: 8px;
+  background: var(--bg-secondary);
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+}
+
+.score-progress-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 9999px;
+  transition: width 0.4s ease;
+}
+
+.score-tiers-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Eligible airdrops */
+.eligible-section { margin-bottom: 1.5rem; }
+
+.eligible-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.no-activity-msg {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  margin: 0;
+}
+
+.airdrop-badge-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.airdrop-badge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 0.85rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  font-size: 0.85rem;
+}
+
+.airdrop-badge.strong {
+  border-color: #22c55e;
+  background: rgba(34,197,94,0.05);
+}
+
+.airdrop-badge.possible {
+  border-color: #eab308;
+  background: rgba(234,179,8,0.05);
+}
+
+.ad-name { font-weight: 700; color: var(--text-primary); }
+.ad-status {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+}
+.status-strong { color: #22c55e; background: rgba(34,197,94,0.12); }
+.status-possible { color: #eab308; background: rgba(234,179,8,0.12); }
+.status-unlikely { color: var(--text-muted); background: var(--bg-secondary); }
+
+.ad-criteria { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+/* CTA box */
+.ad-cta-box {
+  background: linear-gradient(135deg, rgba(37,99,235,0.07), var(--bg-secondary));
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.1rem;
+}
+
+.ad-cta-content { margin-bottom: 0.85rem; }
+.ad-cta-content strong { display: block; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.ad-cta-content p { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.5; margin: 0; }
+
+.ad-cta-btn {
+  display: block;
+  text-align: center;
+  padding: 0.7rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.ad-cta-btn:hover { background: var(--accent-hover); }
+
+/* Section */
+.ad-section { margin-bottom: 2rem; }
+.ad-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+/* Airdrop DB grid */
+.airdrop-db-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.db-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 1.1rem;
+}
+
+.db-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.6rem;
+}
+
+.db-name { font-size: 1rem; font-weight: 800; }
+.db-status-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+}
+
+.db-desc { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.6rem; line-height: 1.4; }
+
+.db-criteria-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.db-criteria-item {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: flex;
+  gap: 0.3rem;
+}
+.db-criteria-item::before { content: '•'; color: var(--accent); }
+
+/* Disclaimer */
+.ad-disclaimer {
+  background: rgba(234,179,8,0.07);
+  border: 1px solid rgba(234,179,8,0.25);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.ad-disclaimer strong { color: #eab308; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ad-grid { grid-template-columns: 1fr; }
+  .airdrop-db-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 500px) {
+  .airdrop-db-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const MAX_SCORE = 120;
+
+  // Airdrop database: each entry has required tags and min scores
+  const AIRDROPS = [
+    {
+      name: 'LayerZero',
+      status: 'distributed',
+      statusColor: '#64748b',
+      desc: 'Cross-chain messaging protocol. ZRO airdrop already distributed (2024). New airdrop seasons rumored.',
+      criteria: ['bridge,l2', 'dex,swap', 'multi'],
+      minScore: 20,
+      tags: ['bridge', 'l2', 'dex', 'multi'],
+      criteriaLabels: ['Bridged to L2', 'Used a DEX', 'Used 3+ chains']
+    },
+    {
+      name: 'zkSync Era',
+      status: 'distributed',
+      statusColor: '#64748b',
+      desc: 'ZK rollup by Matter Labs. First airdrop distributed June 2024. Future distributions possible.',
+      criteria: ['bridge,l2', 'dex,swap'],
+      minScore: 15,
+      tags: ['bridge', 'l2', 'dex'],
+      criteriaLabels: ['Bridged to zkSync', 'Swapped on zkSync DEX', 'Used testnet']
+    },
+    {
+      name: 'Scroll',
+      status: 'upcoming',
+      statusColor: '#f59e0b',
+      desc: 'ZK rollup focused on EVM compatibility. Active ecosystem with upcoming SCR distribution season 2.',
+      criteria: ['bridge,l2', 'testnet'],
+      minScore: 20,
+      tags: ['bridge', 'l2', 'testnet', 'dex'],
+      criteriaLabels: ['Bridged to Scroll', 'Used Scroll testnet', 'DeFi activity on Scroll']
+    },
+    {
+      name: 'Linea',
+      status: 'upcoming',
+      statusColor: '#f59e0b',
+      desc: 'Consensys ZK-EVM L2. Surge points program with upcoming token launch anticipated in 2026.',
+      criteria: ['bridge,l2', 'dex,swap'],
+      minScore: 15,
+      tags: ['bridge', 'l2', 'dex', 'testnet'],
+      criteriaLabels: ['Bridged to Linea', 'Used Linea DEX', 'Testnet participation']
+    },
+    {
+      name: 'Starknet',
+      status: 'distributed',
+      statusColor: '#64748b',
+      desc: 'STRK airdrop distributed Feb 2024. Continued ecosystem incentives and liquidity programs.',
+      criteria: ['bridge,l2', 'testnet'],
+      minScore: 10,
+      tags: ['bridge', 'l2', 'testnet'],
+      criteriaLabels: ['Bridged to Starknet', 'Used Starknet testnet', 'Early ecosystem activity']
+    },
+    {
+      name: 'Hyperliquid',
+      status: 'distributed',
+      statusColor: '#64748b',
+      desc: 'Perpetuals DEX L1. HYPE airdrop distributed Nov 2024 — largest airdrop of 2024 by value.',
+      criteria: ['dex,swap'],
+      minScore: 12,
+      tags: ['dex', 'bridge', 'l2'],
+      criteriaLabels: ['Traded on Hyperliquid perps', 'Volume traded', 'LP participation']
+    },
+    {
+      name: 'EigenLayer (AVS)',
+      status: 'upcoming',
+      statusColor: '#f59e0b',
+      desc: 'EIGEN distributed 2024. Additional AVS-specific drops expected as ecosystem matures.',
+      criteria: ['staking,defi'],
+      minScore: 10,
+      tags: ['staking', 'bridge', 'l2'],
+      criteriaLabels: ['Restaked ETH on EigenLayer', 'AVS operator delegation', 'Early restaker status']
+    },
+    {
+      name: 'Berachain',
+      status: 'upcoming',
+      statusColor: '#22c55e',
+      desc: 'Novel PoL consensus chain. Honey + BERA ecosystem with active testnet incentive programs.',
+      criteria: ['testnet', 'liquidity,defi'],
+      minScore: 18,
+      tags: ['testnet', 'liquidity', 'dex', 'nft'],
+      criteriaLabels: ['Berachain testnet activity', 'Provided liquidity in Bex', 'Minted Bong Bears NFT']
+    },
+    {
+      name: 'Monad',
+      status: 'upcoming',
+      statusColor: '#22c55e',
+      desc: 'High-performance EVM chain. Testnet launching in 2025/26 with large ecosystem fund for early users.',
+      criteria: ['testnet'],
+      minScore: 10,
+      tags: ['testnet', 'dex', 'bridge'],
+      criteriaLabels: ['Monad testnet participation', 'DEX activity on testnet', 'Early community member']
+    }
+  ];
+
+  const checks = document.querySelectorAll('.activity-check');
+
+  function getActiveTags() {
+    const tags = new Set();
+    checks.forEach(c => {
+      if (c.checked) {
+        const item = c.closest('.activity-item');
+        const pts = item.getAttribute('data-tag') || '';
+        pts.split(',').forEach(t => tags.add(t.trim()));
+      }
+    });
+    return tags;
+  }
+
+  function getTotalScore() {
+    let total = 0;
+    checks.forEach(c => {
+      if (c.checked) {
+        const item = c.closest('.activity-item');
+        total += parseInt(item.getAttribute('data-points') || '0');
+      }
+    });
+    return total;
+  }
+
+  function getTier(score) {
+    if (score === 0) return { label: 'No Activity', color: 'var(--text-muted)', desc: 'Start adding your on-chain activities to see your airdrop eligibility.' };
+    if (score < 25) return { label: 'Low Activity', color: '#ef4444', desc: 'You have limited on-chain activity. Start bridging to L2s and using DeFi protocols to increase your eligibility.' };
+    if (score < 55) return { label: 'Moderate Activity', color: '#eab308', desc: 'You have a decent on-chain history. You likely qualify for some airdrops. Expand to more protocols and L2s.' };
+    if (score < 90) return { label: 'High Activity', color: '#3b82f6', desc: 'Strong on-chain profile. You\'re eligible for most upcoming airdrops. Keep maintaining multi-chain activity.' };
+    return { label: 'Power User', color: '#22c55e', desc: 'Excellent on-chain activity profile. You\'re well-positioned for virtually all major upcoming airdrops.' };
+  }
+
+  function updateScore() {
+    const score = getTotalScore();
+    const tags = getActiveTags();
+    const tier = getTier(score);
+    const pct = Math.min(score / MAX_SCORE, 1);
+
+    // Update ring arc
+    const circumference = 201.1;
+    const offset = circumference * (1 - pct);
+    document.getElementById('score-arc').setAttribute('stroke-dashoffset', offset);
+    document.getElementById('score-arc').setAttribute('stroke', tier.color);
+    document.getElementById('score-value').textContent = score;
+    document.getElementById('score-value').style.color = tier.color;
+
+    document.getElementById('score-tier').textContent = tier.label;
+    document.getElementById('score-tier').style.color = tier.color;
+    document.getElementById('score-desc').textContent = tier.desc;
+
+    // Progress bar
+    document.getElementById('score-progress').style.width = (pct * 100) + '%';
+    document.getElementById('score-progress').style.background = tier.color;
+
+    // Eligible airdrops
+    updateAirdrops(score, tags);
+  }
+
+  function updateAirdrops(score, tags) {
+    const listEl = document.getElementById('airdrop-list');
+
+    if (score === 0) {
+      listEl.innerHTML = '<p class="no-activity-msg">Start checking activities above to see your eligible airdrops.</p>';
+      return;
+    }
+
+    const eligible = AIRDROPS.filter(a => {
+      if (score < a.minScore) return false;
+      return a.tags.some(t => tags.has(t));
+    });
+
+    if (eligible.length === 0) {
+      listEl.innerHTML = '<p class="no-activity-msg">No strong matches yet. Try bridging to an L2 and using a DEX.</p>';
+      return;
+    }
+
+    const sortedEligible = eligible.map(a => {
+      const matchCount = a.tags.filter(t => tags.has(t)).length;
+      const strength = matchCount / a.tags.length;
+      return { ...a, strength };
+    }).sort((a, b) => b.strength - a.strength);
+
+    listEl.innerHTML = `<div class="airdrop-badge-list">${
+      sortedEligible.map(a => {
+        const isStrong = a.strength >= 0.6;
+        const statusClass = isStrong ? 'strong' : 'possible';
+        const statusLabel = isStrong ? 'Likely Eligible' : 'Possibly Eligible';
+        const statusStyle = isStrong ? 'status-strong' : 'status-possible';
+        return `
+          <div class="airdrop-badge ${statusClass}">
+            <div>
+              <div class="ad-name">${a.name}</div>
+              <div class="ad-criteria">${a.criteriaLabels.slice(0, 2).join(' · ')}</div>
+            </div>
+            <span class="ad-status ${statusStyle}">${statusLabel}</span>
+          </div>
+        `;
+      }).join('')
+    }</div>`;
+  }
+
+  function buildDatabase() {
+    const grid = document.getElementById('airdrop-db');
+    grid.innerHTML = AIRDROPS.map(a => {
+      const statusLabel = a.status === 'distributed' ? 'Distributed' :
+                          a.status === 'upcoming' ? 'Upcoming' : 'Active';
+      const statusBg = a.status === 'distributed' ? 'rgba(100,116,139,0.12)' :
+                       a.status === 'upcoming' ? 'rgba(245,158,11,0.12)' : 'rgba(34,197,94,0.12)';
+      return `
+        <div class="db-card">
+          <div class="db-header">
+            <div class="db-name">${a.name}</div>
+            <span class="db-status-badge" style="color:${a.statusColor};background:${statusBg}">${statusLabel}</span>
+          </div>
+          <p class="db-desc">${a.desc}</p>
+          <div class="db-criteria-list">
+            ${a.criteriaLabels.map(l => `<div class="db-criteria-item">${l}</div>`).join('')}
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // Checkbox visuals
+  checks.forEach(c => {
+    c.addEventListener('change', () => {
+      const item = c.closest('.activity-item');
+      if (c.checked) item.classList.add('checked');
+      else item.classList.remove('checked');
+      updateScore();
+    });
+  });
+
+  buildDatabase();
+  updateScore();
+});
+</script>

@@ -1,0 +1,656 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'Yield Compounding Simulator 2026 — DeFi Compound Interest Calculator';
+const description = 'Simulate DeFi yield compounding over time. Compare daily, weekly, monthly, and yearly compounding frequencies with a visual growth chart. Free tool by Passive Yield Lab.';
+---
+
+<BaseLayout title={title} description={description} ogImage="/og/tools.svg">
+  <div class="yc-page">
+
+    <!-- Hero -->
+    <section class="yc-hero">
+      <span class="yc-badge">Free Tool</span>
+      <h1>Yield Compounding <span class="accent">Simulator</span></h1>
+      <p>See how compounding frequency dramatically affects your DeFi returns. Compare daily vs weekly vs monthly vs yearly — side by side.</p>
+    </section>
+
+    <!-- Inputs row -->
+    <section class="yc-inputs-section">
+      <div class="yc-inputs-panel">
+        <h2 class="yc-section-title">Your Parameters</h2>
+        <div class="inputs-grid">
+          <div class="form-group">
+            <label for="principal">Principal Amount (USD)</label>
+            <div class="input-prefix-wrap">
+              <span class="input-prefix">$</span>
+              <input type="number" id="principal" min="1" step="any" placeholder="e.g. 10000" value="10000" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="apy">APY (%)</label>
+            <div class="apy-row">
+              <input type="range" id="apy-slider" min="0.1" max="100" step="0.1" value="12" />
+              <input type="number" id="apy" min="0.1" max="1000" step="0.1" value="12" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="time-months">Time Period (months)</label>
+            <input type="number" id="time-months" min="1" max="360" step="1" value="24" />
+          </div>
+          <div class="form-group">
+            <label>Compounding Frequency</label>
+            <div class="freq-checkboxes">
+              <label class="freq-label"><input type="checkbox" id="freq-daily" checked /> Daily</label>
+              <label class="freq-label"><input type="checkbox" id="freq-weekly" checked /> Weekly</label>
+              <label class="freq-label"><input type="checkbox" id="freq-monthly" checked /> Monthly</label>
+              <label class="freq-label"><input type="checkbox" id="freq-yearly" checked /> Yearly</label>
+            </div>
+          </div>
+        </div>
+        <button class="yc-btn" id="calc-btn">Simulate Growth</button>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="yc-results-section" id="results-section" style="display:none">
+
+      <!-- Summary cards -->
+      <div class="results-cards" id="results-cards"></div>
+
+      <!-- Chart -->
+      <div class="yc-panel chart-panel">
+        <h2 class="yc-section-title">Growth Curve</h2>
+        <div class="canvas-wrap">
+          <canvas id="growth-chart" height="320"></canvas>
+        </div>
+        <div class="chart-legend" id="chart-legend"></div>
+      </div>
+
+      <!-- Comparison table -->
+      <div class="yc-panel">
+        <h2 class="yc-section-title">Detailed Comparison</h2>
+        <div class="table-wrap">
+          <table class="comp-table" id="comp-table">
+            <thead>
+              <tr>
+                <th>Frequency</th>
+                <th>Final Value</th>
+                <th>Total Earnings</th>
+                <th>vs Yearly (extra)</th>
+                <th>Effective APY</th>
+              </tr>
+            </thead>
+            <tbody id="comp-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Loss aversion -->
+      <div class="yc-loss-banner">
+        <div class="loss-icon">&#9888;</div>
+        <div>
+          <strong>Compounding frequency matters more than you think.</strong>
+          <span id="loss-text">Daily compounding significantly outperforms yearly over time.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Explainer -->
+    <section class="yc-section">
+      <div class="yc-panel">
+        <h2 class="yc-section-title">How Compound Interest Works</h2>
+        <div class="explainer-grid">
+          <div class="explainer-item">
+            <div class="explainer-icon">&#x1F4C8;</div>
+            <h3>The Formula</h3>
+            <p>A = P × (1 + r/n)^(n×t) where P = principal, r = annual rate, n = compounds per year, t = years.</p>
+          </div>
+          <div class="explainer-item">
+            <div class="explainer-icon">&#x23F0;</div>
+            <h3>Why Frequency Matters</h3>
+            <p>More frequent compounding means your earnings generate their own earnings sooner. Daily compounding maximizes this effect.</p>
+          </div>
+          <div class="explainer-item">
+            <div class="explainer-icon">&#x1F3AF;</div>
+            <h3>DeFi vs CeFi</h3>
+            <p>Many DeFi protocols auto-compound in real time (continuous compounding). Reinvesting manually monthly is still far better than never compounding.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+.yc-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* Hero */
+.yc-hero {
+  text-align: center;
+  padding: 3.5rem 1rem 2.5rem;
+}
+
+.yc-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(37,99,235,0.25);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.yc-hero h1 {
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 0.9rem;
+}
+
+.yc-hero .accent { color: var(--accent); }
+
+.yc-hero p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Inputs section */
+.yc-inputs-section { margin-bottom: 2rem; }
+
+.yc-inputs-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+.yc-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.inputs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Forms */
+.form-group { }
+.form-group > label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.45rem;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+
+.input-prefix-wrap { position: relative; }
+.input-prefix {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+.input-prefix-wrap input { padding-left: 1.75rem; }
+
+/* APY slider */
+.apy-row {
+  display: grid;
+  grid-template-columns: 1fr 70px;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  background: var(--border-light);
+  border-radius: 9999px;
+  outline: none;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 18px; height: 18px;
+  border: none; border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+/* Frequency checkboxes */
+.freq-checkboxes {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.freq-label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.freq-label input[type="checkbox"] {
+  width: auto;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+.yc-btn {
+  padding: 0.85rem 2.5rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+.yc-btn:hover { background: var(--accent-hover); }
+.yc-btn:active { transform: scale(0.98); }
+
+/* Results */
+.yc-results-section { }
+
+/* Summary cards */
+.results-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.result-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.result-card.featured {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, rgba(37,99,235,0.06), var(--bg-card));
+}
+
+.rc-freq {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.rc-final {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.rc-earnings {
+  font-size: 0.82rem;
+  color: #22c55e;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.rc-apy {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Chart */
+.yc-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.chart-panel { }
+
+.canvas-wrap {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+}
+
+canvas {
+  max-width: 100%;
+  display: block;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Comparison table */
+.table-wrap { overflow-x: auto; }
+
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.comp-table th {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+.comp-table td {
+  padding: 0.7rem 0.75rem;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+.comp-table tr:last-child td { border-bottom: none; }
+.comp-table .best-row td { background: rgba(37,99,235,0.04); }
+.comp-table .best-row td:first-child { font-weight: 700; }
+
+/* Loss banner */
+.yc-loss-banner {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: rgba(234,179,8,0.08);
+  border: 1px solid rgba(234,179,8,0.3);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+.loss-icon { font-size: 1.4rem; }
+.yc-loss-banner strong { font-weight: 700; margin-right: 0.35rem; }
+
+/* Section */
+.yc-section { margin-bottom: 2rem; }
+
+/* Explainer */
+.explainer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.explainer-item {
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+.explainer-icon { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.explainer-item h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+.explainer-item p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .inputs-grid { grid-template-columns: 1fr 1fr; }
+  .results-cards { grid-template-columns: 1fr 1fr; }
+  .explainer-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 500px) {
+  .inputs-grid { grid-template-columns: 1fr; }
+  .results-cards { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const FREQ_CONFIG = [
+    { id: 'daily',   label: 'Daily',   n: 365,  color: '#2563eb' },
+    { id: 'weekly',  label: 'Weekly',  n: 52,   color: '#7c3aed' },
+    { id: 'monthly', label: 'Monthly', n: 12,   color: '#0891b2' },
+    { id: 'yearly',  label: 'Yearly',  n: 1,    color: '#64748b' }
+  ];
+
+  // Sync slider and number input
+  const apySlider = document.getElementById('apy-slider');
+  const apyInput = document.getElementById('apy');
+
+  apySlider.addEventListener('input', () => {
+    apyInput.value = apySlider.value;
+  });
+  apyInput.addEventListener('input', () => {
+    apySlider.value = apyInput.value;
+  });
+
+  document.getElementById('calc-btn').addEventListener('click', simulate);
+
+  function simulate() {
+    const principal = parseFloat(document.getElementById('principal').value) || 10000;
+    const apy = parseFloat(document.getElementById('apy').value) / 100 || 0.12;
+    const months = parseInt(document.getElementById('time-months').value) || 24;
+    const years = months / 12;
+
+    // Get selected frequencies
+    const selected = FREQ_CONFIG.filter(f =>
+      document.getElementById('freq-' + f.id).checked
+    );
+
+    if (selected.length === 0) return;
+
+    // Calculate final values
+    const results = selected.map(f => {
+      const finalValue = principal * Math.pow(1 + apy / f.n, f.n * years);
+      const earnings = finalValue - principal;
+      const effectiveAPY = (Math.pow(1 + apy / f.n, f.n) - 1) * 100;
+      return { ...f, finalValue, earnings, effectiveAPY };
+    });
+
+    // Show results section
+    document.getElementById('results-section').style.display = 'block';
+    document.getElementById('results-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Summary cards
+    const cardsEl = document.getElementById('results-cards');
+    const bestValue = Math.max(...results.map(r => r.finalValue));
+
+    cardsEl.innerHTML = results.map(r => `
+      <div class="result-card ${r.finalValue === bestValue ? 'featured' : ''}">
+        <div class="rc-freq" style="color:${r.color}">${r.label}</div>
+        <div class="rc-final">$${r.finalValue.toLocaleString('en-US', {maximumFractionDigits: 0})}</div>
+        <div class="rc-earnings">+$${r.earnings.toLocaleString('en-US', {maximumFractionDigits: 0})}</div>
+        <div class="rc-apy">${r.effectiveAPY.toFixed(2)}% effective APY</div>
+      </div>
+    `).join('');
+
+    // Chart
+    drawChart(principal, apy, months, selected);
+
+    // Comparison table
+    const yearlyResult = results.find(r => r.id === 'yearly') || results[results.length - 1];
+    const tbody = document.getElementById('comp-tbody');
+    const sorted = [...results].sort((a, b) => b.finalValue - a.finalValue);
+
+    tbody.innerHTML = sorted.map((r, i) => {
+      const extra = r.finalValue - yearlyResult.finalValue;
+      return `
+        <tr class="${i === 0 ? 'best-row' : ''}">
+          <td><span style="display:inline-flex;align-items:center;gap:0.4rem"><span style="width:10px;height:10px;border-radius:2px;background:${r.color};display:inline-block"></span>${r.label}</span></td>
+          <td><strong>$${r.finalValue.toLocaleString('en-US', {maximumFractionDigits: 2})}</strong></td>
+          <td style="color:#22c55e">+$${r.earnings.toLocaleString('en-US', {maximumFractionDigits: 2})}</td>
+          <td>${r.id === 'yearly' ? '—' : `+$${extra.toLocaleString('en-US', {maximumFractionDigits: 2})}`}</td>
+          <td>${r.effectiveAPY.toFixed(3)}%</td>
+        </tr>
+      `;
+    }).join('');
+
+    // Loss banner
+    const dailyR = results.find(r => r.id === 'daily');
+    const yearlyR = results.find(r => r.id === 'yearly');
+    if (dailyR && yearlyR) {
+      const diff = dailyR.finalValue - yearlyR.finalValue;
+      document.getElementById('loss-text').innerHTML =
+        `Daily compounding earns you an extra <strong>$${diff.toLocaleString('en-US', {maximumFractionDigits: 2})}</strong> vs yearly compounding over ${months} months at ${(apy*100).toFixed(1)}% APY.`;
+    }
+  }
+
+  function drawChart(principal, apy, totalMonths, selected) {
+    const canvas = document.getElementById('growth-chart');
+    const ctx = canvas.getContext('2d');
+
+    // Responsive width
+    canvas.width = canvas.parentElement.clientWidth || 800;
+    canvas.height = 320;
+
+    const W = canvas.width;
+    const H = canvas.height;
+    const PAD = { top: 20, right: 20, bottom: 50, left: 75 };
+
+    ctx.clearRect(0, 0, W, H);
+
+    // Data points: monthly snapshots
+    const dataByFreq = selected.map(f => {
+      const points = [];
+      for (let m = 0; m <= totalMonths; m++) {
+        const t = m / 12;
+        const v = principal * Math.pow(1 + apy / f.n, f.n * t);
+        points.push(v);
+      }
+      return { ...f, points };
+    });
+
+    const allValues = dataByFreq.flatMap(d => d.points);
+    const maxVal = Math.max(...allValues);
+    const minVal = principal;
+
+    const xScale = (m) => PAD.left + (m / totalMonths) * (W - PAD.left - PAD.right);
+    const yScale = (v) => PAD.top + (1 - (v - minVal) / (maxVal - minVal + 1)) * (H - PAD.top - PAD.bottom);
+
+    // Background
+    ctx.fillStyle = 'transparent';
+    ctx.fillRect(0, 0, W, H);
+
+    // Grid lines (horizontal)
+    const gridLines = 5;
+    ctx.strokeStyle = 'rgba(148,163,184,0.15)';
+    ctx.lineWidth = 1;
+    for (let i = 0; i <= gridLines; i++) {
+      const y = PAD.top + (i / gridLines) * (H - PAD.top - PAD.bottom);
+      ctx.beginPath();
+      ctx.moveTo(PAD.left, y);
+      ctx.lineTo(W - PAD.right, y);
+      ctx.stroke();
+      // Y label
+      const val = maxVal - (i / gridLines) * (maxVal - minVal);
+      ctx.fillStyle = 'rgba(148,163,184,0.7)';
+      ctx.font = '11px system-ui, sans-serif';
+      ctx.textAlign = 'right';
+      ctx.fillText('$' + Math.round(val).toLocaleString(), PAD.left - 6, y + 4);
+    }
+
+    // X axis labels
+    ctx.fillStyle = 'rgba(148,163,184,0.7)';
+    ctx.font = '11px system-ui, sans-serif';
+    ctx.textAlign = 'center';
+    const xTicks = Math.min(totalMonths, 12);
+    for (let i = 0; i <= xTicks; i++) {
+      const m = Math.round((i / xTicks) * totalMonths);
+      const x = xScale(m);
+      const y = H - PAD.bottom + 18;
+      ctx.fillText(m + 'mo', x, y);
+    }
+
+    // Lines
+    dataByFreq.forEach(d => {
+      ctx.strokeStyle = d.color;
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      d.points.forEach((v, m) => {
+        const x = xScale(m);
+        const y = yScale(v);
+        if (m === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      });
+      ctx.stroke();
+    });
+
+    // Legend
+    const legendEl = document.getElementById('chart-legend');
+    legendEl.innerHTML = dataByFreq.map(d =>
+      `<div class="legend-item"><span class="legend-dot" style="background:${d.color}"></span>${d.label}</div>`
+    ).join('');
+  }
+
+  // Run on load
+  simulate();
+});
+</script>

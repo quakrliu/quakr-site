@@ -1,0 +1,781 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'DeFi Risk Score — Protocol Safety Ratings 2026';
+const description = 'Check the risk score of any major DeFi protocol. Ratings based on TVL, audit status, age, governance, and smart contract risk. Free tool by Passive Yield Lab.';
+---
+
+<BaseLayout title={title} description={description} ogImage="/og/tools.svg">
+  <div class="risk-page">
+
+    <!-- Hero -->
+    <section class="risk-hero">
+      <span class="risk-badge">Free Tool</span>
+      <h1>DeFi Protocol <span class="accent">Risk Score</span></h1>
+      <p>Understand the safety profile of major DeFi protocols before you deposit. Scores based on TVL, audits, protocol age, and governance structure.</p>
+    </section>
+
+    <!-- Selector + Score Display -->
+    <section class="risk-wrapper">
+      <div class="risk-grid">
+
+        <!-- LEFT: Selector -->
+        <div class="risk-selector">
+          <h2 class="risk-section-title">Select Protocol</h2>
+
+          <div class="form-group">
+            <label for="protocol-select">Protocol</label>
+            <select id="protocol-select">
+              <option value="aave">Aave</option>
+              <option value="lido">Lido</option>
+              <option value="compound">Compound</option>
+              <option value="uniswap">Uniswap</option>
+              <option value="curve">Curve</option>
+              <option value="eigenlayer">EigenLayer</option>
+              <option value="morpho">Morpho</option>
+              <option value="pendle">Pendle</option>
+              <option value="maker">Maker (Sky)</option>
+              <option value="yearn">Yearn Finance</option>
+            </select>
+          </div>
+
+          <div class="protocol-meta" id="protocol-meta">
+            <div class="meta-row"><span class="meta-label">Category</span><span class="meta-val" id="meta-category">—</span></div>
+            <div class="meta-row"><span class="meta-label">Chain(s)</span><span class="meta-val" id="meta-chains">—</span></div>
+            <div class="meta-row"><span class="meta-label">TVL (approx)</span><span class="meta-val" id="meta-tvl">—</span></div>
+            <div class="meta-row"><span class="meta-label">Launched</span><span class="meta-val" id="meta-launched">—</span></div>
+          </div>
+
+          <div class="risk-legend">
+            <h3 class="legend-title">Score Guide</h3>
+            <div class="legend-row"><span class="legend-dot dot-low"></span><span>1–3 — High Risk</span></div>
+            <div class="legend-row"><span class="legend-dot dot-med"></span><span>4–6 — Moderate Risk</span></div>
+            <div class="legend-row"><span class="legend-dot dot-good"></span><span>7–8 — Low Risk</span></div>
+            <div class="legend-row"><span class="legend-dot dot-best"></span><span>9–10 — Very Low Risk</span></div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Score Display -->
+        <div class="risk-display" id="risk-display" aria-live="polite">
+          <!-- Overall score -->
+          <div class="overall-score-wrap">
+            <div class="overall-score-ring" id="score-ring">
+              <div class="score-ring-inner">
+                <div class="score-number" id="score-number">—</div>
+                <div class="score-label-inner">/ 10</div>
+              </div>
+            </div>
+            <div class="overall-score-meta">
+              <div class="protocol-name-display" id="protocol-name">Select a protocol</div>
+              <div class="risk-level-badge" id="risk-level-badge">—</div>
+              <p class="protocol-summary" id="protocol-summary">Select a protocol from the dropdown to see its risk breakdown.</p>
+            </div>
+          </div>
+
+          <!-- Breakdown bars -->
+          <div class="breakdown-section">
+            <h3 class="breakdown-title">Risk Breakdown</h3>
+
+            <div class="breakdown-item">
+              <div class="breakdown-header">
+                <span class="breakdown-label">TVL Size</span>
+                <span class="breakdown-score" id="score-tvl">—</span>
+              </div>
+              <div class="breakdown-track">
+                <div class="breakdown-fill" id="bar-tvl" style="width:0%"></div>
+              </div>
+              <small class="breakdown-note" id="note-tvl">Larger TVL = more battle-tested</small>
+            </div>
+
+            <div class="breakdown-item">
+              <div class="breakdown-header">
+                <span class="breakdown-label">Audit Status</span>
+                <span class="breakdown-score" id="score-audit">—</span>
+              </div>
+              <div class="breakdown-track">
+                <div class="breakdown-fill" id="bar-audit" style="width:0%"></div>
+              </div>
+              <small class="breakdown-note" id="note-audit">Number and quality of security audits</small>
+            </div>
+
+            <div class="breakdown-item">
+              <div class="breakdown-header">
+                <span class="breakdown-label">Time in Market</span>
+                <span class="breakdown-score" id="score-time">—</span>
+              </div>
+              <div class="breakdown-track">
+                <div class="breakdown-fill" id="bar-time" style="width:0%"></div>
+              </div>
+              <small class="breakdown-note" id="note-time">Years live without major exploit</small>
+            </div>
+
+            <div class="breakdown-item">
+              <div class="breakdown-header">
+                <span class="breakdown-label">Governance</span>
+                <span class="breakdown-score" id="score-gov">—</span>
+              </div>
+              <div class="breakdown-track">
+                <div class="breakdown-fill" id="bar-gov" style="width:0%"></div>
+              </div>
+              <small class="breakdown-note" id="note-gov">Decentralization and upgrade controls</small>
+            </div>
+
+            <div class="breakdown-item">
+              <div class="breakdown-header">
+                <span class="breakdown-label">Smart Contract Risk</span>
+                <span class="breakdown-score" id="score-sc">—</span>
+              </div>
+              <div class="breakdown-track">
+                <div class="breakdown-fill" id="bar-sc" style="width:0%"></div>
+              </div>
+              <small class="breakdown-note" id="note-sc">Complexity, upgradeability, attack surface</small>
+            </div>
+          </div>
+
+          <!-- Risks + highlights -->
+          <div class="risk-notes" id="risk-notes" style="display:none">
+            <div class="risk-note-col">
+              <h4 class="rn-title rn-green">Strengths</h4>
+              <ul id="strengths-list"></ul>
+            </div>
+            <div class="risk-note-col">
+              <h4 class="rn-title rn-red">Risk Factors</h4>
+              <ul id="risks-list"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- All protocols overview -->
+    <section class="risk-section">
+      <div class="risk-panel">
+        <h2 class="risk-section-title">All Protocols at a Glance</h2>
+        <div class="overview-table-wrap">
+          <table class="overview-table" id="overview-table">
+            <thead>
+              <tr>
+                <th>Protocol</th>
+                <th>Category</th>
+                <th>Overall Score</th>
+                <th>Risk Level</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="overview-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Disclaimer -->
+    <section class="risk-section">
+      <div class="risk-disclaimer-panel">
+        <strong>Important Disclaimer</strong>
+        <p>Risk scores are based on publicly available data and are intended for educational purposes only. DeFi carries significant financial risk including smart contract exploits, rug pulls, and market volatility. This is not financial advice. Always do your own research (DYOR) before depositing funds into any protocol.</p>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+.risk-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* Hero */
+.risk-hero {
+  text-align: center;
+  padding: 3.5rem 1rem 2.5rem;
+}
+
+.risk-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(37,99,235,0.25);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.risk-hero h1 {
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 0.9rem;
+}
+
+.risk-hero .accent { color: var(--accent); }
+
+.risk-hero p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+/* Layout */
+.risk-wrapper { margin-bottom: 3rem; }
+
+.risk-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.risk-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.risk-selector, .risk-display {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+/* Form */
+.form-group { margin-bottom: 1.25rem; }
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.45rem;
+}
+
+select {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2rem;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+
+/* Meta */
+.protocol-meta {
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  padding: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  font-size: 0.82rem;
+  border-bottom: 1px solid var(--border-light);
+}
+.meta-row:last-child { border-bottom: none; }
+.meta-label { color: var(--text-muted); }
+.meta-val { font-weight: 600; color: var(--text-primary); }
+
+/* Legend */
+.risk-legend { }
+.legend-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.35rem;
+}
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.dot-low { background: #ef4444; }
+.dot-med { background: #eab308; }
+.dot-good { background: #3b82f6; }
+.dot-best { background: #22c55e; }
+
+/* Overall score */
+.overall-score-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.overall-score-ring {
+  flex-shrink: 0;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: conic-gradient(var(--accent) 0%, var(--bg-secondary) 0%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background 0.4s;
+}
+
+.score-ring-inner {
+  width: 68px;
+  height: 68px;
+  background: var(--bg-card);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-number {
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.score-label-inner {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.protocol-name-display {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+
+.risk-level-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  margin-bottom: 0.5rem;
+}
+
+.protocol-summary {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Breakdown */
+.breakdown-section { margin-bottom: 1.5rem; }
+.breakdown-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.breakdown-item { margin-bottom: 0.9rem; }
+.breakdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+.breakdown-label { font-size: 0.875rem; font-weight: 600; color: var(--text-primary); }
+.breakdown-score {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.breakdown-track {
+  background: var(--bg-secondary);
+  border-radius: 9999px;
+  height: 8px;
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+}
+.breakdown-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: var(--accent);
+  transition: width 0.5s ease;
+}
+
+.breakdown-note { font-size: 0.72rem; color: var(--text-muted); }
+
+/* Risk notes */
+.risk-notes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.rn-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+}
+.rn-green { color: #22c55e; }
+.rn-red { color: #ef4444; }
+
+.risk-note-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.risk-note-col li {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  padding: 0.25rem 0;
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  gap: 0.4rem;
+  align-items: flex-start;
+}
+.risk-note-col li:last-child { border-bottom: none; }
+.risk-note-col li::before { flex-shrink: 0; }
+#strengths-list li::before { content: '✓'; color: #22c55e; font-weight: 700; }
+#risks-list li::before { content: '⚠'; color: #eab308; }
+
+/* Section */
+.risk-section { margin-bottom: 2rem; }
+.risk-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+/* Overview table */
+.overview-table-wrap { overflow-x: auto; }
+.overview-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.overview-table th {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+.overview-table td {
+  padding: 0.7rem 0.75rem;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+.overview-table tr:last-child td { border-bottom: none; }
+.overview-table tr:hover td { background: var(--bg-secondary); }
+
+.score-pill {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius);
+  min-width: 2.5rem;
+  text-align: center;
+}
+
+.view-btn {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: none;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 0.25rem 0.65rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.view-btn:hover { background: var(--accent); color: #fff; }
+
+/* Disclaimer */
+.risk-disclaimer-panel {
+  background: rgba(234,179,8,0.08);
+  border: 1px solid rgba(234,179,8,0.3);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.risk-disclaimer-panel strong { display: block; margin-bottom: 0.4rem; color: #eab308; }
+
+/* Responsive */
+@media (max-width: 800px) {
+  .risk-grid { grid-template-columns: 1fr; }
+  .overall-score-wrap { flex-direction: column; text-align: center; }
+  .risk-notes { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const PROTOCOLS = {
+    aave: {
+      name: 'Aave',
+      category: 'Lending/Borrowing',
+      chains: 'Ethereum, Arbitrum, Polygon, more',
+      tvl: '$12.5B',
+      launched: '2017 (ETHLend)',
+      scores: { tvl: 10, audit: 9, time: 9, gov: 8, sc: 8 },
+      summary: 'Aave is one of the most battle-tested DeFi lending protocols. Multiple audits, long track record, and strong governance make it a benchmark for protocol safety.',
+      strengths: ['$12B+ TVL across multiple chains', 'Multiple top-tier audits (OpenZeppelin, Trail of Bits)', 'Live since 2017 — no major exploit', 'Strong AAVE governance token with active DAO'],
+      risks: ['Smart contract risk inherent in all DeFi', 'Liquidation cascades in volatile markets', 'Cross-chain bridge dependencies on L2 deployments']
+    },
+    lido: {
+      name: 'Lido',
+      category: 'Liquid Staking',
+      chains: 'Ethereum (stETH)',
+      tvl: '$25.8B',
+      launched: '2020',
+      scores: { tvl: 10, audit: 9, time: 8, gov: 7, sc: 8 },
+      summary: 'Lido dominates ETH liquid staking with the largest TVL in DeFi. Highly audited but faces centralization concerns around validator set concentration.',
+      strengths: ['Largest TVL in DeFi (~$25B)', 'Multiple audits by top firms', 'stETH deeply integrated across DeFi', 'Non-custodial ETH staking'],
+      risks: ['Validator concentration risk (33%+ ETH staked)', 'Governance attack vector via LDO token', 'Regulatory scrutiny as largest staking provider', 'Slashing risk from validator misbehavior']
+    },
+    compound: {
+      name: 'Compound',
+      category: 'Lending/Borrowing',
+      chains: 'Ethereum, Base',
+      tvl: '$2.1B',
+      launched: '2018',
+      scores: { tvl: 7, audit: 9, time: 9, gov: 8, sc: 7 },
+      summary: 'Compound pioneered DeFi lending and remains a highly audited, community-governed protocol. TVL has declined from peak but protocol remains robust.',
+      strengths: ['Original DeFi lending pioneer (2018)', 'Extensive audit history', 'Fully community-governed via COMP', 'Battle-tested codebase'],
+      risks: ['TVL significantly below Aave peak', 'Compound III (Comet) codebase is newer, less battle-tested', 'Declining market share', 'COMP governance participation relatively low']
+    },
+    uniswap: {
+      name: 'Uniswap',
+      category: 'DEX / AMM',
+      chains: 'Ethereum, Arbitrum, Optimism, Polygon, Base, more',
+      tvl: '$5.2B',
+      launched: '2018',
+      scores: { tvl: 9, audit: 10, time: 9, gov: 7, sc: 9 },
+      summary: 'Uniswap is the most audited and widely deployed DEX in crypto. V3 concentrated liquidity is complex but thoroughly tested. Low smart contract risk by DeFi standards.',
+      strengths: ['Most audited DEX codebase in existence', 'Live since 2018 without major exploit', 'Deepest liquidity of any DEX', 'Deployed on 10+ chains'],
+      risks: ['Impermanent loss for LPs can be significant', 'V3 LP management complexity', 'Governance centralization around a16z holdings', 'Fee switch governance controversy']
+    },
+    curve: {
+      name: 'Curve Finance',
+      category: 'Stablecoin DEX',
+      chains: 'Ethereum, Arbitrum, Polygon, more',
+      tvl: '$1.8B',
+      launched: '2020',
+      scores: { tvl: 7, audit: 7, time: 7, gov: 5, sc: 6 },
+      summary: 'Curve is a critical piece of DeFi infrastructure for stablecoin swaps. Suffered the crvUSD reentrancy exploit in 2023. Governance is complex and somewhat centralized around the founder.',
+      strengths: ['Critical stablecoin infrastructure', 'Deep liquidity for stable pairs', 'crvUSD over-collateralized stablecoin', 'veCRV long-term alignment model'],
+      risks: ['Reentrancy exploit in 2023 (~$70M lost)', 'Founder liquidation risk via CRV loans', 'Complex Vyper compiler dependency', 'Governance heavily influenced by single entity']
+    },
+    eigenlayer: {
+      name: 'EigenLayer',
+      category: 'Restaking',
+      chains: 'Ethereum',
+      tvl: '$14.2B',
+      launched: '2023',
+      scores: { tvl: 9, audit: 7, time: 3, gov: 5, sc: 5 },
+      summary: 'EigenLayer introduces a novel restaking primitive with massive TVL. However, it is relatively new, introduces systemic risk to ETH staking, and the AVS ecosystem is still maturing.',
+      strengths: ['Massive TVL adoption ($14B+)', 'Audited by top firms', 'Novel security primitive for Ethereum ecosystem', 'Strong backer and team'],
+      risks: ['Live only since 2023 — limited battle testing', 'Novel systemic risk to ETH validator set', 'AVS slash conditions still evolving', 'Governance immature, EIGEN token still maturing', 'Correlated slashing risk across restakers']
+    },
+    morpho: {
+      name: 'Morpho',
+      category: 'Lending / Yield Optimizer',
+      chains: 'Ethereum, Base',
+      tvl: '$3.4B',
+      launched: '2021',
+      scores: { tvl: 8, audit: 8, time: 6, gov: 7, sc: 8 },
+      summary: 'Morpho offers optimized lending rates on top of Aave and Compound. Morpho Blue introduces permissionless markets with a simpler, highly audited codebase.',
+      strengths: ['Morpho Blue: minimal, clean codebase', 'Multiple Spearbit and Trail of Bits audits', 'Permissionless market creation', 'Strong TVL growth trajectory'],
+      risks: ['Younger protocol (2021) with less track record', 'Curator risk in MetaMorpho vaults', 'Oracle manipulation risk in Morpho Blue markets', 'Governance still maturing']
+    },
+    pendle: {
+      name: 'Pendle Finance',
+      category: 'Yield Trading',
+      chains: 'Ethereum, Arbitrum, BNB Chain',
+      tvl: '$2.8B',
+      launched: '2021',
+      scores: { tvl: 7, audit: 7, time: 6, gov: 6, sc: 6 },
+      summary: 'Pendle enables yield tokenization and trading, allowing fixed-rate yields in DeFi. Growing rapidly but introduces novel complexity with PT/YT mechanics.',
+      strengths: ['Innovative yield tokenization mechanism', 'Audited by top-tier firms', 'Strong product-market fit in points/airdrop farming', 'Growing TVL and liquidity'],
+      risks: ['Complex PT/YT mechanics — higher user error risk', 'Relatively new protocol (2021)', 'Dependent on underlying yield sources', 'vePENDLE governance still maturing', 'Interest rate risk on fixed-yield positions']
+    },
+    maker: {
+      name: 'Maker (Sky)',
+      category: 'CDP / Stablecoin',
+      chains: 'Ethereum',
+      tvl: '$8.1B',
+      launched: '2017',
+      scores: { tvl: 9, audit: 10, time: 10, gov: 8, sc: 8 },
+      summary: 'MakerDAO (now Sky) is the oldest and most audited DeFi protocol. DAI/USDS stablecoin has maintained its peg through multiple market cycles. One of the safest protocols in DeFi.',
+      strengths: ['Oldest DeFi protocol (2017)', 'Extensive multi-year audit history', 'DAI has maintained peg through multiple crashes', 'Strong community governance via MKR', 'Real-world asset backing adds diversification'],
+      risks: ['Governance attack surface via MKR votes', 'RWA counterparty risk from US Treasury exposure', 'Oracle risk for collateral pricing', 'Brand/migration complexity with Sky rebrand']
+    },
+    yearn: {
+      name: 'Yearn Finance',
+      category: 'Yield Aggregator',
+      chains: 'Ethereum, Arbitrum, Polygon',
+      tvl: '$0.5B',
+      launched: '2020',
+      scores: { tvl: 5, audit: 7, time: 7, gov: 6, sc: 6 },
+      summary: 'Yearn pioneered automated yield optimization. TVL has declined from its $6B peak. Strategy complexity introduces unique risks, but the team has a strong security track record.',
+      strengths: ['Pioneer of automated yield strategies', 'Strong security culture with bug bounties', 'Open-source strategies reviewed by community', 'Battle-tested core vault contracts'],
+      risks: ['TVL significantly below peak ($6B → $0.5B)', 'Strategy complexity across many protocols', 'Dependent on underlying protocol safety', 'Declining competitive advantage vs newer vaults', 'Historical exploits in early strategies (2021)']
+    }
+  };
+
+  const select = document.getElementById('protocol-select');
+
+  function getRiskLevel(score) {
+    if (score >= 9) return { label: 'Very Low Risk', color: '#22c55e', bg: 'rgba(34,197,94,0.12)' };
+    if (score >= 7) return { label: 'Low Risk', color: '#3b82f6', bg: 'rgba(59,130,246,0.12)' };
+    if (score >= 4) return { label: 'Moderate Risk', color: '#eab308', bg: 'rgba(234,179,8,0.12)' };
+    return { label: 'High Risk', color: '#ef4444', bg: 'rgba(239,68,68,0.12)' };
+  }
+
+  function getBarColor(score) {
+    if (score >= 9) return '#22c55e';
+    if (score >= 7) return '#3b82f6';
+    if (score >= 4) return '#eab308';
+    return '#ef4444';
+  }
+
+  function updateDisplay(key) {
+    const p = PROTOCOLS[key];
+    const scores = p.scores;
+    const avg = (scores.tvl + scores.audit + scores.time + scores.gov + scores.sc) / 5;
+    const overall = Math.round(avg * 10) / 10;
+    const rl = getRiskLevel(overall);
+
+    // Meta
+    document.getElementById('meta-category').textContent = p.category;
+    document.getElementById('meta-chains').textContent = p.chains;
+    document.getElementById('meta-tvl').textContent = p.tvl;
+    document.getElementById('meta-launched').textContent = p.launched;
+
+    // Score ring
+    const pct = (overall / 10) * 100;
+    const ringEl = document.getElementById('score-ring');
+    ringEl.style.background = `conic-gradient(${rl.color} ${pct}%, var(--bg-secondary) ${pct}%)`;
+    document.getElementById('score-number').textContent = overall.toFixed(1);
+
+    // Name + badge
+    document.getElementById('protocol-name').textContent = p.name;
+    const badge = document.getElementById('risk-level-badge');
+    badge.textContent = rl.label;
+    badge.style.color = rl.color;
+    badge.style.background = rl.bg;
+
+    document.getElementById('protocol-summary').textContent = p.summary;
+
+    // Breakdown bars
+    const categories = [
+      { key: 'tvl', barId: 'bar-tvl', scoreId: 'score-tvl' },
+      { key: 'audit', barId: 'bar-audit', scoreId: 'score-audit' },
+      { key: 'time', barId: 'bar-time', scoreId: 'score-time' },
+      { key: 'gov', barId: 'bar-gov', scoreId: 'score-gov' },
+      { key: 'sc', barId: 'bar-sc', scoreId: 'score-sc' }
+    ];
+
+    categories.forEach(({ key, barId, scoreId }) => {
+      const s = scores[key];
+      const bar = document.getElementById(barId);
+      bar.style.width = (s * 10) + '%';
+      bar.style.background = getBarColor(s);
+      document.getElementById(scoreId).textContent = s + '/10';
+    });
+
+    // Strengths & risks
+    const notesEl = document.getElementById('risk-notes');
+    notesEl.style.display = 'grid';
+
+    const sl = document.getElementById('strengths-list');
+    const rl2 = document.getElementById('risks-list');
+    sl.innerHTML = p.strengths.map(s => `<li>${s}</li>`).join('');
+    rl2.innerHTML = p.risks.map(r => `<li>${r}</li>`).join('');
+  }
+
+  function buildOverviewTable() {
+    const tbody = document.getElementById('overview-tbody');
+    const rows = Object.entries(PROTOCOLS).map(([key, p]) => {
+      const scores = p.scores;
+      const avg = (scores.tvl + scores.audit + scores.time + scores.gov + scores.sc) / 5;
+      const overall = Math.round(avg * 10) / 10;
+      const rl = getRiskLevel(overall);
+      return { key, p, overall, rl };
+    }).sort((a, b) => b.overall - a.overall);
+
+    tbody.innerHTML = rows.map(({ key, p, overall, rl }) => `
+      <tr>
+        <td><strong>${p.name}</strong></td>
+        <td style="color:var(--text-muted);font-size:0.82rem">${p.category}</td>
+        <td><span class="score-pill" style="color:${rl.color};background:${rl.bg}">${overall.toFixed(1)}</span></td>
+        <td><span style="font-size:0.8rem;font-weight:600;color:${rl.color}">${rl.label}</span></td>
+        <td><button class="view-btn" data-key="${key}">View</button></td>
+      </tr>
+    `).join('');
+
+    tbody.querySelectorAll('.view-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-key');
+        select.value = key;
+        updateDisplay(key);
+        document.querySelector('.risk-wrapper').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  }
+
+  select.addEventListener('change', () => updateDisplay(select.value));
+
+  // Init
+  updateDisplay('aave');
+  buildOverviewTable();
+});
+</script>

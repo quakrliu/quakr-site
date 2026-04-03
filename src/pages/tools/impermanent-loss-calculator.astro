@@ -1,0 +1,620 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'Impermanent Loss Calculator 2026 — DeFi LP Risk Tool';
+const description = 'Calculate impermanent loss for any token pair in a liquidity pool. See how much you lose vs simply holding. Free tool by Passive Yield Lab.';
+---
+
+<BaseLayout title={title} description={description} ogImage="/og/tools.svg">
+  <div class="il-page">
+
+    <!-- Hero -->
+    <section class="il-hero">
+      <span class="il-badge">Free Tool</span>
+      <h1>Impermanent Loss <span class="accent">Calculator</span></h1>
+      <p>See exactly how much providing liquidity costs you compared to simply holding — before you commit your funds.</p>
+    </section>
+
+    <!-- Main Calculator -->
+    <section class="il-wrapper">
+      <div class="il-grid">
+
+        <!-- LEFT: Inputs -->
+        <div class="il-inputs">
+          <h2 class="il-section-title">Your LP Position</h2>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="token-a-name">Token A Name</label>
+              <input type="text" id="token-a-name" placeholder="e.g. ETH" value="ETH" />
+            </div>
+            <div class="form-group">
+              <label for="token-b-name">Token B Name</label>
+              <input type="text" id="token-b-name" placeholder="e.g. USDC" value="USDC" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="initial-value">Initial LP Value (USD)</label>
+            <div class="input-prefix-wrap">
+              <span class="input-prefix">$</span>
+              <input type="number" id="initial-value" min="1" step="any" placeholder="e.g. 10000" value="10000" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="price-change-a">Token A Price Change (%)</label>
+              <div class="input-suffix-wrap">
+                <input type="number" id="price-change-a" step="any" placeholder="e.g. 100" value="100" />
+                <span class="input-suffix">%</span>
+              </div>
+              <small class="field-hint">Positive = price up, negative = price down</small>
+            </div>
+            <div class="form-group">
+              <label for="price-change-b">Token B Price Change (%)</label>
+              <div class="input-suffix-wrap">
+                <input type="number" id="price-change-b" step="any" placeholder="e.g. 0" value="0" />
+                <span class="input-suffix">%</span>
+              </div>
+              <small class="field-hint">Positive = price up, negative = price down</small>
+            </div>
+          </div>
+
+          <button class="il-btn" id="calc-btn">Calculate Impermanent Loss</button>
+
+          <p class="il-disclaimer">* Assumes 50/50 constant product AMM (Uniswap v2 style). Does not include fees earned.</p>
+        </div>
+
+        <!-- RIGHT: Results -->
+        <div class="il-results" id="il-results" aria-live="polite">
+          <div class="results-placeholder" id="results-placeholder">
+            <div class="placeholder-icon">&#9654;</div>
+            <p>Enter your token price changes and click <strong>Calculate</strong> to see your impermanent loss.</p>
+          </div>
+
+          <div class="results-content" id="results-content" style="display:none">
+            <h2 class="il-section-title">Your IL Analysis</h2>
+
+            <!-- IL Score Card -->
+            <div class="il-score-card" id="il-score-card">
+              <div class="il-score-label">Impermanent Loss</div>
+              <div class="il-score-value" id="il-pct">—</div>
+              <div class="il-score-sub" id="il-dollar">—</div>
+            </div>
+
+            <!-- Comparison cards -->
+            <div class="compare-cards">
+              <div class="compare-card hold-card">
+                <div class="compare-label">Value if Held</div>
+                <div class="compare-value" id="hold-value">—</div>
+                <div class="compare-sub" id="hold-breakdown">—</div>
+              </div>
+              <div class="compare-card lp-card">
+                <div class="compare-label">Value as LP</div>
+                <div class="compare-value" id="lp-value">—</div>
+                <div class="compare-sub" id="lp-sub">Current LP value</div>
+              </div>
+            </div>
+
+            <!-- Visual bar comparison -->
+            <div class="bar-chart-wrap">
+              <h3 class="chart-title">Value Comparison</h3>
+              <div class="bar-row">
+                <span class="bar-label">Hold</span>
+                <div class="bar-track"><div class="bar-fill bar-hold" id="bar-hold" style="width:0%"></div></div>
+                <span class="bar-val" id="bar-val-hold">$0</span>
+              </div>
+              <div class="bar-row">
+                <span class="bar-label">LP</span>
+                <div class="bar-track"><div class="bar-fill bar-lp" id="bar-lp" style="width:0%"></div></div>
+                <span class="bar-val" id="bar-val-lp">$0</span>
+              </div>
+            </div>
+
+            <!-- Breakeven note -->
+            <div class="il-info-box" id="il-info-box">
+              <strong id="il-verdict-title">Verdict</strong>
+              <p id="il-verdict-text">—</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IL Reference Table -->
+    <section class="il-section">
+      <div class="il-panel">
+        <h2 class="il-section-title">Common IL Scenarios</h2>
+        <div class="il-table-wrap">
+          <table class="il-table">
+            <thead>
+              <tr>
+                <th>Price Change (1 token)</th>
+                <th>Impermanent Loss</th>
+                <th>Severity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>+25%</td><td>0.6%</td><td><span class="badge badge-low">Low</span></td></tr>
+              <tr><td>+50%</td><td>2.0%</td><td><span class="badge badge-low">Low</span></td></tr>
+              <tr><td>+100%</td><td>5.7%</td><td><span class="badge badge-med">Medium</span></td></tr>
+              <tr><td>+200%</td><td>13.4%</td><td><span class="badge badge-med">Medium</span></td></tr>
+              <tr><td>+500%</td><td>25.5%</td><td><span class="badge badge-high">High</span></td></tr>
+              <tr><td>-50%</td><td>5.7%</td><td><span class="badge badge-med">Medium</span></td></tr>
+              <tr><td>-75%</td><td>20.0%</td><td><span class="badge badge-high">High</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note">* Assumes one token stays flat (stablecoin pair). For volatile pair/pair, losses compound.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="il-section">
+      <div class="il-cta-panel">
+        <h2>Reduce Your IL Exposure</h2>
+        <p>Concentrated liquidity positions and single-sided staking can significantly reduce impermanent loss. Explore the highest-yield, lowest-risk options right now.</p>
+        <a href="/tools/defi-risk-score" class="il-cta-btn">Check Protocol Risk Scores →</a>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+.il-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* Hero */
+.il-hero {
+  text-align: center;
+  padding: 3.5rem 1rem 2.5rem;
+}
+
+.il-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(37,99,235,0.25);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.il-hero h1 {
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 0.9rem;
+}
+
+.il-hero .accent { color: var(--accent); }
+
+.il-hero p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Layout */
+.il-wrapper { margin-bottom: 3rem; }
+
+.il-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.il-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.il-inputs, .il-results {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+.il-results { min-height: 300px; }
+
+/* Forms */
+.form-group { margin-bottom: 1.25rem; }
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.45rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+
+.input-prefix-wrap { position: relative; }
+.input-prefix {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+.input-prefix-wrap input { padding-left: 1.75rem; }
+
+.input-suffix-wrap { position: relative; }
+.input-suffix {
+  position: absolute;
+  right: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+.input-suffix-wrap input { padding-right: 2rem; }
+
+.field-hint {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+
+.il-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 0.5rem;
+}
+.il-btn:hover { background: var(--accent-hover); }
+.il-btn:active { transform: scale(0.98); }
+
+.il-disclaimer {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+/* Results placeholder */
+.results-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  min-height: 260px;
+  color: var(--text-muted);
+  gap: 1rem;
+}
+.placeholder-icon {
+  font-size: 2.5rem;
+  color: var(--accent);
+  opacity: 0.4;
+}
+.results-placeholder p { font-size: 0.9rem; max-width: 240px; line-height: 1.6; }
+
+/* IL Score card */
+.il-score-card {
+  background: linear-gradient(135deg, rgba(37,99,235,0.08), var(--bg-secondary));
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+.il-score-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+.il-score-value {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #ef4444;
+  line-height: 1;
+}
+.il-score-card.positive .il-score-value { color: #22c55e; }
+.il-score-sub {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 0.3rem;
+}
+
+/* Compare cards */
+.compare-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.compare-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+}
+.hold-card { border-color: #22c55e; }
+.lp-card { border-color: var(--accent); }
+.compare-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+.compare-value {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+.compare-sub { font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+/* Bar chart */
+.bar-chart-wrap { margin-bottom: 1.25rem; }
+.chart-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+.bar-row {
+  display: grid;
+  grid-template-columns: 48px 1fr 80px;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.bar-label { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; }
+.bar-track {
+  background: var(--bg-secondary);
+  border-radius: 9999px;
+  height: 10px;
+  overflow: hidden;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.5s ease;
+}
+.bar-hold { background: #22c55e; }
+.bar-lp { background: var(--accent); }
+.bar-val { font-size: 0.8rem; font-weight: 700; color: var(--text-primary); text-align: right; }
+
+/* Info box */
+.il-info-box {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.9rem 1rem;
+  font-size: 0.875rem;
+}
+.il-info-box strong { display: block; margin-bottom: 0.3rem; color: var(--text-primary); }
+.il-info-box p { color: var(--text-secondary); margin: 0; line-height: 1.5; }
+
+/* Section */
+.il-section { margin-bottom: 2rem; }
+.il-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+/* Reference table */
+.il-table-wrap { overflow-x: auto; }
+.il-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.il-table th {
+  text-align: left;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+.il-table td {
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+.il-table tr:last-child td { border-bottom: none; }
+
+.badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+}
+.badge-low { background: rgba(34,197,94,0.15); color: #22c55e; }
+.badge-med { background: rgba(234,179,8,0.15); color: #eab308; }
+.badge-high { background: rgba(239,68,68,0.15); color: #ef4444; }
+
+.table-note { font-size: 0.75rem; color: var(--text-muted); margin-top: 1rem; }
+
+/* CTA */
+.il-cta-panel {
+  background: linear-gradient(135deg, var(--bg-card), rgba(37,99,235,0.05));
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+}
+.il-cta-panel h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.75rem; }
+.il-cta-panel p { color: var(--text-secondary); max-width: 520px; margin: 0 auto 1.5rem; }
+.il-cta-btn {
+  display: inline-block;
+  padding: 0.8rem 1.75rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.il-cta-btn:hover { background: var(--accent-hover); }
+
+/* Responsive */
+@media (max-width: 700px) {
+  .il-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .compare-cards { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const calcBtn = document.getElementById('calc-btn');
+
+  calcBtn.addEventListener('click', calculate);
+
+  // Also calculate on Enter key
+  ['token-a-name','token-b-name','initial-value','price-change-a','price-change-b'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
+  });
+
+  function calculate() {
+    const tokenA = (document.getElementById('token-a-name').value || 'Token A').trim();
+    const tokenB = (document.getElementById('token-b-name').value || 'Token B').trim();
+    const initialValue = parseFloat(document.getElementById('initial-value').value) || 10000;
+    const changePctA = parseFloat(document.getElementById('price-change-a').value) || 0;
+    const changePctB = parseFloat(document.getElementById('price-change-b').value) || 0;
+
+    // New price ratios relative to initial
+    const newPriceA = 1 + changePctA / 100;
+    const newPriceB = 1 + changePctB / 100;
+
+    // Price ratio change: r = (newPriceA / newPriceB)
+    const priceRatio = newPriceA / newPriceB;
+
+    // IL formula: IL = 2*sqrt(r) / (1 + r) - 1
+    const ilFactor = (2 * Math.sqrt(priceRatio)) / (1 + priceRatio) - 1;
+    // ilFactor is negative or 0 (loss)
+
+    // Value if held: each token is 50% of the initial value
+    const halfValue = initialValue / 2;
+    // Half was token A (now worth halfValue * newPriceA), half was token B
+    const holdValueA = halfValue * newPriceA;
+    const holdValueB = halfValue * newPriceB;
+    const holdTotal = holdValueA + holdValueB;
+
+    // LP value: holdTotal * (1 + ilFactor)
+    const lpTotal = holdTotal * (1 + ilFactor);
+
+    const ilPct = ilFactor * 100; // negative number = loss
+    const ilDollar = lpTotal - holdTotal; // negative = loss
+
+    // Display
+    const placeholder = document.getElementById('results-placeholder');
+    const content = document.getElementById('results-content');
+    placeholder.style.display = 'none';
+    content.style.display = 'block';
+
+    const scoreCard = document.getElementById('il-score-card');
+    scoreCard.classList.remove('positive');
+
+    document.getElementById('il-pct').textContent = ilPct.toFixed(2) + '%';
+    document.getElementById('il-dollar').textContent =
+      (ilDollar < 0 ? '−$' : '+$') + Math.abs(ilDollar).toLocaleString('en-US', {maximumFractionDigits: 2});
+
+    document.getElementById('hold-value').textContent = '$' + holdTotal.toLocaleString('en-US', {maximumFractionDigits: 2});
+    document.getElementById('hold-breakdown').textContent =
+      `${tokenA}: $${holdValueA.toFixed(2)} · ${tokenB}: $${holdValueB.toFixed(2)}`;
+
+    document.getElementById('lp-value').textContent = '$' + lpTotal.toLocaleString('en-US', {maximumFractionDigits: 2});
+
+    // Bar chart
+    const maxVal = Math.max(holdTotal, lpTotal);
+    const holdPct = (holdTotal / maxVal) * 100;
+    const lpPct = (lpTotal / maxVal) * 100;
+    document.getElementById('bar-hold').style.width = holdPct + '%';
+    document.getElementById('bar-lp').style.width = lpPct + '%';
+    document.getElementById('bar-val-hold').textContent = '$' + Math.round(holdTotal).toLocaleString();
+    document.getElementById('bar-val-lp').textContent = '$' + Math.round(lpTotal).toLocaleString();
+
+    // Verdict
+    const absIL = Math.abs(ilPct);
+    let verdictTitle, verdictText;
+    if (absIL < 0.5) {
+      verdictTitle = 'Minimal IL Risk';
+      verdictText = `With these price changes, your IL is negligible (${absIL.toFixed(2)}%). LP fees will almost certainly cover this. This is a low-risk pair to provide liquidity for.`;
+    } else if (absIL < 5) {
+      verdictTitle = 'Moderate IL';
+      verdictText = `Your impermanent loss is ${absIL.toFixed(2)}%. Whether LP fees compensate depends on the pool's trading volume. Check the 24h fee APY before committing.`;
+    } else if (absIL < 15) {
+      verdictTitle = 'Significant IL';
+      verdictText = `At ${absIL.toFixed(2)}% IL, you are meaningfully worse off than holding. You need high fee APY (10%+/yr) to break even. Consider a concentrated liquidity range or single-sided vault.`;
+    } else {
+      verdictTitle = 'High IL — Holding Was Better';
+      verdictText = `At ${absIL.toFixed(2)}% IL, providing liquidity significantly underperformed holding. This level of divergence is very hard to recover from with fees alone.`;
+    }
+
+    document.getElementById('il-verdict-title').textContent = verdictTitle;
+    document.getElementById('il-verdict-text').textContent = verdictText;
+  }
+
+  // Run on load with defaults
+  calculate();
+});
+</script>

@@ -1,0 +1,621 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const title = 'Crypto Tax Estimator 2026 — Calculate Capital Gains (US, AU, UK)';
+const description = 'Estimate your crypto capital gains tax for the US, Australia, and UK. Enter your buy/sell details and get an instant tax estimate. Free tool by Passive Yield Lab.';
+---
+
+<BaseLayout title={title} description={description} ogImage="/og/tools.svg">
+  <div class="tax-page">
+
+    <!-- Hero -->
+    <section class="tax-hero">
+      <span class="tax-badge">Free Tool</span>
+      <h1>Crypto Tax <span class="accent">Estimator</span></h1>
+      <p>Estimate your capital gains tax for crypto trades in the US, Australia, and UK. Instant results, no sign-up needed.</p>
+    </section>
+
+    <!-- Calculator -->
+    <section class="tax-wrapper">
+      <div class="tax-grid">
+
+        <!-- LEFT: Inputs -->
+        <div class="tax-inputs">
+          <h2 class="tax-section-title">Trade Details</h2>
+
+          <div class="form-group">
+            <label for="country-select">Country</label>
+            <select id="country-select">
+              <option value="US">United States (US)</option>
+              <option value="AU">Australia (AU)</option>
+              <option value="UK">United Kingdom (UK)</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="buy-price">Buy Price (per coin)</label>
+              <div class="input-prefix-wrap">
+                <span class="input-prefix">$</span>
+                <input type="number" id="buy-price" min="0" step="any" placeholder="e.g. 30000" value="30000" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="sell-price">Sell Price (per coin)</label>
+              <div class="input-prefix-wrap">
+                <span class="input-prefix">$</span>
+                <input type="number" id="sell-price" min="0" step="any" placeholder="e.g. 65000" value="65000" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="quantity">Quantity (coins)</label>
+            <input type="number" id="quantity" min="0" step="any" placeholder="e.g. 0.5" value="0.5" />
+          </div>
+
+          <div class="form-group">
+            <label for="holding-period">Holding Period</label>
+            <select id="holding-period">
+              <option value="short">Short-term (held &lt; 12 months)</option>
+              <option value="long" selected>Long-term (held &ge; 12 months)</option>
+            </select>
+          </div>
+
+          <div class="form-group" id="income-group">
+            <label for="income-bracket">Annual Income Bracket</label>
+            <select id="income-bracket">
+              <option value="low">Low (&lt;$44,725 / £12,570 / A$18,200)</option>
+              <option value="mid" selected>Middle ($44,725–$492,300 / £50,270 / A$45,001–$120,000)</option>
+              <option value="high">High (&gt;$492,300 / £125,140 / A$120,001+)</option>
+            </select>
+          </div>
+
+          <button class="tax-btn" id="calc-btn">Calculate Tax Estimate</button>
+
+          <p class="tax-disclaimer">* Estimates only. Tax laws change frequently. Consult a qualified tax professional for advice specific to your situation.</p>
+        </div>
+
+        <!-- RIGHT: Results -->
+        <div class="tax-results" id="tax-results" aria-live="polite">
+          <div class="results-placeholder" id="results-placeholder">
+            <div class="placeholder-icon">&#9654;</div>
+            <p>Fill in your trade details and click <strong>Calculate</strong> to see your estimated tax.</p>
+          </div>
+
+          <div class="results-content" id="results-content" style="display:none">
+            <h2 class="tax-section-title">Your Estimated Tax</h2>
+
+            <!-- Summary cards -->
+            <div class="result-cards">
+              <div class="result-card">
+                <div class="result-label">Capital Gain</div>
+                <div class="result-value" id="capital-gain">—</div>
+              </div>
+              <div class="result-card featured">
+                <div class="result-label">Estimated Tax</div>
+                <div class="result-value accent-val" id="tax-owed">—</div>
+              </div>
+              <div class="result-card">
+                <div class="result-label">After-tax Profit</div>
+                <div class="result-value success-val" id="after-tax">—</div>
+              </div>
+            </div>
+
+            <!-- Tax breakdown -->
+            <div class="tax-breakdown-panel">
+              <h3 class="breakdown-title">How It's Calculated</h3>
+              <div class="breakdown-row">
+                <span class="bd-label">Buy price total</span>
+                <span class="bd-val" id="bd-cost">—</span>
+              </div>
+              <div class="breakdown-row">
+                <span class="bd-label">Sell price total</span>
+                <span class="bd-val" id="bd-proceeds">—</span>
+              </div>
+              <div class="breakdown-row">
+                <span class="bd-label">Gross capital gain</span>
+                <span class="bd-val" id="bd-gain">—</span>
+              </div>
+              <div class="breakdown-row" id="bd-discount-row">
+                <span class="bd-label" id="bd-discount-label">CGT discount</span>
+                <span class="bd-val" id="bd-discount">—</span>
+              </div>
+              <div class="breakdown-row">
+                <span class="bd-label">Taxable gain</span>
+                <span class="bd-val" id="bd-taxable">—</span>
+              </div>
+              <div class="breakdown-row bd-highlight">
+                <span class="bd-label">Tax rate applied</span>
+                <span class="bd-val" id="bd-rate">—</span>
+              </div>
+              <div class="breakdown-row bd-highlight">
+                <span class="bd-label">Estimated tax owed</span>
+                <span class="bd-val" id="bd-tax">—</span>
+              </div>
+            </div>
+
+            <!-- Country rules note -->
+            <div class="rules-note" id="rules-note">
+              <strong id="rules-title">Tax Rules Applied</strong>
+              <p id="rules-text">—</p>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-box">
+              <div class="cta-content">
+                <div class="cta-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <div>
+                  <strong>Want accurate crypto taxes?</strong>
+                  <p>This is an estimate. CoinLedger auto-imports all your trades, applies the right rules for your country, and generates IRS/ATO/HMRC-ready reports.</p>
+                </div>
+              </div>
+              <a href="https://coinledger.io?fpr=4bsqmx" target="_blank" rel="noopener sponsored" class="cta-btn">Try CoinLedger Free →</a>
+              <p class="cta-legal">Affiliate link — we may earn a commission at no extra cost to you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tax Rules Reference -->
+    <section class="tax-section">
+      <div class="tax-panel">
+        <h2 class="tax-section-title">Crypto Tax Rules by Country</h2>
+        <div class="rules-grid">
+          <div class="rules-card">
+            <div class="rules-flag">🇺🇸</div>
+            <h3>United States</h3>
+            <ul>
+              <li>Short-term (&lt;12 months): taxed as ordinary income (10–37%)</li>
+              <li>Long-term (≥12 months): 0%, 15%, or 20% depending on income</li>
+              <li>Crypto-to-crypto trades are taxable events</li>
+              <li>Report on Form 8949 / Schedule D</li>
+            </ul>
+          </div>
+          <div class="rules-card">
+            <div class="rules-flag">🇦🇺</div>
+            <h3>Australia</h3>
+            <ul>
+              <li>CGT applies — gains added to taxable income</li>
+              <li>50% CGT discount if held ≥12 months</li>
+              <li>Tax rates: 0–45% + 2% Medicare levy</li>
+              <li>Report via myTax to the ATO</li>
+            </ul>
+          </div>
+          <div class="rules-card">
+            <div class="rules-flag">🇬🇧</div>
+            <h3>United Kingdom</h3>
+            <ul>
+              <li>Capital Gains Tax: 10% (basic) or 20% (higher rate)</li>
+              <li>Annual CGT allowance: £3,000 (2026)</li>
+              <li>No long-term rate reduction</li>
+              <li>Report via Self Assessment to HMRC</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+.tax-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* Hero */
+.tax-hero {
+  text-align: center;
+  padding: 3.5rem 1rem 2.5rem;
+}
+
+.tax-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(37,99,235,0.25);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.tax-hero h1 {
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 0.9rem;
+}
+
+.tax-hero .accent { color: var(--accent); }
+
+.tax-hero p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* Layout */
+.tax-wrapper { margin-bottom: 3rem; }
+
+.tax-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.tax-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.tax-inputs, .tax-results {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+.tax-results { min-height: 300px; }
+
+/* Forms */
+.form-group { margin-bottom: 1.25rem; }
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.45rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+select,
+input[type="number"] {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  padding-right: 2rem;
+}
+
+select:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+}
+
+.input-prefix-wrap { position: relative; }
+.input-prefix {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+.input-prefix-wrap input { padding-left: 1.75rem; }
+
+.tax-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 0.5rem;
+}
+.tax-btn:hover { background: var(--accent-hover); }
+.tax-btn:active { transform: scale(0.98); }
+
+.tax-disclaimer {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+/* Placeholder */
+.results-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  min-height: 260px;
+  color: var(--text-muted);
+  gap: 1rem;
+}
+.placeholder-icon {
+  font-size: 2.5rem;
+  color: var(--accent);
+  opacity: 0.4;
+}
+.results-placeholder p { font-size: 0.9rem; max-width: 240px; line-height: 1.6; }
+
+/* Result cards */
+.result-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.result-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+}
+.result-card.featured {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, rgba(37,99,235,0.05), var(--bg-secondary));
+}
+.result-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+.result-value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+.result-value.accent-val { color: #ef4444; }
+.result-value.success-val { color: #22c55e; }
+
+/* Breakdown */
+.tax-breakdown-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.breakdown-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.85rem;
+}
+.breakdown-row:last-child { border-bottom: none; }
+.bd-label { color: var(--text-secondary); }
+.bd-val { font-weight: 700; color: var(--text-primary); }
+.bd-highlight .bd-label { color: var(--text-primary); font-weight: 600; }
+.bd-highlight .bd-val { color: var(--accent); }
+
+/* Rules note */
+.rules-note {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.9rem 1rem;
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+}
+.rules-note strong { display: block; margin-bottom: 0.3rem; color: var(--text-primary); }
+.rules-note p { color: var(--text-secondary); margin: 0; line-height: 1.5; }
+
+/* CTA */
+.cta-box {
+  background: linear-gradient(135deg, rgba(37,99,235,0.06), var(--bg-secondary));
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+.cta-content {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.cta-icon {
+  flex-shrink: 0;
+  color: var(--accent);
+  margin-top: 0.1rem;
+}
+.cta-content strong { display: block; margin-bottom: 0.3rem; font-size: 0.95rem; }
+.cta-content p { font-size: 0.82rem; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+.cta-btn {
+  display: block;
+  text-align: center;
+  padding: 0.75rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+.cta-btn:hover { background: var(--accent-hover); }
+.cta-legal { font-size: 0.7rem; color: var(--text-muted); text-align: center; margin: 0.5rem 0 0; }
+
+/* Section */
+.tax-section { margin-bottom: 2rem; }
+.tax-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
+/* Rules grid */
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.rules-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+}
+.rules-flag { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.rules-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; }
+.rules-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.rules-card li {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  padding: 0.25rem 0;
+  border-bottom: 1px solid var(--border-light);
+  line-height: 1.4;
+}
+.rules-card li:last-child { border-bottom: none; }
+
+@media (max-width: 700px) {
+  .tax-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .result-cards { grid-template-columns: 1fr; }
+  .rules-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const calcBtn = document.getElementById('calc-btn');
+  calcBtn.addEventListener('click', calculate);
+
+  // Tax rates by country, bracket, holding period
+  const TAX_RATES = {
+    US: {
+      short: { low: 0.12, mid: 0.22, high: 0.37 },
+      long:  { low: 0.00, mid: 0.15, high: 0.20 }
+    },
+    AU: {
+      short: { low: 0.19, mid: 0.325, high: 0.45 },
+      long:  { low: 0.19, mid: 0.325, high: 0.45 } // 50% discount applied separately
+    },
+    UK: {
+      short: { low: 0.10, mid: 0.20, high: 0.20 },
+      long:  { low: 0.10, mid: 0.20, high: 0.20 } // no long/short distinction in UK
+    }
+  };
+
+  const RULES_TEXT = {
+    US: (period, bracket) =>
+      `US ${period === 'short' ? 'short-term' : 'long-term'} capital gains tax applied at ${Math.round(TAX_RATES.US[period][bracket]*100)}% (${bracket} income bracket). Short-term gains are taxed as ordinary income; long-term gains benefit from reduced rates of 0%, 15%, or 20%.`,
+    AU: (period, bracket) =>
+      `Australian CGT applied. Your marginal tax rate is ${Math.round(TAX_RATES.AU[period][bracket]*100)}%.${period === 'long' ? ' A 50% CGT discount has been applied because you held for ≥12 months.' : ' No CGT discount applies for holdings under 12 months.'} Plus 2% Medicare levy estimated.`,
+    UK: (period, bracket) =>
+      `UK Capital Gains Tax at ${Math.round(TAX_RATES.UK[period][bracket]*100)}% (${bracket === 'low' ? 'basic rate' : 'higher rate'}). The UK does not distinguish between short and long-term holdings. The £3,000 annual CGT allowance is not factored here.`
+  };
+
+  function calculate() {
+    const country = document.getElementById('country-select').value;
+    const buyPrice = parseFloat(document.getElementById('buy-price').value) || 0;
+    const sellPrice = parseFloat(document.getElementById('sell-price').value) || 0;
+    const quantity = parseFloat(document.getElementById('quantity').value) || 0;
+    const holdingPeriod = document.getElementById('holding-period').value;
+    const incomeBracket = document.getElementById('income-bracket').value;
+
+    const costBasis = buyPrice * quantity;
+    const proceeds = sellPrice * quantity;
+    const grossGain = proceeds - costBasis;
+
+    // Determine taxable gain (AU gets 50% discount for long-term)
+    let discountLabel = '';
+    let discountAmount = 0;
+    let taxableGain = grossGain;
+
+    if (country === 'AU' && holdingPeriod === 'long' && grossGain > 0) {
+      discountAmount = grossGain * 0.5;
+      taxableGain = grossGain * 0.5;
+      discountLabel = '50% CGT discount (AU, long-term)';
+    } else {
+      discountLabel = 'No discount applicable';
+    }
+
+    const rate = TAX_RATES[country][holdingPeriod][incomeBracket];
+    // AU: add Medicare levy 2%
+    const effectiveRate = country === 'AU' ? rate + 0.02 : rate;
+    const taxOwed = Math.max(0, taxableGain * effectiveRate);
+    const afterTax = grossGain - taxOwed;
+
+    // Show results
+    document.getElementById('results-placeholder').style.display = 'none';
+    document.getElementById('results-content').style.display = 'block';
+
+    const fmt = (n) => '$' + Math.abs(n).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+    document.getElementById('capital-gain').textContent = (grossGain < 0 ? '-' : '+') + fmt(grossGain);
+    document.getElementById('tax-owed').textContent = fmt(taxOwed);
+    document.getElementById('after-tax').textContent = (afterTax < 0 ? '-' : '+') + fmt(afterTax);
+
+    document.getElementById('bd-cost').textContent = fmt(costBasis);
+    document.getElementById('bd-proceeds').textContent = fmt(proceeds);
+    document.getElementById('bd-gain').textContent = (grossGain < 0 ? '-' : '+') + fmt(grossGain);
+
+    const discountRow = document.getElementById('bd-discount-row');
+    document.getElementById('bd-discount-label').textContent = discountLabel;
+    document.getElementById('bd-discount').textContent = discountAmount > 0 ? '-' + fmt(discountAmount) : '—';
+    discountRow.style.display = 'flex';
+
+    document.getElementById('bd-taxable').textContent = fmt(taxableGain);
+    document.getElementById('bd-rate').textContent = Math.round(effectiveRate * 100) + '%';
+    document.getElementById('bd-tax').textContent = fmt(taxOwed);
+
+    document.getElementById('rules-title').textContent = `${country} Tax Rules Applied`;
+    document.getElementById('rules-text').textContent = RULES_TEXT[country](holdingPeriod, incomeBracket);
+  }
+
+  // Run on load with defaults
+  calculate();
+});
+</script>
