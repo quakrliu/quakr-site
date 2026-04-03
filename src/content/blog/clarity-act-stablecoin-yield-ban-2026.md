@@ -320,6 +320,7 @@ You're your own best advocate here.
 
 **Want to go deeper?**
 
+- [Stablecoin Yield 2026: CLARITY Act Compromise — What's Banned, What Survives, What to Do Now](/blog/stablecoin-yield-2026)
 - [How to Earn Interest on Stablecoins in 2026 — Complete Guide](/blog/earn-interest-stablecoins-guide-2026)
 - [Best Crypto Lending Platforms in 2026](/blog/best-crypto-lending-platforms-2026)
 - [How to Earn Passive Income with Crypto in 2026](/blog/how-to-earn-passive-income-with-crypto-2026)

@@ -366,6 +366,7 @@ Use it.
 ---
 
 *Related reading:*
+- *[Stablecoin Yield 2026: CLARITY Act Compromise — What's Banned, What Survives, What to Do Now](/blog/stablecoin-yield-2026)*
 - *[Are Stablecoin Yields Being Banned? What the CLARITY Act Means for Your Crypto Income in 2026](/blog/clarity-act-stablecoin-yield-ban-2026)*
 - *[Bitfinex Lending Guide: Earn Passive Income](/blog/bitfinex-lending-guide-passive-income)*
 - *[Best Crypto Lending Platforms 2026](/blog/best-crypto-lending-platforms-2026)*

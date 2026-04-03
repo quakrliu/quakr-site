@@ -443,6 +443,7 @@ The math is hard to argue with. The only question is how long you want to wait.
 ---
 
 **Related guides:**
+- [Stablecoin Yield 2026: CLARITY Act Compromise — What's Banned, What Survives](/blog/stablecoin-yield-2026)
 - [Best Crypto Lending Platforms 2026: Full Comparison](/blog/best-crypto-lending-platforms-2026)
 - [Bitfinex Margin Lending: Complete Step-by-Step Guide](/blog/bitfinex-lending-guide-passive-income)
 - [How to Earn Passive Income with Crypto in 2026](/blog/how-to-earn-passive-income-with-crypto-2026)
