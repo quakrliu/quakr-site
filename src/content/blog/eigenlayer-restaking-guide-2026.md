@@ -26,7 +26,7 @@ Let's get into it.
 
 ## What Is Restaking?
 
-Standard ETH staking is simple: lock 32 ETH (or a fractional amount via liquid staking), help validate Ethereum transactions, earn ~3–4% APY. Your stake only secures Ethereum.
+Standard ETH staking is simple: lock 32 ETH (or a fractional amount via liquid staking), help validate Ethereum transactions, earn ~3–4% APY. Your stake only secures Ethereum. For a full breakdown of staking options — solo, exchange, and liquid staking compared — see our [Ethereum staking guide for 2026](/blog/ethereum-staking-guide-2026).
 
 **Restaking** takes that already-staked ETH and extends its economic security to other protocols — called Actively Validated Services (AVSs). Think of AVSs as new networks, middleware layers, or decentralized services that need cryptoeconomic security but can't bootstrap their own validator set from scratch.
 
@@ -86,7 +86,7 @@ One honest note: the highest-yield operators on EigenLayer carry materially more
 
 EigenLayer restaking makes sense if you:
 
-- Already hold stETH, rETH, or other LSTs earning base staking yield
+- Already hold stETH, rETH, or other LSTs earning base staking yield (see our [best staking coins for 2026](/blog/best-staking-coins-2026) for a broader yield comparison)
 - Have long-term ETH conviction (restaked positions can face withdrawal delays)
 - Understand smart contract and slashing risks and accept them
 - Are comfortable monitoring operator behavior periodically
@@ -300,7 +300,7 @@ No. You restake ETH or LSTs. EIGEN is a separate token used for governance and f
 
 ## The Bottom Line
 
-EigenLayer is a legitimate yield amplification layer for ETH holders who understand what they're getting into. At $15+ billion TVL and 28M+ in paid rewards, it has moved well past the "experimental" phase.
+EigenLayer is a legitimate yield amplification layer for ETH holders who understand what they're getting into. At $15+ billion TVL and 28M+ in paid rewards, it has moved well past the "experimental" phase. If you're building a broader crypto passive income stack, our guide to the [best crypto passive income strategies for 2026](/blog/best-crypto-passive-income-strategies-2026) shows how restaking fits alongside stablecoins, lending, and DeFi yield.
 
 The extra 1.5–4% APY it offers over base staking is real, but it comes with real slashing risk, real withdrawal illiquidity, and real operator selection decisions that matter. This isn't a passive "deposit and forget" setup — it rewards informed participants.
 

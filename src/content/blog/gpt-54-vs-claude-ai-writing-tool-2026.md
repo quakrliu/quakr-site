@@ -84,7 +84,7 @@ The limitation: Claude is less aggressive about autonomous action than GPT-5.4. 
 
 ### SEO Content and Structured Briefs
 
-**GPT-5.4 is comparable, slightly ahead on rule adherence.** When the brief is tight — exact keyword density, specific H2 structure, required CTAs — GPT-5.4 follows instructions with slightly higher fidelity. For SEO-first content where the structure is predetermined, this matters more than prose quality.
+**GPT-5.4 is comparable, slightly ahead on rule adherence.** When the brief is tight — exact keyword density, specific H2 structure, required CTAs — GPT-5.4 follows instructions with slightly higher fidelity. For SEO-first content where the structure is predetermined, this matters more than prose quality. It's also worth understanding how [Answer Engine Optimization (AEO)](/blog/answer-engine-optimization-guide) is changing content strategy in 2026 — AI-generated answers are increasingly where first-page traffic goes.
 
 ### Research Synthesis and Accuracy-Critical Pieces
 
@@ -110,7 +110,7 @@ The limitation: Claude is less aggressive about autonomous action than GPT-5.4. 
 
 For individual creators using the claude.ai or ChatGPT interfaces rather than the API, both tools are available under their respective subscription plans. The subscription-level experience doesn't expose the fine-grained model tier selection that matters for high-volume work — but for most content creators running 10-20 articles per month, subscription access is sufficient.
 
-If you're building content tools and newsletters that need to reach your audience automatically, pairing AI writing with a platform like [Beehiiv](https://www.beehiiv.com?via=Johnny-Liu) makes sense — it's designed specifically for AI-assisted publishing workflows and handles distribution at scale.
+If you're building content tools and newsletters that need to reach your audience automatically, pairing AI writing with a platform like [Beehiiv](https://www.beehiiv.com?via=Johnny-Liu) makes sense — it's designed specifically for AI-assisted publishing workflows and handles distribution at scale. See our [Beehiiv review for 2026](/blog/beehiiv-review-2026) for a full breakdown of features and pricing.
 
 ---
 
@@ -132,7 +132,7 @@ Neither model is the universal winner — the right choice depends on your actua
 
 **A practical middle path:** Many serious content operations in 2026 run both. Claude for drafting and editing; GPT-5.4 for research gathering and structured template filling. The API pricing for both at Standard/Sonnet tiers is close enough that running both isn't prohibitively expensive at moderate volumes.
 
-For audio content creators who want to expand their content format beyond text, [ElevenLabs](https://try.elevenlabs.io/nhg940eg3rqa) integrates well with AI-generated scripts from either model — worth considering if you're building a multi-format content operation.
+For audio content creators who want to expand their content format beyond text, [ElevenLabs](https://try.elevenlabs.io/nhg940eg3rqa) integrates well with AI-generated scripts from either model — worth considering if you're building a multi-format content operation. If you're looking to monetize your AI content skills beyond one-off projects, our guide to [AI passive income strategies for 2026](/blog/ai-passive-income-2026-guide) covers the most viable models for building recurring revenue.
 
 ---
 
