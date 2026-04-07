@@ -17,3 +17,4 @@ User-agent: Bytespider
 Disallow: /
 
 Sitemap: https://passiveyieldlab.com/sitemap-index.xml
+Sitemap: https://quakr.dev/sitemap-quakr.xml
