@@ -4,7 +4,7 @@ description: "Compare YLDS, USDY, and sDAI side-by-side — current APY, risk pr
 pubDate: "2026-04-02"
 updatedDate: "2026-04-02"
 keywords: ["yield bearing stablecoin 2026", "YLDS vs USDY", "best stablecoin yield", "sDAI APY 2026", "USDY Ondo Finance", "YLDS Figure Markets"]
-author: "PassiveYieldLab"
+author: "Ethan Moore"
 category: defi
 slug: "ylds-vs-usdy-vs-sdai-2026"
 affiliates: ["binance", "okx", "coinledger"]

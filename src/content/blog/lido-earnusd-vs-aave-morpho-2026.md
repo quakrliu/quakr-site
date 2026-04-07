@@ -7,7 +7,7 @@ updatedDate: 2026-03-30
 category: defi
 tags: ["Lido EarnUSD", "Aave", "Morpho", "stablecoin yield", "DeFi 2026", "USDC yield", "passive income crypto"]
 keywords: "Lido EarnUSD review, stablecoin DeFi yield comparison 2026, best stablecoin lending platform"
-author: "PassiveYieldLab"
+author: "Ethan Moore"
 ogImage: "/images/og/lido-earnusd-vs-aave-morpho-2026.png"
 featured: true
 ---

@@ -7,7 +7,7 @@ pubDate: 2026-03-31
 updatedDate: 2026-03-31
 category: "investing"
 tags: ["REIT", "monthly-dividend", "passive-income", "real-estate", "dividend-investing", "Realty-Income", "EPR-Properties"]
-author: "PassiveYieldLab"
+author: "Ethan Moore"
 image: "/images/best-high-dividend-reits-monthly-2026.jpg"
 imageAlt: "Best high dividend REITs 2026 monthly income comparison"
 keywords: ["high yield REITs 2026", "monthly dividend REITs", "best REITs passive income 2026", "Realty Income dividend", "EPR Properties yield 2026"]

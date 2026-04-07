@@ -15,7 +15,7 @@ keywords:
   - earn interest on crypto
 level: beginner
 trending: false
-author: passiveyieldlab
+author: "Ethan Moore"
 image: /images/blog/best-crypto-lending-platforms-2026.jpg
 ---
 

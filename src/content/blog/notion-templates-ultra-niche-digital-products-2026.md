@@ -6,7 +6,7 @@ pubDate: 2026-04-01
 updatedDate: 2026-04-01
 category: guides
 tags: ["Notion templates", "digital products", "print on demand", "passive income", "Gumroad", "Etsy", "Amazon KDP", "Gelato", "Printify", "2026"]
-author: PassiveYieldLab
+author: "Ethan Moore"
 image: /images/notion-templates-ultra-niche-digital-products-2026.jpg
 imageAlt: "Laptop showing Notion template dashboard with passive income revenue charts"
 schema:

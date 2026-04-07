@@ -6,7 +6,7 @@ pubDate: 2026-04-01
 updatedDate: 2026-04-01
 tags: ["airdrop", "defi", "passive income", "strata", "hyperliquid", "HyperEVM"]
 category: "defi"
-author: "PassiveYieldLab"
+author: "Ethan Moore"
 image: "/images/strata-airdrop-2026-defi-q2-guide.jpg"
 imageAlt: "STRATA airdrop 2026 and best DeFi farming strategies"
 featured: false

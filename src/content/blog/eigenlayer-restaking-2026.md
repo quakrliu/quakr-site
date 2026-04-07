@@ -12,7 +12,7 @@ affiliate: ["binance", "coinledger"]
 octalysisScore: 74
 aeoScore: 87
 wordCount: 2050
-author: "Huang Zhong"
+author: "Ethan Moore"
 image: "/og/eigenlayer-restaking-2026.png"
 imageAlt: "EigenLayer restaking 2026 guide — boost ETH yield from 3.5% to 6%"
 ---

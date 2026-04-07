@@ -7,7 +7,7 @@ updatedDate: 2026-04-01
 category: "defi"
 tags: ["yield bearing stablecoin 2026", "Lido EarnUSD", "sDAI", "sUSDe", "USDY", "stablecoin yield", "passive income crypto", "earn USDC DeFi"]
 keywords: "yield bearing stablecoin 2026, best stablecoin yield, earn usdc yield defi, Lido EarnUSD review"
-author: "PassiveYieldLab"
+author: "Ethan Moore"
 ogImage: "/images/og/lido-earnusd-vs-yield-stablecoins-2026.png"
 featured: true
 ---

@@ -3,7 +3,7 @@ title: "EigenLayer Restaking Guide 2026: Earn Extra Yield on Staked ETH"
 description: "A complete guide to EigenLayer restaking — how it works, current APY rates, step-by-step tutorial for native and LST restaking, risks, and whether the extra yield is worth it in 2026."
 pubDate: 2026-03-31
 updatedDate: 2026-03-31
-author: "PassiveYieldLab"
+author: "Ethan Moore"
 tags: ["eigenlayer", "restaking", "ethereum", "defi", "passive income", "staking"]
 category: "staking"
 slug: "eigenlayer-restaking-guide-2026"

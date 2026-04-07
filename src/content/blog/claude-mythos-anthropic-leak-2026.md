@@ -4,7 +4,7 @@ slug: "claude-mythos-anthropic-leak-2026"
 description: "Anthropic's CMS error exposed Claude Mythos, its most powerful AI ever. Here's what leaked, what it means for cybersecurity, and how to prepare now."
 pubDate: 2026-04-01
 date: 2026-04-01
-author: "PassiveYieldLab"
+author: "Ethan Moore"
 category: "news"
 tags: ["Claude Mythos", "Anthropic", "AI Models 2026", "Cybersecurity", "Claude Capybara"]
 keywords: ["Claude Mythos", "Anthropic new model 2026", "Claude Capybara", "Anthropic leak 2026", "Claude Mythos capabilities"]

@@ -15,7 +15,7 @@ keywords:
   - crypto staking vs lending
   - best crypto yield strategy 2026
 image: /images/blog/staking-vs-yield-farming-vs-lending-2026.jpg
-author: passiveyieldlab
+author: "Ethan Moore"
 level: intermediate
 trending: false
 ---

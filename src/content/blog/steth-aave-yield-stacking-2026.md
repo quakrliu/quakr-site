@@ -7,7 +7,7 @@ updatedDate: 2026-04-01
 category: "defi"
 tags: ["stETH", "Aave", "liquid staking", "ETH yield", "DeFi 2026", "yield stacking", "EigenLayer", "passive income crypto"]
 keywords: "stETH Aave yield stacking 2026, how to earn yield on ETH DeFi, liquid staking collateral strategy"
-author: "PassiveYieldLab"
+author: "Ethan Moore"
 ogImage: "/images/og/steth-aave-yield-stacking-2026.png"
 featured: true
 ---
