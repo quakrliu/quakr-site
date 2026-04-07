@@ -2,7 +2,7 @@
 title: "CLARITY Act Stablecoin Yield Ban: What It Actually Means for DeFi Passive Income"
 description: "The CLARITY Act's passive stablecoin yield ban threatens Aave, Compound, and Lido. Here's the full breakdown of what's banned, what survives, and how to position your DeFi portfolio before the Senate votes."
 pubDate: 2026-03-31
-updatedDate: 2026-03-31
+updatedDate: 2026-04-04
 category: news
 tags: ["CLARITY Act stablecoin yield", "stablecoin interest ban", "DeFi yield regulation 2026", "CLARITY Act Aave impact", "passive stablecoin income"]
 level: intermediate
@@ -24,7 +24,7 @@ affiliateLinks:
 
 There's a version of this story where Washington finally gets crypto regulation right, establishes clear rules, and everyone moves forward with confidence. Then there's the version that's actually happening: a bipartisan compromise that bans passive stablecoin yield, threatens the core revenue model of DeFi's biggest lending protocols, and sends Circle's stock into freefall.
 
-As of March 2026, the second version is very much in play.
+As of April 2026, the second version is very much in play — and the odds just got more interesting.
 
 The CLARITY Act's latest draft, shaped by a bipartisan deal between Senators Thom Tillis (R-NC) and Angela Alsobrooks (D-MD) and backed by the White House, draws a hard line between "passive yield" (banned) and "activity-based rewards" (allowed). It sounds like a reasonable distinction until you realize that most of what you've been earning on Aave, Compound, and similar platforms sits squarely in the banned category.
 
@@ -38,9 +38,11 @@ The CLARITY Act — formally the Digital Asset Market Clarity Act of 2025 (H.R. 
 
 **The CLARITY Act is a broad digital asset market structure bill that divides regulatory authority over cryptocurrencies between the SEC and CFTC, while also defining rules for stablecoin issuers and operators.**
 
-After months of delays — including a late cancellation of a markup session when Coinbase pulled its support — a bipartisan agreement on the most contentious provision, stablecoin yield, was reached on March 20, 2026. The Senate Banking Committee is now targeting a markup in late April, with the Senate floor vote window estimated at May through June 2026.
+After months of delays — including a late cancellation of a markup session when Coinbase pulled its support (twice, most recently rejecting the April 2 compromise draft) — a bipartisan framework on stablecoin yield was locked in via the March 20 deal and reaffirmed in the April 2 compromise text. The Senate Banking Committee is targeting a markup session for the second half of April, after returning from Easter recess on April 13. Senate floor vote window: May through June 2026.
 
-One key timeline point: if this bill doesn't pass by May 2026, Senator Bernie Moreno (R-OH) has said digital asset legislation won't move for the foreseeable future. That makes the next six weeks politically critical.
+Here's the market temperature: Polymarket currently prices passage in 2026 at **56%** — down 9 points from earlier in the month, largely reflecting Easter recess uncertainty and Coinbase's renewed opposition. Still a coin flip, but with a political deadline attached.
+
+One key timeline point: if this bill doesn't pass by May 2026, Senator Bernie Moreno (R-OH) has said digital asset legislation won't move for the foreseeable future. That makes the next three weeks after April 13 politically critical.
 
 ---
 
@@ -50,7 +52,7 @@ The core provision is blunt: **digital asset service providers — including exc
 
 In plain English: if you're holding USDC, USDT, or any other payment stablecoin on a regulated platform in the U.S., that platform cannot pay you interest for doing so.
 
-The March 23 draft language closed a loophole that many hoped would save DeFi. Earlier versions of the bill focused narrowly on "payment stablecoins" issued by licensed issuers, which some interpreted as leaving room for DeFi-native yield on those tokens. The latest text extends the prohibition to any yield that is "economically or functionally equivalent" to interest, regardless of how it's labeled or through which mechanism it's delivered.
+The March 23 draft language — reaffirmed in the April 2 compromise text — closed a loophole that many hoped would save DeFi. Earlier versions of the bill focused narrowly on "payment stablecoins" issued by licensed issuers, which some interpreted as leaving room for DeFi-native yield on those tokens. The latest text extends the prohibition to any yield that is "economically or functionally equivalent" to interest, regardless of how it's labeled or through which mechanism it's delivered.
 
 That's the part that should get your attention.
 
@@ -76,7 +78,7 @@ Whether DeFi protocols can credibly reframe their yield models as "activity-base
 
 ### Aave
 
-Aave is the clearest target. The protocol's entire value proposition for stablecoin depositors is passive yield from borrower interest. As of March 2026, Aave's USDC supply APY on Ethereum V3 sits around 2–4% base, with incentivized rates potentially higher depending on AAVE token rewards (*APY data as of March 2026; rates fluctuate constantly based on utilization and market conditions*).
+Aave is the clearest target. The protocol's entire value proposition for stablecoin depositors is passive yield from borrower interest. As of early April 2026, Aave's USDC supply APY on Ethereum V3 sits around 2–4% base, with incentivized rates potentially higher depending on AAVE token rewards (*APY data as of April 4, 2026; rates fluctuate constantly based on utilization and market conditions*).
 
 If the bill passes as written and DeFi is brought in-scope — which the current text leaves ambiguous — Aave depositors could no longer earn that yield on U.S.-accessible frontends. The protocol's governance token (AAVE) would face structural pressure: lower TVL, thinner fee revenue, weaker token demand.
 
@@ -100,7 +102,7 @@ Uniswap's core product — trading fees from liquidity provision — is arguably
 
 ### Circle and Regulated Stablecoin Issuers
 
-Paradoxically, Circle's stock dropped 20% in a single day when the stablecoin yield provisions leaked on March 24 — because USDC's main distribution partner, Coinbase, offers stablecoin rewards as a product, and that revenue stream was directly threatened.
+Paradoxically, Circle's stock dropped over 18% in a single day when the stablecoin yield provisions leaked on March 24 — because USDC's main distribution partner, Coinbase, offers stablecoin rewards as a product, and that revenue stream was directly threatened. Stablecoin revenue represented roughly 19% of Coinbase's total revenue in Q3 2025, which is why Coinbase has now rejected this bill twice, including the April 2 compromise draft.
 
 But zoom out: if you're Circle, and stablecoin yield is banned across the board, your regulated USDC suddenly has less competition from crypto-native yield alternatives. Banks distributing USDC via custody become more attractive relative to DeFi alternatives. It's a complex position for Circle — short-term pain, potentially long-term structural advantage if DeFi yield gets ring-fenced.
 
@@ -136,7 +138,7 @@ If you hold stablecoin positions across DeFi and want to position ahead of poten
 
 **3. Diversify to non-U.S.-regulated platforms.** If you're comfortable with the associated risks, yield exposure through offshore venues (accessible via platforms like [Binance](https://www.binance.com/en/register?ref=725285686) or [OKX](https://www.okx.com/join/26575603)) operates under different regulatory frameworks — though regulatory risk is never zero.
 
-**4. Track the April markup.** The Senate Banking Committee markup, scheduled for the week of April 13 or April 20, 2026, is the next critical gate. If it passes markup, the floor vote window opens in May. If it stalls again, the current language could be significantly revised.
+**4. Track the April markup.** The Senate returned from Easter recess on April 13, 2026. The Banking Committee markup is targeted for the second half of April (likely week of April 20 or 27). If it passes markup, the floor vote window opens in May. Polymarket gives 56% odds of passage in 2026 — meaning there's still a 44% chance this draft dies, gets heavily amended, or stalls past May. If it stalls, Senator Moreno has said crypto legislation is off the table for the foreseeable future.
 
 **5. Don't panic-sell governance tokens prematurely.** AAVE, COMP, and similar tokens have already absorbed some of this regulatory risk in price. The bill is not law yet, DeFi exemptions are possible, and the implementation timeline (one-year rule-writing period post-enactment) means any operational changes are 12–24 months away at minimum.
 
@@ -144,7 +146,7 @@ If you hold stablecoin positions across DeFi and want to position ahead of poten
 
 ## Risks and Disclaimers
 
-**Regulatory risk is the primary concern.** The CLARITY Act has not passed as of March 2026. Legislative language can change materially between markup and final passage. Do not make major portfolio decisions based solely on current draft text.
+**Regulatory risk is the primary concern.** The CLARITY Act has not passed as of April 4, 2026. Legislative language can change materially between markup and final passage. Do not make major portfolio decisions based solely on current draft text.
 
 **All APY figures cited in this article are as of March 2026 and subject to constant fluctuation.** Stablecoin lending yields on platforms like Aave are variable, dependent on supply/demand dynamics, and not guaranteed at any rate. Past yield is not indicative of future returns.
 
@@ -163,7 +165,7 @@ The CLARITY Act bans passive stablecoin yield — interest earned simply for hol
 Not explicitly. The bill targets "digital asset service providers" and includes language about economically equivalent yield. Whether fully decentralized protocols fall under this definition remains legally ambiguous in the current draft.
 
 **Q: When will the CLARITY Act become law?**
-The Senate Banking Committee markup is scheduled for late April 2026. A Senate floor vote window is estimated at May–June 2026. Final passage and White House signature would follow. The bill has not yet passed as of March 31, 2026.
+The Senate returned from Easter recess on April 13, 2026. The Banking Committee markup is targeted for the second half of April. A Senate floor vote window is estimated at May–June 2026. Polymarket currently prices passage in 2026 at 56% (as of April 4, 2026 — odds fluctuate). The bill has not yet passed as of April 4, 2026.
 
 **Q: Is Aave yield illegal under the CLARITY Act?**
 Under the bill's current language, Aave's passive stablecoin lending yield model would face significant legal scrutiny if the bill passes and DeFi platforms are determined to be "service providers." No final determination has been made.
@@ -176,6 +178,12 @@ Lending protocols with stablecoin interest models (Aave, Compound) face the high
 
 **Q: What happens if the CLARITY Act doesn't pass by May 2026?**
 Senator Bernie Moreno (R-OH) stated that digital asset legislation will not move for the foreseeable future if it doesn't pass by May 2026, making the current legislative window politically critical for the crypto industry.
+
+---
+
+## Next in This Series
+
+**[2026 Q2 DeFi Yield Strategy: How to Earn After the CLARITY Act](/blog/defi-yield-strategy-post-regulation-2026)** — We map out which yield strategies survive the new regulatory landscape, including the protocols most likely to adapt successfully and the ones you should watch closely.
 
 ---
 
@@ -205,7 +213,7 @@ Senator Bernie Moreno (R-OH) stated that digital asset legislation will not move
       "name": "When will the CLARITY Act become law?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Senate Banking Committee markup is scheduled for late April 2026. A Senate floor vote window is estimated at May–June 2026. The bill has not yet passed as of March 31, 2026."
+        "text": "The Senate returned from Easter recess on April 13, 2026. The Banking Committee markup is targeted for late April 2026. A Senate floor vote window is estimated at May–June 2026. Polymarket prices passage in 2026 at 56% as of April 4, 2026. The bill has not yet passed."
       }
     },
     {
