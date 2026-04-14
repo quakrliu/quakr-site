@@ -36,7 +36,7 @@ const levelLabels: Record<string, string> = {
         <p class="hero-proof">80+ guides &nbsp;&middot;&nbsp; 8 free tools</p>
       </div>
       <div class="hero-image">
-        <img src="/images/ethan-avatar.png" alt="Ethan Moore" class="hero-portrait" />
+        <img src="/images/ethan-fullbody.png" alt="Ethan Moore" class="hero-portrait" />
       </div>
     </div>
   </section>
@@ -252,11 +252,10 @@ const levelLabels: Record<string, string> = {
 }
 
 .hero-portrait {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+  max-height: 480px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.1));
 }
 
 @media (max-width: 768px) {
@@ -268,8 +267,7 @@ const levelLabels: Record<string, string> = {
     order: -1;
   }
   .hero-portrait {
-    width: 180px;
-    height: 180px;
+    max-height: 360px;
   }
 }
 
