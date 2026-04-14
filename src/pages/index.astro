@@ -20,6 +20,9 @@ const levelLabels: Record<string, string> = {
   <!-- HERO: Left-aligned split layout -->
   <section class="hero">
     <div class="hero-inner">
+      <div class="hero-avatar">
+        <img src="/images/ethan-avatar.png" alt="Ethan Moore" class="avatar-img" width="120" height="120" />
+      </div>
       <div class="hero-content">
         <p class="hero-eyebrow">Hi, I'm Ethan.</p>
         <h1 class="hero-heading">
@@ -232,10 +235,36 @@ const levelLabels: Record<string, string> = {
 .hero-inner {
   max-width: var(--max-width);
   margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.hero-avatar {
+  flex-shrink: 0;
+}
+
+.avatar-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .hero-content {
   max-width: 62ch;
+}
+
+@media (max-width: 600px) {
+  .hero-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .avatar-img {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 .hero-eyebrow {
