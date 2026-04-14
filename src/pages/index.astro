@@ -6,1611 +6,520 @@ const now = new Date();
 const allPosts = await getCollection('blog', ({ data }) => !data.draft && data.pubDate <= now);
 const posts = allPosts
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
-  .slice(0, 12);
-
-const categories = [
-  { slug: 'staking', label: 'Staking' },
-  { slug: 'defi', label: 'DeFi' },
-  { slug: 'ai-income', label: 'AI Income' },
-  { slug: 'exchange-reviews', label: 'Exchange Reviews' },
-  { slug: 'guides', label: 'Guides' },
-  { slug: 'market-analysis', label: 'Market Analysis' },
-  { slug: 'tools', label: 'Tools' },
-  { slug: 'news', label: 'News' },
-  { slug: 'automation', label: 'Automation' },
-  { slug: 'investing', label: 'Investing' },
-];
+  .slice(0, 6);
 
 const levelLabels: Record<string, string> = {
   beginner: 'Beginner',
   intermediate: 'Intermediate',
   advanced: 'Advanced',
 };
-
-// Start Here: Crypto Yield column (3 posts)
-const cryptoYieldSlugs = [
-  'how-to-earn-passive-income-with-crypto-2026',
-  'best-crypto-passive-income-strategies-2026',
-  'how-to-stake-sol-marinade-finance',
-];
-const cryptoYieldPosts = cryptoYieldSlugs
-  .map((slug) => allPosts.find((p) => p.id === slug))
-  .filter(Boolean) as typeof allPosts;
-
-// Start Here: AI Income column (3 posts)
-const aiIncomeSlugs = [
-  'make-money-with-ai-2026',
-  'ai-freelancing-guide-2026',
-  'ai-youtube-channel-guide-2026',
-];
-const aiIncomePosts = aiIncomeSlugs
-  .map((slug) => allPosts.find((p) => p.id === slug))
-  .filter(Boolean) as typeof allPosts;
-
-// Featured post (latest)
-const featuredPost = posts[0];
-const remainingPosts = posts.slice(1, 9);
-
-// Stats
-const totalArticles = allPosts.length;
-const totalCategories = categories.length;
 ---
 
-<BaseLayout title="Passive Yield Lab" ogImage="/og/default.svg">
+<BaseLayout title="Passive Yield Lab — Crypto, AI & Passive Income" ogImage="/og/default.svg">
 
-  <!-- HERO: Asymmetric split — Octalysis #1 Epic Meaning + #8 Loss Avoidance -->
-  <section class="hp-hero">
-    <div class="hp-hero-inner">
-      <div class="hp-hero-text">
-        <span class="hp-hero-tag">Crypto Yield + AI Income Lab</span>
-        <h1>
-          Your idle crypto is losing value.<br />
-          <span class="hp-hero-accent">Put it to work.</span>
+  <!-- HERO: Left-aligned split layout -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Hi, I'm Ethan.</p>
+        <h1 class="hero-heading">
+          I build passive income systems from Bali — crypto, AI, and everything in between.
+          <span class="hero-accent">Real numbers, real mistakes.</span>
         </h1>
-        <p class="hp-hero-desc">
-          Practical, tested guides on earning 4-20% APY through staking, DeFi, and lending — plus AI-powered income strategies that actually work. Built by practitioners who lost money so you don't have to.
+        <p class="hero-sub">
+          Your idle crypto is losing value every day it sits still.
+          I share tested strategies to put it to work — with honest numbers and no fluff.
         </p>
-        <p class="hp-hero-milestone">
-          Your goal: go from $0 to your first $100/month in passive income. We'll show you how, step by step.
-        </p>
-        <div class="hp-hero-actions">
-          <a href="/blog" class="hp-btn-primary">Read the Guides</a>
-          <a href="/tools/staking-calculator" class="hp-btn-secondary">Calculate Your Yield</a>
+        <div class="hero-actions">
+          <a href="/blog" class="btn-primary">Start Here</a>
         </div>
+        <p class="hero-proof">80+ guides &nbsp;&middot;&nbsp; 8 free tools</p>
       </div>
-      <div class="hp-hero-aside">
-        <div class="hp-hero-proof">
-          <div class="hp-proof-line">
-            <span class="hp-proof-number">{totalArticles}</span>
-            <span class="hp-proof-text">in-depth guides</span>
-          </div>
-          <span class="hp-proof-divider">·</span>
-          <div class="hp-proof-line">
-            <span class="hp-proof-number">8</span>
-            <span class="hp-proof-text">free tools</span>
-          </div>
-          <span class="hp-proof-divider">·</span>
-          <div class="hp-proof-line">
-            <span class="hp-proof-number">0</span>
-            <span class="hp-proof-text">fluff</span>
-          </div>
+    </div>
+  </section>
+
+  <!-- PODCAST SECTION -->
+  <section class="podcast">
+    <div class="section-inner">
+      <div class="podcast-layout">
+        <div class="podcast-text">
+          <span class="section-tag">Latest Episode</span>
+          <h2 class="section-heading">Listen to the Podcast</h2>
+          <p class="section-sub">
+            Each week I break down one passive income strategy — what worked, what didn't, and exactly what I'd do differently.
+          </p>
+          <a href="https://www.youtube.com/@PassiveYieldLab" target="_blank" rel="noopener" class="btn-secondary">
+            Watch on YouTube
+          </a>
         </div>
-        <div class="hp-hero-calc">
-          <p class="hp-calc-hook">How much is your idle crypto costing you?</p>
-          <p class="hp-calc-example">$10,000 at 5% APY = <strong>$9.60/week</strong> in missed yield</p>
-          <a href="/tools/yield-dashboard" class="hp-btn-calc">See your number →</a>
+        <div class="podcast-embed">
+          <div class="yt-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed?listType=user_uploads&list=PassiveYieldLab&index=0"
+              title="Passive Yield Lab — Latest Episode"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TOOLS: Octalysis #3 Empowerment + #4 Ownership -->
-  <section class="hp-tools">
-    <div class="hp-tools-inner">
-      <div class="hp-section-header">
-        <span class="hp-section-tag">Your Toolkit</span>
-        <h2>Build your portfolio with real data</h2>
-        <p>Your numbers, your strategy. Model, track, and optimize your passive income with tools built for practitioners.</p>
+  <!-- POPULAR GUIDES -->
+  <section class="guides">
+    <div class="section-inner">
+      <div class="guides-header">
+        <span class="section-tag">Popular Guides</span>
+        <h2 class="section-heading">Pick a strategy. Start earning.</h2>
+        <p class="section-sub">Tested frameworks, honest numbers. No guaranteed returns — just real data and what worked for me.</p>
       </div>
-      <div class="hp-tools-grid">
-        <a href="/tools/yield-dashboard" class="hp-tool-card hp-tool-card--wide">
-          <div class="hp-tool-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-          </div>
-          <h3>Yield Dashboard</h3>
-          <p>Track staking yields across protocols. Compare APYs. Find the best opportunities right now.</p>
-          <span class="hp-tool-cta">Open Dashboard &rarr;</span>
-        </a>
-        <a href="/tools/staking-calculator" class="hp-tool-card">
-          <div class="hp-tool-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="16" y1="14" x2="16" y2="18"/><line x1="8" y1="10" x2="8" y2="10.01"/><line x1="12" y1="10" x2="12" y2="10.01"/><line x1="16" y1="10" x2="16" y2="10.01"/><line x1="8" y1="14" x2="8" y2="14.01"/><line x1="12" y1="14" x2="12" y2="14.01"/><line x1="8" y1="18" x2="8" y2="18.01"/><line x1="12" y1="18" x2="12" y2="18.01"/></svg>
-          </div>
-          <h3>Staking Calculator</h3>
-          <p>Model your rewards. See exactly what your holdings could earn.</p>
-          <span class="hp-tool-cta">Calculate &rarr;</span>
-        </a>
-        <a href="/tools/aeo-audit" class="hp-tool-card">
-          <div class="hp-tool-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          </div>
-          <h3>AEO Audit</h3>
-          <p>Check how your content performs for AI Engine Optimization.</p>
-          <span class="hp-tool-cta">Run Audit &rarr;</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- START HERE: Octalysis #2 Accomplishment + #7 Curiosity -->
-  <section class="start-here">
-    <div class="start-here-inner">
-      <div class="start-here-header">
-        <span class="hp-section-tag">New here? Pick your path.</span>
-        <h2>Start Here</h2>
-        <p>Two proven tracks to passive income. Choose the one that fits you — and finish your first guide today.</p>
-        <div class="start-here-progress">
-          <div class="progress-step">
-            <span class="progress-num">1</span>
-            <span class="progress-text">Pick a path</span>
-          </div>
-          <span class="progress-arrow">&rarr;</span>
-          <div class="progress-step">
-            <span class="progress-num">2</span>
-            <span class="progress-text">Read the starter guide</span>
-          </div>
-          <span class="progress-arrow">&rarr;</span>
-          <div class="progress-step">
-            <span class="progress-num">3</span>
-            <span class="progress-text">Earn your first yield</span>
-          </div>
-        </div>
-      </div>
-      <div class="start-here-columns">
-
-        <!-- Left: Crypto Yield -->
-        <div class="start-here-column">
-          <div class="start-here-column-header">
-            <span class="column-icon">&#9670;</span>
-            <h3>Crypto Yield</h3>
-            <p>Staking, DeFi, lending — earn on what you hold.</p>
-          </div>
-          <div class="start-here-grid">
-            {cryptoYieldPosts.map((post) => (
-              <a href={`/blog/${post.id}`} class="start-here-card">
-                <div class="start-here-card-badges">
-                  <span class="card-category">{post.data.category}</span>
-                  {post.data.level && (
-                    <span class={`level-badge level-${post.data.level}`}>
-                      {levelLabels[post.data.level]}
-                    </span>
-                  )}
-                  {post.data.trending && (
-                    <span class="trending-badge">Trending</span>
-                  )}
-                </div>
-                <h4>{post.data.title}</h4>
-                <p>{post.data.description}</p>
-                <span class="start-here-read">Read guide &rarr;</span>
-              </a>
-            ))}
-          </div>
-        </div>
-
-        <!-- Right: AI Income -->
-        <div class="start-here-column">
-          <div class="start-here-column-header">
-            <span class="column-icon column-icon--ai">&#9670;</span>
-            <h3>AI Income</h3>
-            <p>Build income streams with AI tools and automation.</p>
-          </div>
-          <div class="start-here-grid">
-            {aiIncomePosts.map((post) => (
-              <a href={`/blog/${post.id}`} class="start-here-card">
-                <div class="start-here-card-badges">
-                  <span class="card-category">{post.data.category}</span>
-                  {post.data.level && (
-                    <span class={`level-badge level-${post.data.level}`}>
-                      {levelLabels[post.data.level] || post.data.level}
-                    </span>
-                  )}
-                </div>
-                <h4>{post.data.title}</h4>
-                <p>{post.data.description}</p>
-                <span class="start-here-read">Read guide &rarr;</span>
-              </a>
-            ))}
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- DAILY PULSE: Stickiness features — Octalysis #2 Accomplishment + #7 Curiosity + #4 Ownership -->
-  <section class="dp-section">
-    <div class="dp-inner">
-      <div class="hp-section-header">
-        <span class="hp-section-tag">Today's Pulse</span>
-        <h2>Your Daily Edge</h2>
-        <p>Live yields, daily tips, and your personal progress — updated every day.</p>
-      </div>
-
-      <div class="dp-grid">
-
-        <!-- 1. Today's Best APY -->
-        <div class="dp-card dp-card--apy" id="dp-apy">
-          <div class="dp-card-header">
-            <svg class="dp-card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-            <h3>Top Yields Right Now</h3>
-          </div>
-          <div class="dp-apy-list" id="dp-apy-list">
-            <div class="dp-apy-skeleton">
-              <div class="dp-skeleton-line dp-skeleton-line--w60"></div>
-              <div class="dp-skeleton-line dp-skeleton-line--w40"></div>
+      <div class="guides-grid">
+        {posts.map((post) => (
+          <a href={`/blog/${post.id}`} class="guide-card">
+            <div class="guide-card-meta">
+              {post.data.category && (
+                <span class="tag-category">{post.data.category}</span>
+              )}
+              {post.data.level && (
+                <span class={`tag-level tag-level--${post.data.level}`}>
+                  {levelLabels[post.data.level] ?? post.data.level}
+                </span>
+              )}
             </div>
-            <div class="dp-apy-skeleton">
-              <div class="dp-skeleton-line dp-skeleton-line--w50"></div>
-              <div class="dp-skeleton-line dp-skeleton-line--w35"></div>
-            </div>
-            <div class="dp-apy-skeleton">
-              <div class="dp-skeleton-line dp-skeleton-line--w55"></div>
-              <div class="dp-skeleton-line dp-skeleton-line--w45"></div>
-            </div>
-          </div>
-          <p class="dp-apy-disclaimer" id="dp-apy-disclaimer" style="display:none">APYs fluctuate. Data via DeFiLlama. Not financial advice.</p>
-        </div>
-
-        <!-- 2. Daily Yield Tip -->
-        <div class="dp-card dp-card--tip">
-          <div class="dp-card-header">
-            <svg class="dp-card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v1m0 18v1m8.66-15.66l-.71.71M4.05 19.95l-.71.71M22 12h-1M3 12H2m15.66 7.66l-.71-.71M4.05 4.05l-.71-.71"/><circle cx="12" cy="12" r="4"/></svg>
-            <h3>Daily Yield Tip</h3>
-          </div>
-          <blockquote class="dp-tip-quote" id="dp-tip-text">Loading tip...</blockquote>
-          <span class="dp-tip-day" id="dp-tip-day"></span>
-        </div>
-
-        <!-- 3. My Portfolio Earnings -->
-        <div class="dp-card dp-card--portfolio" id="dp-portfolio">
-          <div class="dp-card-header">
-            <svg class="dp-card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3H8l-2 4h12l-2-4z"/><line x1="12" y1="11" x2="12" y2="17"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
-            <h3>Your Earnings Today</h3>
-          </div>
-          <div class="dp-portfolio-content" id="dp-portfolio-content">
-            <p class="dp-portfolio-empty">
-              No portfolio saved yet.
-              <a href="/tools/yield-dashboard">Set up your dashboard</a> to see daily earnings here.
-            </p>
-          </div>
-        </div>
-
-        <!-- 4. 30-Day Challenge -->
-        <div class="dp-card dp-card--challenge">
-          <div class="dp-card-header">
-            <svg class="dp-card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-            <h3>30-Day Challenge</h3>
-          </div>
-          <p class="dp-challenge-title">$0 to $100/month in passive income</p>
-          <div class="dp-challenge-progress" id="dp-challenge-progress">
-            <div class="dp-challenge-bar">
-              <div class="dp-challenge-fill" id="dp-challenge-fill" style="width:0%"></div>
-            </div>
-            <span class="dp-challenge-label" id="dp-challenge-label">Day 0 / 30</span>
-          </div>
-          <button class="dp-challenge-btn" id="dp-challenge-btn">Start the Challenge</button>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURED + LATEST: Asymmetric zig-zag layout -->
-  {featuredPost && (
-    <section class="hp-featured">
-      <div class="hp-featured-inner">
-        <div class="hp-section-header">
-          <span class="hp-section-tag">Latest</span>
-          <h2>Fresh from the Lab</h2>
-        </div>
-        <a href={`/blog/${featuredPost.id}`} class="hp-featured-card">
-          <div class="hp-featured-meta">
-            <span class="card-category">{featuredPost.data.category}</span>
-            {featuredPost.data.level && (
-              <span class={`level-badge level-${featuredPost.data.level}`}>
-                {levelLabels[featuredPost.data.level]}
-              </span>
+            <h3 class="guide-card-title">{post.data.title}</h3>
+            {post.data.description && (
+              <p class="guide-card-desc">{post.data.description}</p>
             )}
-            {featuredPost.data.trending && (
-              <span class="trending-badge">Trending</span>
-            )}
-            <time datetime={featuredPost.data.pubDate.toISOString()}>
-              {featuredPost.data.pubDate.toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-              })}
-            </time>
-          </div>
-          <h3>{featuredPost.data.title}</h3>
-          <p>{featuredPost.data.description}</p>
-          <span class="hp-featured-read">Read this guide &rarr;</span>
-        </a>
+            <span class="guide-card-cta">Read guide &rarr;</span>
+          </a>
+        ))}
       </div>
-    </section>
-  )}
+      <div class="guides-footer">
+        <a href="/blog" class="btn-ghost">Browse all guides &rarr;</a>
+      </div>
+    </div>
+  </section>
 
-  <!-- CATEGORY NAV -->
-  <div class="category-filter">
-    <a href="/blog" class="active">All</a>
-    {categories.map((cat) => (
-      <a href={`/category/${cat.slug}`}>{cat.label}</a>
-    ))}
-  </div>
-
-  <!-- ARTICLE GRID: Asymmetric 2-column + 1 wide pattern -->
-  <section class="hp-articles">
-    <div class="hp-articles-grid">
-      {remainingPosts.map((post, i) => (
-        <a
-          href={`/blog/${post.id}`}
-          class={`article-card ${i === 0 ? 'article-card--wide' : ''}`}
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="section-inner">
+      <div class="newsletter-inner">
+        <div class="newsletter-text">
+          <span class="section-tag">Free Newsletter</span>
+          <h2 class="newsletter-heading">Weekly yield picks + AI income strategies.</h2>
+          <p class="newsletter-sub">
+            Every Sunday: one actionable strategy, current APYs, and what I'm actually running.
+            Your yield, your strategy — don't miss a week.
+          </p>
+        </div>
+        <form
+          class="newsletter-form"
+          action="https://subscribe-forms.beehiiv.com/1c80f432-8696-4d95-b028-aa8bd75f08ba"
+          method="post"
+          target="_blank"
         >
-          <div class="card-badges">
-            <span class="card-category">{post.data.category}</span>
-            {post.data.level && (
-              <span class={`level-badge level-${post.data.level}`}>
-                {levelLabels[post.data.level]}
-              </span>
-            )}
-            {post.data.trending && (
-              <span class="trending-badge">Trending</span>
-            )}
+          <div class="newsletter-fields">
+            <input
+              type="email"
+              name="email"
+              placeholder="your@email.com"
+              required
+              class="newsletter-input"
+            />
+            <button type="submit" class="newsletter-btn">Subscribe Free</button>
           </div>
-          <h3>{post.data.title}</h3>
-          <p>{post.data.description}</p>
-          <div class="card-meta">
-            <time datetime={post.data.pubDate.toISOString()}>
-              {post.data.pubDate.toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-              })}
-            </time>
-          </div>
-        </a>
-      ))}
-    </div>
-    <div class="hp-articles-more">
-      <a href="/blog" class="hp-btn-secondary">View All Guides &rarr;</a>
-    </div>
-  </section>
-
-  <!-- LEAD MAGNET: Octalysis #6 Scarcity + #7 Curiosity -->
-  <section class="home-lead-magnet">
-    <div class="home-lm-inner">
-      <div class="home-lm-text">
-        <span class="home-lm-badge">Free Guide</span>
-        <h2>The Crypto Bear Market Survival Kit</h2>
-        <p>7 passive income strategies that work when prices drop. Real protocols, realistic numbers, step-by-step instructions. Includes APY snapshots that update quarterly — grab the latest version.</p>
-        <a href="/resources/bear-market-survival-kit" class="home-lm-cta">
-          Download Free PDF &rarr;
-        </a>
+          <p class="newsletter-note">No spam. Unsubscribe anytime.</p>
+        </form>
       </div>
     </div>
   </section>
 
-  <!-- EMAIL SIGNUP: Octalysis #5 Social Influence + #2 Accomplishment -->
-  <section class="email-signup">
-    <iframe src="https://subscribe-forms.beehiiv.com/1c80f432-8696-4d95-b028-aa8bd75f08ba" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 100%; max-width: 600px; height: 340px; margin: 0 auto; display: block; background-color: transparent; border-radius: 12px;"></iframe>
-  </section>
 </BaseLayout>
 
 <style>
-  /* ===== Hero: Asymmetric Split ===== */
-  .hp-hero {
-    padding: 5rem 1.5rem 3rem;
-    position: relative;
-    overflow: hidden;
-  }
+/* ---- Shared layout ---- */
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
 
-  .hp-hero::before {
-    content: '';
-    position: absolute;
-    top: -120px;
-    right: -200px;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(ellipse at center, rgba(74, 144, 217, 0.06) 0%, transparent 65%);
-    pointer-events: none;
-    z-index: 0;
-  }
+.section-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
 
-  .hp-hero-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 4rem;
-    align-items: start;
-    position: relative;
-    z-index: 1;
-  }
+.section-heading {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
 
-  .hp-hero-tag {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--accent);
-    background: var(--accent-dim);
-    border: 1px solid rgba(74, 144, 217, 0.15);
-    padding: 0.25rem 0.75rem;
-    border-radius: 9999px;
-    margin-bottom: 1.25rem;
-  }
+.section-sub {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 52ch;
+  line-height: 1.7;
+}
 
-  .hp-hero-text h1 {
-    font-family: var(--font-display);
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-    font-weight: 800;
-    line-height: 1.08;
-    letter-spacing: -0.035em;
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-  }
+/* ---- Buttons ---- */
+.btn-primary {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
 
-  .hp-hero-accent {
-    color: var(--accent);
-  }
+.btn-primary:hover {
+  background: var(--accent-hover);
+  box-shadow: var(--shadow-accent);
+  color: #fff;
+}
 
-  .hp-hero-desc {
-    font-size: 1.05rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    max-width: 540px;
-    margin-bottom: 2rem;
-  }
+.btn-secondary {
+  display: inline-block;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
 
-  .hp-hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
+.btn-secondary:hover {
+  background: var(--accent-dim);
+  color: var(--accent-hover);
+}
 
-  .hp-btn-primary {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    font-family: var(--font-display);
-    font-weight: 700;
-    padding: 0.8rem 2rem;
-    border-radius: var(--radius);
-    font-size: 0.95rem;
-    box-shadow: var(--shadow-accent);
-    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-    text-decoration: none;
-  }
+.btn-ghost {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--accent-dim);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease;
+}
 
-  .hp-btn-primary:hover {
-    background: var(--accent-hover);
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 28px rgba(74, 144, 217, 0.3);
-  }
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent-hover);
+}
 
-  .hp-btn-primary:active {
-    transform: translateY(0) scale(0.98);
-  }
+/* ---- HERO ---- */
+.hero {
+  padding: 6rem 1.5rem 5rem;
+  background: var(--bg-primary);
+}
 
-  .hp-btn-secondary {
-    display: inline-block;
-    color: var(--accent);
-    font-family: var(--font-display);
-    font-weight: 600;
-    padding: 0.8rem 2rem;
-    border-radius: var(--radius);
-    font-size: 0.95rem;
-    border: 1px solid var(--border);
-    background: var(--bg-primary);
-    transition: border-color 0.2s, background 0.2s, transform 0.15s;
-    text-decoration: none;
-  }
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
 
-  .hp-btn-secondary:hover {
-    border-color: var(--accent);
-    background: var(--accent-dim);
-    color: var(--accent);
-    transform: translateY(-1px);
-  }
+.hero-content {
+  max-width: 62ch;
+}
 
-  .hp-btn-secondary:active {
-    transform: translateY(0) scale(0.98);
-  }
+.hero-eyebrow {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 1.1rem;
+}
 
-  /* Hero aside */
-  .hp-hero-aside {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding-top: 2.5rem;
-  }
+.hero-heading {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
 
-  .hp-hero-proof {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
+.hero-accent {
+  display: block;
+  color: var(--accent);
+}
 
-  .hp-proof-line {
-    display: flex;
-    align-items: baseline;
-    gap: 0.4rem;
-  }
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 52ch;
+}
 
-  .hp-proof-number {
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: var(--accent);
-    letter-spacing: -0.03em;
-    font-variant-numeric: tabular-nums;
-  }
+.hero-actions {
+  margin-bottom: 1.25rem;
+}
 
-  .hp-proof-text {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    font-weight: 500;
-  }
+.hero-proof {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
 
-  .hp-proof-divider {
-    color: var(--border);
-    font-size: 1.25rem;
-  }
+/* ---- PODCAST ---- */
+.podcast {
+  padding: 5rem 0;
+  background: var(--bg-secondary);
+}
 
-  .hp-hero-calc {
-    background: linear-gradient(135deg, rgba(27, 58, 92, 0.04) 0%, rgba(74, 144, 217, 0.06) 100%);
-    border: 1px solid rgba(74, 144, 217, 0.15);
-    border-radius: 12px;
-    padding: 1.25rem 1.5rem;
-  }
+.podcast-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: center;
+}
 
-  .hp-calc-hook {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin: 0 0 0.5rem;
-  }
+.podcast-text .section-heading {
+  margin-top: 0;
+}
 
-  .hp-calc-example {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin: 0 0 1rem;
-  }
+.podcast-text .section-sub {
+  margin-bottom: 1.75rem;
+}
 
-  .hp-calc-example strong {
-    color: var(--accent);
-    font-weight: 700;
-  }
+.yt-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
 
-  .hp-btn-calc {
-    display: inline-block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--accent);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+.yt-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
-  .hp-btn-calc:hover {
-    color: var(--text-primary);
-  }
+/* ---- GUIDES ---- */
+.guides {
+  padding: 5rem 0;
+  background: var(--bg-primary);
+}
 
-  .hp-stat-value {
-    font-family: var(--font-display);
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: var(--text-primary);
-    letter-spacing: -0.03em;
-  }
+.guides-header {
+  margin-bottom: 2.5rem;
+}
 
-  .hp-stat-sub {
-    font-size: 0.78rem;
-    color: var(--text-secondary);
-    line-height: 1.5;
-  }
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
 
-  .hp-hero-loss {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-style: italic;
-    margin-top: 0.5rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--border-light);
-  }
+.guide-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  text-decoration: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
 
-  .hp-hero-milestone {
-    font-size: 0.9rem;
-    color: var(--accent);
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    padding: 0.6rem 1rem;
-    background: var(--accent-dim);
-    border-left: 3px solid var(--accent);
-    border-radius: 0 var(--radius) var(--radius) 0;
-    max-width: 540px;
-  }
+.guide-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-hover);
+}
 
-  .hp-hero-urgency {
-    margin-top: 0.5rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--border-light);
-  }
+.guide-card-meta {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
 
-  .hp-hero-cost {
-    font-size: 0.82rem;
-    color: var(--text-secondary);
-    margin-top: 0.4rem;
-    line-height: 1.55;
-  }
+.tag-category {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-dim);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
 
-  /* ===== Section shared styles ===== */
-  .hp-section-header {
-    margin-bottom: 2rem;
-  }
+.tag-level {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
 
-  .hp-section-tag {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--accent);
-    background: var(--accent-dim);
-    border: 1px solid rgba(74, 144, 217, 0.15);
-    padding: 0.2rem 0.65rem;
-    border-radius: 9999px;
-    margin-bottom: 0.75rem;
-  }
+.tag-level--beginner {
+  background: #e6f4ea;
+  color: #2d7a3a;
+}
 
-  .hp-section-header h2 {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--text-primary);
-    letter-spacing: -0.025em;
-    margin-bottom: 0.35rem;
-  }
+.tag-level--intermediate {
+  background: #fef3e0;
+  color: #a05c00;
+}
 
-  .hp-section-header p {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    max-width: 520px;
-  }
+.tag-level--advanced {
+  background: #fde8e8;
+  color: #b52a2a;
+}
 
-  /* ===== Tools Section ===== */
-  .hp-tools {
-    padding: 2rem 1.5rem 3rem;
-    background: var(--bg-secondary);
-  }
+.guide-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+  margin-top: 0.25rem;
+}
 
-  .hp-tools-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
-  }
+.guide-card-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
 
-  .hp-tools-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 1rem;
-  }
+.guide-card-cta {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 0.5rem;
+}
 
-  .hp-tool-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 1.75rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s, box-shadow 0.3s;
-  }
+.guides-footer {
+  text-align: left;
+}
 
-  .hp-tool-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-    box-shadow: 0 12px 32px rgba(27, 58, 92, 0.08);
-    color: inherit;
-  }
+/* ---- NEWSLETTER ---- */
+.newsletter {
+  padding: 5rem 0;
+  background: var(--bg-secondary);
+}
 
-  .hp-tool-card:active {
-    transform: translateY(-1px) scale(0.995);
-  }
+.newsletter-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
 
-  .hp-tool-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
-    background: var(--accent-dim);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent);
-    flex-shrink: 0;
-  }
+.newsletter-heading {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
 
-  .hp-tool-card h3 {
-    font-family: var(--font-display);
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--text-primary);
-  }
+.newsletter-sub {
+  color: var(--text-secondary);
+  font-size: 0.97rem;
+  line-height: 1.7;
+}
 
-  .hp-tool-card p {
-    font-size: 0.88rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    flex-grow: 1;
-  }
+.newsletter-fields {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
 
-  .hp-tool-cta {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--accent);
-  }
+.newsletter-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
 
-  /* ===== Start Here (inherited) ===== */
-  .start-here {
-    padding: 3rem 1.5rem;
-  }
+.newsletter-input:focus {
+  border-color: var(--accent);
+}
 
-  .start-here-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
-  }
+.newsletter-btn {
+  padding: 0.75rem 1.4rem;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
 
-  .start-here-header {
-    margin-bottom: 2rem;
-  }
+.newsletter-btn:hover {
+  background: var(--accent-hover);
+}
 
-  .start-here-header h2 {
-    font-family: var(--font-display);
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--text-primary);
-    letter-spacing: -0.025em;
-    margin-bottom: 0.35rem;
-  }
+.newsletter-note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
 
-  .start-here-header p {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-  }
-
-  .start-here-progress {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-top: 1.25rem;
-    flex-wrap: wrap;
-  }
-
-  .progress-step {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .progress-num {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background: var(--accent);
-    color: #fff;
-    font-size: 0.75rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .progress-text {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--text-primary);
-  }
-
-  .progress-arrow {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-  }
-
-  .start-here-columns {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  .podcast-layout {
+    grid-template-columns: 1fr;
     gap: 2rem;
-    margin-top: 1.5rem;
   }
 
-  .start-here-column-header {
-    margin-bottom: 1.25rem;
+  .guides-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .start-here-column-header h3 {
-    font-family: var(--font-display);
-    font-size: 1.15rem;
-    font-weight: 800;
-    color: var(--text-primary);
-    margin: 0.25rem 0 0.4rem;
-    letter-spacing: -0.02em;
+  .newsletter-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 4rem 1.25rem 3.5rem;
   }
 
-  .start-here-column-header p {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    margin: 0;
+  .guides-grid {
+    grid-template-columns: 1fr;
   }
 
-  .column-icon {
-    font-size: 0.85rem;
-    color: var(--accent);
-  }
-
-  .column-icon--ai {
-    color: var(--accent);
-  }
-
-  .start-here-grid {
-    display: flex;
+  .newsletter-fields {
     flex-direction: column;
-    gap: 0.75rem;
   }
 
-  .start-here-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s, box-shadow 0.3s;
-  }
-
-  .start-here-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--accent);
-    box-shadow: 0 8px 24px rgba(27, 58, 92, 0.08);
-    color: inherit;
-  }
-
-  .start-here-card:active {
-    transform: translateY(-1px) scale(0.995);
-  }
-
-  .start-here-card-badges {
-    display: flex;
-    gap: 0.4rem;
-    flex-wrap: wrap;
-  }
-
-  .start-here-card h4 {
-    font-family: var(--font-display);
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    line-height: 1.35;
-  }
-
-  .start-here-card p {
-    font-size: 0.82rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
-  }
-
-  .start-here-read {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--accent);
-    margin-top: auto;
-  }
-
-  /* ===== Featured ===== */
-  .hp-featured {
-    padding: 2rem 1.5rem 1rem;
-  }
-
-  .hp-featured-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
-  }
-
-  .hp-featured-card {
-    display: block;
-    background: linear-gradient(135deg, rgba(27, 58, 92, 0.03) 0%, rgba(74, 144, 217, 0.04) 100%);
-    border: 1px solid rgba(74, 144, 217, 0.15);
-    border-radius: var(--radius-lg);
-    padding: 2.5rem;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s, box-shadow 0.3s;
-  }
-
-  .hp-featured-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-    box-shadow: 0 16px 40px rgba(27, 58, 92, 0.1);
-    color: inherit;
-  }
-
-  .hp-featured-card:active {
-    transform: translateY(-1px) scale(0.998);
-  }
-
-  .hp-featured-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-  }
-
-  .hp-featured-meta time {
-    font-size: 0.78rem;
-    color: var(--text-muted);
-  }
-
-  .hp-featured-card h3 {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--text-primary);
-    letter-spacing: -0.025em;
-    margin-bottom: 0.75rem;
-    line-height: 1.2;
-  }
-
-  .hp-featured-card p {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.65;
-    max-width: 680px;
-    margin-bottom: 1rem;
-  }
-
-  .hp-featured-read {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--accent);
-  }
-
-  /* ===== Articles Grid: Asymmetric ===== */
-  .hp-articles {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 1.5rem 2rem;
-  }
-
-  .hp-articles-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-  }
-
-  .hp-articles-grid .article-card--wide {
-    grid-column: 1 / -1;
-  }
-
-  .hp-articles-more {
-    text-align: center;
-    margin-top: 2rem;
-  }
-
-  /* ===== Lead Magnet (inherited) ===== */
-  .home-lead-magnet {
-    padding: 0 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .home-lm-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    background: linear-gradient(135deg, rgba(27, 58, 92, 0.04) 0%, rgba(74, 144, 217, 0.06) 100%);
-    border: 1px solid rgba(74, 144, 217, 0.2);
-    border-radius: var(--radius-lg);
-    padding: 2.5rem 3rem;
-  }
-
-  .home-lm-text {
-    max-width: 600px;
-  }
-
-  .home-lm-badge {
-    display: inline-block;
-    font-size: 0.68rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--accent);
-    background: var(--accent-dim);
-    border: 1px solid rgba(74, 144, 217, 0.2);
-    padding: 0.2rem 0.65rem;
-    border-radius: 9999px;
-    margin-bottom: 0.75rem;
-  }
-
-  .home-lm-text h2 {
-    font-family: var(--font-display);
-    font-size: 1.35rem;
-    font-weight: 800;
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
-    margin-bottom: 0.5rem;
-  }
-
-  .home-lm-text p {
-    font-size: 0.92rem;
-    color: var(--text-secondary);
-    line-height: 1.65;
-    margin-bottom: 1.25rem;
-  }
-
-  .home-lm-cta {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    font-family: var(--font-display);
-    font-size: 0.9rem;
-    font-weight: 700;
-    padding: 0.7rem 1.5rem;
-    border-radius: var(--radius);
-    text-decoration: none;
-    box-shadow: var(--shadow-accent);
-    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-  }
-
-  .home-lm-cta:hover {
-    background: var(--accent-hover);
-    color: #fff;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(74, 144, 217, 0.3);
-  }
-
-  /* ===== Responsive ===== */
-  @media (max-width: 768px) {
-    .hp-hero-inner {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    .hp-hero-aside {
-      padding-top: 0;
-    }
-
-    .hp-hero-text h1 {
-      font-size: 2rem;
-    }
-
-    .hp-tools-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .hp-tool-card--wide {
-      grid-column: auto;
-    }
-
-    .start-here-columns {
-      grid-template-columns: 1fr;
-    }
-
-    .hp-featured-card {
-      padding: 1.75rem;
-    }
-
-    .hp-featured-card h3 {
-      font-size: 1.2rem;
-    }
-
-    .hp-articles-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .hp-articles-grid .article-card--wide {
-      grid-column: auto;
-    }
-
-    .home-lm-inner {
-      padding: 2rem 1.5rem;
-    }
-
-    .dp-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  /* ===== Daily Pulse Section ===== */
-  .dp-section {
-    padding: 2rem 1.5rem 3rem;
-    background: var(--bg-secondary);
-  }
-
-  .dp-inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
-  }
-
-  .dp-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 1rem;
-  }
-
-  .dp-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    transition: border-color 0.2s, box-shadow 0.3s;
-  }
-
-  .dp-card:hover {
-    border-color: rgba(74, 144, 217, 0.25);
-    box-shadow: 0 8px 24px rgba(27, 58, 92, 0.06);
-  }
-
-  .dp-card-header {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-
-  .dp-card-icon {
-    color: var(--accent);
-    flex-shrink: 0;
-  }
-
-  .dp-card-header h3 {
-    font-family: var(--font-display);
-    font-size: 0.92rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    letter-spacing: -0.01em;
-  }
-
-  /* APY Card */
-  .dp-apy-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .dp-apy-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 0.75rem;
-    background: rgba(74, 144, 217, 0.04);
-    border-radius: var(--radius);
-    transition: background 0.2s;
-  }
-
-  .dp-apy-row:hover {
-    background: rgba(74, 144, 217, 0.08);
-  }
-
-  .dp-apy-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-  }
-
-  .dp-apy-protocol {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--text-primary);
-  }
-
-  .dp-apy-pool {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-  }
-
-  .dp-apy-value {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: var(--accent);
-    font-variant-numeric: tabular-nums;
-  }
-
-  .dp-apy-disclaimer {
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    font-style: italic;
-    margin-top: auto;
-  }
-
-  /* Skeleton */
-  .dp-apy-skeleton {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.6rem 0.75rem;
-    background: rgba(74, 144, 217, 0.04);
-    border-radius: var(--radius);
-  }
-
-  .dp-skeleton-line {
-    height: 14px;
-    border-radius: 4px;
-    background: linear-gradient(90deg, rgba(74, 144, 217, 0.08) 25%, rgba(74, 144, 217, 0.15) 50%, rgba(74, 144, 217, 0.08) 75%);
-    background-size: 200% 100%;
-    animation: dp-shimmer 1.5s infinite;
-  }
-
-  .dp-skeleton-line--w60 { width: 60%; }
-  .dp-skeleton-line--w50 { width: 50%; }
-  .dp-skeleton-line--w55 { width: 55%; }
-  .dp-skeleton-line--w40 { width: 40%; }
-  .dp-skeleton-line--w35 { width: 35%; }
-  .dp-skeleton-line--w45 { width: 45%; }
-
-  @keyframes dp-shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-  }
-
-  /* Tip Card */
-  .dp-tip-quote {
-    font-size: 0.92rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    border-left: 3px solid var(--accent);
-    padding-left: 1rem;
-    margin: 0;
-    font-style: normal;
-  }
-
-  .dp-tip-day {
-    font-size: 0.72rem;
-    color: var(--text-muted);
-    font-weight: 500;
-    margin-top: auto;
-  }
-
-  /* Portfolio Card */
-  .dp-portfolio-empty {
-    font-size: 0.88rem;
-    color: var(--text-muted);
-    line-height: 1.6;
-  }
-
-  .dp-portfolio-empty a {
-    color: var(--accent);
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  .dp-portfolio-empty a:hover {
-    text-decoration: underline;
-  }
-
-  .dp-portfolio-earning {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-  }
-
-  .dp-portfolio-amount {
-    font-family: var(--font-display);
-    font-size: 1.75rem;
-    font-weight: 800;
-    color: var(--accent);
-    font-variant-numeric: tabular-nums;
-    letter-spacing: -0.03em;
-  }
-
-  .dp-portfolio-label {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-  }
-
-  .dp-portfolio-detail {
-    font-size: 0.78rem;
-    color: var(--text-secondary);
-    line-height: 1.5;
-  }
-
-  .dp-portfolio-link {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--accent);
-    text-decoration: none;
-    margin-top: auto;
-  }
-
-  .dp-portfolio-link:hover {
-    text-decoration: underline;
-  }
-
-  /* Challenge Card */
-  .dp-challenge-title {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin: 0;
-  }
-
-  .dp-challenge-progress {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-  }
-
-  .dp-challenge-bar {
+  .newsletter-btn {
     width: 100%;
-    height: 8px;
-    background: rgba(74, 144, 217, 0.1);
-    border-radius: 9999px;
-    overflow: hidden;
   }
-
-  .dp-challenge-fill {
-    height: 100%;
-    background: var(--accent);
-    border-radius: 9999px;
-    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .dp-challenge-label {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    font-weight: 500;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .dp-challenge-btn {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 0.85rem;
-    padding: 0.6rem 1.25rem;
-    border: none;
-    border-radius: var(--radius);
-    cursor: pointer;
-    box-shadow: var(--shadow-accent);
-    transition: background 0.2s, transform 0.15s;
-    margin-top: auto;
-    align-self: flex-start;
-  }
-
-  .dp-challenge-btn:hover {
-    background: var(--accent-hover);
-    transform: translateY(-1px);
-  }
-
-  .dp-challenge-btn:active {
-    transform: translateY(0) scale(0.98);
-  }
-
-  .dp-challenge-btn--active {
-    background: transparent;
-    color: var(--accent);
-    border: 1px solid var(--accent);
-    box-shadow: none;
-  }
-
-  .dp-challenge-btn--active:hover {
-    background: var(--accent-dim);
-  }
-
-  /* APY error */
-  .dp-apy-error {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    padding: 0.75rem;
-    text-align: center;
-  }
-
-  .dp-apy-error a {
-    color: var(--accent);
-    font-weight: 600;
-    text-decoration: none;
-  }
+}
 </style>
-
-<script>
-  // === Daily Pulse: Client-side hydration ===
-
-  // 1. Today's Best APY (DeFiLlama)
-  (async function loadTopYields() {
-    const list = document.getElementById('dp-apy-list');
-    const disclaimer = document.getElementById('dp-apy-disclaimer');
-    if (!list) return;
-
-    try {
-      const res = await fetch('https://yields.llama.fi/pools');
-      if (!res.ok) throw new Error('API error');
-      const { data } = await res.json();
-
-      // Filter: stablecoin or major token pools, TVL > $1M, from reputable protocols
-      const reputable = ['aave-v3', 'lido', 'compound-v3', 'maker', 'jito', 'marinade-finance', 'rocket-pool', 'spark', 'ethena', 'morpho', 'pendle', 'jupiter', 'raydium'];
-      const filtered = data
-        .filter((p) => p.tvlUsd > 1_000_000 && p.apy > 0.5 && p.apy < 50 && reputable.some((r) => p.project.toLowerCase().includes(r)))
-        .sort((a, b) => b.apy - a.apy)
-        .slice(0, 3);
-
-      if (filtered.length === 0) throw new Error('No qualifying pools');
-
-      list.innerHTML = filtered
-        .map(
-          (p) => `
-        <div class="dp-apy-row">
-          <div class="dp-apy-info">
-            <span class="dp-apy-protocol">${p.project}</span>
-            <span class="dp-apy-pool">${p.symbol} · ${p.chain}</span>
-          </div>
-          <span class="dp-apy-value">${p.apy.toFixed(2)}%</span>
-        </div>`
-        )
-        .join('');
-
-      if (disclaimer) disclaimer.style.display = 'block';
-    } catch {
-      list.innerHTML = `<p class="dp-apy-error">Could not load live yields. <a href="/tools/yield-dashboard">Check the dashboard</a> instead.</p>`;
-    }
-  })();
-
-  // 2. Daily Yield Tip
-  (function loadDailyTip() {
-    const tips = [
-      "Staking ETH via Lido gives you stETH, which you can use in DeFi while still earning staking rewards. Double-dip your yield.",
-      "Dollar-cost averaging into staking positions smooths out APY volatility. Don't chase the highest rate — chase consistency.",
-      "Always check a protocol's TVL trend before depositing. Rising TVL + stable APY = healthy protocol. Falling TVL + rising APY = red flag.",
-      "Diversify across at least 3 protocols and 2 chains. One exploit shouldn't wipe out your entire passive income.",
-      "Restaking (EigenLayer, Symbiotic) can boost rewards 2-3x, but adds smart contract risk layers. Size positions accordingly.",
-      "Stablecoin yields (USDC/USDT lending) are the 'savings account' of DeFi. Currently 4-8% on Aave/Compound. Lower risk, steady income.",
-      "Gas fees eat into yields on small positions. On Ethereum, aim for at least $5,000 per position. For smaller amounts, use Solana or L2s.",
-      "Auto-compounding vaults (like Yearn or Beefy) reinvest rewards automatically. The compounding effect adds 15-30% more yield annually.",
-      "Check your staking rewards tax obligations. In many jurisdictions, staking rewards are taxable as income when received.",
-      "The best yield strategy is the one you understand. If you can't explain how a protocol generates its APY, don't deposit there.",
-      "Liquid staking tokens (stETH, mSOL, jitoSOL) let you exit positions faster than traditional staking lockups. Liquidity matters.",
-      "Set a calendar reminder to review your positions monthly. APYs drift, protocols change, and better opportunities appear.",
-      "Impermanent loss in LP positions is real. If you're providing liquidity, pair correlated assets (ETH/stETH, USDC/USDT) to minimize it.",
-      "Hardware wallets + DeFi = best security combo. Never stake from a hot wallet holding your entire portfolio.",
-      "Track your actual realized yield, not just the advertised APY. Fees, slippage, and reward timing all affect real returns.",
-      "New protocols often offer higher APYs to attract deposits. Early yields are real, but they won't last — have an exit plan.",
-      "Governance tokens earned from staking/farming often lose 60-80% of value. Consider selling rewards regularly rather than holding.",
-      "Before bridging assets to chase yield on another chain, factor in bridge fees and the added smart contract risk.",
-      "The 'risk-free rate' in DeFi is roughly what USDC lending pays on Aave (~4-6%). Anything above that has additional risk.",
-      "Solana staking (via Jito or Marinade) offers 7-8% APY with MEV rewards included. Lower fees make it accessible with smaller amounts.",
-      "Never stake more than you can afford to have locked for 30 days. Unbonding periods are real, and markets move fast.",
-      "Yield aggregators like DeFiLlama and Vaults.fyi make comparing opportunities across protocols and chains effortless — use them daily.",
-      "Consider splitting your portfolio: 60% in stable yield (lending, ETH staking), 30% in moderate (LP, restaking), 10% in aggressive plays.",
-      "Bookmark your protocol dashboards and check them with morning coffee. Five minutes of monitoring prevents weeks of missed problems.",
-      "The power of compounding at 8% APY: $10,000 becomes $21,589 in 10 years. Start now. Time is your biggest edge.",
-      "Airdrops from protocols you're actively using are bonus yield. Track your eligibility on sites like earni.fi.",
-      "If a protocol offers 100%+ APY on a non-meme token, the yield is coming from token emissions — and the token is likely inflating away.",
-      "Run the numbers on your staking calculator before committing. A 2% APY difference on $10k is only $200/year — is the extra risk worth it?",
-      "Multi-sig treasury protocols (like Gnosis Safe) add security for larger portfolios. Worth the setup if you're managing $50k+.",
-      "Your first $100/month in passive income is the hardest. After that, you have the knowledge and infrastructure to scale to $500+.",
-    ];
-
-    const today = new Date();
-    const dayOfYear = Math.floor((today.getTime() - new Date(today.getFullYear(), 0, 0).getTime()) / 86400000);
-    const tipIndex = dayOfYear % tips.length;
-
-    const tipEl = document.getElementById('dp-tip-text');
-    const dayEl = document.getElementById('dp-tip-day');
-    if (tipEl) tipEl.textContent = tips[tipIndex];
-    if (dayEl) dayEl.textContent = today.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric' });
-  })();
-
-  // 3. Portfolio Earnings
-  (function loadPortfolio() {
-    const content = document.getElementById('dp-portfolio-content');
-    if (!content) return;
-
-    try {
-      const saved = localStorage.getItem('yd-portfolio');
-      if (!saved) return;
-
-      const portfolio = JSON.parse(saved);
-      if (!Array.isArray(portfolio) || portfolio.length === 0) return;
-
-      let totalDailyUsd = 0;
-      const lines = [];
-
-      for (const pos of portfolio) {
-        const amount = parseFloat(pos.amount) || 0;
-        const apy = parseFloat(pos.apy) || 0;
-        const price = parseFloat(pos.price) || 0;
-        const dailyYield = (amount * price * apy) / 100 / 365;
-        totalDailyUsd += dailyYield;
-        if (dailyYield > 0.01) {
-          lines.push(`${pos.coin || pos.symbol || 'Token'}: ~$${dailyYield.toFixed(2)}/day at ${apy}% APY`);
-        }
-      }
-
-      if (totalDailyUsd < 0.01) return;
-
-      content.innerHTML = `
-        <div class="dp-portfolio-earning">
-          <span class="dp-portfolio-amount">~$${totalDailyUsd.toFixed(2)}</span>
-          <span class="dp-portfolio-label">estimated today</span>
-        </div>
-        ${lines.length > 0 ? `<p class="dp-portfolio-detail">${lines.slice(0, 3).join(' · ')}</p>` : ''}
-        <a href="/tools/yield-dashboard" class="dp-portfolio-link">View full dashboard &rarr;</a>
-      `;
-    } catch {
-      // If localStorage parse fails, keep showing the empty state
-    }
-  })();
-
-  // 4. 30-Day Challenge
-  (function loadChallenge() {
-    const KEY = 'pyl-30day-challenge';
-    const btn = document.getElementById('dp-challenge-btn');
-    const fill = document.getElementById('dp-challenge-fill');
-    const label = document.getElementById('dp-challenge-label');
-    if (!btn || !fill || !label) return;
-
-    function getState() {
-      try {
-        const raw = localStorage.getItem(KEY);
-        return raw ? JSON.parse(raw) : null;
-      } catch {
-        return null;
-      }
-    }
-
-    function render() {
-      const state = getState();
-      if (!state || !state.startDate) {
-        fill.style.width = '0%';
-        label.textContent = 'Day 0 / 30';
-        btn.textContent = 'Start the Challenge';
-        btn.classList.remove('dp-challenge-btn--active');
-        return;
-      }
-
-      const start = new Date(state.startDate);
-      const now = new Date();
-      const dayNum = Math.min(30, Math.max(1, Math.floor((now.getTime() - start.getTime()) / 86400000) + 1));
-      const pct = Math.round((dayNum / 30) * 100);
-
-      fill.style.width = pct + '%';
-      label.textContent = dayNum >= 30 ? 'Challenge Complete!' : `Day ${dayNum} / 30`;
-      btn.textContent = dayNum >= 30 ? 'Restart Challenge' : 'Day ' + dayNum + ' — Keep Going';
-      btn.classList.add('dp-challenge-btn--active');
-    }
-
-    btn.addEventListener('click', () => {
-      const state = getState();
-      if (!state || !state.startDate) {
-        localStorage.setItem(KEY, JSON.stringify({ startDate: new Date().toISOString() }));
-      } else {
-        const start = new Date(state.startDate);
-        const dayNum = Math.floor((new Date().getTime() - start.getTime()) / 86400000) + 1;
-        if (dayNum >= 30) {
-          localStorage.setItem(KEY, JSON.stringify({ startDate: new Date().toISOString() }));
-        } else {
-          window.location.href = '/blog/how-to-earn-passive-income-with-crypto-2026';
-        }
-      }
-      render();
-    });
-
-    render();
-  })();
-</script>
