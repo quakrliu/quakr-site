@@ -105,6 +105,35 @@ const levelLabels: Record<string, string> = {
     </div>
   </section>
 
+  <!-- BOOKS -->
+  <section class="books">
+    <div class="section-inner">
+      <div class="books-header">
+        <span class="section-tag">Our Books</span>
+        <h2 class="section-heading">Learn at Your Own Pace</h2>
+        <p class="section-sub">Practical guides to help you build real passive income — available on Amazon Kindle.</p>
+      </div>
+      <div class="books-grid">
+        <div class="book-card">
+          <div class="book-card-body">
+            <h3 class="book-title">Crypto Yield Handbook</h3>
+            <p class="book-subtitle">Staking, Lending &amp; DeFi Income Strategies for 2026</p>
+            <p class="book-price">$4.99</p>
+          </div>
+          <a href="https://www.amazon.com/dp/B0FFFKCZTC" target="_blank" rel="noopener noreferrer" class="btn-primary book-btn">Get on Amazon</a>
+        </div>
+        <div class="book-card">
+          <div class="book-card-body">
+            <h3 class="book-title">The AI Passive Income Playbook</h3>
+            <p class="book-subtitle">Build Automated Income Streams With AI Tools in 2026</p>
+            <p class="book-price">$4.99</p>
+          </div>
+          <a href="https://www.amazon.com/dp/B0GGVM7BHY" target="_blank" rel="noopener noreferrer" class="btn-primary book-btn">Get on Amazon</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- NEWSLETTER -->
   <section class="newsletter">
     <div class="section-inner">
@@ -446,6 +475,75 @@ const levelLabels: Record<string, string> = {
 
 .guides-footer {
   text-align: left;
+}
+
+/* ---- BOOKS ---- */
+.books {
+  padding: 5rem 0;
+  background: var(--bg-secondary);
+}
+
+.books-header {
+  margin-bottom: 2.5rem;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.book-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-hover);
+}
+
+.book-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.book-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.book-subtitle {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.book-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: 0.25rem;
+}
+
+.book-btn {
+  align-self: flex-start;
+}
+
+@media (max-width: 600px) {
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---- NEWSLETTER ---- */
