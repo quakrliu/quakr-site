@@ -17,12 +17,9 @@ const levelLabels: Record<string, string> = {
 
 <BaseLayout title="Passive Yield Lab — Crypto, AI & Passive Income" ogImage="/og/default.svg">
 
-  <!-- HERO: Left-aligned split layout -->
+  <!-- HERO: Split layout — text left, image right -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-avatar">
-        <img src="/images/ethan-avatar.png" alt="Ethan Moore" class="avatar-img" width="120" height="120" />
-      </div>
       <div class="hero-content">
         <p class="hero-eyebrow">Hi, I'm Ethan.</p>
         <h1 class="hero-heading">
@@ -37,6 +34,9 @@ const levelLabels: Record<string, string> = {
           <a href="/blog" class="btn-primary">Start Here</a>
         </div>
         <p class="hero-proof">80+ guides &nbsp;&middot;&nbsp; 8 free tools</p>
+      </div>
+      <div class="hero-image">
+        <img src="/images/ethan-avatar.png" alt="Ethan Moore" class="hero-portrait" />
       </div>
     </div>
   </section>
@@ -235,35 +235,41 @@ const levelLabels: Record<string, string> = {
 .hero-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-}
-
-.hero-avatar {
-  flex-shrink: 0;
-}
-
-.avatar-img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 3rem;
+  align-items: center;
 }
 
 .hero-content {
   max-width: 62ch;
 }
 
-@media (max-width: 600px) {
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-portrait {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 768px) {
   .hero-inner {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
     text-align: center;
   }
-  .avatar-img {
-    width: 90px;
-    height: 90px;
+  .hero-image {
+    order: -1;
+  }
+  .hero-portrait {
+    width: 180px;
+    height: 180px;
   }
 }
 
