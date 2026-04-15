@@ -528,3 +528,12 @@ The key to crypto passive income isn't finding the highest APY — it's building
 - [How to Earn Passive Income with Crypto in 2026](/blog/how-to-earn-passive-income-with-crypto-2026/) — The complete beginner's guide
 - [Staking vs. Yield Farming vs. Lending](/blog/staking-vs-yield-farming-vs-lending-2026/) — Compare the three main strategies head-to-head
 - [How to Earn Interest on Stablecoins in 2026](/blog/earn-interest-stablecoins-guide-2026/) — The lower-risk path to crypto yield
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[Ledger Nano X Crypto Hardware Wallet](https://www.amazon.com/dp/B07M6R4NK3?tag=bloompath-20)** — The most trusted hardware wallet — keep your crypto safe offline with Bluetooth support
+- **[Cryptoassets by Chris Burniske & Jack Tatar](https://www.amazon.com/dp/1260026671?tag=bloompath-20)** — The definitive investor's guide to Bitcoin and the broader crypto asset class

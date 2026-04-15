@@ -349,3 +349,12 @@ Start with an amount you're comfortable with, use a hardware wallet for security
 - [Best Staking Coins in 2026](/blog/best-staking-coins-2026/) — See how SOL compares to other staking options
 - [Staking Rewards Comparison 2026](/blog/staking-rewards-comparison-2026/) — Compare APYs across all major platforms
 - [Ethereum Staking in 2026](/blog/ethereum-staking-guide-2026/) — The other major staking opportunity
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[Ledger Nano X Crypto Hardware Wallet](https://www.amazon.com/dp/B07M6R4NK3?tag=bloompath-20)** — The most trusted hardware wallet — keep your crypto safe offline with Bluetooth support
+- **[Cryptoassets by Chris Burniske & Jack Tatar](https://www.amazon.com/dp/1260026671?tag=bloompath-20)** — The definitive investor's guide to Bitcoin and the broader crypto asset class

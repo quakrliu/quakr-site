@@ -279,3 +279,21 @@ This article is for informational purposes only and does not constitute financia
   ]
 }
 </script>
+
+---
+
+## Further Reading
+
+- [Best High-Dividend ETFs in 2026](/blog/best-high-dividend-etfs-2026)
+- [Best High-Dividend REITs Paying Monthly 2026](/blog/best-high-dividend-reits-monthly-2026)
+- [Best High-Yield REIT ETFs in 2026](/blog/best-high-yield-reit-etf-2026)
+
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[Ledger Nano X Crypto Hardware Wallet](https://www.amazon.com/dp/B07M6R4NK3?tag=bloompath-20)** — The most trusted hardware wallet — keep your crypto safe offline with Bluetooth support
+- **[Cryptoassets by Chris Burniske & Jack Tatar](https://www.amazon.com/dp/1260026671?tag=bloompath-20)** — The definitive investor's guide to Bitcoin and the broader crypto asset class

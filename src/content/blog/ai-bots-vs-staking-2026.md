@@ -157,3 +157,21 @@ Next in this series: [How to Set Up a Binance Grid Bot: Step-by-Step for 2026]
 ---
 
 *APY data sourced from Bitcompare, Blocklr, and StakedCrypto — verified April 2026. Rates fluctuate; verify current rates before staking. Not financial advice.*
+
+---
+
+## Further Reading
+
+- [7 Best Crypto Passive Income Strategies in 2026](/blog/best-crypto-passive-income-strategies-2026)
+- [How to Earn Passive Income with Crypto in 2026](/blog/how-to-earn-passive-income-with-crypto-2026)
+- [DeFi Yield vs Savings Account: Which Wins in 2026?](/blog/defi-yield-vs-savings-account-2026)
+
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[Ledger Nano X Crypto Hardware Wallet](https://www.amazon.com/dp/B07M6R4NK3?tag=bloompath-20)** — The most trusted hardware wallet — keep your crypto safe offline with Bluetooth support
+- **[Cryptoassets by Chris Burniske & Jack Tatar](https://www.amazon.com/dp/1260026671?tag=bloompath-20)** — The definitive investor's guide to Bitcoin and the broader crypto asset class

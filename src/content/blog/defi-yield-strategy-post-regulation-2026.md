@@ -223,3 +223,21 @@ The bill primarily affects U.S.-regulated platforms and service providers. Non-U
 ## Next in This Series
 
 **[2026 High-Dividend REIT Guide: Monthly Income at 5–16% Yield](/blog/best-high-yield-reit-2026)** — Real estate income streams that work entirely outside the crypto regulatory debate. Monthly distributions, diversified sector exposure, and how to pick the right REIT for your yield goals.
+
+---
+
+## Further Reading
+
+- [DeFi Yield Farming: Beginner's Guide 2026](/blog/defi-yield-farming-beginners-guide-2026)
+- [DeFi vs CeFi Yield: Which Earns More?](/blog/defi-vs-cefi-yield-passive-income-2026)
+- [EigenLayer Restaking Guide 2026](/blog/eigenlayer-restaking-guide-2026)
+
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[Ledger Nano X Crypto Hardware Wallet](https://www.amazon.com/dp/B07M6R4NK3?tag=bloompath-20)** — The most trusted hardware wallet — keep your crypto safe offline with Bluetooth support
+- **[Cryptoassets by Chris Burniske & Jack Tatar](https://www.amazon.com/dp/1260026671?tag=bloompath-20)** — The definitive investor's guide to Bitcoin and the broader crypto asset class

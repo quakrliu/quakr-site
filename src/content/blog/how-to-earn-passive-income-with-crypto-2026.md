@@ -622,3 +622,12 @@ Join thousands of readers who get our weekly crypto passive income strategies, p
 ---
 
 *Disclaimer: This article is for informational purposes only and does not constitute financial advice. Crypto assets are highly volatile and all passive income strategies carry risk. Always conduct your own research and consult a qualified financial advisor before investing. Some links in this article are affiliate links — we may earn a commission if you sign up through them, at no extra cost to you.*
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[Ledger Nano X Crypto Hardware Wallet](https://www.amazon.com/dp/B07M6R4NK3?tag=bloompath-20)** — The most trusted hardware wallet — keep your crypto safe offline with Bluetooth support
+- **[Cryptoassets by Chris Burniske & Jack Tatar](https://www.amazon.com/dp/1260026671?tag=bloompath-20)** — The definitive investor's guide to Bitcoin and the broader crypto asset class

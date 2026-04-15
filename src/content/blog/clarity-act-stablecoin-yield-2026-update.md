@@ -333,3 +333,12 @@ Under the principled agreement, a licensed stablecoin issuer must hold 1:1 reser
 ---
 
 *Last updated: March 30, 2026. This article reflects the CLARITY Act principled agreement as announced on March 27, 2026. Legislative details may change as the bill progresses through Congress. I'll update this article as new developments occur.*
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[Ledger Nano X Crypto Hardware Wallet](https://www.amazon.com/dp/B07M6R4NK3?tag=bloompath-20)** — The most trusted hardware wallet — keep your crypto safe offline with Bluetooth support
+- **[Cryptoassets by Chris Burniske & Jack Tatar](https://www.amazon.com/dp/1260026671?tag=bloompath-20)** — The definitive investor's guide to Bitcoin and the broader crypto asset class

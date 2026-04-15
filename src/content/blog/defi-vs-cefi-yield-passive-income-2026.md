@@ -302,3 +302,21 @@ Yes. In the United States, yield income from both DeFi and CeFi platforms is typ
   ]
 }
 </script>
+
+---
+
+## Further Reading
+
+- [DeFi Yield Farming: Beginner's Guide 2026](/blog/defi-yield-farming-beginners-guide-2026)
+- [DeFi Yield Strategy Post-Regulation 2026](/blog/defi-yield-strategy-post-regulation-2026)
+- [EigenLayer Restaking Guide 2026](/blog/eigenlayer-restaking-guide-2026)
+
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[Ledger Nano X Crypto Hardware Wallet](https://www.amazon.com/dp/B07M6R4NK3?tag=bloompath-20)** — The most trusted hardware wallet — keep your crypto safe offline with Bluetooth support
+- **[Cryptoassets by Chris Burniske & Jack Tatar](https://www.amazon.com/dp/1260026671?tag=bloompath-20)** — The definitive investor's guide to Bitcoin and the broader crypto asset class

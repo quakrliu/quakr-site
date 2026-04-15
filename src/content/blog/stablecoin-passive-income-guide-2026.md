@@ -339,3 +339,12 @@ The idle USDC in your wallet isn't earning anything. That's a choice — and it'
 ---
 
 *APY figures cited in this article reflect market conditions as of March 2026 and are subject to change. DeFi protocol rates are variable and not guaranteed. This article is for informational purposes only and does not constitute financial advice. Always conduct your own research before depositing funds into any protocol.*
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[Ledger Nano X Crypto Hardware Wallet](https://www.amazon.com/dp/B07M6R4NK3?tag=bloompath-20)** — The most trusted hardware wallet — keep your crypto safe offline with Bluetooth support
+- **[Cryptoassets by Chris Burniske & Jack Tatar](https://www.amazon.com/dp/1260026671?tag=bloompath-20)** — The definitive investor's guide to Bitcoin and the broader crypto asset class

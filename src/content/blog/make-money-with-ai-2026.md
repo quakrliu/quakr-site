@@ -547,3 +547,11 @@ If you're serious about building passive income — whether through AI, crypto, 
 - [How to Earn Passive Income with Crypto in 2026](/blog/how-to-earn-passive-income-with-crypto-2026) — the complete crypto side of the equation
 - [Staking Calculator](/tools/staking-calculator) — model your crypto + AI yield returns before committing capital
 - [Resources Hub](/resources) — curated tools, platforms, and learning materials
+
+---
+
+## Further Reading
+
+- [AI Passive Income Guide 2026](/blog/ai-passive-income-2026-guide)
+- [Best AI Side Hustles in 2026](/blog/best-ai-side-hustles-2026)
+- [Faceless AI YouTube Channel: How to Start & Earn](/blog/faceless-ai-youtube-channel-2026)

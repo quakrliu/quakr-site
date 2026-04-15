@@ -201,3 +201,21 @@ If you're tracking yield across multiple platforms, [CoinLedger](https://coinled
 ---
 
 *Next in this series: When the CLARITY Act passes (or fails), I'll publish a 48-hour breakdown of exactly how platforms respond and where yields move first. Follow along.*
+
+---
+
+## Further Reading
+
+- [Stablecoin Yield in 2026: Best Rates Compared](/blog/stablecoin-yield-2026)
+- [How to Earn Interest on Stablecoins in 2026](/blog/earn-interest-stablecoins-guide-2026)
+- [Yield-Bearing Stablecoins in 2026](/blog/yield-bearing-stablecoins-2026)
+
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[Ledger Nano X Crypto Hardware Wallet](https://www.amazon.com/dp/B07M6R4NK3?tag=bloompath-20)** — The most trusted hardware wallet — keep your crypto safe offline with Bluetooth support
+- **[Cryptoassets by Chris Burniske & Jack Tatar](https://www.amazon.com/dp/1260026671?tag=bloompath-20)** — The definitive investor's guide to Bitcoin and the broader crypto asset class

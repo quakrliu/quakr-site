@@ -196,3 +196,20 @@ Most REIT dividends are classified as ordinary income rather than qualified divi
 ## Disclaimer
 
 *This article is for informational purposes only and does not constitute financial or investment advice. All dividend yields cited are as of March 2026 and fluctuate — verify current rates before investing. Past distributions do not guarantee future payments. REIT ETFs carry interest rate risk, price volatility, and potential for distribution cuts. Consult a qualified financial advisor before making investment decisions.*
+
+---
+
+## Further Reading
+
+- [Best High-Dividend ETFs in 2026](/blog/best-high-dividend-etfs-2026)
+- [Best High-Dividend REITs Paying Monthly 2026](/blog/best-high-dividend-reits-monthly-2026)
+- [RWA Passive Income Guide 2026](/blog/rwa-passive-income-guide-2026)
+
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[The Intelligent Investor by Benjamin Graham](https://www.amazon.com/dp/0062312685?tag=bloompath-20)** — Warren Buffett's all-time favorite investing book — the bible of value investing

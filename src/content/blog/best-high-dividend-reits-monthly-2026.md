@@ -213,3 +213,20 @@ At a 6% blended yield, you'd need approximately $200,000 invested to generate $1
 ## Next in This Series
 
 **[Best High-Yield REIT ETFs for 2026: MORT vs. SRET vs. SPYD Compared](https://passiveyieldlab.com/blog/best-high-yield-reit-etf-2026)** — If you want monthly REIT income without picking individual stocks, these three ETFs are the most-discussed options. One yields 13%, one pays monthly globally, one is the boring choice that tends to win long-term.
+
+---
+
+## Further Reading
+
+- [Best High-Dividend ETFs in 2026](/blog/best-high-dividend-etfs-2026)
+- [Best High-Yield REIT ETFs in 2026](/blog/best-high-yield-reit-etf-2026)
+- [RWA Passive Income Guide 2026](/blog/rwa-passive-income-guide-2026)
+
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[The Intelligent Investor by Benjamin Graham](https://www.amazon.com/dp/0062312685?tag=bloompath-20)** — Warren Buffett's all-time favorite investing book — the bible of value investing

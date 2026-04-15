@@ -229,3 +229,12 @@ Passive income isn't lazy money — it's smart money. Your BTC can HODL *and* ea
 ---
 
 **Next in this series:** [Bitcoin Passive Income Strategies 2026](/blog/bitcoin-passive-income-strategies-2026) — the full playbook for earning yield across all BTC strategies, including CeFi options.
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[Ledger Nano X Crypto Hardware Wallet](https://www.amazon.com/dp/B07M6R4NK3?tag=bloompath-20)** — The most trusted hardware wallet — keep your crypto safe offline with Bluetooth support
+- **[The Bitcoin Standard by Saifedean Ammous](https://www.amazon.com/dp/1119473861?tag=bloompath-20)** — The must-read book on Bitcoin as a monetary system — every serious crypto investor should have this

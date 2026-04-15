@@ -267,3 +267,20 @@ Qualified dividends (common in SCHD) are taxed at 0–20% depending on income br
 ---
 
 *Yield data sourced from fund providers and financial data aggregators. All figures as of March 2026. APY and yield figures fluctuate based on market conditions and fund distributions — verify current yields before investing. This article is for informational purposes only and does not constitute financial advice.*
+
+---
+
+## Further Reading
+
+- [Best High-Dividend REITs Paying Monthly 2026](/blog/best-high-dividend-reits-monthly-2026)
+- [Best High-Yield REIT ETFs in 2026](/blog/best-high-yield-reit-etf-2026)
+- [RWA Passive Income Guide 2026](/blog/rwa-passive-income-guide-2026)
+
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[The Intelligent Investor by Benjamin Graham](https://www.amazon.com/dp/0062312685?tag=bloompath-20)** — Warren Buffett's all-time favorite investing book — the bible of value investing

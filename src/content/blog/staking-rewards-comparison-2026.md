@@ -432,3 +432,12 @@ Start with what you already hold. Stack the yield. Keep an eye on the lock-up pe
 ---
 
 *Disclaimer: All APY figures are estimates as of early 2026 and are subject to change. Crypto staking involves risk, including potential loss of staked funds due to slashing, smart contract vulnerabilities, or exchange insolvency. This article is for informational purposes only and does not constitute financial advice. Always do your own research before making investment decisions.*
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[Ledger Nano X Crypto Hardware Wallet](https://www.amazon.com/dp/B07M6R4NK3?tag=bloompath-20)** — The most trusted hardware wallet — keep your crypto safe offline with Bluetooth support
+- **[Cryptoassets by Chris Burniske & Jack Tatar](https://www.amazon.com/dp/1260026671?tag=bloompath-20)** — The definitive investor's guide to Bitcoin and the broader crypto asset class

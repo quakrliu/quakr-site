@@ -450,3 +450,21 @@ I believe newsletters are one of the most underrated passive income channels in 
 ---
 
 *This article contains affiliate links. If you sign up through my link, I may earn a commission at no extra cost to you. I only recommend tools I've personally tested and believe provide real value. This is not financial advice — do your own research before making any investment or business decision.*
+
+---
+
+## Further Reading
+
+- [7 Best Crypto Passive Income Strategies in 2026](/blog/best-crypto-passive-income-strategies-2026)
+- [How to Earn Passive Income with Crypto in 2026](/blog/how-to-earn-passive-income-with-crypto-2026)
+- [DeFi Yield vs Savings Account: Which Wins in 2026?](/blog/defi-yield-vs-savings-account-2026)
+
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[Ledger Nano X Crypto Hardware Wallet](https://www.amazon.com/dp/B07M6R4NK3?tag=bloompath-20)** — The most trusted hardware wallet — keep your crypto safe offline with Bluetooth support
+- **[Cryptoassets by Chris Burniske & Jack Tatar](https://www.amazon.com/dp/1260026671?tag=bloompath-20)** — The definitive investor's guide to Bitcoin and the broader crypto asset class

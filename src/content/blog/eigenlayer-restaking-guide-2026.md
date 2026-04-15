@@ -311,3 +311,12 @@ For existing ETH holders with clear risk tolerance and a long-term mindset, Eige
 ---
 
 *Risk Disclaimer: This article is for informational purposes only and does not constitute financial or investment advice. Restaking involves significant risks including loss of principal through slashing, smart contract vulnerabilities, and market volatility. APY figures cited are estimates as of March 2026 and are not guaranteed. Always do your own research and consult a financial advisor before committing funds. Never invest more than you can afford to lose.*
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[Ledger Nano X Crypto Hardware Wallet](https://www.amazon.com/dp/B07M6R4NK3?tag=bloompath-20)** — The most trusted hardware wallet — keep your crypto safe offline with Bluetooth support
+- **[Cryptoassets by Chris Burniske & Jack Tatar](https://www.amazon.com/dp/1260026671?tag=bloompath-20)** — The definitive investor's guide to Bitcoin and the broader crypto asset class

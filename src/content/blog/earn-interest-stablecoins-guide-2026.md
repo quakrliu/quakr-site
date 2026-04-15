@@ -449,3 +449,12 @@ The math is hard to argue with. The only question is how long you want to wait.
 - [How to Earn Passive Income with Crypto in 2026](/blog/how-to-earn-passive-income-with-crypto-2026)
 - [Crypto Passive Income Tax Guide 2026](/blog/crypto-passive-income-tax-guide-2026)
 - [Staking Calculator — Estimate Your Returns](/tools/staking-calculator)
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[Ledger Nano X Crypto Hardware Wallet](https://www.amazon.com/dp/B07M6R4NK3?tag=bloompath-20)** — The most trusted hardware wallet — keep your crypto safe offline with Bluetooth support
+- **[Cryptoassets by Chris Burniske & Jack Tatar](https://www.amazon.com/dp/1260026671?tag=bloompath-20)** — The definitive investor's guide to Bitcoin and the broader crypto asset class

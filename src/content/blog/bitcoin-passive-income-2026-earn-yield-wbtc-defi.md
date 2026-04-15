@@ -245,3 +245,12 @@ Start small. Test your setup. And for anything significant, keep your keys in ha
 ---
 
 *Not financial advice. Always do your own research before making investment decisions.*
+
+---
+
+## Recommended Resources
+
+*(Affiliate links — I earn a small commission at no cost to you)*
+
+- **[Ledger Nano X Crypto Hardware Wallet](https://www.amazon.com/dp/B07M6R4NK3?tag=bloompath-20)** — The most trusted hardware wallet — keep your crypto safe offline with Bluetooth support
+- **[The Bitcoin Standard by Saifedean Ammous](https://www.amazon.com/dp/1119473861?tag=bloompath-20)** — The must-read book on Bitcoin as a monetary system — every serious crypto investor should have this
