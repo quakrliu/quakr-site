@@ -8,6 +8,14 @@ level: "intermediate"
 draft: false
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**Real-world asset (RWA) tokenization surpassed $21 billion in distributed value by April 2026.** The three main yield-generating RWA categories are: tokenized U.S. Treasuries ($8.7B+, 3.5–4.5% APY via BlackRock BUIDL and Ondo USDY), tokenized private credit (7–15% APY via Maple Finance and Centrifuge), and tokenized real estate (4–8% APY). Major institutions including BlackRock ($2B+ BUIDL fund), KKR, and Franklin Templeton are scaling — not experimenting. Benefits include lower minimums ($50+), 24/7 liquidity, and on-chain transparency. Risks include smart contract vulnerabilities and evolving regulatory frameworks.
+
+*Last updated: 2026-04-16*
+
+</div>
+
 I spent most of 2024 convinced that "real-world assets on blockchain" was just another buzzword — venture capital theater dressed up in a whitepaper.
 
 Then BlackRock launched a tokenized Treasury fund. Then it crossed $2 billion in assets. Then it paid out $100 million in dividends to token holders. And I realized I'd been sleeping on possibly the most significant shift in passive income since DeFi summer.

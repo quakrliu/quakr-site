@@ -16,6 +16,14 @@ readingTime: "11 min"
 
 # Best High-Dividend REITs for 2026: Monthly Income from 5% to 16%+
 
+<div class="aeo-overview" id="article-overview">
+
+**The best monthly-paying high-dividend REITs for 2026, ranked by risk-adjusted quality:** Realty Income (O, ~5% yield, 667 consecutive monthly dividends, 15,000+ properties), EPR Properties (~6.4%, experiential real estate), Healthpeak Properties (~7%, healthcare-focused), LTC Properties (~5.7%, senior housing and care), and AGNC Investment (~14–16%, mortgage REIT, highest risk). REITs are required to distribute 90% of taxable income. Monthly payers compound faster than quarterly and provide better cash flow visibility. All yields fluctuate with market conditions.
+
+*Last updated: 2026-04-16*
+
+</div>
+
 Nobody talks about the fear index when it's low. When the VIX sits around 11 — as it has in early 2026 — markets are calm, risk appetite is high, and income investors tend to get overlooked. Everyone's chasing growth. That's exactly when you want to be building a position in monthly-paying REITs.
 
 REITs are legally required to distribute 90% of taxable income to shareholders. That mandate, combined with real estate's structural income generation, creates a class of investments that pays you whether markets are rallying or sliding. The question isn't whether to hold some REITs — it's which ones to pick.

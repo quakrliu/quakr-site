@@ -20,6 +20,14 @@ affiliateLinks:
     cta: "Try ElevenLabs for audio products"
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**Nine digital product categories are generating real passive income in 2026:** Notion templates ($500–$50,000+/year for top sellers), online courses ($500–$8,000/month on Teachable), printables and planners ($200–$8,000/month on Etsy), paid newsletters ($500–$3,800/month on Beehiiv), AI prompt packs ($7–$49 per pack on Gumroad), ebooks and guides ($17–$47 per sale), stock design/illustration packs ($15–$49 per pack), audio products via ElevenLabs, and content templates. AI tools have cut production time by 60–80%, making digital product creation accessible in 2–3 hours instead of 10+. Margins are typically 95%+ once created.
+
+*Last updated: 2026-04-16*
+
+</div>
+
 Every week someone discovers that Easlo made over $500,000 selling Notion templates. Or that Thomas Frank crossed $1 million. Or that some anonymous creator quietly earns $8,000 per month selling a planner on Etsy they made in an afternoon.
 
 The reaction is usually some combination of "that can't be real" and "why haven't I done this yet."

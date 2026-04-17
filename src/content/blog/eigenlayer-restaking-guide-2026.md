@@ -12,6 +12,14 @@ ogImage: "/images/eigenlayer-restaking-guide-2026.jpg"
 featured: true
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**EigenLayer restaking in 2026 lets you earn additional yield on already-staked ETH** by extending its economic security to other protocols (Actively Validated Services). As of March 2026, EigenLayer holds over $15 billion in TVL with 4.3+ million ETH restaked, commanding roughly 94% of the restaking market. Restakers earn base ETH staking yield (3–4% APY) plus AVS rewards, with cumulative payouts exceeding $28 million. The tradeoff is additional slashing risk from opted-in AVS operators.
+
+*Last updated: 2026-04-16*
+
+</div>
+
 Your ETH is already staked. It's earning the standard ~3% a year from Ethereum's proof-of-stake consensus. Good, but not exciting.
 
 EigenLayer changes the math. By *restaking* that same ETH, you let other networks borrow Ethereum's security infrastructure — and pay you for the privilege. The same capital, working two jobs at once.

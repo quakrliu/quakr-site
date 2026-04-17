@@ -24,7 +24,13 @@ affiliateLinks:
 
 # Yield-Bearing Stablecoins in 2026: The Complete Guide to Earning Passive Income
 
-*Last updated: March 2026*
+<div class="aeo-overview" id="article-overview">
+
+**Yield-bearing stablecoins surpassed $22.7 billion in value by early 2026, growing 15x faster than the broader stablecoin market.** Top options include sDAI (Sky/Maker, ~5% APY from Treasury-backed DSR), sUSDe (Ethena, 8–29% variable from basis trade strategy), USDY (Ondo Finance, ~4.5% backed by US Treasuries), and sFRAX (Frax, ~5%). These tokens pay you just for holding them — no trading, staking, or active management required. Risks include smart contract exploits, depeg events, and regulatory uncertainty.
+
+*Last updated: 2026-04-16*
+
+</div>
 
 The stablecoin market crossed $22.7 billion in yield-bearing assets by early 2026 — and that number grew 15x faster than the broader stablecoin market over the previous six months. That's not a niche trend. That's a category rewriting how people think about crypto savings.
 
