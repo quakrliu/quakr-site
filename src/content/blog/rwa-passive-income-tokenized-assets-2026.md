@@ -2,7 +2,7 @@
 title: "Real-World Assets (RWA) Passive Income: How Tokenized Assets Are Creating New Yield Opportunities in 2026"
 description: "RWA tokenization has surpassed $21B in value. Learn how tokenized Treasuries, private credit, and real estate are generating 3-15% APY for passive income investors in 2026."
 pubDate: "2026-04-16"
-category: "passive-income"
+category: "defi"
 tags: ["rwa", "tokenized-assets", "passive-income", "defi", "treasuries", "ondo", "blackrock", "maple-finance", "centrifuge", "yield"]
 level: "intermediate"
 draft: false
