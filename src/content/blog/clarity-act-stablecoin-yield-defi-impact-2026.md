@@ -18,6 +18,14 @@ affiliateLinks:
     cta: "Explore OKX Earn"
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**The CLARITY Act's passive stablecoin yield ban threatens Aave, Compound, and Lido. Here's the full breakdown of what's banned, what survives, and how to position your DeFi portfolio before the Senate votes.**
+
+*Last updated: 2026-04-16*
+
+</div>
+
 > **Disclaimer:** This article is for informational purposes only and does not constitute legal or financial advice. The CLARITY Act is proposed legislation — it has NOT been signed into law as of publication. Regulatory details may change. Always verify current status before making financial decisions.
 
 ---

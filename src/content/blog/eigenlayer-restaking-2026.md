@@ -17,6 +17,14 @@ image: "/og/eigenlayer-restaking-2026.png"
 imageAlt: "EigenLayer restaking 2026 guide — boost ETH yield from 3.5% to 6%"
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**Your stETH is earning ~3.3% on Lido. Here's how I boosted mine to ~5-6% using EigenLayer restaking — step-by-step guide, real risks, and what actually works in April 2026.**
+
+*Last updated: 2026-04-16*
+
+</div>
+
 I remember checking my Lido position from a warung in Canggu, half a coffee in, realizing my stETH had been quietly earning 3.3% for the past eight months. Not bad. But not great either.
 
 Then a guy at the table next to me — turned out to be a solo validator in Prague — mentioned EigenLayer in passing. "Same ETH, same risk profile, about 5-6%." I asked him to explain it like I'd just surfed three hours and my brain was half asleep. He did. I was restaking by the time I got back to the villa.

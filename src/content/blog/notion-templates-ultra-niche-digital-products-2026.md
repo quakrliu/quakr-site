@@ -13,6 +13,14 @@ schema:
   faqSchema: true
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**Ultra-niche Notion templates and print-on-demand products earn more with less competition. Here's the playbook — ADHD planners, pet POD, astrology merch, Amazon KDP — with real numbers and zero hype.**
+
+*Last updated: 2026-04-16*
+
+</div>
+
 Three weeks ago, from a café in Canggu, I was watching my Gumroad dashboard tick over while eating a $2 nasi goreng. Not a life-changing amount — $340 that week from two Notion templates I built in an afternoon. But enough to pay for a month of Bali living.
 
 The templates? One is a solar project planning workspace. The other is an ADHD daily system I built for myself and figured someone else might want.

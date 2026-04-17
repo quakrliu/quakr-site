@@ -15,6 +15,14 @@ aeo: 87
 wordCount: 2240
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**Anthropic's CMS error exposed Claude Mythos, its most powerful AI ever. Here's what leaked, what it means for cybersecurity, and how to prepare now.**
+
+*Last updated: 2026-04-16*
+
+</div>
+
 I was in a café in Canggu, half-watching a surf session through the window, when my phone blew up.
 
 Three separate group chats. Same Fortune article link. Same message: *"Anthropic just leaked their next model. This one's different."*

@@ -8,6 +8,14 @@ level: "intermediate"
 draft: false
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**Compare Jito, Marinade, Sanctum INF, and native Solana staking APYs for 2026. Real data on MEV yields, LST strategies, and which platform pays the most right now.**
+
+*Last updated: 2026-04-16*
+
+</div>
+
 I checked my Jito position from a warung in Ubud last Tuesday. 8.1% APY flashing on my screen, SOL price holding around $82. Coffee cost me $1.50. The yield from that SOL stack covered three months of Bali rent in one quarter.
 
 That's the thing about Solana staking in 2026 — the gap between strategies has gotten real. Not 0.1% differences. We're talking 6.2% native versus 8.5% with Sanctum INF. On a $120K position, that's an extra $2,700 a year just from choosing the right LST.

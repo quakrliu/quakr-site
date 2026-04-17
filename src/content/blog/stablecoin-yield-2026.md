@@ -13,6 +13,14 @@ ogImage: "/images/stablecoin-yield-2026.jpg"
 
 # Stablecoin Yield 2026: CLARITY Act Compromise Explained — What's Banned, What Survives, What to Do Now
 
+<div class="aeo-overview" id="article-overview">
+
+**The CLARITY Act is about to rewrite the rules on stablecoin yield. Here's what the April 2026 compromise actually bans, which DeFi platforms survive, and where to earn real yield today on Aave, Ethena USDe, and more.**
+
+*Last updated: 2026-04-16*
+
+</div>
+
 **Last Updated: April 3, 2026**
 
 Three hours after the Senate went on Easter recess, Coinbase's chief legal officer Paul Grewal posted what might be the most important crypto tweet of Q2 2026: the CLARITY Act stablecoin yield dispute is "99% resolved" and "very close" to final agreement.

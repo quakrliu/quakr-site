@@ -14,6 +14,14 @@ ogImage: "/og/best-high-yield-reit-etf-2026.jpg"
 affiliateLinks: []
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**MORT is yielding 12.6%+. SRET pays monthly at 7.87%. SPYD offers S&P 500 quality at 4.46%. Here's an honest comparison of the three most-discussed REIT ETFs for passive income in 2026.**
+
+*Last updated: 2026-04-16*
+
+</div>
+
 There's a type of investor who looks at a 12% yield and sees opportunity. There's another who looks at the same number and sees a warning sign. Both are right, which is exactly why choosing between MORT, SRET, and SPYD deserves more than a quick yield comparison.
 
 These three REIT ETFs keep showing up in passive income conversations in 2026, often lumped together as "high yield real estate income funds." They're not interchangeable. They hold different assets, carry different risks, and serve different goals. Here's a genuine breakdown — yield, mechanics, risks, and who each one actually makes sense for.

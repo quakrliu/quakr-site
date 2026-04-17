@@ -12,6 +12,14 @@ ogImage: "/images/og/steth-aave-yield-stacking-2026.png"
 featured: true
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**A step-by-step guide to using Lido's stETH and Aave's Prime instance to stack ETH yields beyond 6% APY — including real numbers, exact leverage math, risks, and a beginner-friendly setup walkthrough.**
+
+*Last updated: 2026-04-16*
+
+</div>
+
 Last Tuesday morning in Canggu, I checked my phone before even making coffee.
 
 Not for social media. Not for news. I was checking my stETH position on Aave — a habit I'd built after a rough Q4 2023 when I was too passive about a leveraged stablecoin position and got partially liquidated. Learned that one the hard way.

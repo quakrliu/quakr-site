@@ -8,6 +8,14 @@ level: "intermediate"
 draft: false
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**Already holding Lido stETH? Here's exactly how to restake it on EigenLayer — step-by-step guide to boost your ETH yield from 2.5% to 5-7%, risks included.**
+
+*Last updated: 2026-04-16*
+
+</div>
+
 Last Tuesday I pulled up my Lido dashboard and stared at the number: **2.47% APY**.
 
 My stETH had been sitting there for eight months, quietly earning its keep. Respectable. Boring. And according to half the DeFi Twitter I follow, completely leaving yield on the table.

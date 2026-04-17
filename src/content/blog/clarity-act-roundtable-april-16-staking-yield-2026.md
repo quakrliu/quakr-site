@@ -210,6 +210,66 @@ I'll be watching the April 16 roundtable closely. If there's material new inform
 
 *APY figures and market data as of April 14, 2026. All rates fluctuate. This is what I do — not what you should do.*
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does the CLARITY Act affect Ethereum staking rewards?",
+      "datePublished": "2026-04-14",
+      "dateModified": "2026-04-16",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Under the current bill text and the SEC's existing interpretation, native proof-of-stake validation — including ETH staking via Lido, solo staking, or liquid staking — is explicitly categorized as network validation activity, not a securities offering. Your staking rewards are not targeted by the legislation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the SEC roundtable on April 16?",
+      "datePublished": "2026-04-14",
+      "dateModified": "2026-04-16",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's part of the SEC Crypto Task Force's ongoing roundtable series, run under the \"Spring Sprint Toward Crypto Clarity\" initiative. The roundtable brings together industry participants and regulators to discuss implementation frameworks. It signals institutional readiness ahead of a potential Senate floor vote on CLARITY."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are Polymarket odds for CLARITY Act passing?",
+      "datePublished": "2026-04-14",
+      "dateModified": "2026-04-16",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of April 14, 2026, Polymarket shows approximately 59% probability that the CLARITY Act becomes law in 2026. This has fluctuated between 42% and 72% throughout 2026 depending on deal status. Check Polymarket directly for the most current odds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will stablecoin yield be completely banned?",
+      "datePublished": "2026-04-14",
+      "dateModified": "2026-04-16",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not completely. The Tillis-Alsobrooks compromise bans passive balance yield (earning interest just for holding a stablecoin) but explicitly allows activity-based rewards tied to transactions, liquidity provision, and platform usage. The exact boundary between these categories will depend on final regulatory text and enforcement guidance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When could the CLARITY Act become law?",
+      "datePublished": "2026-04-14",
+      "dateModified": "2026-04-16",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The realistic Senate floor vote window is May through June 2026, assuming the Banking Committee completes its markup and the bill gets sufficient support for cloture (60 votes). The April 16 roundtable is a signaling event, not the vote itself."
+      }
+    }
+  ]
+}
+</script>
+
 ---
 
 ## Recommended Resources

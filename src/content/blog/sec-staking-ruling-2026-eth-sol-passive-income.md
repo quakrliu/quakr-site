@@ -23,6 +23,14 @@ affiliateLinks:
     cta: "Track staking taxes with CoinLedger"
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**The SEC/CFTC joint ruling on March 17, 2026 officially removed legal risk from crypto staking. Here's what changed, which platforms now make sense, and the real APYs you can expect from ETH and SOL staking today.**
+
+*Last updated: 2026-04-16*
+
+</div>
+
 For years, anyone earning yield on their ETH or SOL through staking had a quiet worry in the back of their mind: *is the SEC going to come after this?* That worry is now officially gone.
 
 On March 17, 2026, the SEC and CFTC issued a landmark joint interpretation that classified 16 major cryptocurrencies — including ETH, SOL, BTC, and XRP — as "digital commodities," not securities. More importantly for passive income seekers: the ruling explicitly stated that **all four staking models** (solo, self-custodial, custodial, and liquid) fall **outside securities regulation**.

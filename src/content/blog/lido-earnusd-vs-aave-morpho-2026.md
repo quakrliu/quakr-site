@@ -12,6 +12,14 @@ ogImage: "/images/og/lido-earnusd-vs-aave-morpho-2026.png"
 featured: true
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**Lido just launched EarnUSD, a multi-strategy stablecoin vault targeting 4–7% APY. We compare it head-to-head against Aave V3 and Morpho on yield, safety, and ease of use — so you can decide where your USDC should actually sit.**
+
+*Last updated: 2026-04-16*
+
+</div>
+
 Your USDC is sitting somewhere right now. The question is whether it's working hard enough.
 
 A bank savings account pays you roughly 0.5%. The US 3-month Treasury yield stands at approximately 3.67% (as of March 2026). Meanwhile, three DeFi protocols are competing for your stablecoin deposits — and one of them launched just 18 days ago.

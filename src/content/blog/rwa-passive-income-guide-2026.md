@@ -29,6 +29,14 @@ seoDescription: "How tokenized real-world assets — US Treasuries, private cred
 draft: false
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**How tokenized real-world assets — US Treasuries, private credit, and real estate — generate yield on-chain. Platforms, APYs, risks, and how to get started.**
+
+*Last updated: 2026-04-16*
+
+</div>
+
 Something changed in early 2026 that most crypto investors missed entirely.
 
 The New York Stock Exchange — founded in 1792, the oldest major exchange in America — signed an agreement with Securitize to build a tokenized securities platform. Not a pilot program. Not a white paper. A formal partnership with a timeline targeting 24/7 trading and T+0 settlement by late 2026.

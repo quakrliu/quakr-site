@@ -33,6 +33,14 @@ faqItems:
     answer: "There is no minimum for LST restaking (stETH, rETH, etc.). Native restaking requires a full 32 ETH Ethereum validator. Note that mainnet gas costs can reduce net yield for very small positions."
 ---
 
+<div class="aeo-overview" id="article-overview">
+
+**A complete guide to EigenLayer restaking — how it works, current APY rates, step-by-step tutorial for native and LST restaking, risks, and whether the extra yield is worth it in 2026.**
+
+*Last updated: 2026-04-16*
+
+</div>
+
 Your ETH is already staked. It's earning the standard ~3% a year from Ethereum's proof-of-stake consensus. Good, but not exciting.
 
 EigenLayer changes the math. By *restaking* that same ETH, you let other networks borrow Ethereum's security infrastructure — and pay you for the privilege. The same capital, working two jobs at once.
@@ -289,6 +297,76 @@ For existing ETH holders with clear risk tolerance and a long-term mindset, Eige
 ---
 
 *Risk Disclaimer: This article is for informational purposes only and does not constitute financial or investment advice. Restaking involves significant risks including loss of principal through slashing, smart contract vulnerabilities, and market volatility. APY figures cited are estimates as of March 2026 and are not guaranteed. Always do your own research and consult a financial advisor before committing funds. Never invest more than you can afford to lose.*
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is my ETH safe in EigenLayer?",
+      "datePublished": "2026-03-31",
+      "dateModified": "2026-04-16",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EigenLayer is non-custodial — you retain control of your assets via your wallet. However, you accept slashing risk when you restake. Your ETH is not \"safe\" in the way a savings account is safe. It's an active DeFi position with meaningful risk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the minimum amount to restake?",
+      "datePublished": "2026-03-31",
+      "dateModified": "2026-04-16",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For LST restaking, there's no minimum — you can restake any amount of stETH or rETH. For native restaking, you need a full 32 ETH validator. Note that small positions on Ethereum mainnet will see gas costs eat into returns significantly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I unstake any time?",
+      "datePublished": "2026-03-31",
+      "dateModified": "2026-04-16",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can initiate a withdrawal, but it's not instant. Expect Ethereum's standard unstaking queue (typically days, sometimes weeks during congestion) plus any additional delays for ongoing slashing resolutions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What chains does EigenLayer support?",
+      "datePublished": "2026-03-31",
+      "dateModified": "2026-04-16",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EigenLayer's core protocol is on Ethereum mainnet. Some AVSs may have components on Layer 2 networks, but the base restaking happens on L1."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is EigenCloud?",
+      "datePublished": "2026-03-31",
+      "dateModified": "2026-04-16",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "EigenCloud is the brand under which EigenLayer's AVS ecosystem now operates, reflecting its expansion beyond simple restaking to a broader decentralized cloud computing infrastructure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need the EIGEN token to restake?",
+      "datePublished": "2026-03-31",
+      "dateModified": "2026-04-16",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. You restake ETH or LSTs. EIGEN is a separate token used for governance and for securing intersubjective AVSs. Holding EIGEN is optional."
+      }
+    }
+  ]
+}
+</script>
 
 ---
 

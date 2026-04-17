@@ -210,6 +210,66 @@ No. The CLARITY Act explicitly excludes proof-of-stake validation rewards from i
 
 That's your call, not mine — I'm not a financial advisor. What I personally did: reduce CeFi stablecoin yield exposure and increase ETH staking allocation. If the bill passes, CeFi stablecoin yield products get an 18-month transition window before they need to restructure.
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Will stablecoin yield be banned in the US under the CLARITY Act?",
+      "datePublished": "2026-04-15",
+      "dateModified": "2026-04-16",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The CLARITY Act as currently written bans passive interest on stablecoin balances — yield paid simply for holding USDC or USDT. It does NOT ban activity-based rewards tied to transactions or protocol participation. DeFi yield is in a regulatory grey zone until implementing rules are written."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What did the White House CEA study find about stablecoin deposit flight?",
+      "datePublished": "2026-04-15",
+      "dateModified": "2026-04-16",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Council of Economic Advisers released a study in April 2026 finding that banning stablecoin yield under the CLARITY Act's provisions would increase bank lending by only 0.02% (~$2.1 billion). This contradicts the Treasury's earlier estimate of $6.6 trillion in potential deposit flight if stablecoin yield is permitted."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When is the CLARITY Act Senate Banking Committee markup?",
+      "datePublished": "2026-04-15",
+      "dateModified": "2026-04-16",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The markup is targeted for late April 2026. As of April 15, Senate Banking Committee Chairman Tim Scott has not announced a specific date. The window closes if the bill isn't advanced before May, which would likely push it to after the November 2026 midterms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is ETH staking affected by the CLARITY Act?",
+      "datePublished": "2026-04-15",
+      "dateModified": "2026-04-16",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The CLARITY Act explicitly excludes proof-of-stake validation rewards from its stablecoin yield provisions. Native staking on ETH, SOL, DOT, and other PoS networks is protected regardless of how the bill's stablecoin provisions are resolved."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I move my USDC yield positions now?",
+      "datePublished": "2026-04-15",
+      "dateModified": "2026-04-16",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "That's your call, not mine — I'm not a financial advisor. What I personally did: reduce CeFi stablecoin yield exposure and increase ETH staking allocation. If the bill passes, CeFi stablecoin yield products get an 18-month transition window before they need to restructure."
+      }
+    }
+  ]
+}
+</script>
+
 ---
 
 ## Further Reading
