@@ -170,6 +170,22 @@ Similarly, DeFi yield strategies on L2 are currently in a sweet spot. Fees are a
 
 Coinbase, Figment, and Kiln have already consolidated thousands of validators. Lido is on track for full optimization by mid-2026. If institutional players are moving this aggressively, it's worth asking whether your staking setup is keeping pace.
 
+### What Happens If You Wait?
+
+Let's put numbers to the cost of inaction. If you're running 10 separate 32-ETH validators and delaying consolidation:
+
+| Scenario | Monthly Cost | Annual Impact |
+|----------|-------------|---------------|
+| 10 separate validators (current) | ~$150–300 server costs | $1,800–3,600 in overhead |
+| 1 consolidated validator (post EIP-7251) | ~$15–30 server costs | $180–360 in overhead |
+| **Savings from consolidating** | **~$135–270/month** | **~$1,620–3,240/year** |
+
+That's money you're leaving on the table every month you delay — not including the compounding rewards you're missing on ETH above 32.
+
+### Who's Already Moving?
+
+The institutional migration is well underway. BlackRock launched its staked ETH ETF (ETHB) in March 2026 with $107M seed funding, crossing $250M AUM within a week. The Ethereum Foundation itself began staking 70,000 ETH. Over 430,000 validators have already consolidated under EIP-7251, and that number grows daily. When BlackRock, Coinbase, and the Ethereum Foundation are all staking aggressively, it sends a clear signal about where institutional confidence lies.
+
 ## Practical Steps: What Should You Do Now?
 
 ### If You're Already Staking
