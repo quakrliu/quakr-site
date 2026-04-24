@@ -1,0 +1,37 @@
+name: Discord Notify
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/content/blog/*.md'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect new article
+        id: detect
+        run: |
+          FILE=$(git diff --diff-filter=A --name-only HEAD~1 HEAD -- 'src/content/blog/*.md' | head -1)
+          echo "file=$FILE" >> "$GITHUB_OUTPUT"
+
+      - name: Send huang-zhong report
+        if: steps.detect.outputs.file != ''
+        run: |
+          FILE="${{ steps.detect.outputs.file }}"
+          TITLE=$(grep -m1 '^title:' "$FILE" | sed 's/title: *"\?\(.*\)"\?/\1/')
+          MSG="## PYL 新文章已部署\n- ${TITLE}\n- 檔案: ${FILE}\n- Cloudflare Pages 自動部署中"
+          PAYLOAD=$(jq -n \
+            --arg channel "huang-zhong" \
+            --arg content "$MSG" \
+            '{channel: $channel, content: $content}')
+          curl -s -X POST \
+            -H "Content-Type: application/json" \
+            -H "X-Auth-Token: ${{ secrets.DISCORD_RELAY_TOKEN }}" \
+            -d "$PAYLOAD" \
+            "${{ secrets.DISCORD_RELAY_URL }}"
