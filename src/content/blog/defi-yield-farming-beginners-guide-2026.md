@@ -493,6 +493,7 @@ The pool is generating yield right now. The only question is whether you're in i
 - [DeFi vs CeFi Yield: Which Earns More?](/blog/defi-vs-cefi-yield-passive-income-2026)
 - [DeFi Yield Strategy Post-Regulation 2026](/blog/defi-yield-strategy-post-regulation-2026)
 - [EigenLayer Restaking Guide 2026](/blog/eigenlayer-restaking-guide-2026)
+- [Pendle Finance 2026: How to Lock In Fixed APY Before DeFi Rates Collapse](/blog/pendle-finance-fixed-yield-guide-2026)
 
 
 ---
