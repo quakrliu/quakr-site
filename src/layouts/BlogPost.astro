@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import AdSense from '../components/AdSense.astro';
 import { getCollection } from 'astro:content';
 import { generateArticleSchema } from '@/utils/seo';
 
@@ -149,9 +150,19 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     </div>
   </header>
 
+  <!-- Ad: After header, before content -->
+  <div class="post-content">
+    <AdSense format="auto" />
+  </div>
+
   <article class="post-content">
     <slot />
   </article>
+
+  <!-- Ad: After content, before lead magnet -->
+  <div class="post-content">
+    <AdSense format="auto" />
+  </div>
 
   <!-- Bear Market Survival Kit Lead Magnet CTA -->
   <div class="post-content">
@@ -310,6 +321,11 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
       border: none !important;
     }
   </style>
+
+  <!-- Ad: Before related articles -->
+  <div class="post-content">
+    <AdSense format="auto" />
+  </div>
 
   <!-- Related Articles -->
   {relatedPosts.length > 0 && (
