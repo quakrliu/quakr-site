@@ -30,7 +30,9 @@ RWA yield means earning returns from real-world financial instruments -- U.S. Tr
 
 This matters because DeFi’s original yield model (token farms, liquidity mining) was mostly inflationary. The new model -- RWA yield -- is backed by something the Fed controls: interest rates. Total on-chain RWA value hit roughly $26 billion by April 2026, up from $6.6 billion twelve months earlier. That is a 300% expansion in one year.
 
-The shift is real. And the options have multiplied fast.
+The shift is real. And the options have multiplied fast. If you are still earning 0.5% in a savings account while this is happening, you are leaving money on the table every single day.
+
+Here is the thing that most people miss: this window is rate-dependent. When the Fed eventually cuts, these yields compress. The people who set up their RWA stack now lock in today's rates. The people who wait will get a smaller slice of a shrinking pie.
 
 **One-liner:** RWA yield is DeFi growing up -- trading meme APYs for boring-but-real returns.
 
@@ -97,6 +99,16 @@ Here is the table I wish existed when I was trying to figure this out.
 *All APYs fluctuate. Data collected May 11, 2026. Not financial advice -- this is what I track, not what you should do.*
 
 The honest takeaway from this table: Franklin Templeton BENJI is the most underrated product here. 4.3-4.6% APY, $20 minimum, US retail access, T+1 liquidity. It runs on Stellar and Polygon rather than Ethereum mainnet, but for clean Treasury yield it beats almost everything else at this price point.
+
+To put this in perspective: 42,000+ wallets hold BUIDL and BENJI combined. Over $26 billion in real capital has already moved on-chain for RWA yield. This is not experimental anymore -- Goldman Sachs, JP Morgan, and Fidelity are all building tokenized fund infrastructure alongside BlackRock. When the biggest names in finance validate a model, the early retail movers tend to benefit most.
+
+**Quick math on a $10K position:**
+- BUIDL at 3.44%: $344/year (but you cannot access it)
+- BENJI at 4.5%: $450/year (you can, starting at $20)
+- Aave USDC at 3.29%: $329/year (fully liquid)
+- Pendle eACRED PT at 8%: $800/year (locked until July 2, 2026 maturity)
+
+Now imagine layering all three accessible options. A $30K stack split 40/30/30 across Aave, BENJI, and Pendle gives you roughly $1,500-$1,700/year in yield -- from assets backed by actual economic activity, not token printers. That is not life-changing money. But it is money that works while you sleep, and it compounds.
 
 ---
 
@@ -196,6 +208,8 @@ BUIDL is institutional infrastructure. What it tells us -- the benchmark -- is t
 Passive income is not lazy money -- it is freedom money. The game in 2026 is not picking the single best yield. It is building a stack where no single failure wrecks you, the total yield beats your cost of living, and you spend more time in the water than on the dashboard.
 
 I am not an expert. I am just a dad with a spreadsheet and a surfboard. But the spreadsheet is working.
+
+One more thing: DTCC -- the world's largest securities settlement system -- is launching tokenized asset trading infrastructure in July 2026. When that happens, the bridge between TradFi yield and DeFi yield essentially disappears. The people who already understand how both sides work will have a serious edge. You do not need to be first. But you definitely do not want to be last.
 
 ---
 
