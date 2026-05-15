@@ -2,7 +2,7 @@
 title: "Tokenized Treasury USYC Yield Guide 2026: Earn T-Bill Returns On-Chain Without a $5M Minimum"
 description: "USYC by Hashnote pays ~3.93% APY on US T-bills with 24/7 USDC redemption. A no-fluff breakdown of how it works, who can access it, and how it stacks up against BUIDL, USDY, and BENJI."
 pubDate: "2026-05-15"
-category: "rwa"
+category: "defi"
 tags: ["usyc", "tokenized-treasuries", "hashnote", "rwa", "passive-income", "defi-yield", "stablecoin-yield"]
 level: "intermediate"
 draft: false
