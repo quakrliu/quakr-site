@@ -278,6 +278,8 @@ Staking yields vary widely based on validator performance, but the near-instant 
 
 **Reality check:** Sui is still a young network. Smart contract ecosystems can have undiscovered vulnerabilities. If you stake here, treat it as a speculative position, not a core holding.
 
+> **Deeper read:** [SUI Staking in 2026: What $143M in Institutional Bets Means for Yield Hunters](/blog/sui-staking-passive-income-guide-2026) — a step-by-step breakdown of SUI delegation, validator selection, and whether institutional momentum actually helps retail yield seekers.
+
 ---
 
 <div class="evidence-panel" id="evidence-staking-market-2026">
