@@ -335,6 +335,7 @@ The idle USDC in your wallet isn't earning anything. That's a choice — and it'
 - [How to Earn Interest on Stablecoins in 2026](/blog/earn-interest-stablecoins-guide-2026/) — Beat your savings account with USDT, USDC & DAI
 - [Yield-Bearing Stablecoins Compared](/blog/yield-bearing-stablecoins-comparison-2026/) — USDY vs sDAI vs USDe vs USDM head-to-head
 - [Best Stablecoin Yield Strategies After the CLARITY Act](/blog/best-stablecoin-yield-after-clarity-act-2026/) — What still works post-regulation
+- [Compound in 2026: I Pulled My USDC When the APY Dropped to 0.26%](/blog/compound-protocol-2026-why-i-moved-my-usdc) — What killed Compound's yield and where to move instead
 
 ---
 
