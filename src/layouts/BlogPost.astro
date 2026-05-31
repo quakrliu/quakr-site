@@ -18,6 +18,7 @@ interface Props {
   ogImage?: string;
   level?: 'beginner' | 'intermediate' | 'advanced';
   trending?: boolean;
+  author?: string;
   extraSchemas?: string[];
 }
 
@@ -35,6 +36,7 @@ const {
   ogImage,
   level,
   trending = false,
+  author = "Johnny Liu",
   extraSchemas = [],
 } = Astro.props;
 
@@ -147,6 +149,9 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
         </span>
       )}
       <span>{readingTime} min read</span>
+    </div>
+    <div class="byline">
+      By <strong>{author}</strong>
     </div>
   </header>
 

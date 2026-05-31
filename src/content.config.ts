@@ -35,6 +35,7 @@ const blog = defineCollection({
     canonicalUrl: z.string().url().optional(),
     ogImage: z.string().optional(),
     draft: z.boolean().default(false),
+    author: z.string().default('Johnny Liu'),
     level: z.enum(['beginner', 'intermediate', 'advanced']).optional(),
     trending: z.boolean().default(false),
     faqItems: z
