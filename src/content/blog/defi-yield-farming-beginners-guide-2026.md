@@ -490,6 +490,7 @@ The pool is generating yield right now. The only question is whether you're in i
 
 ## Further Reading
 
+- [DeFi Staking Risk Tiers 2026: Ranking Aave, Lido, and EigenLayer by Safety](/blog/defi-staking-risk-tiers-2026-aave-lido-eigenlayer)
 - [DeFi vs CeFi Yield: Which Earns More?](/blog/defi-vs-cefi-yield-passive-income-2026)
 - [DeFi Yield Strategy Post-Regulation 2026](/blog/defi-yield-strategy-post-regulation-2026)
 - [EigenLayer Restaking Guide 2026](/blog/eigenlayer-restaking-guide-2026)
