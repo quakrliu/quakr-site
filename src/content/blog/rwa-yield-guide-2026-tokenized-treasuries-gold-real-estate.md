@@ -5,7 +5,7 @@ pubDate: "2026-06-05"
 category: "defi"
 tags: ["rwa", "tokenized-assets", "passive-income", "defi", "yield", "blackrock-buidl", "tokenized-gold"]
 level: "intermediate"
-image: "/og/rwa-yield-guide-2026-tokenized-treasuries-gold-real-estate.png"
+image: "/og/defi.svg"
 draft: false
 ---
 
