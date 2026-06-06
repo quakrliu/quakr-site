@@ -5,7 +5,7 @@ pubDate: "2026-06-06"
 category: "staking"
 tags: ["chainlink", "LINK", "CCIP", "AWS", "enterprise blockchain", "passive income", "staking", "tokenization"]
 level: "intermediate"
-image: "/og/chainlink-aws-marketplace-ccip-enterprise-web3-2026.png"
+image: "/og/staking.svg"
 draft: false
 ---
 
