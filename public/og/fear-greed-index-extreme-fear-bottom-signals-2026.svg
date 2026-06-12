@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5F0EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bottomLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1B3A5C;stop-opacity:0" />
+      <stop offset="30%" style="stop-color:#1B3A5C;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#DC2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:0" />
+    </linearGradient>
+    <linearGradient id="fearGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#DC2626;stop-opacity:0.10" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <g opacity="0.04" stroke="#1B3A5C" stroke-width="1">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <circle cx="1060" cy="200" r="110" fill="url(#fearGrad)" stroke="none"/>
+  <circle cx="1060" cy="200" r="110" fill="none" stroke="#DC2626" stroke-width="1.5" opacity="0.2"/>
+  <circle cx="1060" cy="200" r="75" fill="none" stroke="#DC2626" stroke-width="1" opacity="0.15"/>
+  <text x="1060" y="190" font-family="'Arial Black', Arial, sans-serif" font-size="52" font-weight="900" fill="#DC2626" text-anchor="middle" opacity="0.6">11</text>
+  <text x="1060" y="218" font-family="Arial, sans-serif" font-size="13" fill="#DC2626" text-anchor="middle" opacity="0.7" letter-spacing="1">EXTREME FEAR</text>
+
+  <circle cx="120" cy="540" r="100" fill="none" stroke="#1B3A5C" stroke-width="1" opacity="0.06"/>
+
+  <rect x="60" y="155" width="4" height="320" rx="2" fill="#1B3A5C" opacity="0.7"/>
+
+  <text x="80" y="100" font-family="'Arial Black', Arial, sans-serif" font-size="32" font-weight="900" fill="#1B3A5C" letter-spacing="1">PASSIVE YIELD LAB</text>
+  <text x="80" y="122" font-family="Arial, sans-serif" font-size="13" fill="#64748B" letter-spacing="4">EARN MORE. WORK LESS.</text>
+  <line x1="80" y1="135" x2="460" y2="135" stroke="#1B3A5C" stroke-width="1" opacity="0.3"/>
+
+  <rect x="80" y="153" width="185" height="30" rx="4" fill="#DC2626" opacity="0.12"/>
+  <rect x="80" y="153" width="185" height="30" rx="4" fill="none" stroke="#DC2626" stroke-width="1.5" opacity="0.7"/>
+  <text x="172" y="173" font-family="Arial, sans-serif" font-size="13" fill="#DC2626" text-anchor="middle" letter-spacing="2" font-weight="700">MARKET ANALYSIS · 2026</text>
+
+  <text x="80" y="248" font-family="'Arial Black', Arial, sans-serif" font-size="52" font-weight="900" fill="#1E293B" letter-spacing="-1">Fear &amp; Greed Index</text>
+  <text x="80" y="312" font-family="'Arial Black', Arial, sans-serif" font-size="52" font-weight="900" fill="#1B3A5C" letter-spacing="-1">at 11: What History</text>
+  <text x="80" y="376" font-family="'Arial Black', Arial, sans-serif" font-size="52" font-weight="900" fill="#DC2626" letter-spacing="-1">Says About the Bottom</text>
+
+  <text x="80" y="420" font-family="Arial, sans-serif" font-size="20" fill="#64748B" letter-spacing="0.3">Bitcoin ETF $4.4B outflow · 3 extreme fear episodes analyzed</text>
+
+  <rect x="80" y="447" width="130" height="50" rx="6" fill="#FEE2E2" opacity="0.9"/>
+  <text x="145" y="467" font-family="'Arial Black', Arial, sans-serif" font-size="22" fill="#DC2626" text-anchor="middle" font-weight="900">$4.4B</text>
+  <text x="145" y="487" font-family="Arial, sans-serif" font-size="11" fill="#DC2626" text-anchor="middle">ETF outflows</text>
+
+  <rect x="225" y="447" width="130" height="50" rx="6" fill="#FEF3C7" opacity="0.9"/>
+  <text x="290" y="467" font-family="'Arial Black', Arial, sans-serif" font-size="22" fill="#92400E" text-anchor="middle" font-weight="900">13 Days</text>
+  <text x="290" y="487" font-family="Arial, sans-serif" font-size="11" fill="#92400E" text-anchor="middle">consecutive outflow</text>
+
+  <rect x="370" y="447" width="140" height="50" rx="6" fill="#DCFCE7" opacity="0.9"/>
+  <text x="440" y="467" font-family="'Arial Black', Arial, sans-serif" font-size="18" fill="#166534" text-anchor="middle" font-weight="900">+$15K BTC</text>
+  <text x="440" y="487" font-family="Arial, sans-serif" font-size="11" fill="#166534" text-anchor="middle">last extreme fear</text>
+
+  <rect x="80" y="515" width="145" height="36" rx="18" fill="#1B3A5C" opacity="0.1"/>
+  <rect x="80" y="515" width="145" height="36" rx="18" fill="none" stroke="#1B3A5C" stroke-width="1.5" opacity="0.5"/>
+  <text x="152" y="538" font-family="Arial, sans-serif" font-size="12" fill="#1B3A5C" text-anchor="middle" letter-spacing="2" font-weight="700">BTC · PORTFOLIO</text>
+
+  <text x="1140" y="600" font-family="Arial, sans-serif" font-size="20" fill="#1B3A5C" text-anchor="end" opacity="0.8" letter-spacing="1">passiveyieldlab.com</text>
+
+  <rect x="0" y="618" width="1200" height="4" fill="url(#bottomLine)"/>
+</svg>
