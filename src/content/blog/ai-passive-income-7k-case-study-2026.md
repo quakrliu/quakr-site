@@ -5,7 +5,7 @@ pubDate: "2026-06-20"
 category: "ai-income"
 tags: ["ai-passive-income", "make-automation", "beehiiv", "elevenlabs", "passive-income-2026", "ai-income-case-study"]
 level: "intermediate"
-image: "/og/ai-passive-income-7k-case-study-2026.png"
+image: "/og/ai-passive-income-7k-case-study-2026.svg"
 draft: false
 ---
 
