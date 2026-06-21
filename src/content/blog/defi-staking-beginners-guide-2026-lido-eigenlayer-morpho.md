@@ -5,7 +5,7 @@ pubDate: "2026-06-21"
 category: "defi"
 tags: ["lido", "eigenlayer", "morpho", "ethereum", "staking", "defi", "passive-income", "beginners"]
 level: "intermediate"
-image: "/og/defi-staking-beginners-guide-2026-lido-eigenlayer-morpho.png"
+image: "/og/defi-staking-beginners-guide-2026-lido-eigenlayer-morpho.svg"
 draft: false
 ---
 

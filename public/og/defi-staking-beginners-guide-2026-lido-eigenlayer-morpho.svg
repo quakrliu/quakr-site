@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#F5F0EB"/>
+  <!-- Header bar -->
+  <rect x="0" y="0" width="1200" height="90" fill="#1B3A5C"/>
+  <!-- Brand name -->
+  <text x="40" y="58" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF">PassiveYieldLab.com</text>
+  <!-- Category tag -->
+  <rect x="40" y="115" width="175" height="42" fill="#1B3A5C" rx="4"/>
+  <text x="55" y="142" font-family="Arial, sans-serif" font-size="22" fill="#FFFFFF">DeFi · 2026</text>
+  <!-- Main title line 1 -->
+  <text x="40" y="215" font-family="Arial, sans-serif" font-size="46" font-weight="bold" fill="#1B3A5C">DeFi Staking 2026:</text>
+  <!-- Main title line 2 -->
+  <text x="40" y="272" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#1B3A5C">Lido vs EigenLayer vs Morpho</text>
+  <!-- Subtitle -->
+  <text x="40" y="325" font-family="Arial, sans-serif" font-size="28" fill="#555555">The $1K Beginner's Framework</text>
+  <!-- Divider -->
+  <rect x="40" y="352" width="760" height="3" fill="#1B3A5C"/>
+  <!-- Stats row -->
+  <text x="40" y="392" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B3A5C">Lido</text>
+  <text x="40" y="425" font-family="Arial, sans-serif" font-size="20" fill="#555555">~3.3% APY</text>
+  <text x="320" y="392" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B3A5C">EigenLayer</text>
+  <text x="320" y="425" font-family="Arial, sans-serif" font-size="20" fill="#555555">~7% APY</text>
+  <text x="600" y="392" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B3A5C">Morpho</text>
+  <text x="600" y="425" font-family="Arial, sans-serif" font-size="20" fill="#555555">$175M Raise</text>
+  <!-- Tagline -->
+  <text x="40" y="490" font-family="Arial, sans-serif" font-size="22" fill="#888888" font-style="italic">Passive income isn't lazy money — it's freedom money.</text>
+  <!-- Footer bar -->
+  <rect x="0" y="570" width="1200" height="60" fill="#1B3A5C"/>
+  <text x="40" y="607" font-family="Arial, sans-serif" font-size="22" fill="#CCDDEE">passiveyieldlab.com · Ethan Moore</text>
+  <text x="950" y="607" font-family="Arial, sans-serif" font-size="22" fill="#CCDDEE">June 2026</text>
+</svg>
