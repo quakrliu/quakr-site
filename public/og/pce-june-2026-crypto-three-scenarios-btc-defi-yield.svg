@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#F5F0EB"/>
+  <!-- Header bar -->
+  <rect x="0" y="0" width="1200" height="90" fill="#1B3A5C"/>
+  <!-- Brand name -->
+  <text x="40" y="58" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF">PassiveYieldLab.com</text>
+  <!-- Category tag -->
+  <rect x="40" y="115" width="230" height="42" fill="#1B3A5C" rx="4"/>
+  <text x="55" y="142" font-family="Arial, sans-serif" font-size="22" fill="#FFFFFF">Market Analysis · 2026</text>
+  <!-- Main title line 1 -->
+  <text x="40" y="220" font-family="Arial, sans-serif" font-size="46" font-weight="bold" fill="#1B3A5C">PCE June 25, 2026:</text>
+  <!-- Main title line 2 -->
+  <text x="40" y="275" font-family="Arial, sans-serif" font-size="38" font-weight="bold" fill="#1B3A5C">3 Scenarios for Bitcoin &amp; DeFi Yield</text>
+  <!-- Subtitle -->
+  <text x="40" y="328" font-family="Arial, sans-serif" font-size="26" fill="#555555">Rate-Cut Dream · Shrug · Inflation Stays Sticky</text>
+  <!-- Divider -->
+  <rect x="40" y="355" width="800" height="3" fill="#1B3A5C"/>
+  <!-- Stats row -->
+  <text x="40" y="398" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B3A5C">BTC $64,114</text>
+  <text x="40" y="430" font-family="Arial, sans-serif" font-size="20" fill="#555555">Fear &amp; Greed: 37</text>
+  <text x="340" y="398" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B3A5C">Morpho USDC</text>
+  <text x="340" y="430" font-family="Arial, sans-serif" font-size="20" fill="#555555">4–8% APY</text>
+  <text x="640" y="398" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1B3A5C">PCE Core Prev.</text>
+  <text x="640" y="430" font-family="Arial, sans-serif" font-size="20" fill="#555555">+0.3% MoM</text>
+  <!-- Tagline -->
+  <text x="40" y="498" font-family="Arial, sans-serif" font-size="22" fill="#888888" font-style="italic">Passive income isn't lazy money — it's freedom money.</text>
+  <!-- Footer bar -->
+  <rect x="0" y="570" width="1200" height="60" fill="#1B3A5C"/>
+  <text x="40" y="607" font-family="Arial, sans-serif" font-size="22" fill="#CCDDEE">passiveyieldlab.com · Ethan Moore</text>
+</svg>
