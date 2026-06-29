@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5F0EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1B3A5C;stop-opacity:0" />
+      <stop offset="30%" style="stop-color:#1B3A5C;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#2E6B4F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2E6B4F;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Grid texture -->
+  <g opacity="0.04" stroke="#1B3A5C" stroke-width="1">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1200" height="8" fill="#1B3A5C"/>
+
+  <!-- Left accent block -->
+  <rect x="60" y="140" width="6" height="260" fill="#1B3A5C" opacity="0.8"/>
+
+  <!-- Category badge -->
+  <rect x="80" y="135" width="180" height="34" rx="4" fill="#1B3A5C"/>
+  <text x="170" y="158" font-family="Georgia, serif" font-size="14" fill="#FFFFFF" text-anchor="middle" font-weight="bold" letter-spacing="2">AI INCOME</text>
+
+  <!-- Main title line 1 -->
+  <text x="80" y="230" font-family="Georgia, serif" font-size="58" fill="#1B3A5C" font-weight="bold">Newsletter</text>
+  <!-- Main title line 2 -->
+  <text x="80" y="300" font-family="Georgia, serif" font-size="58" fill="#1B3A5C" font-weight="bold">Monetization</text>
+  <!-- Main title line 3 -->
+  <text x="80" y="365" font-family="Georgia, serif" font-size="52" fill="#2E6B4F" font-weight="bold">for Creators 2026</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="415" font-family="Arial, sans-serif" font-size="26" fill="#444444">How to Hit Your First $500 in 90 Days</text>
+
+  <!-- Accent line -->
+  <rect x="80" y="440" width="600" height="3" fill="url(#accentLine)" rx="2"/>
+
+  <!-- Data callouts -->
+  <rect x="80" y="470" width="160" height="80" rx="6" fill="#1B3A5C" opacity="0.08"/>
+  <text x="160" y="503" font-family="Georgia, serif" font-size="28" fill="#1B3A5C" font-weight="bold" text-anchor="middle">$19M</text>
+  <text x="160" y="528" font-family="Arial, sans-serif" font-size="13" fill="#555555" text-anchor="middle">Beehiiv Platform</text>
+  <text x="160" y="543" font-family="Arial, sans-serif" font-size="13" fill="#555555" text-anchor="middle">Revenue (2026)</text>
+
+  <rect x="260" y="470" width="160" height="80" rx="6" fill="#1B3A5C" opacity="0.08"/>
+  <text x="340" y="503" font-family="Georgia, serif" font-size="28" fill="#1B3A5C" font-weight="bold" text-anchor="middle">90 Days</text>
+  <text x="340" y="528" font-family="Arial, sans-serif" font-size="13" fill="#555555" text-anchor="middle">To First</text>
+  <text x="340" y="543" font-family="Arial, sans-serif" font-size="13" fill="#555555" text-anchor="middle">Paycheck</text>
+
+  <rect x="440" y="470" width="175" height="80" rx="6" fill="#1B3A5C" opacity="0.08"/>
+  <text x="527" y="503" font-family="Georgia, serif" font-size="28" fill="#1B3A5C" font-weight="bold" text-anchor="middle">$500-3.8K</text>
+  <text x="527" y="528" font-family="Arial, sans-serif" font-size="13" fill="#555555" text-anchor="middle">Monthly at</text>
+  <text x="527" y="543" font-family="Arial, sans-serif" font-size="13" fill="#555555" text-anchor="middle">5k-12k Subs</text>
+
+  <!-- Right illustration: envelope icon -->
+  <g transform="translate(860, 200) scale(1.4)">
+    <rect x="0" y="0" width="180" height="130" rx="8" fill="none" stroke="#1B3A5C" stroke-width="3" opacity="0.25"/>
+    <polyline points="0,0 90,70 180,0" fill="none" stroke="#1B3A5C" stroke-width="3" opacity="0.25"/>
+    <!-- Dollar sign inside envelope -->
+    <text x="90" y="105" font-family="Georgia, serif" font-size="42" fill="#1B3A5C" font-weight="bold" text-anchor="middle" opacity="0.3">$</text>
+  </g>
+
+  <!-- Beehiiv brand mention -->
+  <rect x="860" y="430" width="260" height="50" rx="6" fill="#1B3A5C" opacity="0.07"/>
+  <text x="990" y="462" font-family="Arial, sans-serif" font-size="18" fill="#1B3A5C" text-anchor="middle" font-weight="bold">Powered by Beehiiv</text>
+
+  <!-- PassiveYieldLab branding -->
+  <text x="80" y="595" font-family="Arial, sans-serif" font-size="18" fill="#1B3A5C" opacity="0.7" font-weight="bold" letter-spacing="1">PASSIVEYIELDLAB.COM</text>
+  <text x="1120" y="595" font-family="Arial, sans-serif" font-size="16" fill="#777777" text-anchor="end">Ethan Moore · June 2026</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="622" width="1200" height="8" fill="#1B3A5C" opacity="0.3"/>
+</svg>
