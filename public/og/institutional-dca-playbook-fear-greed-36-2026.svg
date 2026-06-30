@@ -1,0 +1,41 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#F5F0EB"/>
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1200" height="80" fill="#1B3A5C"/>
+  <!-- Bottom bar -->
+  <rect x="0" y="550" width="1200" height="80" fill="#1B3A5C"/>
+  <!-- Accent line -->
+  <rect x="60" y="115" width="6" height="320" fill="#1B3A5C"/>
+  <!-- Fear label badge -->
+  <rect x="80" y="108" width="220" height="44" rx="8" fill="#C0392B"/>
+  <text x="190" y="136" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="white" text-anchor="middle">Fear &amp; Greed: 36</text>
+  <!-- Main title -->
+  <text x="100" y="210" font-family="Georgia, serif" font-size="48" font-weight="bold" fill="#1B3A5C">Institutional DCA</text>
+  <text x="100" y="270" font-family="Georgia, serif" font-size="48" font-weight="bold" fill="#1B3A5C">Playbook</text>
+  <!-- Sub-line -->
+  <text x="100" y="335" font-family="Arial, sans-serif" font-size="30" fill="#333333">When Fear &amp; Greed Hits 36</text>
+  <!-- Detail line -->
+  <text x="100" y="390" font-family="Arial, sans-serif" font-size="24" fill="#555555">What BlackRock's $257M Move</text>
+  <text x="100" y="422" font-family="Arial, sans-serif" font-size="24" fill="#555555">Actually Tells Us</text>
+  <!-- Stats row -->
+  <rect x="100" y="460" width="180" height="70" rx="8" fill="#1B3A5C"/>
+  <text x="190" y="490" font-family="Arial, sans-serif" font-size="13" fill="#A0B8CC" text-anchor="middle">BTC PRICE</text>
+  <text x="190" y="515" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">$59,912</text>
+  <rect x="300" y="460" width="180" height="70" rx="8" fill="#1B3A5C"/>
+  <text x="390" y="490" font-family="Arial, sans-serif" font-size="13" fill="#A0B8CC" text-anchor="middle">F&amp;G INDEX</text>
+  <text x="390" y="515" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#E74C3C" text-anchor="middle">FEAR 36</text>
+  <rect x="500" y="460" width="180" height="70" rx="8" fill="#1B3A5C"/>
+  <text x="590" y="490" font-family="Arial, sans-serif" font-size="13" fill="#A0B8CC" text-anchor="middle">BLACKROCK</text>
+  <text x="590" y="515" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">$257M</text>
+  <!-- Logo area -->
+  <text x="1100" y="610" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="white" text-anchor="middle">PassiveYieldLab</text>
+  <!-- Top bar label -->
+  <text x="600" y="52" font-family="Arial, sans-serif" font-size="22" fill="white" text-anchor="middle" font-weight="bold">MARKET ANALYSIS · 2026-06-30</text>
+  <!-- Right decorative element -->
+  <circle cx="1050" cy="315" r="180" fill="none" stroke="#1B3A5C" stroke-width="3" opacity="0.15"/>
+  <circle cx="1050" cy="315" r="130" fill="none" stroke="#1B3A5C" stroke-width="3" opacity="0.15"/>
+  <circle cx="1050" cy="315" r="80" fill="#1B3A5C" opacity="0.1"/>
+  <text x="1050" y="305" font-family="Arial, sans-serif" font-size="52" font-weight="bold" fill="#1B3A5C" text-anchor="middle" opacity="0.4">36</text>
+  <text x="1050" y="340" font-family="Arial, sans-serif" font-size="18" fill="#C0392B" text-anchor="middle" font-weight="bold">FEAR</text>
+</svg>
