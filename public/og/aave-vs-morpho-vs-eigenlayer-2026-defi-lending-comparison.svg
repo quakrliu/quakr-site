@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F5F0EB"/>
+  <rect width="1200" height="80" fill="#1B3A5C"/>
+  <text x="600" y="52" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">PassiveYieldLab</text>
+  <rect x="60" y="120" width="1080" height="360" rx="12" fill="#FFFFFF" opacity="0.85"/>
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="46" font-weight="bold" fill="#1B3A5C" text-anchor="middle">Aave vs Morpho vs EigenLayer</text>
+  <text x="600" y="258" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#1B3A5C" text-anchor="middle">2026 DeFi Lending APY Comparison</text>
+  <line x1="120" y1="285" x2="1080" y2="285" stroke="#1B3A5C" stroke-width="2" opacity="0.2"/>
+  <text x="240" y="340" font-family="Arial, sans-serif" font-size="22" fill="#333333" text-anchor="middle">Aave V3</text>
+  <text x="240" y="375" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#1B3A5C" text-anchor="middle">3–5%</text>
+  <text x="240" y="405" font-family="Arial, sans-serif" font-size="18" fill="#666666" text-anchor="middle">USDC • Low Risk</text>
+  <line x1="420" y1="310" x2="420" y2="430" stroke="#1B3A5C" stroke-width="1" opacity="0.15"/>
+  <text x="600" y="340" font-family="Arial, sans-serif" font-size="22" fill="#333333" text-anchor="middle">Morpho Blue</text>
+  <text x="600" y="375" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#1B3A5C" text-anchor="middle">4–6%</text>
+  <text x="600" y="405" font-family="Arial, sans-serif" font-size="18" fill="#666666" text-anchor="middle">USDC • Low-Med Risk</text>
+  <line x1="780" y1="310" x2="780" y2="430" stroke="#1B3A5C" stroke-width="1" opacity="0.15"/>
+  <text x="960" y="340" font-family="Arial, sans-serif" font-size="22" fill="#333333" text-anchor="middle">EigenLayer</text>
+  <text x="960" y="375" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#1B3A5C" text-anchor="middle">5–15%</text>
+  <text x="960" y="405" font-family="Arial, sans-serif" font-size="18" fill="#666666" text-anchor="middle">ETH Restaking • Med-High</text>
+  <text x="600" y="460" font-family="Arial, sans-serif" font-size="20" fill="#555555" text-anchor="middle">Tested with 18 real ETH • Circle OCC Approval Context</text>
+  <text x="600" y="570" font-family="Arial, sans-serif" font-size="22" font-style="italic" fill="#1B3A5C" text-anchor="middle">Passive income isn't lazy money — it's freedom money.</text>
+  <text x="600" y="610" font-family="Arial, sans-serif" font-size="16" fill="#888888" text-anchor="middle">passiveyieldlab.com • APY as of July 2026, fluctuates</text>
+</svg>
