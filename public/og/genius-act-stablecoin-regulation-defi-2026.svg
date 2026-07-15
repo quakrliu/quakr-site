@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F5F0EB"/>
+  <rect width="1200" height="80" fill="#1B3A5C"/>
+  <text x="600" y="52" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">PassiveYieldLab</text>
+  <rect x="60" y="110" width="1080" height="390" rx="12" fill="#FFFFFF" opacity="0.88"/>
+  <text x="600" y="190" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#1B3A5C" text-anchor="middle">GENIUS Act Stablecoin Rules</text>
+  <text x="600" y="244" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#1B3A5C" text-anchor="middle">What DeFi Users Must Know</text>
+  <rect x="400" y="258" width="400" height="4" rx="2" fill="#C0392B"/>
+  <text x="600" y="310" font-family="Arial, sans-serif" font-size="24" fill="#C0392B" font-weight="bold" text-anchor="middle">Final Rules: July 18, 2026</text>
+  <line x1="120" y1="335" x2="1080" y2="335" stroke="#1B3A5C" stroke-width="1" opacity="0.15"/>
+  <text x="300" y="380" font-family="Arial, sans-serif" font-size="20" fill="#333333" text-anchor="middle">USDC</text>
+  <text x="300" y="412" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#27AE60" text-anchor="middle">Compliant</text>
+  <line x1="500" y1="355" x2="500" y2="440" stroke="#1B3A5C" stroke-width="1" opacity="0.15"/>
+  <text x="600" y="380" font-family="Arial, sans-serif" font-size="20" fill="#333333" text-anchor="middle">Aave / DeFi</text>
+  <text x="600" y="412" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1B3A5C" text-anchor="middle">Unaffected</text>
+  <line x1="700" y1="355" x2="700" y2="440" stroke="#1B3A5C" stroke-width="1" opacity="0.15"/>
+  <text x="900" y="380" font-family="Arial, sans-serif" font-size="20" fill="#333333" text-anchor="middle">USDT</text>
+  <text x="900" y="412" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#E67E22" text-anchor="middle">Watch Closely</text>
+  <text x="600" y="468" font-family="Arial, sans-serif" font-size="18" fill="#555555" text-anchor="middle">6 Federal Agencies • USDC/USDT Impact • Aave TVL $40B</text>
+  <text x="600" y="560" font-family="Arial, sans-serif" font-size="16" fill="#888888" text-anchor="middle">passiveyieldlab.com</text>
+</svg>
