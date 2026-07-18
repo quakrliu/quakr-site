@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F5F0EB"/>
+  <rect width="1200" height="80" fill="#1B3A5C"/>
+  <text x="600" y="52" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">PassiveYieldLab</text>
+  <rect x="60" y="110" width="1080" height="400" rx="12" fill="#FFFFFF" opacity="0.85"/>
+  <text x="600" y="195" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#1B3A5C" text-anchor="middle">Cardano van Rossem Hard Fork</text>
+  <text x="600" y="250" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#1B3A5C" text-anchor="middle">Is Live — The August ETF Signal</text>
+  <line x1="120" y1="275" x2="1080" y2="275" stroke="#1B3A5C" stroke-width="2" opacity="0.2"/>
+  <text x="240" y="330" font-family="Arial, sans-serif" font-size="20" fill="#555555" text-anchor="middle">Whale Accumulation</text>
+  <text x="240" y="368" font-family="Arial, sans-serif" font-size="38" font-weight="bold" fill="#1B3A5C" text-anchor="middle">25.6B ADA</text>
+  <text x="240" y="400" font-family="Arial, sans-serif" font-size="17" fill="#888888" text-anchor="middle">July 14–15 · 3.5yr High</text>
+  <line x1="440" y1="300" x2="440" y2="430" stroke="#1B3A5C" stroke-width="1" opacity="0.15"/>
+  <text x="600" y="330" font-family="Arial, sans-serif" font-size="20" fill="#555555" text-anchor="middle">DeFi TVL</text>
+  <text x="600" y="368" font-family="Arial, sans-serif" font-size="38" font-weight="bold" fill="#1B3A5C" text-anchor="middle">$82M</text>
+  <text x="600" y="400" font-family="Arial, sans-serif" font-size="17" fill="#888888" text-anchor="middle">Down 69% from $266M peak</text>
+  <line x1="760" y1="300" x2="760" y2="430" stroke="#1B3A5C" stroke-width="1" opacity="0.15"/>
+  <text x="960" y="330" font-family="Arial, sans-serif" font-size="20" fill="#555555" text-anchor="middle">ADA Staking APY</text>
+  <text x="960" y="368" font-family="Arial, sans-serif" font-size="38" font-weight="bold" fill="#1B3A5C" text-anchor="middle">3–4%</text>
+  <text x="960" y="400" font-family="Arial, sans-serif" font-size="17" fill="#888888" text-anchor="middle">No lockup · No slashing</text>
+  <text x="600" y="455" font-family="Arial, sans-serif" font-size="19" fill="#555555" text-anchor="middle">Binance + Coinbase confirmed readiness · August ETF window opens</text>
+  <text x="600" y="565" font-family="Arial, sans-serif" font-size="21" font-style="italic" fill="#1B3A5C" text-anchor="middle">Passive income is not lazy money — it is freedom money.</text>
+  <text x="600" y="608" font-family="Arial, sans-serif" font-size="15" fill="#888888" text-anchor="middle">passiveyieldlab.com · ADA price as of July 18, 2026 — fluctuates</text>
+</svg>
