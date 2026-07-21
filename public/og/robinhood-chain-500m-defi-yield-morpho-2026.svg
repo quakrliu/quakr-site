@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F5F0EB"/>
+  <rect width="1200" height="80" fill="#1B3A5C"/>
+  <text x="600" y="52" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle">PassiveYieldLab</text>
+  <rect x="60" y="120" width="1080" height="360" rx="12" fill="#FFFFFF" opacity="0.85"/>
+  <text x="600" y="195" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="#1B3A5C" text-anchor="middle">Robinhood Chain Hit $500M</text>
+  <text x="600" y="248" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#1B3A5C" text-anchor="middle">in 7 Days — DeFi Yield Breakdown</text>
+  <line x1="120" y1="275" x2="1080" y2="275" stroke="#1B3A5C" stroke-width="2" opacity="0.2"/>
+  <text x="240" y="328" font-family="Arial, sans-serif" font-size="20" fill="#333333" text-anchor="middle">Aave V3</text>
+  <text x="240" y="368" font-family="Arial, sans-serif" font-size="38" font-weight="bold" fill="#1B3A5C" text-anchor="middle">3–5%</text>
+  <text x="240" y="400" font-family="Arial, sans-serif" font-size="17" fill="#666666" text-anchor="middle">USDC • Low Risk</text>
+  <line x1="400" y1="295" x2="400" y2="425" stroke="#1B3A5C" stroke-width="1" opacity="0.15"/>
+  <text x="560" y="328" font-family="Arial, sans-serif" font-size="20" fill="#333333" text-anchor="middle">Morpho (ETH)</text>
+  <text x="560" y="368" font-family="Arial, sans-serif" font-size="38" font-weight="bold" fill="#1B3A5C" text-anchor="middle">4–6%</text>
+  <text x="560" y="400" font-family="Arial, sans-serif" font-size="17" fill="#666666" text-anchor="middle">USDC • Low-Med</text>
+  <line x1="720" y1="295" x2="720" y2="425" stroke="#1B3A5C" stroke-width="1" opacity="0.15"/>
+  <rect x="740" y="288" width="360" height="150" rx="8" fill="#1B3A5C" opacity="0.08"/>
+  <text x="920" y="320" font-family="Arial, sans-serif" font-size="18" fill="#1B3A5C" text-anchor="middle" font-weight="bold">★ Robinhood Chain Morpho</text>
+  <text x="920" y="362" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="#1B3A5C" text-anchor="middle">~7%</text>
+  <text x="920" y="398" font-family="Arial, sans-serif" font-size="17" fill="#1B3A5C" text-anchor="middle">+ Lloyd's Insurance</text>
+  <text x="600" y="455" font-family="Arial, sans-serif" font-size="20" fill="#555555" text-anchor="middle">$500M Uniswap volume • July 8, 2026 • Morpho $10.7B TVL</text>
+  <text x="600" y="570" font-family="Arial, sans-serif" font-size="22" font-style="italic" fill="#1B3A5C" text-anchor="middle">Passive income isn't lazy money — it's freedom money.</text>
+  <text x="600" y="608" font-family="Arial, sans-serif" font-size="16" fill="#888888" text-anchor="middle">passiveyieldlab.com • APY as of July 21, 2026, fluctuates</text>
+</svg>
