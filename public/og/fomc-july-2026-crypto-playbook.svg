@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5F0EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bottomLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1B3A5C;stop-opacity:0" />
+      <stop offset="30%" style="stop-color:#1B3A5C;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#E63946;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E63946;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Grid lines -->
+  <g opacity="0.04" stroke="#1B3A5C" stroke-width="1">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Decorative circles -->
+  <circle cx="1080" cy="200" r="100" fill="none" stroke="#E63946" stroke-width="1.5" opacity="0.1"/>
+  <circle cx="1080" cy="200" r="65" fill="none" stroke="#E63946" stroke-width="1" opacity="0.08"/>
+  <circle cx="120" cy="540" r="110" fill="none" stroke="#1B3A5C" stroke-width="1" opacity="0.06"/>
+
+  <!-- Left accent bar -->
+  <rect x="60" y="155" width="4" height="320" rx="2" fill="#1B3A5C" opacity="0.7"/>
+
+  <!-- Brand -->
+  <text x="80" y="100" font-family="'Arial Black', Arial, sans-serif" font-size="32" font-weight="900" fill="#1B3A5C" letter-spacing="1">PASSIVE YIELD LAB</text>
+  <text x="80" y="122" font-family="Arial, sans-serif" font-size="13" fill="#64748B" letter-spacing="4">EARN MORE. WORK LESS.</text>
+  <line x1="80" y1="135" x2="460" y2="135" stroke="#1B3A5C" stroke-width="1" opacity="0.3"/>
+
+  <!-- URGENT badge -->
+  <rect x="80" y="153" width="160" height="30" rx="4" fill="#E63946" opacity="0.12"/>
+  <rect x="80" y="153" width="160" height="30" rx="4" fill="none" stroke="#E63946" stroke-width="1.5" opacity="0.7"/>
+  <text x="160" y="173" font-family="Arial, sans-serif" font-size="13" fill="#E63946" text-anchor="middle" letter-spacing="2" font-weight="700">JUL 28-29 FOMC</text>
+
+  <!-- Main title -->
+  <text x="80" y="255" font-family="'Arial Black', Arial, sans-serif" font-size="56" font-weight="900" fill="#1E293B" letter-spacing="-1">Fed Decision:</text>
+  <text x="80" y="322" font-family="'Arial Black', Arial, sans-serif" font-size="52" font-weight="900" fill="#1B3A5C" letter-spacing="-1">My BTC, ETH &amp; SOL</text>
+  <text x="80" y="386" font-family="'Arial Black', Arial, sans-serif" font-size="52" font-weight="900" fill="#1B3A5C" letter-spacing="-1">Playbook</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="425" font-family="Arial, sans-serif" font-size="20" fill="#64748B" letter-spacing="0.3">3 scenarios · 96-hour checklist · Real positions</text>
+
+  <!-- Stats pills -->
+  <rect x="80" y="448" width="140" height="48" rx="6" fill="#FEE2E2" opacity="0.9"/>
+  <text x="150" y="466" font-family="'Arial Black', Arial, sans-serif" font-size="18" fill="#DC2626" text-anchor="middle" font-weight="900">70%</text>
+  <text x="150" y="486" font-family="Arial, sans-serif" font-size="11" fill="#DC2626" text-anchor="middle">rate hold odds</text>
+
+  <rect x="232" y="448" width="140" height="48" rx="6" fill="#DBEAFE" opacity="0.9"/>
+  <text x="302" y="466" font-family="'Arial Black', Arial, sans-serif" font-size="18" fill="#1D4ED8" text-anchor="middle" font-weight="900">$64,864</text>
+  <text x="302" y="486" font-family="Arial, sans-serif" font-size="11" fill="#1D4ED8" text-anchor="middle">BTC as of Jul 24</text>
+
+  <rect x="384" y="448" width="155" height="48" rx="6" fill="#DCFCE7" opacity="0.9"/>
+  <text x="461" y="466" font-family="'Arial Black', Arial, sans-serif" font-size="18" fill="#166534" text-anchor="middle" font-weight="900">$1,923</text>
+  <text x="461" y="486" font-family="Arial, sans-serif" font-size="11" fill="#166534" text-anchor="middle">ETH as of Jul 24</text>
+
+  <!-- Tags -->
+  <rect x="80" y="512" width="165" height="36" rx="18" fill="#1B3A5C" opacity="0.1"/>
+  <rect x="80" y="512" width="165" height="36" rx="18" fill="none" stroke="#1B3A5C" stroke-width="1.5" opacity="0.5"/>
+  <text x="162" y="534" font-family="Arial, sans-serif" font-size="12" fill="#1B3A5C" text-anchor="middle" letter-spacing="2" font-weight="700">MACRO · CRYPTO</text>
+
+  <!-- URL -->
+  <text x="1140" y="600" font-family="Arial, sans-serif" font-size="20" fill="#1B3A5C" text-anchor="end" opacity="0.8" letter-spacing="1">passiveyieldlab.com</text>
+
+  <!-- Bottom gradient bar -->
+  <rect x="0" y="618" width="1200" height="4" fill="url(#bottomLine)"/>
+</svg>
