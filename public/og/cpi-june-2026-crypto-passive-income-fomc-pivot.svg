@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5F0EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bottomLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1B3A5C;stop-opacity:0" />
+      <stop offset="30%" style="stop-color:#1B3A5C;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#16A34A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16A34A;stop-opacity:0" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Grid lines -->
+  <g opacity="0.04" stroke="#1B3A5C" stroke-width="1">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Decorative circles -->
+  <circle cx="1080" cy="200" r="100" fill="none" stroke="#16A34A" stroke-width="1.5" opacity="0.12"/>
+  <circle cx="1080" cy="200" r="65" fill="none" stroke="#16A34A" stroke-width="1" opacity="0.08"/>
+  <circle cx="120" cy="540" r="110" fill="none" stroke="#1B3A5C" stroke-width="1" opacity="0.06"/>
+
+  <!-- Left accent bar -->
+  <rect x="60" y="155" width="4" height="320" rx="2" fill="#16A34A" opacity="0.7"/>
+
+  <!-- Brand -->
+  <text x="80" y="100" font-family="'Arial Black', Arial, sans-serif" font-size="32" font-weight="900" fill="#1B3A5C" letter-spacing="1">PASSIVE YIELD LAB</text>
+  <text x="80" y="122" font-family="Arial, sans-serif" font-size="13" fill="#64748B" letter-spacing="4">EARN MORE. WORK LESS.</text>
+  <line x1="80" y1="135" x2="460" y2="135" stroke="#1B3A5C" stroke-width="1" opacity="0.3"/>
+
+  <!-- CPI badge -->
+  <rect x="80" y="153" width="185" height="30" rx="4" fill="#16A34A" opacity="0.12"/>
+  <rect x="80" y="153" width="185" height="30" rx="4" fill="none" stroke="#16A34A" stroke-width="1.5" opacity="0.7"/>
+  <text x="172" y="173" font-family="Arial, sans-serif" font-size="13" fill="#16A34A" text-anchor="middle" letter-spacing="2" font-weight="700">JUNE 2026 CPI DATA</text>
+
+  <!-- Main title -->
+  <text x="80" y="255" font-family="'Arial Black', Arial, sans-serif" font-size="52" font-weight="900" fill="#1E293B" letter-spacing="-1">CPI 3.5% — 300bps</text>
+  <text x="80" y="318" font-family="'Arial Black', Arial, sans-serif" font-size="50" font-weight="900" fill="#1B3A5C" letter-spacing="-1">Below Forecast</text>
+  <text x="80" y="378" font-family="'Arial Black', Arial, sans-serif" font-size="44" font-weight="900" fill="#16A34A" letter-spacing="-1">My FOMC Pivot</text>
+
+  <!-- Subtitle -->
+  <text x="80" y="418" font-family="Arial, sans-serif" font-size="19" fill="#64748B" letter-spacing="0.3">BTC +1.16% · ETH +3.48% · DeFi fixed-rate strategy</text>
+
+  <!-- Stats pills -->
+  <rect x="80" y="440" width="145" height="48" rx="6" fill="#DCFCE7" opacity="0.9"/>
+  <text x="152" y="458" font-family="'Arial Black', Arial, sans-serif" font-size="18" fill="#166534" text-anchor="middle" font-weight="900">3.5% CPI</text>
+  <text x="152" y="478" font-family="Arial, sans-serif" font-size="11" fill="#166534" text-anchor="middle">Jun 2026 YoY</text>
+
+  <rect x="237" y="440" width="145" height="48" rx="6" fill="#DBEAFE" opacity="0.9"/>
+  <text x="309" y="458" font-family="'Arial Black', Arial, sans-serif" font-size="18" fill="#1D4ED8" text-anchor="middle" font-weight="900">$65,217</text>
+  <text x="309" y="478" font-family="Arial, sans-serif" font-size="11" fill="#1D4ED8" text-anchor="middle">BTC Jul 28</text>
+
+  <rect x="394" y="440" width="165" height="48" rx="6" fill="#FEF9C3" opacity="0.9"/>
+  <text x="476" y="458" font-family="'Arial Black', Arial, sans-serif" font-size="18" fill="#854D0E" text-anchor="middle" font-weight="900">14.5% APY</text>
+  <text x="476" y="478" font-family="Arial, sans-serif" font-size="11" fill="#854D0E" text-anchor="middle">Pendle sUSDe fixed*</text>
+
+  <!-- Tags -->
+  <rect x="80" y="505" width="185" height="36" rx="18" fill="#1B3A5C" opacity="0.1"/>
+  <rect x="80" y="505" width="185" height="36" rx="18" fill="none" stroke="#1B3A5C" stroke-width="1.5" opacity="0.5"/>
+  <text x="172" y="527" font-family="Arial, sans-serif" font-size="12" fill="#1B3A5C" text-anchor="middle" letter-spacing="2" font-weight="700">MACRO · DEFI YIELD</text>
+
+  <!-- URL -->
+  <text x="1140" y="600" font-family="Arial, sans-serif" font-size="20" fill="#1B3A5C" text-anchor="end" opacity="0.8" letter-spacing="1">passiveyieldlab.com</text>
+
+  <!-- Bottom gradient bar -->
+  <rect x="0" y="618" width="1200" height="4" fill="url(#bottomLine)"/>
+</svg>
