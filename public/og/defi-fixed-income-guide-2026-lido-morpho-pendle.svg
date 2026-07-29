@@ -1,0 +1,50 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#F5F0EB"/>
+
+  <!-- Top blue bar -->
+  <rect width="1200" height="80" fill="#1B3A5C"/>
+
+  <!-- Bottom blue accent bar -->
+  <rect y="570" width="1200" height="60" fill="#1B3A5C"/>
+
+  <!-- PassiveYieldLab in top bar -->
+  <text x="60" y="52" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF">PassiveYieldLab</text>
+
+  <!-- Tag in top bar right -->
+  <text x="1140" y="52" font-family="Arial, sans-serif" font-size="20" fill="#A8C4E0" text-anchor="end">2026 Guide</text>
+
+  <!-- Main headline -->
+  <text x="60" y="175" font-family="Arial, sans-serif" font-size="52" font-weight="bold" fill="#1B3A5C">DeFi Fixed Income 2026</text>
+  <text x="60" y="245" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="#2D5A8E">Complete Allocation Guide</text>
+  <text x="60" y="305" font-family="Arial, sans-serif" font-size="36" fill="#444444">Lido → Morpho → Pendle → Aave</text>
+
+  <!-- Yield boxes -->
+  <!-- Box 1: Lido -->
+  <rect x="60" y="360" width="240" height="110" rx="12" fill="#1B3A5C" opacity="0.9"/>
+  <text x="180" y="400" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#A8C4E0" text-anchor="middle">Lido stETH</text>
+  <text x="180" y="432" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#FFFFFF" text-anchor="middle">~5%</text>
+  <text x="180" y="458" font-family="Arial, sans-serif" font-size="14" fill="#A8C4E0" text-anchor="middle">APY · Floating</text>
+
+  <!-- Box 2: Pendle -->
+  <rect x="330" y="360" width="240" height="110" rx="12" fill="#2D5A8E" opacity="0.9"/>
+  <text x="450" y="400" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#A8C4E0" text-anchor="middle">Pendle PT</text>
+  <text x="450" y="432" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#FFFFFF" text-anchor="middle">~14.5%</text>
+  <text x="450" y="458" font-family="Arial, sans-serif" font-size="14" fill="#A8C4E0" text-anchor="middle">APY · Fixed</text>
+
+  <!-- Box 3: Morpho -->
+  <rect x="600" y="360" width="240" height="110" rx="12" fill="#3A6FA5" opacity="0.9"/>
+  <text x="720" y="400" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#A8C4E0" text-anchor="middle">Morpho Vaults</text>
+  <text x="720" y="432" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#FFFFFF" text-anchor="middle">3.5–9%</text>
+  <text x="720" y="458" font-family="Arial, sans-serif" font-size="14" fill="#A8C4E0" text-anchor="middle">APY · Stablecoin</text>
+
+  <!-- Box 4: Aave -->
+  <rect x="870" y="360" width="240" height="110" rx="12" fill="#1B3A5C" opacity="0.7"/>
+  <text x="990" y="400" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#A8C4E0" text-anchor="middle">Aave USDC</text>
+  <text x="990" y="432" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#FFFFFF" text-anchor="middle">3–5%</text>
+  <text x="990" y="458" font-family="Arial, sans-serif" font-size="14" fill="#A8C4E0" text-anchor="middle">APY · Liquid</text>
+
+  <!-- Bottom bar text -->
+  <text x="60" y="610" font-family="Arial, sans-serif" font-size="20" fill="#FFFFFF">passiveyieldlab.com</text>
+  <text x="1140" y="610" font-family="Arial, sans-serif" font-size="18" fill="#A8C4E0" text-anchor="end">APY fluctuates · Not financial advice</text>
+</svg>
